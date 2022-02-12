@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>{{ page.title }}</title>
+    <meta charset="utf-8">
+    <meta name="description" content="{{ page.description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="copyright" content="&copy; {{site.time | date: '%Y'}} Webis">
+    <link rel="icon" type="image/png" href="{{ '/img/touche-icon-16x16.ico' | relative_url }}">
+
+    <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}?{{site.time | date: '%s'}}">
+    {% for css in page.additional_css %}
+    <link rel="stylesheet" href="{{ css | relative_url }}?{{site.time | date: '%s'}}">
+    {% endfor %}
+</head>
+<body class="uk-offcanvas-content page-{{ page.nav_active }}">
+<script src="https://assets.webis.de/js/thirdparty/uikit/uikit.min.js"></script>
+<script src="https://assets.webis.de/js/thirdparty/uikit/uikit-icons.min.js"></script>
+<script src="https://assets.webis.de/js/thirdparty/jquery/jquery.min.js"></script>
+<script src="https://assets.webis.de/js/thirdparty/code-prettify/prettify.js"></script>
+<script src="https://assets.webis.de/js/thirdparty/code-prettify/lang-proto.js"></script>
+<script src="https://assets.webis.de/js/thirdparty/code-prettify/lang-wiki.js"></script>
+<script src="https://assets.webis.de/js/thirdparty/code-prettify/lang-yaml.js"></script>
+<script src="https://assets.webis.de/js/code-prettify/lang-cmd.js"></script>
+
+<div id="offcanvas-nav" class="mobile-nav" data-uk-offcanvas="overlay: true; flip: true;">
+    <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+
+        <!-- Off-canvas mobile navigation -->
+        <nav class="uk-margin-large-top">
+            <ul class="uk-nav uk-nav-primary uk-nav-parent-icon" data-uk-nav>
+                <li{% if page.nav_active == "shared-tasks" %} class="uk-active"{% endif %}>
+                    <a href="{{ '/shared-tasks.html' | relative_url }}">Shared Tasks</a>
+                </li>
+                <li{% if page.nav_active == "events" %} class="uk-active"{% endif %}>
+                    <a href="{{ '/events.html' | relative_url }}">Events</a>
+                </li>
+                <li{% if page.nav_active == "data" %} class="uk-active"{% endif %}>
+                    <a href="{{ '/data.html' | relative_url }}">Data</a>
+                </li>
+                <li{% if page.nav_active == "publications" %} class="uk-active"{% endif %}>
+                    <a href="{{ '/publications.html' | relative_url }}">Publications</a>
+                </li>
+                <li{% if page.nav_active == "organization" %} class="uk-active"{% endif %}>
+                    <a href="{{ '/organization.html' | relative_url }}">Organization</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<div class="uk-background-secondary global-nav" data-uk-sticky>
+    <nav class="uk-navbar-container uk-navbar-transparent uk-container uk-light" data-uk-navbar="mode: click">
+        <div class="uk-navbar-left">
+            <ul class="uk-navbar-nav">
+                <li{% if page.nav_active == "index" %} class="uk-active"{% endif %}>
+                    <a href="{{ '/' | relative_url }}"><img src="{{ '/img/touche-logo.svg' | relative_url }}" alt="Touché Logo" class="uk-logo" style="height: 3rem"> Touché</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Mobile navigation toggle button -->
+        <div class="uk-navbar-right mobile-nav">
+            <button class="uk-button uk-navbar-item uk-light uk-button-large" type="button" data-uk-icon="icon: menu"
+                    data-uk-toggle="target: #offcanvas-nav"></button>
+        </div>
+
+        <!-- Desktop navigation -->
+        <div class="uk-navbar-right desktop-nav">
+            <ul class="uk-navbar-nav">
+                <li class="nav-group-start{% if page.nav_active == 'shared-tasks' %} uk-active{% endif %}">
+                    <a href="{{ '/shared-tasks.html' | relative_url }}">Shared Tasks</a>
+                </li>
+                <li{% if page.nav_active == "events" %} class="uk-active"{% endif %}>
+                    <a href="{{ '/events.html' | relative_url }}">Events</a>
+                </li>
+                <li{% if page.nav_active == "data" %} class="uk-active"{% endif %} class="uk-parent">
+                    <a href="{{ '/data.html' | relative_url }}">Data</a>
+                </li>
+                <li class="nav-group-start{% if page.nav_active == 'publications' %} uk-active{% endif %}">
+                    <a href="{{ '/publications.html' | relative_url }}">Publications</a>
+                </li>
+                <li{% if page.nav_active == "organization" %} class="uk-active"{% endif %}>
+                    <a href="{{ '/organization.html' | relative_url }}">Organization</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div data-uk-height-viewport="expand: true">
+{{ content }}
+</div>
+
+<footer class="uk-section uk-section-muted footer-section">
+    <div class="uk-container">
+        <div class="uk-grid uk-grid-small uk-margin-top">
+            <div class="uk-width-1-5@s">
+              <!-- links specific to a service -->
+            </div>
+            <div class="uk-width-expand uk-visible@s"></div>
+            <div>
+              &copy; {{site.time | date: '%Y'}} <a href="https://webis.de/">Webis Group</a> <span class="uk-padding-small">&bullet;</span>
+              <a href="https://github.com/webis-de"><span data-uk-icon="icon: github; ratio:0.8"></span></a> 
+              <a href="https://twitter.com/webis_de"><span data-uk-icon="icon: twitter; ratio:0.9"></span></a> 
+              <a href="https://www.youtube.com/webis"><span data-uk-icon="icon: youtube; ratio:0.9"></span></a> <span class="uk-padding-small">&bullet;</span>
+              <a href="{{ '/organization.html' | relative_url }}">Contact</a> <span class="uk-padding-small">&bullet;</span>
+              <a href="https://webis.de/legal.html">Impressum / Terms / Privacy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    UIkit.util.ready(() => {
+        PR.prettyPrint();
+
+        const nav = UIkit.util.$(".global-nav");
+        const navHeight = UIkit.util.height(nav);
+
+        // correct scroll offset due to fixed navigation after page load
+        let fixScrollHeight = () => {
+            if (location.hash === "" || !UIkit.util.$(location.hash)) {
+                return;
+            }
+
+            const pos = document.documentElement.scrollTop;
+            const offset = UIkit.util.offset(UIkit.util.$(location.hash));
+
+            if (pos > navHeight * .8 && offset) {
+                document.documentElement.scrollTop = offset.top - navHeight - 20;
+            }
+        };
+
+        window.addEventListener("hashchange", fixScrollHeight, false);
+        setTimeout(fixScrollHeight, 100);
+    });
+
+    // Google analytics
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-70770005-1', 'auto');
+    ga('send', 'pageview');
+</script>
+</body>
+</html>
