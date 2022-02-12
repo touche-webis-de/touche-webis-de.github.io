@@ -1,0 +1,54 @@
+---
+layout: default
+nav_active: data
+title: Touché Data
+description: Datasets used in Touché shared tasks.
+---
+<nav class="uk-container">
+<ul class="uk-breadcrumb">
+<li><a href="index.html">Touché</a></li>
+<li class="uk-disabled"><a href="#">Data</a></li>
+</ul>
+</nav>
+
+<main>
+<div class="uk-section uk-section-default">
+
+<div class="uk-container uk-margin-medium-bottom">
+<h1>Data</h1>
+</div>
+
+<div class="uk-container uk-margin-medium">
+<div id="search-control">
+<input type="text" class="uk-input" id="filter-field" placeholder="Type here to filter&hellip;"/>
+</div>
+</div>
+
+<div class="uk-container uk-margin-medium webis-data-table"></div>
+<div class="uk-container uk-margin-medium">
+<div id="filtered-all-message" class="uk-hidden uk-text-muted" aria-hidden="true">
+None of our corpora match your filter.
+</div>
+</div>
+
+</div>
+</main>
+
+<script src="https://assets.webis.de/js/thirdparty/jquery/jquery.slim.min.js"></script>
+<script src="https://assets.webis.de/js/tables.js"></script>
+<script src="https://assets.webis.de/js/thirdparty/fontawesome/fontawesome.min.js"></script>
+<script src="https://assets.webis.de/js/thirdparty/fontawesome/solid.min.js"></script>
+<script src="https://assets.webis.de/js/filter.js"></script>
+<script src="https://assets.webis.de/js/selection.js"></script>
+<script>
+let query = "";
+if (window.location.hash.startsWith("#?q=")) {
+  query = window.location.hash.substr(4);
+}
+includeList(document.querySelector(".webis-data-table"), "https://webis.de/data.html", "#touche-include", table => {
+  const filterFunction = initWebisDataFiltering(tables = [table], updateHash = true);
+  filterFunction(query);
+  table.classList.remove("uk-container", "uk-margin-medium");
+  initTableHighlightOnClick([table]);
+});
+</script>

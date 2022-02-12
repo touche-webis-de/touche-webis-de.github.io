@@ -1,0 +1,97 @@
+---
+layout: default
+nav_active: shared-tasks
+title: Touché Shared Tasks
+description: Touché Shared Tasks Overview
+---
+<nav class="uk-container">
+<ul class="uk-breadcrumb">
+<li><a href="index.html">Touché</a></li>
+<li class="uk-disabled"><a href="#">Shared Tasks</a></li>
+</ul>
+</nav>
+
+<main>
+    <section class="uk-section uk-section-default">
+        <div class="uk-container uk-margin-medium-bottom">
+            <h1>Shared Tasks</h1>
+            <!--
+            <ul class="uk-list">
+                <li><span data-uk-icon="chevron-down"></span> <a href="#id">Name</a></li>
+            </ul>
+            -->
+        </div>
+
+        <div class="uk-container uk-margin-medium">
+            <div id="search-control">
+                <input type="text" class="uk-input" id="filter-field" placeholder="Type here to filter&hellip;"/>
+            </div>
+
+            <div id="filtered-all-message" class="uk-hidden uk-text-muted" aria-hidden="true">
+                None of our shared tasks match your filter.
+            </div>
+        </div>
+
+        <div class="uk-container uk-margin-medium webis-data-table">
+            <table class="uk-table uk-table-divider uk-table-small targetable sortable">
+                <thead>
+                <!--
+                <tr>
+                    <th id="id"></th>
+                    <th colspan="3">
+                        Name
+                        <a href="#" class="uk-float-right uk-link-reset" data-uk-icon="chevron-up"></a>
+                    </th>
+                </tr>
+                -->
+                <tr>
+                    <th></th>
+                    <th class="header uk-width-2-3"><span>Name</span></th>
+                    <!-- <th class="header uk-width-1-4"><span>Task</span></th> -->
+                    <th class="header uk-table-expand"><span>Edition</span></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td id="argument-retrieval-for-comparative-questions"></td>
+                    <td>Argument Retrieval for Comparative Questions</td>
+                    <td>[<a href="clef22/touche22-web/argument-retrieval-for-comparative-questions.html">2022</a>]
+                        [<a href="clef21/touche21-web/argument-retrieval-for-comparative-questions">2021</a>]
+                        [<a href="clef20/touche20-web/argument-retrieval-for-comparative-questions">2020</a>]
+                    </td>
+                </tr>
+                <tr>
+                    <td id="argument-retrieval-for-controversial-questions"></td>
+                    <td>Argument Retrieval for Controversial Questions</td>
+                    <td>[<a href="clef22/touche22-web/argument-retrieval-for-controversial-questions.html">2022</a>]
+                        [<a href="clef21/touche21-web/argument-retrieval-for-controversial-questions">2021</a>]
+                        [<a href="clef20/touche20-web/argument-retrieval-for-controversial-questions">2020</a>]
+                    </td>
+                </tr>
+                <tr>
+                    <td id="image-retrieval-for-arguments"></td>
+                    <td>Image Retrieval for Arguments</td>
+                    <td>[<a href="clef22/touche22-web/image-retrieval-for-arguments.html">2022</a>]
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+<script src="https://assets.webis.de/js/thirdparty/jquery/jquery.slim.min.js"></script>
+<script src="https://assets.webis.de/js/tables.js"></script>
+<script src="https://assets.webis.de/js/thirdparty/fontawesome/fontawesome.min.js"></script>
+<script src="https://assets.webis.de/js/thirdparty/fontawesome/solid.min.js"></script>
+<script src="https://assets.webis.de/js/filter.js"></script>
+<script src="https://assets.webis.de/js/selection.js"></script>
+<script>
+    initWebisTableFiltering(document.querySelectorAll(".targetable"), true, entry => {
+        const attributes = entry.dataset;
+        attributes['name'] = normalize(entry.children[1].textContent);
+        attributes['edition'] = normalize(entry.children[2].textContent);
+        return attributes;
+    });
+    initTableHighlightOnClick();
+</script>
