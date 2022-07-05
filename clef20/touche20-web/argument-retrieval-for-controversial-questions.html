@@ -35,7 +35,7 @@ description: Touché at CLEF 2020 - Argument Retrieval for Controversial Questio
 <h2 id="synopsis">Synopsis</h2>
 <ul>
 <li>Task: Given a question on a controversial topic, retrieve relevant arguments from a focused crawl of online debate portals.</li>
-<li>Input: [<a href="https://zenodo.org/record/3734893">corpus</a>] [<a href="{{ '/data.html#touche20-argument-retrieval-for-controversial-questions' | relative_url }}">other</a>]</li>
+<li>Input: [<a href="https://doi.org/10.5281/zenodo.3734893">corpus</a>] [<a href="https://doi.org/10.5281/zenodo.6067666">other</a>]</li>
 <li>Submission: [<a href="https://www.tira.io/task/touche-task-1/">submit</a>]</li>
 </ul>
 
@@ -44,7 +44,6 @@ description: Touché at CLEF 2020 - Argument Retrieval for Controversial Questio
 <p><strong>Registration closed on Sunday, 26 April 2020</strong></p>
 
 <h2 id="data">Data</h2>
-<p>Available data for this task are the topics, quality judgements, and participant runs. [<a href="{{ '/data.html#touche20-argument-retrieval-for-controversial-questions' | relative_url }}">download</a>]</p>
 <p>Example topic for <strong>Task 1:</strong></p>
 <pre><code>&lt;topic&gt;
 &lt;number&gt;1&lt;/number&gt;
@@ -52,7 +51,8 @@ description: Touché at CLEF 2020 - Argument Retrieval for Controversial Questio
 &lt;description&gt;You read an opinion piece on how climate change is a hoax and disagree. Now you are looking for arguments supporting the claim that climate change is in fact real.&lt;/description&gt;
 &lt;narrative&gt;Relevant arguments will support the given stance that climate change is real or attack a hoax side's argument.&lt;/narrative&gt;
 &lt;/topic&gt;</code></pre>
-<p><strong>The corpus</strong> for Task 1 is the <a href="https://zenodo.org/record/3734893">args.me corpus</a>; you may index the corpus with your favorite retrieval system. To ease participation, you may also directly use the <a href="https://www.args.me/index.html">args.me</a> search engine's <a href="https://www.args.me/api-en.html">API</a> for a baseline retrieval.</p>
+<p><strong>The corpus</strong> for Task 1 is the <a href="https://doi.org/10.5281/zenodo.3734893">args.me corpus</a>; you may index the corpus with your favorite retrieval system. To ease participation, you may also directly use the <a href="https://www.args.me/index.html">args.me</a> search engine's <a href="https://www.args.me/api-en.html">API</a> for a baseline retrieval.</p>
+<p><strong>Other data</strong> for this task are the topics, quality judgements, and participant runs. [<a href="https://doi.org/10.5281/zenodo.6067666">download</a>]</p>
 
 <h2 id="evaluation">Evaluation</h2>
 <p>Be sure to retrieve good ''strong'' arguments. Our human assessors will label the retrieved documents manually, both for their general topical relevance and for the rhetorical quality, i.e., "well-writtenness" of the document: (1) whether the text has a good style of speech (formal language is preferred over informal), (2) whether the text has a proper sentence structure and is easy to read, (3) whether it includes profanity, has typos, and makes use of other detrimental style choices.</p>
@@ -97,7 +97,7 @@ An example run for Task 1 is:
 <p>You can register more than one system (“software/ model”) per virtual machine using the web interface. TIRA gives systems automatic names “Software 1”, “Software 2” etc. You can perform several runs per system.</p>
 
 <h2 id="results">Results</h2>
-Results for old documents (args.me corpus version 1)
+Results for old documents (args.me corpus version 1) [<a href="https://zenodo.org/record/6067667/files/touche2020-task1-relevance-args-me-corpus-version-1.qrels?download=1">qrels</a>]
 <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
 <thead>
 <tr> <th>team</th> <th colspan="2" align="center">results</th> </tr>
@@ -126,7 +126,7 @@ Results for old documents (args.me corpus version 1)
 <tr> <td>Aragorn</td> <td>cedr_knrm</td> <td>0.271</td> </tr>
 </tbody>
 </table>
-Results for new documents (args.me corpus version 2020-04-01)
+Results for new documents (args.me corpus version 2020-04-01) [<a href="https://zenodo.org/record/6067667/files/touche2020-task1-relevance-args-me-corpus-version-2020-04-01.qrels?download=1">qrels</a>]
 <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
 <thead>
 <tr> <th>team</th> <th colspan="2" align="center">results</th> </tr>
