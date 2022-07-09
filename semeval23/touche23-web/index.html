@@ -48,13 +48,14 @@ pre .tab { background-color: #ffffb3; }
 <div class="uk-section uk-section-default">
 <div class="uk-container uk-margin-small">
 <h1 class="uk-margin-remove-top uk-margin-remove-bottom">Human Value Detection 2023</h1>
-<span style="color:#909090";">SemEval 2023. ValueEval: Identification of Human Values behind Arguments</span>
+<span style="color:#909090;">SemEval 2023 Task 4. ValueEval: Identification of Human Values behind Arguments</span>
 <ul class="uk-list">
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#important-dates">Important Dates</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
 </ul>
 </div>
@@ -63,15 +64,16 @@ pre .tab { background-color: #ffffb3; }
 
 <h2 id="synopsis">Synopsis</h2>
 <ul>
-<li>Task: Given a textual argument and a human value category, classify whether the argument resorts to that category or not.</li>
-<li>Mailing list: <a href="https://groups.google.com/group/valueeval/subscribe">valueeval@googlegroups.com</a> (ask <a href="mailto:johannes.kiesel@uni-weimar.de">Johannes</a> to subscribe without Google account)</li>
-<li>Input: [<a href="">data</a>]</li>
+<li>Task: Given a textual argument and a human value category, classify whether or not the argument draws on that category. [<a href="https://webis.de/publications.html#kiesel_2022b">paper</a>]</li>
+<li>Communication: [mailing lists: <a href="https://groups.google.com/group/valueeval/subscribe">task</a>, <a href="https://groups.google.com/group/valueeval-organizers/subscribe">organizers</a>] [twitter]</li>
+<li>Input: [<a href="https://doi.org/10.5281/zenodo.6814563">data</a>]</li>
 <li>Code: [<a href="https://github.com/webis-de/acl22-identifying-the-human-values-behind-arguments">baselines</a>]</li>
 </ul>
+<a class="uk-button uk-button-primary" href="https://forms.gle/ib72JUtsxhb3ZMNw5">Register now</a>
 
 <h2 id="important-dates" class="uk-margin-large-top">Important Dates</h2>
 <ul>
-<li><strong>November 9, 2022:</strong> Data finalized.</li>
+<li><strong>In November, 2022:</strong> Run submission opens.</li>
 <li><strong>December 9, 2023:</strong> Early-bird run submission closes.</li>
 <li><strong>January 24, 2023:</strong> Run submission closes.</li>
 <li><strong>January 31, 2023:</strong> Run evaluation results out.</li>
@@ -83,10 +85,10 @@ pre .tab { background-color: #ffffb3; }
 <p>All deadlines are 23:59 <a href="https://time.is/Anywhere_on_Earth">anywhere on earth</a> (UTC-12).</p>
 
 <h2 id="task">Task</h2>
-<p>Given a textual argument and a human value category, classify whether the argument resorts to that category or not. This task employs a set of 20 value categories compiled from the social science literature an ddescribed in our <a href="https://webis.de/publications.html#kiesel_2022b">ACL paper</a>. Participants can submit runs (also known as approaches or systems) that detect one, some subset, or all of these values in arguments. Arguments are provided as premise text, conclusion text, and binary stance of the premise on the conclusion ("in favor of" or "against").</p>
+<p>Given a textual argument and a human value category, classify whether or not the argument draws on that category. This task uses a set of 20 value categories compiled from the social science literature and described in our <a href="https://webis.de/publications.html#kiesel_2022b">ACL paper</a>. Participants can submit runs (also known as approaches or systems) that detect one, a subset, or all of these values in arguments. Arguments are given as premise text, conclusion text, and binary stance of the premise to the conclusion ("in favor of" or "against").</p>
 
 <h2 id="data">Data</h2>
-<p>Data is provided as tab-separated values files with one header line. We will continuously improve the data until November 9, 2022. Stay up-to-date, report problems, and suggest new raw data by signing up to the <a href="https://groups.google.com/group/valueeval/subscribe">mailing list</a>  (ask <a href="mailto:johannes.kiesel@uni-weimar.de">Johannes</a> to subscribe without Google account). [<a href="">download</a>]</p>
+<p>Data is provided as tab-separated values files with one header line. We will continuously improve the data until early November 2022. Stay up-to-date, report problems, and suggest new data on the <a href="https://groups.google.com/group/valueeval/subscribe">task mailing list</a>. [<a href="https://doi.org/10.5281/zenodo.6814563">download</a>]</p>
 <p>The <code>arguments-training/validation/testing.tsv</code> files contain one argument per line: its unique <span class="column1">argument ID</span>, the <span class="column2">conclusion</span>, the premise's <span class="column3">stance</span> towards the conclusion, and the <span class="column4">premise</span> itself. Example with tab-separated columns highlighted:</p>
 <pre>
 <span class="column1">Argument ID</span><span class="tab">	</span><span class="column2">Conclusion</span><span class="tab">	</span><span class="column3">Stance</span><span class="tab">	</span><span class="column4">Premise</span>
@@ -101,9 +103,13 @@ pre .tab { background-color: #ffffb3; }
 <span class="column1">A01011</span><span class="tab">	</span><span class="column2">0</span><span class="tab">	</span><span class="column3">0</span><span class="tab">	</span><span class="column4">0</span><span class="tab">	</span><span class="column5">0</span><span class="tab">	</span><span class="column6">1</span><span class="tab">	</span><span class="column7">0</span><span class="tab">	</span><span class="column8">0</span><span class="tab">	</span><span class="column9">1</span><span class="tab">	</span><span class="column10">0</span><span class="tab">	</span><span class="column11">0</span><span class="tab">	</span><span class="column12">0</span><span class="tab">	</span><span class="column13">0</span><span class="tab">	</span><span class="column14">0</span><span class="tab">	</span><span class="column15">0</span><span class="tab">	</span><span class="column16">1</span><span class="tab">	</span><span class="column17">0</span><span class="tab">	</span><span class="column18">0</span><span class="tab">	</span><span class="column19">0</span><span class="tab">	</span><span class="column20">1</span><span class="tab">	</span><span class="column21">1</span>
 <span class="column1">A01012</span><span class="tab">	</span><span class="column2">0</span><span class="tab">	</span><span class="column3">0</span><span class="tab">	</span><span class="column4">0</span><span class="tab">	</span><span class="column5">0</span><span class="tab">	</span><span class="column6">0</span><span class="tab">	</span><span class="column7">0</span><span class="tab">	</span><span class="column8">0</span><span class="tab">	</span><span class="column9">0</span><span class="tab">	</span><span class="column10">0</span><span class="tab">	</span><span class="column11">0</span><span class="tab">	</span><span class="column12">0</span><span class="tab">	</span><span class="column13">0</span><span class="tab">	</span><span class="column14">0</span><span class="tab">	</span><span class="column15">0</span><span class="tab">	</span><span class="column16">0</span><span class="tab">	</span><span class="column17">0</span><span class="tab">	</span><span class="column18">1</span><span class="tab">	</span><span class="column19">0</span><span class="tab">	</span><span class="column20">0</span><span class="tab">	</span><span class="column21">0</span>
 </pre>
+<p>We are currently looking for more argument datasets (conclusion + stance + premise) to annotate and incorporate, especially datasets from different cultures and genres. Please send suggestions to our <a href="mailto:valueeval@googlegroups.com">task</a> or <a href="mailto:valueeval-organizers@googlegroups.com">organizers</a> mailing lists.</p>
 
 <h2 id="evaluation">Evaluation</h2>
-<p>Runs are evaluated using the F1-score, Precision, and Recall.</p>
+<p>Runs are evaluated on the basis of F1-score, Precision, and Recall, once averaged over all value categories, but also for each category individually. The runs are ranked according to the F1-score.</p>
+
+<h2 id="submission">Submission</h2>
+<p>Teams are allowed to submit up to 4 runs each. Teams are allowed to submit one additional "early bird" run on the final data until December 9. We expect to open the submission system in November 2022.</p>
 
 <h2 id="task-committee">Task Committee</h2>
 <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
