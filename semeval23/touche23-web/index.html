@@ -5,35 +5,17 @@ title: Touché at SemEval 2023 - Human Value Detection
 description: Touché at SemEval 2023 - Human Value Detection
 ---
 <style>
-/*
-pre .column1 { background-color: #8dd3c7; }
-pre .column2 { background-color: #ffffb3; }
-pre .column3 { background-color: #bebada; }
-pre .column4 { background-color: #fb8072; }
-pre .column5 { background-color: #80b1d3; }
-pre .column6 { background-color: #fdb462; }
-pre .column7 { background-color: #b3de69; }
-pre .column8 { background-color: #fccde5; }
-pre .column9 { background-color: #d9d9d9; }
-pre .column10 { background-color: #bc80bd; }
-pre .column11 { background-color: #ccebc5; }
-pre .column12 { background-color: #ffed6f; }
-pre .column13 { background-color: #8dd3c7; }
-pre .column14 { background-color: #bebada; }
-pre .column15 { background-color: #80b1d3; }
-pre .column16 { background-color: #b3de69; }
-pre .column17 { background-color: #d9d9d9; }
-pre .column18 { background-color: #ccebc5; }
-pre .column19 { background-color: #ffffb3; }
-pre .column20 { background-color: #fb8072; }
-pre .column21 { background-color: #fdb462; }
-*/
-pre .column1, pre .column2, pre .column3, pre .column4, pre .column5, pre .column6, pre .column7, pre .column8, pre .column9, pre .column10, pre .column11, pre .column12, pre .column13, pre .column14, pre .column15, pre .column16, pre .column17, pre .column18, pre .column19, pre .column20, pre .column21 {
+pre .column {
   background-color: #e8e8e8;
 }
-/*
-pre .tab { background-color: #ffffb3; }
-*/
+
+.goals, .goals > li {
+  display: inline;
+  color: #666;
+}
+.goals > li:not(:last-child)::after {
+  content: '; ';
+}
 </style>
 
 <nav class="uk-container">
@@ -86,22 +68,46 @@ pre .tab { background-color: #ffffb3; }
 
 <h2 id="task">Task</h2>
 <p>Given a textual argument and a human value category, classify whether or not the argument draws on that category. This task uses a set of 20 value categories compiled from the social science literature and described in our <a href="https://webis.de/publications.html#kiesel_2022b">ACL paper</a>. Participants can submit runs (also known as approaches or systems) that detect one, a subset, or all of these values in arguments. Arguments are given as premise text, conclusion text, and binary stance of the premise to the conclusion ("in favor of" or "against").</p>
+<p>The 20 value categories (labels to be detected) with exemplary effects that corresponding arguments may target: [source]</p>
+<ol class="level2">
+<li>Self-direction: thought<ul class="goals"> <li>fostering creativity and curiosity</li> <li>allowing to figure things out by oneself</li> <li>reducing censorship and manipulation of thought</li> </ul></li>
+<li>Self-direction: action<ul class="goals"> <li>fostering self-determination</li> <li>increasing control on personal data</li> <li>reducing need for explicit consent</li> <li>reducing surveillance</li> </ul></li>
+<li>Stimulation<ul class="goals"> <li>fostering risk-taking</li> <li>allowing people to change their life frequently</li> <li>providing diverse and perspective-changing experiences</li> </ul></li>
+<li>Hedonism<ul class="goals"> <li>making life enjoyable</li> <li>providing leisure</li> <li>providing opportunities to have fun</li> <li>providing sensuous gratification</li> </ul></li>
+<li>Achievement<ul class="goals"> <li>fostering ambition, learning, reflectivity, and courage</li> <li>allowing for success</li> <li>recognizing achievements</li> </ul></li>
+<li>Power: dominance<ul class="goals"> <li>fostering leadership</li> <li>gaining favors, influence, and control</li> <li>putting the respective experts in charge</li><li>promoting hierarchies</li> </ul></li>
+<li>Power: resources<ul class="goals"> <li>allowing to gain, show, and use wealth</li><li>providing resources to control events</li><li>increasing financial prosperity</li> </ul></li>
+<li>Face<ul class="goals"> <li>avoiding humiliation</li><li>providing social recognition</li> <li>allowing to improve one's reputation</li><li>protecting one's public image</li> </ul></li>
+<li>Security: personal<ul class="goals"> <li>promoting groups (clubs, associations, ...)</li> <li>promoting cleanliness</li> <li>fostering mental and physical health</li> <li>avoiding indebtedness</li> </ul></li>
+<li>Security: societal<ul class="goals"> <li>caring for and defending citizens</li> <li>preventing crimes</li> <li>promoting the social order and stability</li> </ul></li>
+<li>Tradition<ul class="goals"> <li>honoring traditional practices and ways of thinking</li> <li>preserving customs</li> <li>promoting some religion</li> <li>allowing to devote oneself to the faith</li> </ul></li>
+<li>Conformity: rules<ul class="goals"> <li>abiding to laws or rules</li> <li>promoting to meet one's obligations</li> <li>fostering to exercise restraint and good manners</li> </ul></li>
+<li>Conformity: interpersonal<ul class="goals"> <li>avoiding to upset other people</li> <li>decreasing annoyances to others</li> <li>showing faith and respect towards one's elders</li> </ul></li>
+<li>Humility<ul class="goals"> <li>demoting arrogance</li> <li>emphasizing the successful group over individuals</li> <li>giving back to society</li> <li>promoting satisfaction with what one has</li> </ul></li>
+<li>Benevolence: caring<ul class="goals"> <li>fostering a readiness to help</li> <li>promoting honesty</li> <li>allowing for redemption</li> <li>promoting families</li> <li>allowing to show affection</li> </ul></li>
+<li>Benevolence: dependability<ul class="goals"> <li>fostering dependability</li> <li>promoting reliability</li> <li>fostering loyalty towards friends</li> </ul></li>
+<li>Universalism: concern<ul class="goals"> <li>helping the poor and weak</li> <li>providing equal opportunities</li> <li>promoting justice</li> <li>reducing unfair discrimination</li> <li>avoiding conflicts</li> </ul></li>
+<li>Universalism: nature<ul class="goals"> <li>promoting restoration programs</li> <li>avoiding chemicals and modified organisms</li> <li>being in harmony with nature</li> <li>promoting fine arts</li> </ul></li>
+<li>Universalism: tolerance<ul class="goals"> <li>clearing up with prejudices</li> <li>promoting dialogue across groups</li> <li>accepting disagreements</li> <li>demoting partisans or fanatics</li> </ul></li>
+<li>Universalism: objectivity<ul class="goals"> <li>fostering rationality and truth-seeking</li> <li>promoting to form an unbiased opinion</li> <li>providing the means for informed decisions</li> </ul></li>
+</ol>
+
 
 <h2 id="data">Data</h2>
 <p>Data is provided as tab-separated values files with one header line. We will continuously improve the data until early November 2022. Stay up-to-date, report problems, and suggest new data on the <a href="https://groups.google.com/group/valueeval/subscribe">task mailing list</a>. [<a href="https://doi.org/10.5281/zenodo.6814563">download</a>]</p>
-<p>The <code>arguments-training/validation/testing.tsv</code> files contain one argument per line: its unique <span class="column1">argument ID</span>, the <span class="column2">conclusion</span>, the premise's <span class="column3">stance</span> towards the conclusion, and the <span class="column4">premise</span> itself. Example with tab-separated columns highlighted:</p>
+<p>The <code>arguments-training/validation/testing.tsv</code> files contain one argument per line: its unique <span class="column">argument ID</span>, the <span class="column">conclusion</span>, the premise's <span class="column">stance</span> towards the conclusion, and the <span class="column">premise</span> itself. Example with tab-separated columns highlighted:</p>
 <pre>
-<span class="column1">Argument ID</span><span class="tab">	</span><span class="column2">Conclusion</span><span class="tab">	</span><span class="column3">Stance</span><span class="tab">	</span><span class="column4">Premise</span>
-<span class="column1">A01010</span><span class="tab">	</span><span class="column2">We should prohibit school prayer</span><span class="tab">	</span><span class="column3">against</span><span class="tab">	</span><span class="column4">it should be allowed if the student wants to pray as long as it is not interfering with his classes</span>
-<span class="column1">A01011</span><span class="tab">	</span><span class="column2">We should abolish the three-strikes laws</span><span class="tab">	</span><span class="column3">in favor of</span><span class="tab">	</span><span class="column4">three strike laws can cause young people to be put away for life without a chance to straight out their life</span>
-<span class="column1">A01012</span><span class="tab">	</span><span class="column2">The use of public defenders should be mandatory</span><span class="tab">	</span><span class="column3">in favor of</span><span class="tab">	</span><span class="column4">the use of public defenders should be mandatory because some people don't have money for a lawyer and this would help those that don't</span>
+<span class="column">Argument ID</span>	<span class="column">Conclusion</span>	<span class="column">Stance</span>	<span class="column">Premise</span>
+<span class="column">A01010</span>	<span class="column">We should prohibit school prayer</span>	<span class="column">against</span>	<span class="column">it should be allowed if the student wants to pray as long as it is not interfering with his classes</span>
+<span class="column">A01011</span>	<span class="column">We should abolish the three-strikes laws</span>	<span class="column">in favor of</span>	<span class="column">three strike laws can cause young people to be put away for life without a chance to straight out their life</span>
+<span class="column">A01012</span>	<span class="column">The use of public defenders should be mandatory</span>	<span class="column">in favor of</span>	<span class="column">the use of public defenders should be mandatory because some people don't have money for a lawyer and this would help those that don't</span>
 </pre>
 <p>The <code>labels-training/validation/testing.tsv</code> files also contain one argument per line: its unique <span class="column1">argument ID</span> and one column for each of the 20 value categories with a <code>1</code> meaning that the argument resorts to the value category and a <code>0</code> that not. Example with tab-separated columns highlighted:</p>
 <pre>
-<span class="column1">Argument ID</span><span class="tab">	</span><span class="column2">Self-direction: thought</span><span class="tab">	</span><span class="column3">Self-direction: action</span><span class="tab">	</span><span class="column4">Stimulation</span><span class="tab">	</span><span class="column5">Hedonism</span><span class="tab">	</span><span class="column6">Achievement</span><span class="tab">	</span><span class="column7">Power: dominance</span><span class="tab">	</span><span class="column8">Power: resources</span><span class="tab">	</span><span class="column9">Face</span><span class="tab">	</span><span class="column10">Security: personal</span><span class="tab">	</span><span class="column11">Security: societal</span><span class="tab">	</span><span class="column12">Tradition</span><span class="tab">	</span><span class="column13">Conformity: rules</span><span class="tab">	</span><span class="column14">Conformity: interpersonal</span><span class="tab">	</span><span class="column15">Humility</span><span class="tab">	</span><span class="column16">Benevolence: caring</span><span class="tab">	</span><span class="column17">Benevolence: dependability</span><span class="tab">	</span><span class="column18">Universalism: concern</span><span class="tab">	</span><span class="column19">Universalism: nature</span><span class="tab">	</span><span class="column20">Universalism: tolerance</span><span class="tab">	</span><span class="column21">Universalism: objectivity</span>
-<span class="column1">A01010</span><span class="tab">	</span><span class="column2">1</span><span class="tab">	</span><span class="column3">1</span><span class="tab">	</span><span class="column4">0</span><span class="tab">	</span><span class="column5">0</span><span class="tab">	</span><span class="column6">0</span><span class="tab">	</span><span class="column7">0</span><span class="tab">	</span><span class="column8">0</span><span class="tab">	</span><span class="column9">0</span><span class="tab">	</span><span class="column10">0</span><span class="tab">	</span><span class="column11">0</span><span class="tab">	</span><span class="column12">1</span><span class="tab">	</span><span class="column13">0</span><span class="tab">	</span><span class="column14">0</span><span class="tab">	</span><span class="column15">0</span><span class="tab">	</span><span class="column16">0</span><span class="tab">	</span><span class="column17">0</span><span class="tab">	</span><span class="column18">1</span><span class="tab">	</span><span class="column19">0</span><span class="tab">	</span><span class="column20">0</span><span class="tab">	</span><span class="column21">0</span>
-<span class="column1">A01011</span><span class="tab">	</span><span class="column2">0</span><span class="tab">	</span><span class="column3">0</span><span class="tab">	</span><span class="column4">0</span><span class="tab">	</span><span class="column5">0</span><span class="tab">	</span><span class="column6">1</span><span class="tab">	</span><span class="column7">0</span><span class="tab">	</span><span class="column8">0</span><span class="tab">	</span><span class="column9">1</span><span class="tab">	</span><span class="column10">0</span><span class="tab">	</span><span class="column11">0</span><span class="tab">	</span><span class="column12">0</span><span class="tab">	</span><span class="column13">0</span><span class="tab">	</span><span class="column14">0</span><span class="tab">	</span><span class="column15">0</span><span class="tab">	</span><span class="column16">1</span><span class="tab">	</span><span class="column17">0</span><span class="tab">	</span><span class="column18">0</span><span class="tab">	</span><span class="column19">0</span><span class="tab">	</span><span class="column20">1</span><span class="tab">	</span><span class="column21">1</span>
-<span class="column1">A01012</span><span class="tab">	</span><span class="column2">0</span><span class="tab">	</span><span class="column3">0</span><span class="tab">	</span><span class="column4">0</span><span class="tab">	</span><span class="column5">0</span><span class="tab">	</span><span class="column6">0</span><span class="tab">	</span><span class="column7">0</span><span class="tab">	</span><span class="column8">0</span><span class="tab">	</span><span class="column9">0</span><span class="tab">	</span><span class="column10">0</span><span class="tab">	</span><span class="column11">0</span><span class="tab">	</span><span class="column12">0</span><span class="tab">	</span><span class="column13">0</span><span class="tab">	</span><span class="column14">0</span><span class="tab">	</span><span class="column15">0</span><span class="tab">	</span><span class="column16">0</span><span class="tab">	</span><span class="column17">0</span><span class="tab">	</span><span class="column18">1</span><span class="tab">	</span><span class="column19">0</span><span class="tab">	</span><span class="column20">0</span><span class="tab">	</span><span class="column21">0</span>
+<span class="column">Argument ID</span>	<span class="column">Self-direction: thought</span>	<span class="column">Self-direction: action</span>	<span class="column">Stimulation</span>	<span class="column">Hedonism</span>	<span class="column">Achievement</span>	<span class="column">Power: dominance</span>	<span class="column">Power: resources</span>	<span class="column">Face</span>	<span class="column">Security: personal</span>	<span class="column">Security: societal</span>	<span class="column">Tradition</span>	<span class="column">Conformity: rules</span>	<span class="column">Conformity: interpersonal</span>	<span class="column">Humility</span>	<span class="column">Benevolence: caring</span>	<span class="column">Benevolence: dependability</span>	<span class="column">Universalism: concern</span>	<span class="column">Universalism: nature</span>	<span class="column">Universalism: tolerance</span>	<span class="column">Universalism: objectivity</span>
+<span class="column">A01010</span>	<span class="column">1</span>	<span class="column">1</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">1</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">1</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>
+<span class="column">A01011</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">1</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">1</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">1</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">1</span>	<span class="column">1</span>
+<span class="column">A01012</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">1</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>
 </pre>
 <p>We are currently looking for more argument datasets (conclusion + stance + premise) to annotate and incorporate, especially datasets from different cultures and genres. Please send suggestions to our <a href="mailto:valueeval@googlegroups.com">task</a> or <a href="mailto:valueeval-organizers@googlegroups.com">organizers</a> mailing lists.</p>
 
@@ -109,7 +115,7 @@ pre .tab { background-color: #ffffb3; }
 <p>Runs are evaluated on the basis of F1-score, Precision, and Recall, once averaged over all value categories, but also for each category individually. The runs are ranked according to the F1-score.</p>
 
 <h2 id="submission">Submission</h2>
-<p>Teams are allowed to submit up to 4 runs each. Teams are allowed to submit one additional "early bird" run on the final data until December 9. We expect to open the submission system in November 2022.</p>
+<p>We expect to open the submission system in November 2022. Teams are allowed to submit up to 4 runs each. Teams are allowed to submit one additional "early bird" run on the final data until December 9.</p>
 
 <h2 id="task-committee">Task Committee</h2>
 <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
