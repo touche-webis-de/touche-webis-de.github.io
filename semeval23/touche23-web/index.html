@@ -68,29 +68,30 @@ pre .column {
 
 <h2 id="task">Task</h2>
 <p>Given a textual argument and a human value category, classify whether or not the argument draws on that category. This task uses a set of 20 value categories compiled from the social science literature and described in our <a href="https://webis.de/publications.html#kiesel_2022b">ACL paper</a>. Participants can submit runs (also known as approaches or systems) that detect one, a subset, or all of these values in arguments. Arguments are given as premise text, conclusion text, and binary stance of the premise to the conclusion ("in favor of" or "against").</p>
-<p>The 20 value categories (labels to be detected) with exemplary effects that corresponding arguments may target: [<a href="https://zenodo.org/record/6818093/files/value-categories.json?download=1">source</a>]</p>
+<p>The 20 value categories (labels to be detected) with exemplary effects that corresponding arguments may target, ordered by their position on the Schwartz value continuum:</p>
 <ol class="level2">
-<li>Self-direction: thought<ul class="goals"> <li>fostering creativity and curiosity</li> <li>allowing to figure things out by oneself</li> <li>reducing censorship and manipulation of thought</li> </ul></li>
-<li>Self-direction: action<ul class="goals"> <li>fostering self-determination</li> <li>increasing control on personal data</li> <li>reducing need for explicit consent</li> <li>reducing surveillance</li> </ul></li>
-<li>Stimulation<ul class="goals"> <li>fostering risk-taking</li> <li>allowing people to change their life frequently</li> <li>providing diverse and perspective-changing experiences</li> </ul></li>
-<li>Hedonism<ul class="goals"> <li>making life enjoyable</li> <li>providing leisure</li> <li>providing opportunities to have fun</li> <li>providing sensuous gratification</li> </ul></li>
-<li>Achievement<ul class="goals"> <li>fostering ambition, learning, reflectivity, and courage</li> <li>allowing for success</li> <li>recognizing achievements</li> </ul></li>
-<li>Power: dominance<ul class="goals"> <li>fostering leadership</li> <li>gaining favors, influence, and control</li> <li>putting the respective experts in charge</li><li>promoting hierarchies</li> </ul></li>
-<li>Power: resources<ul class="goals"> <li>allowing to gain, show, and use wealth</li><li>providing resources to control events</li><li>increasing financial prosperity</li> </ul></li>
-<li>Face<ul class="goals"> <li>avoiding humiliation</li><li>providing social recognition</li> <li>allowing to improve one's reputation</li><li>protecting one's public image</li> </ul></li>
-<li>Security: personal<ul class="goals"> <li>promoting groups (clubs, associations, ...)</li> <li>promoting cleanliness</li> <li>fostering mental and physical health</li> <li>avoiding indebtedness</li> </ul></li>
-<li>Security: societal<ul class="goals"> <li>caring for and defending citizens</li> <li>preventing crimes</li> <li>promoting the social order and stability</li> </ul></li>
-<li>Tradition<ul class="goals"> <li>honoring traditional practices and ways of thinking</li> <li>preserving customs</li> <li>promoting some religion</li> <li>allowing to devote oneself to the faith</li> </ul></li>
-<li>Conformity: rules<ul class="goals"> <li>abiding to laws or rules</li> <li>promoting to meet one's obligations</li> <li>fostering to exercise restraint and good manners</li> </ul></li>
-<li>Conformity: interpersonal<ul class="goals"> <li>avoiding to upset other people</li> <li>decreasing annoyances to others</li> <li>showing faith and respect towards one's elders</li> </ul></li>
-<li>Humility<ul class="goals"> <li>demoting arrogance</li> <li>emphasizing the successful group over individuals</li> <li>giving back to society</li> <li>promoting satisfaction with what one has</li> </ul></li>
-<li>Benevolence: caring<ul class="goals"> <li>fostering a readiness to help</li> <li>promoting honesty</li> <li>allowing for redemption</li> <li>promoting families</li> <li>allowing to show affection</li> </ul></li>
-<li>Benevolence: dependability<ul class="goals"> <li>fostering dependability</li> <li>promoting reliability</li> <li>fostering loyalty towards friends</li> </ul></li>
-<li>Universalism: concern<ul class="goals"> <li>helping the poor and weak</li> <li>providing equal opportunities</li> <li>promoting justice</li> <li>reducing unfair discrimination</li> <li>avoiding conflicts</li> </ul></li>
-<li>Universalism: nature<ul class="goals"> <li>promoting restoration programs</li> <li>avoiding chemicals and modified organisms</li> <li>being in harmony with nature</li> <li>promoting fine arts</li> </ul></li>
-<li>Universalism: tolerance<ul class="goals"> <li>clearing up with prejudices</li> <li>promoting dialogue across groups</li> <li>accepting disagreements</li> <li>demoting partisans or fanatics</li> </ul></li>
-<li>Universalism: objectivity<ul class="goals"> <li>fostering rationality and truth-seeking</li> <li>promoting to form an unbiased opinion</li> <li>providing the means for informed decisions</li> </ul></li>
+<li data-frequency="201">Self-direction: thought<ul class="goals"> <li>fostering creativity and curiosity</li> <li>allowing to figure things out by oneself</li> <li>reducing censorship and manipulation of thought</li> </ul></li>
+<li data-frequency="425">Self-direction: action<ul class="goals"> <li>fostering self-determination</li> <li>increasing control on personal data</li> <li>reducing need for explicit consent</li> <li>reducing surveillance</li> </ul></li>
+<li data-frequency="71">Stimulation<ul class="goals"> <li>fostering risk-taking</li> <li>allowing people to change their life frequently</li> <li>providing diverse and perspective-changing experiences</li> </ul></li>
+<li data-frequency="39">Hedonism<ul class="goals"> <li>making life enjoyable</li> <li>providing leisure</li> <li>providing opportunities to have fun</li> <li>providing sensuous gratification</li> </ul></li>
+<li data-frequency="395">Achievement<ul class="goals"> <li>fostering ambition, learning, reflectivity, and courage</li> <li>allowing for success</li> <li>recognizing achievements</li> </ul></li>
+<li data-frequency="99">Power: dominance<ul class="goals"> <li>fostering leadership</li> <li>gaining favors, influence, and control</li> <li>putting the respective experts in charge</li><li>promoting hierarchies</li> </ul></li>
+<li data-frequency="108">Power: resources<ul class="goals"> <li>allowing to gain, show, and use wealth</li><li>providing resources to control events</li><li>increasing financial prosperity</li> </ul></li>
+<li data-frequency="76">Face<ul class="goals"> <li>avoiding humiliation</li><li>providing social recognition</li> <li>allowing to improve one's reputation</li><li>protecting one's public image</li> </ul></li>
+<li data-frequency="456">Security: personal<ul class="goals"> <li>promoting groups (clubs, associations, ...)</li> <li>promoting cleanliness</li> <li>fostering mental and physical health</li> <li>avoiding indebtedness</li> </ul></li>
+<li data-frequency="441">Security: societal<ul class="goals"> <li>caring for and defending citizens</li> <li>preventing crimes</li> <li>promoting the social order and stability</li> </ul></li>
+<li data-frequency="141">Tradition<ul class="goals"> <li>honoring traditional practices and ways of thinking</li> <li>preserving customs</li> <li>promoting some religion</li> <li>allowing to devote oneself to the faith</li> </ul></li>
+<li data-frequency="312">Conformity: rules<ul class="goals"> <li>abiding to laws or rules</li> <li>promoting to meet one's obligations</li> <li>fostering to exercise restraint and good manners</li> </ul></li>
+<li data-frequency="43">Conformity: interpersonal<ul class="goals"> <li>avoiding to upset other people</li> <li>decreasing annoyances to others</li> <li>showing faith and respect towards one's elders</li> </ul></li>
+<li data-frequency="88">Humility<ul class="goals"> <li>demoting arrogance</li> <li>emphasizing the successful group over individuals</li> <li>giving back to society</li> <li>promoting satisfaction with what one has</li> </ul></li>
+<li data-frequency="356">Benevolence: caring<ul class="goals"> <li>fostering a readiness to help</li> <li>promoting honesty</li> <li>allowing for redemption</li> <li>promoting families</li> <li>allowing to show affection</li> </ul></li>
+<li data-frequency="149">Benevolence: dependability<ul class="goals"> <li>fostering dependability</li> <li>promoting reliability</li> <li>fostering loyalty towards friends</li> </ul></li>
+<li data-frequency="507">Universalism: concern<ul class="goals"> <li>helping the poor and weak</li> <li>providing equal opportunities</li> <li>promoting justice</li> <li>reducing unfair discrimination</li> <li>avoiding conflicts</li> </ul></li>
+<li data-frequency="103">Universalism: nature<ul class="goals"> <li>promoting restoration programs</li> <li>avoiding chemicals and modified organisms</li> <li>being in harmony with nature</li> <li>promoting fine arts</li> </ul></li>
+<li data-frequency="161">Universalism: tolerance<ul class="goals"> <li>clearing up with prejudices</li> <li>promoting dialogue across groups</li> <li>accepting disagreements</li> <li>demoting partisans or fanatics</li> </ul></li>
+<li data-frequency="208">Universalism: objectivity<ul class="goals"> <li>fostering rationality and truth-seeking</li> <li>promoting to form an unbiased opinion</li> <li>providing the means for informed decisions</li> </ul></li>
 </ol>
+<p>If you want to focus on a few categories but are unsure which to pick, we suggest to take (from) the most frequent ones in our initial dataset: Universalism: concern, Security: personal, Security: societal, Self-direction: action, Achievement, Benevolence: caring.</p>
 
 
 <h2 id="data">Data</h2>
