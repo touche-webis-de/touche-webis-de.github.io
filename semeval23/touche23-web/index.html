@@ -91,7 +91,13 @@ pre .column {
 <li data-frequency="161">Universalism: tolerance<ul class="goals"> <li>clearing up with prejudices</li> <li>promoting dialogue across groups</li> <li>accepting disagreements</li> <li>demoting partisans or fanatics</li> </ul></li>
 <li data-frequency="208">Universalism: objectivity<ul class="goals"> <li>fostering rationality and truth-seeking</li> <li>promoting to form an unbiased opinion</li> <li>providing the means for informed decisions</li> </ul></li>
 </ol>
-<p>If you want to focus on a few categories but are unsure which to pick, we suggest to take (from) the most frequent ones in our initial dataset: Universalism: concern, Security: personal, Security: societal, Self-direction: action, Achievement, Benevolence: caring.</p>
+<p>If you want to focus on a few categories but are unsure which to pick, we suggest to take (from) the most frequent ones in our initial dataset:
+(2)&nbsp;Self-direction:&nbsp;action,
+(5)&nbsp;Achievement,
+(9)&nbsp;Security:&nbsp;personal,
+(10)&nbsp;Security:&nbsp;societal,
+(15)&nbsp;Benevolence:&nbsp;caring,
+(17)&nbsp;Universalism:&nbsp;concern.</p>
 
 
 <h2 id="data">Data</h2>
@@ -112,11 +118,14 @@ pre .column {
 </pre>
 <p>We are currently looking for more argument datasets (conclusion + stance + premise) to annotate and incorporate, especially datasets from different cultures and genres. Please send suggestions to our <a href="mailto:valueeval@googlegroups.com">task (public)</a> or <a href="mailto:valueeval-organizers@googlegroups.com">organizers (private)</a> mailing lists.</p>
 
+
 <h2 id="evaluation">Evaluation</h2>
 <p>Runs are evaluated on the basis of F1-score, Precision, and Recall, once averaged over all value categories, but also for each category individually. The runs are ranked according to the F1-score.</p>
 
+
 <h2 id="submission">Submission</h2>
-<p>We expect to open the submission system in November 2022. Teams are allowed to submit up to 4 runs each. Teams are allowed to submit one additional "early bird" run on the final data until December 9.</p>
+<p>We expect to open the submission system in November 2022. Teams are allowed to submit up to 4 runs each. Teams are allowed to submit one additional "early bird" run on the final data until December 9. The submission format is the same as the <code>labels-training/validation/testing.tsv</code> with value category columns being optional (skip categories for which the run contains no prediction).</p>
+
 
 <h2 id="task-committee">Task Committee</h2>
 <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
