@@ -1,0 +1,122 @@
+---
+layout: default
+nav_active: shared-tasks
+title: Touché at CLEF 2022 - Image Retrieval for Arguments - Validator
+description: Touché at CLEF 2022 - Image Retrieval for Arguments - Validator
+---
+<style>
+.drop-zone {
+  width: 100%;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-width: 1px;
+  border-style: dashed;
+  border-radius: 5px;
+  background: lightcyan;
+}
+.drop-zone.active {
+  background: cyan;
+}
+
+.topic.empty {
+  display: none;
+}
+</style>
+
+<nav class="uk-container">
+<ul class="uk-breadcrumb">
+<li><a href="../../index.html">Touché</a></li>
+<li><a href="../../shared-tasks.html">Shared Tasks</a></li>
+<li><a href="image-retrieval-for-arguments.html">Image Retrieval for Arguments 2022</a></li>
+<li class="uk-disabled"><a href="#">Validator</a></li>
+</ul>
+</nav>
+
+<main>
+<div class="uk-section uk-section-default">
+
+<div class="uk-container uk-margin-small">
+<h1 class="uk-margin-remove-top uk-margin-remove-bottom">Validator</h1>
+</div>
+
+<div class="uk-container uk-margin-medium">
+
+<div id="dropZone" class="drop-zone">
+Drop run files here
+</div>
+
+<h2 id="output">Output</h2>
+
+<h2 id="resultPages">Result Pages</h2>
+<div id="topics"></div>
+
+</div>
+
+</div>
+</main>
+
+<script>
+fetch("https://files.webis.de/corpora/corpora-webis/corpus-touche-image-search-22/topics.xml")
+  .then(response => response.text())
+  .then(data => {
+    const topicsDocument = new DOMParser().parseFromString(data, "text/xml");
+    const topics = Array.from(topicsDocument.querySelectorAll("topic")).map(topic => [
+      topic.querySelector("number").textContent,
+      topic.querySelector("title").textContent
+    ]);
+    const topicsElement = document.getElementById("topics");
+    for (const topic of topics) {
+      const topicElement = document.createElement("details");
+      topicElement.classList.add("topic", "empty");
+      topicElement.setAttribute("data-topic", topic[0]);
+      const topicNameElement = document.createElement("summary");
+      topicNameElement.innerText = topic[0] + ". " + topic[1];
+      topicElement.appendChild(topicNameElement);
+      topicsElement.appendChild(topicElement);
+    }
+  })
+  .catch(error => {
+    console.log(error);
+    UIkit.notification("Could not load topics. Please try again later.", {status:'danger'});
+  });
+
+function addRun(runText) {
+}
+
+// Drag & Drop
+
+const dropZone = document.getElementById("dropZone");
+dropZone.addEventListener("dragenter", event => {
+  event.stopPropagation();
+  event.preventDefault();
+  dropZone.classList.add("active");
+}, false);
+dropZone.addEventListener("dragleave", event => {
+  event.stopPropagation();
+  event.preventDefault();
+  dropZone.classList.remove("active");
+}, false);
+dropZone.addEventListener("dragover", event => {
+  event.stopPropagation();
+  event.preventDefault();
+}, false);
+dropZone.addEventListener("drop", event => {
+  event.stopPropagation();
+  event.preventDefault();
+  dropZone.classList.remove("active");
+  for (const file of event.dataTransfer.files) {
+    if (file.type !== "text/plain") {
+      UIkit.notification("Only text/plain files are allowed, but type of '" + file.name + "' is " + file.type, {status:'danger'});
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = fileEvent => {
+      const runText = reader.result;
+      addRun(runText);
+    };
+    reader.readAsText(file);
+  }
+}, false);
+</script>
