@@ -183,7 +183,7 @@ function addRunLine(runLine, lineNumber) {
   resultElement.classList.add("result");
   resultElement.setAttribute("data-rank", rank);
   resultElement.setAttribute("data-score", score);
-  resultElement.setTitle("title", "rank: " + rank + "; score: " + score);
+  resultElement.setAttribute("title", "rank: " + rank + "; score: " + score);
 
   const imageElement = document.createElement("img");
   imageElement.setAttribute("src", "https://files.webis.de/corpora/corpora-webis/corpus-touche-image-search-22/images/" + imageId.substr(0, 3) + "/" + imageId + ".webp");
