@@ -22,6 +22,44 @@ description: Touché at CLEF 2022 - Image Retrieval for Arguments - Validator
 .topic.empty {
   display: none;
 }
+
+.run {
+  margin-top: 10px;
+}
+.stances {
+  display: flex;
+  column-gap: 26px;
+}
+.stance {
+  display: flex;
+  flex-wrap: wrap;
+}
+.stance label {
+  width: 382px;
+  max-height: 240px;
+  max-width: 482px;
+  min-width: 190px;
+  margin: 1px;
+  flex-basis: auto;
+  flex-grow: 2;
+  flex-shrink: 1;
+}
+.result {
+  width: 190px;
+  max-height: 240px;
+  max-width: 240px;
+  overflow: scroll;
+  margin: 1px;
+  border: 1px solid;
+  flex-basis: auto;
+  flex-grow: 1;
+}
+.pro .result {
+  border-color: #208235;
+}
+.con .result {
+  border-color: #bd1319;
+}
 </style>
 
 <nav class="uk-container">
@@ -57,31 +95,110 @@ Drop run files here
 </main>
 
 <script>
-fetch("https://files.webis.de/corpora/corpora-webis/corpus-touche-image-search-22/topics.xml")
+const topics = [["1","Should teachers get tenure?"],["2","Is vaping with e-cigarettes safe?"],["3","Should insider trading be allowed?"],["4","Should corporal punishment be used in schools?"],["5","Should social security be privatized?"],["6","Is a college education worth it?"],["7","Should felons who have completed their sentence be allowed to vote?"],["8","Should abortion be legal?"],["9","Should students have to wear school uniforms?"],["10","Should any vaccines be required for children?"],["11","Should performance-enhancing drugs be accepted in sports?"],["12","Should birth control pills be available over the counter?"],["13","Can alternative energy effectively replace fossil fuels?"],["14","Is sexual orientation determined at birth?"],["15","Should animals be used for scientific or commercial testing?"],["16","Should prescription drugs be advertised directly to consumers?"],["17","Should recreational marijuana be legal?"],["18","Should churches remain tax-exempt?"],["19","Should gay marriage be legal?"],["20","Is drinking milk healthy for humans?"],["21","Is human activity primarily responsible for global climate change?"],["22","Is a two-state solution an acceptable solution to the Israeli-Palestinian conflict?"],["23","Should euthanasia or physician-assisted suicide be legal?"],["24","Does lowering the federal corporate income tax rate create jobs?"],["25","Should education be free?"],["26","Do standardized tests improve education?"],["27","Should more gun control laws be enacted?"],["28","Should prostitution be legal?"],["29","Should the government allow illegal immigrants to become citizens?"],["30","Should adults have the right to carry a concealed handgun?"],["31","Is obesity a disease?"],["32","Do electronic voting machines improve the voting process?"],["33","Should people become vegetarian?"],["34","Are social networking sites good for our society?"],["35","Do violent video games contribute to youth violence?"],["36","Is golf a sport?"],["37","Is cell phone radiation safe?"],["38","Should marijuana be a medical option?"],["39","Should the federal minimum wage be increased?"],["40","Should the death penalty be allowed?"],["41","Should student loan debt be easier to discharge in bankruptcy?"],["42","Should fighting be allowed in hockey?"],["43","Should bottled water be banned?"],["44","Should election day be a national holiday?"],["45","Should the penny stay in circulation?"],["46","Should net neutrality be restored?"],["47","Is homework beneficial?"],["48","Should the voting age be lowered?"],["49","Should body cameras be mandatory for police?"],["50","Should everyone get a universal basic income?"]];
+
+const imageIdPromise = fetch("https://files.webis.de/corpora/corpora-webis/corpus-touche-image-search-22/image-ids.txt")
   .then(response => response.text())
-  .then(data => {
-    const topicsDocument = new DOMParser().parseFromString(data, "text/xml");
-    const topics = Array.from(topicsDocument.querySelectorAll("topic")).map(topic => [
-      topic.querySelector("number").textContent,
-      topic.querySelector("title").textContent
-    ]);
-    const topicsElement = document.getElementById("topics");
-    for (const topic of topics) {
-      const topicElement = document.createElement("details");
-      topicElement.classList.add("topic", "empty");
-      topicElement.setAttribute("data-topic", topic[0]);
-      const topicNameElement = document.createElement("summary");
-      topicNameElement.innerText = topic[0] + ". " + topic[1];
-      topicElement.appendChild(topicNameElement);
-      topicsElement.appendChild(topicElement);
-    }
-  })
+  .then(text => new Set(text.split("\n")))
   .catch(error => {
     console.log(error);
-    UIkit.notification("Could not load topics. Please try again later.", {status:'danger'});
+    UIkit.notification("Failed to load image IDs. Image ID validation disabled.", {status:'danger'});
   });
 
+for (const topic of topics) {
+  const topicElement = document.createElement("details");
+  topicElement.classList.add("topic", "empty");
+  topicElement.setAttribute("data-topic", topic[0]);
+  const topicNameElement = document.createElement("summary");
+  topicNameElement.innerText = topic[0] + ". " + topic[1];
+  topicElement.appendChild(topicNameElement);
+  document.getElementById("topics").appendChild(topicElement);
+}
+
+function output(text) {
+  console.log(text);
+}
+
+function addRunLine(runLine, lineNumber) {
+  if (runLine === "") { return true; }
+
+  const parts = runLine.split(" ");
+  if (parts.length !== 6) {
+    output("Invalid line " + lineNumber + " with " + parts.length + " fields: '" + runLine + "'");
+    return false;
+  }
+  const topic = parts[0];
+  const stance = parts[1];
+  const imageId = parts[2];
+  const rank = parts[3];
+  const score = parts[4];
+  const name = parts[5];
+
+  const topicElement = document.querySelector("[data-topic='" + topic + "']");
+  if (topicElement === null) {
+    output("Invalid topic '" + topic + "' for '" + name + "' in line " + lineNumber);
+    return false;
+  }
+  topicElement.classList.remove("empty");
+
+  let topicRunElement = topicElement.querySelector("[data-run='" + name + "']");
+  if (topicRunElement === null) {
+    topicRunElement = document.createElement("div");
+    topicRunElement.classList.add("run");
+    topicRunElement.setAttribute("data-run", name);
+
+    const topicRunLabelElement = document.createElement("label");
+    topicRunLabelElement.innerText = "Run: " + name;
+    topicRunElement.appendChild(topicRunLabelElement);
+
+    const topicRunStancesElement = document.createElement("div");
+    topicRunStancesElement.classList.add("stances");
+
+    const topicRunProElement = document.createElement("div");
+    topicRunProElement.classList.add("stance", "pro");
+    const proLabelElement = document.createElement("label");
+    proLabelElement.innerText = "PRO";
+    topicRunProElement.appendChild(proLabelElement);
+    topicRunStancesElement.appendChild(topicRunProElement);
+
+    const topicRunConElement = document.createElement("div");
+    topicRunConElement.classList.add("stance", "con");
+    const conLabelElement = document.createElement("label");
+    conLabelElement.innerText = "CON";
+    topicRunConElement.appendChild(conLabelElement);
+    topicRunStancesElement.appendChild(topicRunConElement);
+
+    topicRunElement.appendChild(topicRunStancesElement);
+
+    topicElement.appendChild(topicRunElement);
+  }
+
+  if (stance !== "PRO" && stance !== "CON") {
+    output("Invalid stance '" + stance + "' for '" + name + "' in line " + lineNumber);
+    return false;
+  }
+  const topicRunStanceElement = topicRunElement.querySelector("." + stance.toLowerCase());
+
+  const resultElement = document.createElement("div");
+  resultElement.classList.add("result");
+  resultElement.setAttribute("data-rank", rank);
+  resultElement.setAttribute("data-score", score);
+  resultElement.setTitle("title", "rank: " + rank + "; score: " + score);
+
+  const imageElement = document.createElement("img");
+  imageElement.setAttribute("src", "https://files.webis.de/corpora/corpora-webis/corpus-touche-image-search-22/images/" + imageId.substr(0, 3) + "/" + imageId + ".webp");
+  resultElement.appendChild(imageElement);
+
+  topicRunStanceElement.appendChild(resultElement);
+
+  return true;
+}
+
 function addRun(runText) {
+  const runLines = runText.split("\n");
+  for (let lineNumber = 1; lineNumber <= runLines.length; ++lineNumber) {
+    addRunLine(runLines[lineNumber - 1], lineNumber);
+  }
 }
 
 // Drag & Drop
