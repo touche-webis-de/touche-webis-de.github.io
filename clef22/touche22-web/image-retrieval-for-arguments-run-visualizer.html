@@ -1,10 +1,15 @@
 ---
 layout: default
 nav_active: shared-tasks
-title: Touché at CLEF 2022 - Image Retrieval for Arguments - Validator
-description: Touché at CLEF 2022 - Image Retrieval for Arguments - Validator
+title: Touché at CLEF 2022 - Image Retrieval for Arguments - Run Visualizer
+description: Touché at CLEF 2022 - Image Retrieval for Arguments - Run Visualizer
 ---
 <style>
+main {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .drop-zone {
   width: 100%;
   text-align: center;
@@ -13,46 +18,58 @@ description: Touché at CLEF 2022 - Image Retrieval for Arguments - Validator
   border-width: 1px;
   border-style: dashed;
   border-radius: 5px;
-  background: lightcyan;
 }
 .drop-zone.active {
-  background: cyan;
+  background: lightcyan;
 }
 
+.topic {
+  margin-bottom: 10px;
+}
 .topic.empty {
   display: none;
 }
-
-.run {
-  margin-top: 10px;
+.topic > summary {
+  cursor: pointer;
+}
+.topic > summary:hover {
+  background: lightcyan;
+}
+.run-area {
+  margin-top: 5px;
 }
 .stances {
   display: flex;
   column-gap: 26px;
 }
-.stance {
+.stance-area {
   display: flex;
   flex-wrap: wrap;
 }
-.stance label {
-  width: 382px;
-  max-height: 240px;
-  max-width: 482px;
-  min-width: 190px;
-  margin: 1px;
-  flex-basis: auto;
-  flex-grow: 2;
-  flex-shrink: 1;
+.stance-area > label {
+  width: 100%;
+}
+.pro .stance {
+  color: #208235;
+}
+.con .stance {
+  color: #bd1319;
+}
+.run {
+  font-style: italic;
 }
 .result {
-  width: 190px;
-  max-height: 240px;
-  max-width: 240px;
-  overflow: scroll;
+  width: 265px;
+  height: 265px;
+  max-width: 400px;
+  overflow-y: scroll;
   margin: 1px;
   border: 1px solid;
   flex-basis: auto;
   flex-grow: 1;
+}
+.result img {
+  width: 100%;
 }
 .pro .result {
   border-color: #208235;
@@ -67,18 +84,14 @@ description: Touché at CLEF 2022 - Image Retrieval for Arguments - Validator
 <li><a href="../../index.html">Touché</a></li>
 <li><a href="../../shared-tasks.html">Shared Tasks</a></li>
 <li><a href="image-retrieval-for-arguments.html">Image Retrieval for Arguments 2022</a></li>
-<li class="uk-disabled"><a href="#">Validator</a></li>
+<li class="uk-disabled"><a href="#">Run Visualizer</a></li>
 </ul>
 </nav>
 
 <main>
 <div class="uk-section uk-section-default">
 
-<div class="uk-container uk-margin-small">
-<h1 class="uk-margin-remove-top uk-margin-remove-bottom">Validator</h1>
-</div>
-
-<div class="uk-container uk-margin-medium">
+<h1 class="uk-margin-remove-top uk-margin-remove-bottom">Run Visualizer</h1>
 
 <div id="dropZone" class="drop-zone">
 Drop run files here
@@ -89,7 +102,6 @@ Drop run files here
 <h2 id="resultPages">Result Pages</h2>
 <div id="topics"></div>
 
-</div>
 
 </div>
 </main>
@@ -119,6 +131,18 @@ function output(text) {
   console.log(text);
 }
 
+function createTopicRunStanceElement(stance, name) {
+  const topicRunStanceElement = document.createElement("div");
+  topicRunStanceElement.classList.add("stance-area", stance.toLowerCase());
+  topicRunStanceElement.setAttribute("uk-lightbox", "true");
+
+  const labelElement = document.createElement("label");
+  labelElement.innerHTML = '<span class="stance">' + stance + '</span> for <span class="run">' + name + '</span>';
+  topicRunStanceElement.appendChild(labelElement);
+  
+  return(topicRunStanceElement);
+}
+
 function addRunLine(runLine, lineNumber) {
   if (runLine === "") { return true; }
 
@@ -133,6 +157,7 @@ function addRunLine(runLine, lineNumber) {
   const rank = parts[3];
   const score = parts[4];
   const name = parts[5];
+  const image = "https://files.webis.de/corpora/corpora-webis/corpus-touche-image-search-22/images/" + imageId.substr(0, 3) + "/" + imageId + ".webp";
 
   const topicElement = document.querySelector("[data-topic='" + topic + "']");
   if (topicElement === null) {
@@ -144,30 +169,13 @@ function addRunLine(runLine, lineNumber) {
   let topicRunElement = topicElement.querySelector("[data-run='" + name + "']");
   if (topicRunElement === null) {
     topicRunElement = document.createElement("div");
-    topicRunElement.classList.add("run");
+    topicRunElement.classList.add("run-area");
     topicRunElement.setAttribute("data-run", name);
-
-    const topicRunLabelElement = document.createElement("label");
-    topicRunLabelElement.innerText = "Run: " + name;
-    topicRunElement.appendChild(topicRunLabelElement);
 
     const topicRunStancesElement = document.createElement("div");
     topicRunStancesElement.classList.add("stances");
-
-    const topicRunProElement = document.createElement("div");
-    topicRunProElement.classList.add("stance", "pro");
-    const proLabelElement = document.createElement("label");
-    proLabelElement.innerText = "PRO";
-    topicRunProElement.appendChild(proLabelElement);
-    topicRunStancesElement.appendChild(topicRunProElement);
-
-    const topicRunConElement = document.createElement("div");
-    topicRunConElement.classList.add("stance", "con");
-    const conLabelElement = document.createElement("label");
-    conLabelElement.innerText = "CON";
-    topicRunConElement.appendChild(conLabelElement);
-    topicRunStancesElement.appendChild(topicRunConElement);
-
+    topicRunStancesElement.appendChild(createTopicRunStanceElement("PRO", name));
+    topicRunStancesElement.appendChild(createTopicRunStanceElement("CON", name));
     topicRunElement.appendChild(topicRunStancesElement);
 
     topicElement.appendChild(topicRunElement);
@@ -179,14 +187,15 @@ function addRunLine(runLine, lineNumber) {
   }
   const topicRunStanceElement = topicRunElement.querySelector("." + stance.toLowerCase());
 
-  const resultElement = document.createElement("div");
+  const resultElement = document.createElement("a");
   resultElement.classList.add("result");
+  resultElement.setAttribute("href", image);
   resultElement.setAttribute("data-rank", rank);
   resultElement.setAttribute("data-score", score);
   resultElement.setAttribute("title", "rank: " + rank + "; score: " + score);
 
   const imageElement = document.createElement("img");
-  imageElement.setAttribute("src", "https://files.webis.de/corpora/corpora-webis/corpus-touche-image-search-22/images/" + imageId.substr(0, 3) + "/" + imageId + ".webp");
+  imageElement.setAttribute("src", image);
   resultElement.appendChild(imageElement);
 
   topicRunStanceElement.appendChild(resultElement);
