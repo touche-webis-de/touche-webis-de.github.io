@@ -1,0 +1,18 @@
+<svg viewBox="0 0 320 320" width="320" height="320" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
+
+<circle class="outline" cx="160" cy="160" r="160" fill="none" stroke="black" />
+
+<g id="backlights">
+<path data-category="self-direction-thought" d="M 160,160 L 160,0 A 160 160 0 0 1 209.44 7.17 z" fill="blue" fill-opacity="1" />
+<path data-category="self-direction-action" d="M 160,160 L 209.44,7.17 A 160 160 0 0 1 254.05 30.56 z" fill="red" fill-opacity="1" />
+<path data-category="stimulation" d="M 160,160 L 254.05,30.56 A 160 160 0 0 1 289.44 65.96 z" fill="blue" fill-opacity="1" />
+<path data-category="hedonism" d="M 160,160 L 289.44,65.96 A 160 160 0 0 1 312.17 110.56 z" fill="red" fill-opacity="1" />
+<path data-category="achievement" d="M 160,160 L 312.17,110.56 A 160 160 0 0 1 320 160 z" fill="blue" fill-opacity="1" />
+<path data-category="power-dominance" d="M 160,160 L 320,160 A 160 160 0 0 1 312.17 209.44 z" fill="red" fill-opacity="1" />
+<path data-category="power-resources" d="M 160,160 L 312.17,209.44 A 160 160 0 0 1 289.44 254.04" fill="blue" fill-opacity="1" />
+<path data-category="face" d="M 160,160 L 289.44,254.04 A 160 160 0 0 1 254.05 289.44 z" fill="red" fill-opacity="1" />
+<path data-category="security-personal" d="M 160,160 L 254.05,289.44 A 160 160 0 0 1 209.44 312.83 z" fill="blue" fill-opacity="1" />
+<path data-category="security-societal" d="M 160,160 L 209.44,312.83 A 160 160 0 0 1 160 320 z" fill="red" fill-opacity="1" />
+</g>
+
+</svg>
