@@ -22,6 +22,17 @@ main {
 .drop-zone.active {
   background: lightcyan;
 }
+.run-buttons button {
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.log {
+  width: 100%;
+  height: 10ex;
+  resize: vertical;
+}
 
 .topic {
   margin-bottom: 10px;
@@ -45,6 +56,7 @@ main {
 .stance-area {
   display: flex;
   flex-wrap: wrap;
+  width: 50%;
 }
 .stance-area > label {
   width: 100%;
@@ -93,11 +105,17 @@ main {
 
 <h1 class="uk-margin-remove-top uk-margin-remove-bottom">Run Visualizer</h1>
 
+<h2 id="addRuns">Add Runs</h2>
 <div id="dropZone" class="drop-zone">
 Drop run files here
 </div>
+<div id="availableRunsButtons" class="run-buttons"><b>Touché 2022 runs:</b> </div>
 
-<h2 id="output">Output</h2>
+<h2 id="validationLog">Validation Log</h2>
+<textarea id="validationLogArea" class="log" disabled="disabled"></textarea>
+
+<h2 id="removeRuns">Remove Runs</h2>
+<div id="activeRunsButtons" class="run-buttons"></div>
 
 <h2 id="resultPages">Result Pages</h2>
 <div id="topics"></div>
@@ -114,7 +132,7 @@ const imageIdPromise = fetch("https://files.webis.de/corpora/corpora-webis/corpu
   .then(text => new Set(text.split("\n")))
   .catch(error => {
     console.log(error);
-    UIkit.notification("Failed to load image IDs. Image ID validation disabled.", {status:'danger'});
+    UIkit.notification("Failed to load image IDs. Image IDs will not be validated.", {status:'danger'});
   });
 
 for (const topic of topics) {
@@ -127,8 +145,104 @@ for (const topic of topics) {
   document.getElementById("topics").appendChild(topicElement);
 }
 
-function output(text) {
-  console.log(text);
+const validationLogAreaElement = document.getElementById("validationLogArea");
+function validationLog(text) {
+  validationLogAreaElement.textContent = validationLogAreaElement.textContent + text + "\n";
+}
+
+function validateRunLine(runLine, lineNumber, imageIds, highestRanks, lowestScores, expectedNameArray) {
+  if (runLine === "") { return true; }
+
+  const parts = runLine.split(" ");
+  if (parts.length !== 6) {
+    validationLog("Invalid line " + lineNumber + " with " + parts.length + " fields: '" + runLine + "'");
+    return false;
+  }
+
+  let foundError = false;
+
+  const name = parts[5];
+  if (expectedNameArray.length === 0) {
+    expectedNameArray.push(name);
+  } else if (expectedNameArray[0] !== name) {
+    validationLog("Invalid name '" + name + "' after having encountered name '" + expectedNameArray[0] + "' in line " + lineNumber);
+    foundError = true;
+  }
+
+  const topic = parts[0];
+  if (topics.find(topicEntry => topicEntry[0] === topic) === undefined) {
+    validationLog("Invalid topic '" + topic + "' for '" + name + "' in line " + lineNumber);
+    foundError = true;
+  }
+
+  const stance = parts[1];
+  if (stance !== "PRO" && stance !== "CON") {
+    validationLog("Invalid stance '" + stance + "' for '" + name + "' in line " + lineNumber);
+    foundError = true;
+  }
+
+  const imageId = parts[2];
+  if (imageIds !== null && !imageIds.has(imageId)) {
+    validationLog("Unknown image ID '" + imageId + "' for '" + name + "' in line " + lineNumber);
+    foundError = true;
+  }
+
+  const rank = parts[3];
+  if (!rank.match("^([1-9]|10)$")) {
+    validationLog("Invalid rank '" + rank + "' for '" + name + "' in line " + lineNumber);
+    foundError = true;
+  } else {
+    const parsedRank = Number.parseInt(rank);
+    const highestRank = highestRanks[topic + " " + stance];
+    if (highestRank !== undefined && parsedRank <= highestRank) {
+      validationLog("Invalid rank '" + rank + "' after having encountered rank '" + highestRank + "' for '" + name + "', topic " + topic + ", stance " + stance + " in line " + lineNumber);
+      foundError = true;
+    }
+    highestRanks[topic + " " + stance] = parsedRank;
+  }
+
+  const score = parts[4];
+  if (!score.match("^-?[0-9]+\\.?[0-9]*$")) {
+    validationLog("Invalid score '" + score + "' for '" + name + "' in line " + lineNumber);
+    foundError = true;
+  } else {
+    const parsedScore = Number.parseFloat(score);
+    const lowestScore = lowestScores[topic + " " + stance];
+      if (lowestScore !== undefined && parsedScore > lowestScore) {
+      validationLog("Invalid score '" + score + "' after having encountered score '" + lowestScore + "' for '" + name + "', topic " + topic + ", stance " + stance + " in line " + lineNumber);
+      foundError = true;
+    }
+    lowestScores[topic + " " + stance] = parsedScore;
+  }
+
+  return !foundError;
+}
+
+function validateRun(runLines, imageIds) {
+  const highestRanks = {};
+  const lowestScores = {};
+  const expectedNameArray = [];
+  let foundError = false;
+  for (let lineNumber = 1; lineNumber <= runLines.length; ++lineNumber) {
+    if (!validateRunLine(runLines[lineNumber - 1], lineNumber, imageIds, highestRanks, lowestScores, expectedNameArray)) {
+      foundError = true;
+    }
+  }
+
+  if (expectedNameArray.length === 0) {
+    validationLog("Run empty\n");
+    UIkit.notification("Run was empty", {status:'danger'});
+    return null;
+  }
+
+  if (foundError) {
+    validationLog("Run invalid\n");
+    UIkit.notification("Run validation failed, see Validation Log", {status:'danger'});
+    return null;
+  } else {
+    validationLog("Run valid\n");
+    return expectedNameArray[0];
+  }
 }
 
 function createTopicRunStanceElement(stance, name) {
@@ -147,10 +261,6 @@ function addRunLine(runLine, lineNumber) {
   if (runLine === "") { return true; }
 
   const parts = runLine.split(" ");
-  if (parts.length !== 6) {
-    output("Invalid line " + lineNumber + " with " + parts.length + " fields: '" + runLine + "'");
-    return false;
-  }
   const topic = parts[0];
   const stance = parts[1];
   const imageId = parts[2];
@@ -160,10 +270,6 @@ function addRunLine(runLine, lineNumber) {
   const image = "https://files.webis.de/corpora/corpora-webis/corpus-touche-image-search-22/images/" + imageId.substr(0, 3) + "/" + imageId + ".webp";
 
   const topicElement = document.querySelector("[data-topic='" + topic + "']");
-  if (topicElement === null) {
-    output("Invalid topic '" + topic + "' for '" + name + "' in line " + lineNumber);
-    return false;
-  }
   topicElement.classList.remove("empty");
 
   let topicRunElement = topicElement.querySelector("[data-run='" + name + "']");
@@ -181,10 +287,6 @@ function addRunLine(runLine, lineNumber) {
     topicElement.appendChild(topicRunElement);
   }
 
-  if (stance !== "PRO" && stance !== "CON") {
-    output("Invalid stance '" + stance + "' for '" + name + "' in line " + lineNumber);
-    return false;
-  }
   const topicRunStanceElement = topicRunElement.querySelector("." + stance.toLowerCase());
 
   const resultElement = document.createElement("a");
@@ -203,11 +305,40 @@ function addRunLine(runLine, lineNumber) {
   return true;
 }
 
+function removeRun(runName) {
+  for (const runElement of Array.from(document.querySelectorAll("[data-run]"))) {
+    if (runElement.getAttribute("data-run") === runName) {
+      runElement.remove();
+    }
+  }
+
+  for (const topicElement of Array.from(document.querySelectorAll(".topic"))) {
+    if (topicElement.querySelector(".run-area") === null) {
+      topicElement.classList.add("empty");
+    }
+  }
+}
+
 function addRun(runText) {
   const runLines = runText.split("\n");
-  for (let lineNumber = 1; lineNumber <= runLines.length; ++lineNumber) {
-    addRunLine(runLines[lineNumber - 1], lineNumber);
-  }
+  
+  imageIdPromise
+      .then(imageIds => validateRun(runLines, imageIds))
+      .catch(error => validateRun(runLines, null))
+      .then(runName => {
+        if (runName !== null) {
+          removeRun(runName);
+          for (let lineNumber = 1; lineNumber <= runLines.length; ++lineNumber) {
+            addRunLine(runLines[lineNumber - 1], lineNumber);
+          }
+          const buttonElement = document.createElement("button");
+          buttonElement.textContent = runName;
+          buttonElement.classList.add("uk-button", "uk-button-default");
+          buttonElement.setAttribute("data-run", runName);
+          buttonElement.addEventListener("click", event => removeRun(runName));
+          document.getElementById("activeRunsButtons").appendChild(buttonElement);
+        }
+      });
 }
 
 // Drag & Drop
@@ -245,4 +376,28 @@ dropZone.addEventListener("drop", event => {
     reader.readAsText(file);
   }
 }, false);
+
+// Example runs
+
+const availableRunNames = ["aramis-argumentativeness-formula-stance-formula","aramis-argumentativeness-formula-stance-neural","aramis-argumentativeness-neural-stance-formula","aramis-argumentativeness-neural-stance-neural","boromir-afinn-clustering","boromir-afinn-ocr-clustering-query-processing","boromir-afinn-ocr-clustering","boromir-afinn-ocr","boromir-bert-ocr-clustering-query-processing","boromir-bert-ocr-query-processing","jester-with-emotion-detection","jester-without-emotion-detection","minsc-baseline"];
+
+const availableRunsButtonsElement = document.getElementById("availableRunsButtons");
+for (const availableRunName of availableRunNames) {
+  const buttonElement = document.createElement("button");
+  buttonElement.textContent = availableRunName;
+  buttonElement.classList.add("uk-button", "uk-button-default");
+  buttonElement.addEventListener("click", event => addAvailableRun(availableRunName));
+  availableRunsButtonsElement.appendChild(buttonElement);
+}
+
+function addAvailableRun(name) {
+  const url = "../touche22-data/image-retrieval-for-arguments/run-" + name + ".txt";
+  fetch(url)
+    .then(response => response.text())
+    .then(addRun) 
+    .catch(error => {
+      console.log(error);
+      UIkit.notification("Failed to load run from '" + url + "': please try later or write us a mail", {status:'danger'});
+    });
+}
 </script>
