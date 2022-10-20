@@ -34,7 +34,7 @@ description: Touché at CLEF 2022 - Image Retrieval for Arguments
 <ul>
 <li>Task: Given a controversial topic, the task is to retrieve images (from web pages) for each stance (pro/con) that show support for that stance. [<a href="https://www.tira.io/c/touche/9">forum</a>]</li>
 <li>Input: [<a href="https://doi.org/10.5281/zenodo.6786948">data</a>]</li>
-<li>Evaluation: [<a href="https://zenodo.org/record/6786949/files/topics.xml?download=1">topics</a>]</li>
+<li>Evaluation: [<a href="https://zenodo.org/record/6786949/files/topics.xml?download=1">topics</a>] [<a href="https://images.args.me">browser</a>]</li>
 <li>Submission: [<a href="https://github.com/touche-webis-de/touche-code/blob/main/clef22/image-retrieval-for-arguments/original-rankings-baseline.py">baseline</a>] [verifier: <a href="https://github.com/touche-webis-de/touche-code/blob/main/clef22/image-retrieval-for-arguments/submission-verifier.sh">program</a>, <a href="https://zenodo.org/record/6786949/files/image-ids.txt?download=1">image-ids</a>] [<a href="https://www.tira.io/task/touche-task-3/dataset/touche-task-3-2022-01-21">tira</a>]</li>
 <li>Manual judgments: [<a href="https://zenodo.org/record/6786949/files/touche-task3-001-050-relevance.qrels?download=1">qrels</a>] [<a href="https://github.com/touche-webis-de/touche-code/blob/main/clef22/image-retrieval-for-arguments/submission-evaluator.sh">evaluator</a>]</li>
 </ul>
@@ -79,26 +79,29 @@ For example:
 
 
 <h2 id="results">Results</h2>
+
+<p>Click on the team to access the respective paper. If no paper is linked, refer to the <a href="http://ceur-ws.org/Vol-3180/paper-247.pdf">overview paper</a>.</p>
+
 <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
-  <caption>Best-scoring run of each team (same for each score) [<a href="https://zenodo.org/record/6802946/files/results-per-topic.zip?download=1">per-topic</a>] [<a href="https://zenodo.org/record/6786949/files/touche-task3-001-050-relevance.qrels?download=1">qrels</a>]</caption>
+  <caption>Best-scoring run of each team (same for each score) [<a href="https://zenodo.org/record/6802946/files/results-per-topic.zip?download=1">per-topic</a>] [<a href="https://zenodo.org/record/6786949/files/touche-task3-001-050-relevance.qrels?download=1">qrels</a>] [<a href="https://images.args.me">browser</a>]</caption>
 <thead>
 <tr><th>Team</th><th>Tag</th><th colspan="3">Precision@10</th></tr>
 <tr><th></th><th></th><th>On topic</th><th>Argumentative</th><th>On stance</th></tr>
 </thead>
 <tbody>
-<tr><td>Boromir</td><td>BERT, OCR, query-processing</td><td>0.878</td><td>0.768</td><td>0.425</td></tr>
-<tr><td>Boromir</td><td>BERT, OCR, clustering, query-preprocessing</td><td>0.822</td><td>0.728</td><td>0.411</td></tr>
-<tr><td>Boromir</td><td>AFINN, OCR</td><td>0.814</td><td>0.726</td><td>0.408</td></tr>
-<tr><td>Minsc</td><td>Baseline</td><td>0.736</td><td>0.686</td><td>0.407</td></tr>
-<tr><td>Boromir</td><td>AFINN, OCR, clustering</td><td>0.749</td><td>0.674</td><td>0.384</td></tr>
-<tr><td>Boromir</td><td>AFINN, OCR, clustering, query-processing</td><td>0.767</td><td>0.688</td><td>0.382</td></tr>
-<tr><td>Aramis</td><td>arg:formula, stance:formula</td><td>0.701</td><td>0.634</td><td>0.381</td></tr>
-<tr><td>Aramis</td><td>arg:neural, stance: formula</td><td>0.687</td><td>0.632</td><td>0.365</td></tr>
-<tr><td>Aramis</td><td>arg:neural, stance: neural</td><td>0.673</td><td>0.624</td><td>0.354</td></tr>
+<tr><td><a href="http://ceur-ws.org/Vol-3180/paper-253.pdf">Boromir</a></td><td>BERT, OCR, query-processing</td><td>0.878</td><td>0.768</td><td>0.425</td></tr>
+<tr><td><a href="http://ceur-ws.org/Vol-3180/paper-253.pdf">Boromir</a></td><td>BERT, OCR, clustering, query-preprocessing</td><td>0.822</td><td>0.728</td><td>0.411</td></tr>
+<tr><td><a href="http://ceur-ws.org/Vol-3180/paper-253.pdf">Boromir</a></td><td>AFINN, OCR</td><td>0.814</td><td>0.726</td><td>0.408</td></tr>
+<tr><td><a href="https://webis.de/publications.html#kiesel_2021e">Minsc</a></td><td>Baseline</td><td>0.736</td><td>0.686</td><td>0.407</td></tr>
+<tr><td><a href="http://ceur-ws.org/Vol-3180/paper-253.pdf">Boromir</a></td><td>AFINN, OCR, clustering</td><td>0.749</td><td>0.674</td><td>0.384</td></tr>
+<tr><td><a href="http://ceur-ws.org/Vol-3180/paper-253.pdf">Boromir</a></td><td>AFINN, OCR, clustering, query-processing</td><td>0.767</td><td>0.688</td><td>0.382</td></tr>
+<tr><td><a href="http://ceur-ws.org/Vol-3180/paper-252.pdf">Aramis</a></td><td>arg:formula, stance:formula</td><td>0.701</td><td>0.634</td><td>0.381</td></tr>
+<tr><td><a href="http://ceur-ws.org/Vol-3180/paper-252.pdf">Aramis</a></td><td>arg:neural, stance: formula</td><td>0.687</td><td>0.632</td><td>0.365</td></tr>
+<tr><td><a href="http://ceur-ws.org/Vol-3180/paper-252.pdf">Aramis</a></td><td>arg:neural, stance: neural</td><td>0.673</td><td>0.624</td><td>0.354</td></tr>
 <tr><td>Jester</td><td>with emotion detection</td><td>0.696</td><td>0.647</td><td>0.350</td></tr>
-<tr><td>Aramis</td><td>arg:formula, stance:neural</td><td>0.664</td><td>0.609</td><td>0.344</td></tr>
+<tr><td><a href="http://ceur-ws.org/Vol-3180/paper-252.pdf">Aramis</a></td><td>arg:formula, stance:neural</td><td>0.664</td><td>0.609</td><td>0.344</td></tr>
 <tr><td>Jester</td><td>without emotion detection</td><td>0.671</td><td>0.618</td><td>0.336</td></tr>
-<tr><td>Boromir</td><td>AFINN, clustering</td><td>0.600</td><td>0.545</td><td>0.319</td></tr>
+<tr><td><a href="http://ceur-ws.org/Vol-3180/paper-253.pdf">Boromir</a></td><td>AFINN, clustering</td><td>0.600</td><td>0.545</td><td>0.319</td></tr>
 </tbody>
 </table>
 <p>Scores are determined using <a href="https://github.com/dirkhovy/MACE">MACE</a> on crowdsourced relevance judgements by five independent annotators each on all submitted results (thus top-10). Expert annotations were used for uncertain cases (MACE confidence below 0.55).</p>
