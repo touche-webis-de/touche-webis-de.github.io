@@ -67,4 +67,20 @@
         margin-bottom: $padding-small-padding;
         margin-right: $padding-small-padding;
     }
+
+    .uk-height-1-1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        > .uk-margin-small-top, > .uk-margin-small-bottom {
+            margin: 0 !important;
+        }
+
+        > .uk-position-bottom-right.thumbnail-card-logo {
+            position: relative !important;
+            margin: 0;
+            align-self: end;
+        }
+    }
 }
