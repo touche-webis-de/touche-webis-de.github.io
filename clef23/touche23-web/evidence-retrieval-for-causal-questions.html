@@ -33,28 +33,32 @@ description: Touché at CLEF 2023 - Evidence Retrieval for Causal Questions
 <h2 id="synopsis">Synopsis</h2>
 <ul>
 <li>Task: Given a causality-related topic, the task is to retrieve and rank documents by relevance to the topic and detect the document "causal" stance.</li>
-<li>Input: [<a href="https://doi.org/10.5281/zenodo.6802591">data</a>]</li>
-<li>Submission: [<a href="https://www.tira.io/task/touche-task-2/">submit</a>]</li>
-<li>Manual judgments (top-5 pooling): [qrels: <a href="https://zenodo.org/record/6802592/files/touche-task2-2022-relevance.qrels?download=1">relevance</a>, <a href="https://zenodo.org/record/6802592/files/touche-task2-2022-quality.qrels?download=1">quality</a>, <a href="https://zenodo.org/record/6802592/files/touche-task2-2022-stance.qrels?download=1">stance</a>]</li>
+<li>Input: will be added soon<!--[<a href="https://doi.org/10.5281/zenodo.6801439">data</a>]--></li>
+<li>Submission: will be added soon<!--[<a href="https://www.tira.io/task/touche-task-1/dataset/touche-task-1-2022-02-16">tira</a>]--></li>
+<li>Evaluation: will be added soon<!--[<a href="https://zenodo.org/record/6801440/files/topics.xml?download=1">topics</a>]--></li>
+<!--<li>Manual judgments (top-5 pooling): [qrels: <a href="https://zenodo.org/record/6802592/files/touche-task2-2022-relevance.qrels?download=1">relevance</a>, <a href="https://zenodo.org/record/6802592/files/touche-task2-2022-quality.qrels?download=1">quality</a>, <a href="https://zenodo.org/record/6802592/files/touche-task2-2022-stance.qrels?download=1">stance</a>]</li>-->
 </ul>
 
 <h2 id="task">Task</h2>
-<p>The goal of <strong>Task 2</strong> is to support users facing some choice problem from "everyday life". Given a comparative topic and a collection of documents, the task is to retrieve relevant argumentative passages for either compared object or for both and to detect their respective stances with respect to the object they talk about.</p>
+<p>The goal of <strong>Task 2</strong> is to support users who want to understand whether a causal relationship between two events / actions exists. Given a causality-related topic
+and a collection of web documents, the task is to retrieve and rank documents by relevance to the topic and detect the document "causal" stance (i.e., whether a causal relationship from the topic’s title holds.</p>
 
 <h2 id="data">Data</h2>
 <p>Example topic for <strong>Task 2:</strong></p>
 <pre><code>&lt;topic&gt;
-&lt;number&gt;25&lt;/number&gt;
-&lt;title&gt;Which browser is better, Internet Explorer or Firefox?&lt;/title&gt;
-&lt;description&gt;A windows user wants to decide whether to use the default Internet Explorer or go for Firefox as alternative and seeks for information to compare them in multiple different aspects such as security and privacy, performance, ease of use, reliability, etc.&lt;/description&gt;
-&lt;narrative&gt;Highly relevant documents discuss in detail pros and cons of both web browsers by contrasting their characteristics and features. This comparison may contain technical details but also personal opinions. A relevant document may explicitly state what are the good/bad features of either the Internet Explorer or the Firefox browser without a clear comparison. Documents that include only descriptions of browser war or historical background how the browsers evolved, etc. are not relevant.&lt;/narrative&gt;
+&lt;number&gt;1&lt;/number&gt;
+&lt;title&gt;Can eating broccoli lead to constipation?&lt;/title&gt;
+&lt;cause&gt;broccoli&lt;/cause&gt;
+&lt;effect&gt;constipation&lt;/effect&gt;
+&lt;description&gt;A young parent has a child experiencing constipation after eating some broccoli for dinner and is wondering [...]&lt;/description&gt;
+&lt;narrative&gt;Relevant documents will discuss if broccoli and other high fiber foods can cause or ease constipation [...]&lt;/narrative&gt;
 &lt;/topic&gt;</code></pre>
-<p><strong>The corpus</strong> for Task 2 is a collection of about 0.9 million text passages. [<a href="https://zenodo.org/record/6802592/files/touche-task2-passages-version-002.jsonl.gz?download=1">download</a>]</p>
-<p><strong>Other data</strong> for this task are the topics, quality judgements, and for training a subset of MS MARCO with comparative questions and a collection of text passages expanded with queries generated using DocT5Query. [<a href="https://doi.org/10.5281/zenodo.6797875">download</a>] [<a href="https://github.com/touche-webis-de/touche-code/blob/main/clef22/argument-retrieval-for-comparative-questions/parse_topics.ipynb">topic parser</a>]</p>
+<!--<p><strong>The corpus</strong> for Task 2 is a collection of about 0.9 million text passages. [<a href="https://zenodo.org/record/6802592/files/touche-task2-passages-version-002.jsonl.gz?download=1">download</a>]</p>
+<p><strong>Other data</strong> for this task are the topics, quality judgements, and for training a subset of MS MARCO with comparative questions and a collection of text passages expanded with queries generated using DocT5Query. [<a href="https://doi.org/10.5281/zenodo.6797875">download</a>] [<a href="https://github.com/touche-webis-de/touche-code/blob/main/clef22/argument-retrieval-for-comparative-questions/parse_topics.ipynb">topic parser</a>]</p>-->
 
 <h2 id="evaluation">Evaluation</h2>
-<p>Be sure to retrieve relevant documents that comprise convincing argumentation for or against one option or the other. Our human assessors will label the retrieved documents manually, both for their general topical relevance and for the rhetorical quality, i.e., "well-writtenness" of the document: (1) whether a document contains arguments (i.e., argumentative support is provided) and whether the text has a good style of speech (formal language is preferred over informal), (2) whether the text has a proper sentence structure and is easy to read and follow, whether it can be well understood, (3) whether it includes profanity, has typos, and makes use of other detrimental style choices.</p>
-<p>Additionally, classify the stance of the retrieved text passages towards the compared objects in questions. For instance, in the question <i>Who is a better friend, a cat or a dog?</i>  the terms <i>cat</i> and <i>dog</i> are the comparison objects. An answer candidate like <i>Cats can be quite affectionate and attentive, and thus are good friends</i> should be classified as pro the <i>cat</i> object, while <i>Cats are less faithful than dogs</i> as supporting the <i>dog</i> object.</p>
+<p>Our human assessors will label the retrieved documents according to two relevance dimensions: (1) whether the document is on topic, i.e., contains information about the causal relationship of the events in a question; the direction of causality will considered, e.g., a document stating that B causes A will be considered as off-topic for the question "Does A cause B?" and (2) if the document is on topic, whether the contained evidence is circumstantial (e.g., a single observation of the co-occurrence of two events) or general (e.g., a statement gained through inductive reasoning).</p>
+<!--
 <p>The format of the relevance/quality judgment file:
 <pre><code>qid 0 doc rel</code></pre>
 With:
@@ -151,18 +155,19 @@ As soon as your Software is installed in your VM, you can register it in TIRA. A
 <tr> <td>Asuna</td> <td>asuna-run-5</td> <td>0.106</td> <td>578</td> <td>0.106</td> <td>578</td> </tr>
 </tbody>
 </table>
-
+-->
 <h2 id="task-committee">Task Committee</h2>
 <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
-{% include people-cards/bondarenko.html gender="male" %}
-{% include people-cards/hagen.html gender="male" %}
-{% include people-cards/froebe.html gender="male" %}
-{% include people-cards/beloucif.html gender="female" %}
-{% include people-cards/biemann.html gender="male" %}
-{% include people-cards/panchenko.html gender="male" %}
+{% include people-cards/schlatt.html %}
+{% include people-cards/bondarenko.html %}
+{% include people-cards/froebe.html %}
+{% include people-cards/reimer.html %}
+{% include people-cards/stein.html %}
+{% include people-cards/potthast.html %}
+{% include people-cards/hagen.html %}
 </div>
 <div class="uk-container uk-padding-large uk-padding-remove-bottom">
-{% include organizations/clef-organizations-section.html year=2022 %}
+{% include organizations/clef-organizations-section.html year=2023 %}
 </div>
 </div>
 </div>
