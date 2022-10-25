@@ -1,0 +1,169 @@
+---
+layout: default
+nav_active: shared-tasks
+title: Touché at CLEF 2023 - Evidence Retrieval for Causal Questions
+description: Touché at CLEF 2023 - Evidence Retrieval for Causal Questions
+---
+<nav class="uk-container">
+<ul class="uk-breadcrumb">
+<li><a href="../../index.html">Touché</a></li>
+<li><a href="../../shared-tasks.html">Shared Tasks</a></li>
+<li class="uk-disabled"><a href="#">Evidence Retrieval for Causal Questions 2023</a></li>
+</ul>
+</nav>
+
+<main>
+<div class="uk-section uk-section-default">
+<div class="uk-container uk-margin-small">
+<h1 class="uk-margin-remove-top uk-margin-remove-bottom">Evidence Retrieval for Causal Questions 2023</h1>
+<ul class="uk-list">
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
+<!--<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#tira-quickstart">TIRA Quickstart</a></li>
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li> -->
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
+</ul>
+</div>
+
+<div class="uk-container uk-margin-medium">
+
+<h2 id="synopsis">Synopsis</h2>
+<ul>
+<li>Task: Given a causality-related topic, the task is to retrieve and rank documents by relevance to the topic and detect the document "causal" stance.</li>
+<li>Input: [<a href="https://doi.org/10.5281/zenodo.6802591">data</a>]</li>
+<li>Submission: [<a href="https://www.tira.io/task/touche-task-2/">submit</a>]</li>
+<li>Manual judgments (top-5 pooling): [qrels: <a href="https://zenodo.org/record/6802592/files/touche-task2-2022-relevance.qrels?download=1">relevance</a>, <a href="https://zenodo.org/record/6802592/files/touche-task2-2022-quality.qrels?download=1">quality</a>, <a href="https://zenodo.org/record/6802592/files/touche-task2-2022-stance.qrels?download=1">stance</a>]</li>
+</ul>
+
+<h2 id="task">Task</h2>
+<p>The goal of <strong>Task 2</strong> is to support users facing some choice problem from "everyday life". Given a comparative topic and a collection of documents, the task is to retrieve relevant argumentative passages for either compared object or for both and to detect their respective stances with respect to the object they talk about.</p>
+
+<h2 id="data">Data</h2>
+<p>Example topic for <strong>Task 2:</strong></p>
+<pre><code>&lt;topic&gt;
+&lt;number&gt;25&lt;/number&gt;
+&lt;title&gt;Which browser is better, Internet Explorer or Firefox?&lt;/title&gt;
+&lt;description&gt;A windows user wants to decide whether to use the default Internet Explorer or go for Firefox as alternative and seeks for information to compare them in multiple different aspects such as security and privacy, performance, ease of use, reliability, etc.&lt;/description&gt;
+&lt;narrative&gt;Highly relevant documents discuss in detail pros and cons of both web browsers by contrasting their characteristics and features. This comparison may contain technical details but also personal opinions. A relevant document may explicitly state what are the good/bad features of either the Internet Explorer or the Firefox browser without a clear comparison. Documents that include only descriptions of browser war or historical background how the browsers evolved, etc. are not relevant.&lt;/narrative&gt;
+&lt;/topic&gt;</code></pre>
+<p><strong>The corpus</strong> for Task 2 is a collection of about 0.9 million text passages. [<a href="https://zenodo.org/record/6802592/files/touche-task2-passages-version-002.jsonl.gz?download=1">download</a>]</p>
+<p><strong>Other data</strong> for this task are the topics, quality judgements, and for training a subset of MS MARCO with comparative questions and a collection of text passages expanded with queries generated using DocT5Query. [<a href="https://doi.org/10.5281/zenodo.6797875">download</a>] [<a href="https://github.com/touche-webis-de/touche-code/blob/main/clef22/argument-retrieval-for-comparative-questions/parse_topics.ipynb">topic parser</a>]</p>
+
+<h2 id="evaluation">Evaluation</h2>
+<p>Be sure to retrieve relevant documents that comprise convincing argumentation for or against one option or the other. Our human assessors will label the retrieved documents manually, both for their general topical relevance and for the rhetorical quality, i.e., "well-writtenness" of the document: (1) whether a document contains arguments (i.e., argumentative support is provided) and whether the text has a good style of speech (formal language is preferred over informal), (2) whether the text has a proper sentence structure and is easy to read and follow, whether it can be well understood, (3) whether it includes profanity, has typos, and makes use of other detrimental style choices.</p>
+<p>Additionally, classify the stance of the retrieved text passages towards the compared objects in questions. For instance, in the question <i>Who is a better friend, a cat or a dog?</i>  the terms <i>cat</i> and <i>dog</i> are the comparison objects. An answer candidate like <i>Cats can be quite affectionate and attentive, and thus are good friends</i> should be classified as pro the <i>cat</i> object, while <i>Cats are less faithful than dogs</i> as supporting the <i>dog</i> object.</p>
+<p>The format of the relevance/quality judgment file:
+<pre><code>qid 0 doc rel</code></pre>
+With:
+<ul>
+<li><code>qid</code>: The topic number.</li>
+<li><code>0</code>: Unused, always 0.</li>
+<li><code>doc</code>: The document ID ("trec_id" if you use ChatNoir or the official ClueWeb12 ID).</li>
+<li><code>rel</code>: The relevance judgment: 0 (not relevant) to 3 (highly relevant). The quality judgment: 0 (low, or no arguments) to 3 (high).</li>
+</ul>
+You can use the corresponding <a href="https://github.com/touche-webis-de/touche-code/blob/main/clef22/evaluate.py">evaluation script</a> to evaluate your run using the relevance judgments.</p>
+
+<h2 id="submission">Submission</h2>
+<p>We encourage participants to use <a href="https://www.tira.io/">TIRA</a> for their submissions to allow for a better reproducibility. Please also have a look at our <a href="#tira-quickstart">TIRA quickstart</a>&#8212;in case of problems we will be able to assist you. Even though the preferred way of run submission is TIRA, in case of problems you may also submit runs via email. We will try to quickly review your TIRA or email submissions and provide feedback.</p>
+<p>Runs may be either automatic or manual. An automatic run must not "manipulate" the topic titles via manual intervention. A manual run is anything that is not an automatic run. Upon submission, please let us know which of your runs are manual. For each topic, include up to 1,000 retrieved documents. Each team can submit <strong>up to 5</strong> different runs.</p>
+<p>The submission format for the task will follow the standard TREC format:
+<pre><code>qid stance doc rank score tag</code></pre>
+With:
+<ul>
+<li><code>qid</code>: The topic number.</li>
+<li><code>stance</code>: The stance of the document (passage) toward the comparison objects (FIRST: pro 1st object, SECOND: pro 2nd object, NEUTRAL: neutral stance, NO: no stance).</li>
+<li><code>doc</code>: The document (passage) ID <code>qid</code>.</li>
+<li><code>rank</code>: The rank the document is retrieved at.</li>
+<li><code>score</code>: The score (integer or floating point) that generated the ranking. The score must be in descending (non-increasing) order. It is important to handle tied scores.</li>
+<li><code>tag</code>: A tag that identifies your group and the method you used to produce the run.</li>
+</ul>
+If you do not classify the stance, use <code>Q0</code> as the value in the stance column. The fields should be separated by a whitespace. The individual columns' widths are not restricted (i.e., score can be an arbitrary precision that has no ties) but it is important to include all columns and to separate them with a whitespace.<br><br>
+An example run for Task 2 is:
+<pre><code>1 FIRST clueweb12-en0010-85-29836___1 1 17.89 myGroupMyMethod
+1 NEUTRAL clueweb12-en0010-86-00457___3 2 16.43 myGroupMyMethod
+1 NO clueweb12-en0010-86-09202___5 3 16.32 myGroupMyMethod
+...</code></pre></p>
+
+<h2 id="tira-quickstart">TIRA Quickstart</h2>
+<p>Participants have to upload (through SSH or RDP) their retrieval models in a dedicated TIRA virtual machine, so that their runs can be reproduced and so that they can be easily applied to different data (of same format) in the future. You can find host ports for your VM in the web interface, same login as to your VM.  If you cannot connect to your VM, please make sure it is powered on: you can check and power on your machine in the web interface where you see the state of your VM and can access the connection informations on how to access your VM.</p>
+<img width="75%" style="margin-left: auto; margin-right: auto; display: block;" src="../touche22-figures/task2-tira-vm-overview.png" alt="Overview of the virtual machine in TIRA.">
+<p>Your software is expected to accept two arguments:
+<ul>
+<li>An input directory (named <code>$inputDataset</code> in TIRA). This input directory contains a <code>topics.xml</code> file that contains the topics for which documents should be retrieved and a <code>passages.jsonl.gz</code> that contains the passages.</li>
+<li>An output directory (named <code>$outputDir</code> in TIRA). Your software should create a standard trec run file in <code>$outputDir/run.txt</code>.</li>
+</ul>
+As soon as your Software is installed in your VM, you can register it in TIRA. Assume that your software is started with a bash script in your home directory called <code>my-software.sh</code> which expects an argument <code>-i</code> specifying the input directory, and an argument <code>-o</code> specifying the output directory. Click on "Add software" and specify the command <code>./my-software.sh -i $inputDataset -o $outputDir</code>. Please select `touche-2022-task2` as input dataset.</p>
+<img width="75%" style="margin-left: auto; margin-right: auto; display: block;" src="../touche22-figures/task2-tira-example-software.png" alt="Overview of the software configuration in TIRA.">
+<p>Please save your software and click on "Run" to execute your software in TIRA. Note that your VM will not be accessible while your system is running – it will be “sandboxed”, detached from the internet, and after the run the state of the VM before the run will be restored. Your run will be reviewed and evaluated by the organizers.</p>
+<p>NOTE: By submitting your software you retain full copyrights. You agree to grant us usage rights for evaluation of the corresponding data generated by your software. We agree not to share your software with a third party or use it for any purpose other than research.</p>
+<p>Once the run of your system completes, please also run the evaluator on the output of your system to verify that your output is a valid submission. These are two separate actions and both should be invoked through the web interface of TIRA. You don’t have to install the evaluator in your VM. It is already prepared in TIRA. You can run the evaluator in the overview of your runs by clicking on the "Evaluate" button.</p>
+<img width="75%" style="margin-left: auto; margin-right: auto; display: block;" src="../touche22-figures/task2-tira-example-evaluation.png" alt="Overview of the software evaluation in TIRA.">
+<p>By Clicking on "Inspect" you can see and download the STDOUT and STDERR as well as the outputs of your system. The output of the evaluator will tell you if the output of your run valid. If you think something went wrong with your run, send us an e-mail or open a <a href="https://www.tira.io/c/touche/9">new Topic in the Touché Forum in TIRA</a>. Additionally, we review your submissions and contact you on demand.</p>
+<p>You can register more than one system (“software/ model”) per virtual machine using the web interface. TIRA gives systems automatic names “Software 1”, “Software 2” etc. You can perform several runs per system.</p>
+
+<h2 id="results">Results</h2>
+<table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+<caption>Best-scoring run of each team for relevance evaluation [<a href="argument-retrieval-for-comparative-questions-results-relevance.html">all runs</a>] [<a href="https://zenodo.org/record/6802592/files/task2_relevance_results_full.csv?download=1">per-topic</a>] [<a href="https://zenodo.org/record/6802592/files/touche-task2-2022-relevance.qrels?download=1">top-5 pooled qrels</a>]</caption>
+<thead>
+<tr style="text-align: right;"> <th>Team</th> <th>Tag</th> <th>Mean nDCG@5</th> <th>CI95 Low</th> <th>CI95 High</th> </tr>
+</thead>
+<tbody>
+<tr> <td>Captain Levi</td> <td>levirank_dense_initial_retrieval</td> <td>0.758</td> <td>0.708</td> <td>0.810</td> </tr>
+<tr> <td>Aldo Nadi</td> <td>seupd2122-kueri_rrf_reranked</td> <td>0.709</td> <td>0.649</td> <td>0.769</td> </tr>
+<tr> <td>Katana</td> <td>Colbert edinburg</td> <td>0.618</td> <td>0.551</td> <td>0.676</td> </tr>
+<tr> <td>Captain Tempesta</td> <td>hextech_run_1</td> <td>0.574</td> <td>0.504</td> <td>0.640</td> </tr>
+<tr> <td>Olivier Armstrong</td> <td>tfid_arg_similarity</td> <td>0.492</td> <td>0.414</td> <td>0.569</td> </tr>
+<tr> <td>Puss in Boots</td> <td>BM25-Baseline</td> <td>0.469</td> <td>0.403</td> <td>0.538</td> </tr>
+<tr> <td>Grimjack</td> <td>grimjack-fair-reranking-argumentative-axioms</td> <td>0.422</td> <td>0.351</td> <td>0.496</td> </tr>
+<tr> <td>Asuna</td> <td>asuna-run-5</td> <td>0.263</td> <td>0.202</td> <td>0.324</td> </tr>
+</tbody>
+</table>
+<table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+<caption>Best-scoring run of each team for quality evaluation [<a href="argument-retrieval-for-comparative-questions-results-quality.html">all runs</a>] [<a href="https://zenodo.org/record/6802592/files/task2_quality_results_full.csv?download=1">per-topic</a>] [<a href="https://zenodo.org/record/6802592/files/touche-task2-2022-quality.qrels?download=1">top-5 pooled qrels</a>]</caption>
+<thead>
+<tr style="text-align: right;"> <th>Team</th> <th>Tag</th> <th>Mean nDCG@5</th> <th>CI95 Low</th> <th>CI95 High</th> </tr>
+</thead>
+<tbody>
+<tr> <td>Aldo Nadi</td> <td>seupd2122-kueri_RF_reranked</td> <td>0.774</td> <td>0.719</td> <td>0.828</td> </tr>
+<tr> <td>Captain Levi</td> <td>levirank_dense_initial_retrieval</td> <td>0.744</td> <td>0.690</td> <td>0.804</td> </tr>
+<tr> <td>Katana</td> <td>Colbert trained by me</td> <td>0.644</td> <td>0.575</td> <td>0.707</td> </tr>
+<tr> <td>Captain Tempesta</td> <td>hextech_run_5</td> <td>0.597</td> <td>0.523</td> <td>0.674</td> </tr>
+<tr> <td>Olivier Armstrong</td> <td>tfid_arg_similarity</td> <td>0.582</td> <td>0.506</td> <td>0.662</td> </tr>
+<tr> <td>Puss in Boots</td> <td>BM25-Baseline</td> <td>0.476</td> <td>0.401</td> <td>0.556</td> </tr>
+<tr> <td>Grimjack</td> <td>grimjack-fair-reranking-argumentative-axioms</td> <td>0.403</td> <td>0.330</td> <td>0.478</td> </tr>
+<tr> <td>Asuna</td> <td>asuna-run-5</td> <td>0.332</td> <td>0.254</td> <td>0.418</td> </tr>
+</tbody>
+</table>
+<table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+<caption>Best-scoring run of each team for stance evaluation with <code>N_run</code>, <code>N_team</code> being the number of stance predictions in the run or team that were manually labeled [<a href="argument-retrieval-for-comparative-questions-results-stance.html">all runs</a>] [<a href="https://zenodo.org/record/6802592/files/task2_stance_results_full.csv?download=1">per-topic</a>] [<a href="https://zenodo.org/record/6802592/files/touche-task2-2022-stance.qrels?download=1">top-5 pooled qrels</a>]</caption>
+<thead>
+<tr style="text-align: right;"> <th>Team</th> <th>Tag</th> <th>F1_macro_run</th> <th>N_run</th> <th>F1_macro_team</th> <th>N_team</th> </tr>
+</thead>
+<tbody>
+<tr> <td>Grimjack</td> <td>grimjack-all-you-need-is-t0</td> <td>0.313</td> <td>1208</td> <td>0.235</td> <td>1386</td> </tr>
+<tr> <td>Captain Levi</td> <td>levirank_dense_initial_retrieval</td> <td>0.301</td> <td>1688</td> <td>0.261</td> <td>2020</td> </tr>
+<tr> <td>Katana</td> <td>Colbert edinburg</td> <td>0.229</td> <td>1027</td> <td>0.220</td> <td>1301</td> </tr>
+<tr> <td>Olivier Armstrong</td> <td>tfid_arg_similarity</td> <td>0.191</td> <td>551</td> <td>0.191</td> <td>551</td> </tr>
+<tr> <td>Puss in Boots</td> <td>Always-NO-Baseline</td> <td>0.158</td> <td>1328</td> <td>0.158</td> <td>1328</td> </tr>
+<tr> <td>Asuna</td> <td>asuna-run-5</td> <td>0.106</td> <td>578</td> <td>0.106</td> <td>578</td> </tr>
+</tbody>
+</table>
+
+<h2 id="task-committee">Task Committee</h2>
+<div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+{% include people-cards/bondarenko.html gender="male" %}
+{% include people-cards/hagen.html gender="male" %}
+{% include people-cards/froebe.html gender="male" %}
+{% include people-cards/beloucif.html gender="female" %}
+{% include people-cards/biemann.html gender="male" %}
+{% include people-cards/panchenko.html gender="male" %}
+</div>
+<div class="uk-container uk-padding-large uk-padding-remove-bottom">
+{% include organizations/clef-organizations-section.html year=2022 %}
+</div>
+</div>
+</div>
+</main>

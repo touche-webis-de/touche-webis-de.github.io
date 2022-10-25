@@ -21,9 +21,9 @@ description: Touché at CLEF 2023 - Argument Retrieval for Controversial Questio
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
-<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
+<!--<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#tira-quickstart">TIRA Quickstart</a></li>
-<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>-->
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
 </ul>
 </div>
@@ -49,14 +49,21 @@ description: Touché at CLEF 2023 - Argument Retrieval for Controversial Questio
 &lt;title&gt;Is climate change real?&lt;/title&gt;
 &lt;description&gt;You read an opinion piece on how climate change is a hoax and disagree. 
 Now you are looking for arguments supporting the claim that climate change is in fact real.&lt;/description&gt;
-&lt;narrative&gt;Relevant arguments will support the given stance that climate change is real or attack a hoax side's argument [...]&lt;/narrative&gt;
+&lt;narrative&gt;Relevant documents will support the given stance that climate change is real or attack a hoax side's argument [...]&lt;/narrative&gt;
 &lt;/topic&gt;</code></pre>
 <!--<p><strong>The corpus</strong> for Task 1 is a pre-processed version of the <a href="https://zenodo.org/record/3734893">args.me corpus (version 2020-04-01)</a> where each argument is split into sentences; you may index these sentences (and the complete arguments if you wish to) with your favorite retrieval system. To ease participation, you may also directly use the <a href="https://www.args.me/index.html">args.me</a> search engine's <a href="https://www.args.me/api-en.html">API</a> for a baseline retrieval and then extract the candidate pair of sentences. Duplicate sentences are an expected part of this dataset. This is because in some of the debate portals from which the args.me corpus was derived, individual arguments are mapped to the same conclusion (which is essentially the discussion topic/title on the corresponding portal). Moreover, we opted to preserve the duplicates to reflect the common information retrieval scenario where filtering out such documents is part of the pipeline. [<a href="https://zenodo.org/record/6801440/files/args_processed_04_01.tar.gz?download=1">download</a>]</p>
 -->
-<!--
+
+<p><strong>Additional resources:</strong></p>
+<ul>
+<li>Argument relevance and quality judgments: [<a href="https://webis.de/data.html?q=touche">Touché qrels</a>]</li>
+<li>Argument mining tool: [<a href="https://demo.webis.de/targer/">TARGER</a>]</li>
+</ul>
+
+
 <h2 id="evaluation">Evaluation</h2>
-<p>Be sure to retrieve a pair of ''strong'' argumentative sentences. Our human assessors will label the retrieved pairs manually, both for their general topical relevance and for their argument quality, i.e.,: (1) whether each sentence in the retrieved pair is argumentative (claim, supporting premise, or conclusion), (2) whether the sentence pair forms a coherent text (sentences in a pair must not contradict each other), (3) whether the sentence pair forms a short summary of the corresponding arguments from which these sentences come from; each sentence in the pair must ideally be the most representative / most important sentence of its corresponding argument.</p>
-<p>The format of the relevance/quality judgment file:
+<p>Our human assessors will label the ranked results both for their general topical relevance and for the rhetorical argument quality [<a href="https://webis.de/publications.html?q=wachsmuth_2017b">paper</a>], i.e., "well-writtennes": (1) whether the document contains arguments and whether the argument text has a good style of speech, (2) whether the text has a proper sentence structure and is easy to follow, (3) whether it includes profanity, has typos, etc. Optionally, detect the documents' stance: pro, con, neutral, or no stance towards the search topic.</p>
+<!--<p>The format of the relevance/quality judgment file:
 <pre><code>qid 0 pair rel</code></pre>
 With:
 <ul>
