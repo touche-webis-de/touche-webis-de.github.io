@@ -33,18 +33,19 @@ description: Touché at CLEF 2023 - Evidence Retrieval for Causal Questions
 <h2 id="synopsis">Synopsis</h2>
 <ul>
 <li>Task: Given a causality-related topic, the task is to retrieve and rank documents by relevance to the topic and detect the document "causal" stance.</li>
-<li>Input: will be added soon<!--[<a href="https://doi.org/10.5281/zenodo.6801439">data</a>]--></li>
-<li>Submission: will be added soon<!--[<a href="https://www.tira.io/task/touche-task-1/dataset/touche-task-1-2022-02-16">tira</a>]--></li>
-<li>Evaluation: will be added soon<!--[<a href="https://zenodo.org/record/6801440/files/topics.xml?download=1">topics</a>]--></li>
+<li>Input: [<a href="../touche23-data/topics-task2.xml">topics*</a>]<!--[<a href="https://doi.org/10.5281/zenodo.6801439">data</a>]--></li>
+<li>Submission: will be added soon.<!--[<a href="https://www.tira.io/task/touche-task-1/dataset/touche-task-1-2022-02-16">tira</a>]--></li>
+<li>Evaluation: will be added soon.<!--[<a href="https://zenodo.org/record/6801440/files/topics.xml?download=1">topics</a>]--></li>
 <!--<li>Manual judgments (top-5 pooling): [qrels: <a href="https://zenodo.org/record/6802592/files/touche-task2-2022-relevance.qrels?download=1">relevance</a>, <a href="https://zenodo.org/record/6802592/files/touche-task2-2022-quality.qrels?download=1">quality</a>, <a href="https://zenodo.org/record/6802592/files/touche-task2-2022-stance.qrels?download=1">stance</a>]</li>-->
 </ul>
+<p>*Only titles are now available; we will publish extended topics by mid-November.</p>
 
 <h2 id="task">Task</h2>
 <p>The goal of <strong>Task 2</strong> is to support users who want to understand whether a causal relationship between two events / actions exists. Given a causality-related topic
 and a collection of web documents, the task is to retrieve and rank documents by relevance to the topic and detect the document "causal" stance (i.e., whether a causal relationship from the topic’s title holds.</p>
 
 <h2 id="data">Data</h2>
-<p>Example topic for <strong>Task 2:</strong></p>
+<p>Example topic for <strong>Task 2</strong> (<a href="../touche23-data/topics-task2.xml">download topics*</a>):</p>
 <pre><code>&lt;topic&gt;
 &lt;number&gt;1&lt;/number&gt;
 &lt;title&gt;Can eating broccoli lead to constipation?&lt;/title&gt;
@@ -53,6 +54,10 @@ and a collection of web documents, the task is to retrieve and rank documents by
 &lt;description&gt;A young parent has a child experiencing constipation after eating some broccoli for dinner and is wondering [...]&lt;/description&gt;
 &lt;narrative&gt;Relevant documents will discuss if broccoli and other high fiber foods can cause or ease constipation [...]&lt;/narrative&gt;
 &lt;/topic&gt;</code></pre>
+<p>*Only titles are now available; we will publish extended topics by mid-November.</p>
+
+
+<p><strong>The corpus</strong> for Task 2 is ClueWeb22. If your organization already has a copy of the corpus, you can start with it; otherwise, we are currently preparing access to the data, which we expect to make available by mid-November.</p>
 <!--<p><strong>The corpus</strong> for Task 2 is a collection of about 0.9 million text passages. [<a href="https://zenodo.org/record/6802592/files/touche-task2-passages-version-002.jsonl.gz?download=1">download</a>]</p>
 <p><strong>Other data</strong> for this task are the topics, quality judgements, and for training a subset of MS MARCO with comparative questions and a collection of text passages expanded with queries generated using DocT5Query. [<a href="https://doi.org/10.5281/zenodo.6797875">download</a>] [<a href="https://github.com/touche-webis-de/touche-code/blob/main/clef22/argument-retrieval-for-comparative-questions/parse_topics.ipynb">topic parser</a>]</p>-->
 

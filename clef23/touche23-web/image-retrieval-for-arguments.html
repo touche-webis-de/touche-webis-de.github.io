@@ -35,13 +35,28 @@ description: Touché at CLEF 2023 - Image Retrieval for Arguments
 <h2 id="synopsis">Synopsis</h2>
 <ul>
 <li>Task: Given a controversial topic, the task is to retrieve images (from web pages) for each stance (pro/con) that show support for that stance.</li>
-<li>Input: will be added soon <!--[<a href="">data</a>]--></li>
-<li>Submission: will be assed soon <!--[<a href="https://github.com/touche-webis-de/touche-code/blob/main/clef22/image-retrieval-for-arguments/original-rankings-baseline.py">baseline</a>] [verifier: <a href="https://github.com/touche-webis-de/touche-code/blob/main/clef22/image-retrieval-for-arguments/submission-verifier.sh">program</a>, <a href="https://zenodo.org/record/6786949/files/image-ids.txt?download=1">image-ids</a>] [<a href="https://www.tira.io/task/touche-task-3/dataset/touche-task-3-2022-01-21">tira</a>]--></li>
-<li>Evaluation: will be added soon <!--[<a href="https://zenodo.org/record/6786949/files/topics.xml?download=1">topics</a>] [<a href="https://images.args.me">browser</a>]--></li>
+<li>Input: [<a href="../touche23-data/topics-task3.xml">topics*</a>] <!--[<a href="">data</a>]--></li>
+<li>Submission: will be assed soon. <!--[<a href="https://github.com/touche-webis-de/touche-code/blob/main/clef22/image-retrieval-for-arguments/original-rankings-baseline.py">baseline</a>] [verifier: <a href="https://github.com/touche-webis-de/touche-code/blob/main/clef22/image-retrieval-for-arguments/submission-verifier.sh">program</a>, <a href="https://zenodo.org/record/6786949/files/image-ids.txt?download=1">image-ids</a>] [<a href="https://www.tira.io/task/touche-task-3/dataset/touche-task-3-2022-01-21">tira</a>]--></li>
+<li>Evaluation: will be added soon. <!--[<a href="https://zenodo.org/record/6786949/files/topics.xml?download=1">topics</a>] [<a href="https://images.args.me">browser</a>]--></li>
 </ul>
+<p>*Only titles are now available; we will publish extended topics by mid-November.</p>
 
 <h2 id="data">Data</h2>
-<p>This task uses a focused crawl of about 30,000 images (and associated web pages) as document collection.<!-- See the collection's <a href="https://zenodo.org/record/6786949/files/README.txt">README</a> for more information on its contents and file formats. [<a href="https://doi.org/10.5281/zenodo.6786948">download</a>] --></p>
+<p>Example topic for <strong>Task 3</strong> (<a href="../touche23-data/topics-task3.xml">download topics*</a>):</p>
+<pre><code>&lt;topic&gt;
+&lt;number&gt;51&lt;/number&gt;
+&lt;title&gt;Do we need sex education in schools?&lt;/title&gt;
+&lt;description&gt;Research published by the Public Library of Science shows that when sex education is comprehensive, 
+students feel more informed, make safer choices and have healthier outcomes [...]&lt;/description&gt;
+&lt;narrative&gt;Highly relevant arguments make a clear statement about the pros and/or cons of sex education in school [...]&lt;/narrative&gt;
+&lt;/topic&gt;</code></pre>
+<p>*Only titles are now available; we will publish extended topics by mid-November.</p>
+
+<p><strong>The corpus</strong> for Task 3 is a focused crawl of about 30,000 images (and associated web pages) as document collection.<!-- See the collection's <a href="https://zenodo.org/record/6786949/files/README.txt">README</a> for more information on its contents and file formats. [<a href="https://doi.org/10.5281/zenodo.6786948">download</a>] --></p>
+<p><strong>Additional resources:</strong></p>
+<ul>
+<li>Relevance and quality judgments: [<a href="https://webis.de/data.html?q=touche">Touché qrels</a>].</li>
+</ul>
 
 <h2 id="evaluation">Evaluation</h2>
 <p>Systems are evaluated on Touché topics 51–100 by the ratio of images among the 20 retrieved images for each topic (10 images for each stance) that are all three: relevant to the topic, argumentative, and have the associated stance.<!-- The file format is explained in the <a href="https://zenodo.org/record/6786949/files/README.txt">README</a>). [<a href="https://zenodo.org/record/6786949/files/topics.xml?download=1">topics</a>]--></p>
