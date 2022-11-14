@@ -1,0 +1,551 @@
+<topics>
+<topic>
+<number>1</number>
+<title>Can eating broccoli lead to constipation?</title>
+<cause>broccoli</cause>
+<effect>constipation</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>2</number>
+<title>Will slow driving lead to traffic jams?</title>
+<cause>slow driving</cause>
+<effect>traffic jams</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>3</number>
+<title>Could sun exposure cause hair loss?</title>
+<cause>sun exposure</cause>
+<effect>hair loss</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>4</number>
+<title>Is climate change an effect of global warming?</title>
+<cause>global warming</cause>
+<effect>climate change</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>5</number>
+<title>Can consuming GMO's lead to kidney problems?</title>
+<cause>gmos</cause>
+<effect>kidney problems</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>6</number>
+<title>Can erosion cause flooding?</title>
+<cause>erosion</cause>
+<effect>flooding</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>7</number>
+<title>Is consumerism a cause of global warming?</title>
+<cause>consumerism</cause>
+<effect>global warming</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>8</number>
+<title>Is El Nino caused by humans?</title>
+<cause>humans</cause>
+<effect>el nino</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>9</number>
+<title>Could melting snow lead to lahars?</title>
+<cause>melting snow</cause>
+<effect>lahars</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>10</number>
+<title>Does wood smoke contribute to air pollution?</title>
+<cause>wood smoke</cause>
+<effect>air pollution</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>11</number>
+<title>Will illegal immigration lead to higher unemployment?</title>
+<cause>illegal immigration</cause>
+<effect>higher unemployment</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>12</number>
+<title>Do droughts cause desertification?</title>
+<cause>droughts</cause>
+<effect>desertification</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>13</number>
+<title>Could dry skin be a result of low humidity?</title>
+<cause>low humidity</cause>
+<effect>dry skin</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>14</number>
+<title>Can marijuana use cause brain damage?</title>
+<cause>marijuana use</cause>
+<effect>brain damage</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>15</number>
+<title>Does mercury in childhood vaccines cause autism?</title>
+<cause>mercury in childhood vaccines</cause>
+<effect>autism</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>16</number>
+<title>Can drinking wine cause blood in urine?</title>
+<cause>wine</cause>
+<effect>blood in urine</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>17</number>
+<title>Will grain free dog food cause heart problems?</title>
+<cause>grain free dog food</cause>
+<effect>heart problems</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>18</number>
+<title>Does drinking sparkling water cause weight gain?</title>
+<cause>sparkling water</cause>
+<effect>weight gain</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>19</number>
+<title>Does caffeine affect muscle gains?</title>
+<cause>caffeine</cause>
+<effect>muscle gains</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>20</number>
+<title>Can a DUI offense lead to deportation?</title>
+<cause>dui</cause>
+<effect>deportation</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>21</number>
+<title>Is gonorrhea caused by a virus?</title>
+<cause>virus</cause>
+<effect>gonorrhea</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>22</number>
+<title>Does taking birth control cause facial hair to grow?</title>
+<cause>birth control</cause>
+<effect>facial hair</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>23</number>
+<title>Can laying on your left side cause heart problems?</title>
+<cause>laying on your left side</cause>
+<effect>heart problems</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>24</number>
+<title>Can long-term antibiotics cause tooth decay?</title>
+<cause>long-term antibiotics</cause>
+<effect>tooth decay</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>25</number>
+<title>Could drinking celery juice lead to lower blood pressure?</title>
+<cause>celery juice</cause>
+<effect>lower blood pressure</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>26</number>
+<title>Can Christmas trees cause allergies?</title>
+<cause>christmas trees</cause>
+<effect>allergies</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>27</number>
+<title>Could kidney stones be a result of drinking soda pop?</title>
+<cause>soda pop</cause>
+<effect>kidney stones</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>28</number>
+<title>Can chemotherapy lead to Alzheimer's disease?</title>
+<cause>chemotherapy</cause>
+<effect>alzheimer’s disease</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>29</number>
+<title>Will fracking lead to a contamination of drinking water?</title>
+<cause>fracking</cause>
+<effect>water contamination</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>30</number>
+<title>Could pirating media cause legal consequences?</title>
+<cause>pirating media</cause>
+<effect>legal consequences</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>31</number>
+<title>Does income inequality lead to higher economic growth?</title>
+<cause>income inequality</cause>
+<effect>higher economic growth</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>32</number>
+<title>Can coconut oil cause heartburn?</title>
+<cause>coconut oil</cause>
+<effect>heartburn</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>33</number>
+<title>Could eating spicy food cause hemorrhoids?</title>
+<cause>spicy food</cause>
+<effect>hemorrhoids</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>34</number>
+<title>Is child labor an effect of poverty?</title>
+<cause>poverty</cause>
+<effect>child labor</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>35</number>
+<title>Is cattle ranching causing deforestation?</title>
+<cause>cattle ranching</cause>
+<effect>deforestation</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>36</number>
+<title>Do extracurricular activities lead to improved academic performance?</title>
+<cause>extracurricular activities</cause>
+<effect>improved academic performance</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>37</number>
+<title>Can parking violations lead to increased insurance premiums?</title>
+<cause>parking violations</cause>
+<effect>increased insurance premiums</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>38</number>
+<title>Does high blood pressure medication cause low testosterone?</title>
+<cause>high blood pressure medication</cause>
+<effect>low testosterone</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>39</number>
+<title>Do microwave ovens cause cancer?</title>
+<cause>microwave ovens</cause>
+<effect>cancer</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>40</number>
+<title>Can dark chocolate cause acne?</title>
+<cause>dark chocolate</cause>
+<effect>acne</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>41</number>
+<title>Does acid rain create pollution?</title>
+<cause>pollution</cause>
+<effect>acid rain</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>42</number>
+<title>Can earthquakes cause tsunamis?</title>
+<cause>earthquakes</cause>
+<effect>tsunamis</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>43</number>
+<title>Can a lack of sleep be the result of depression?</title>
+<cause>lack of sleep</cause>
+<effect>depression</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>44</number>
+<title>Could an insulin resistance lead to obesity?</title>
+<cause>insulin resistance</cause>
+<effect>obesity</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>45</number>
+<title>Will a recession lead to a financial crisis?</title>
+<cause>recession</cause>
+<effect>financial crisis</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>46</number>
+<title>Is acid rain a result of pollution?</title>
+<cause>acid rain</cause>
+<effect>pollution</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>47</number>
+<title>Can tsunamis cause earthquakes?</title>
+<cause>tsunamis</cause>
+<effect>earthquakes</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>48</number>
+<title>Can depression lead to a lack of sleep?</title>
+<cause>depression</cause>
+<effect>lack of sleep</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>49</number>
+<title>Could obesity be the result of an insulin resistance?</title>
+<cause>obesity</cause>
+<effect>insulin resistance</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+
+<topic>
+<number>50</number>
+<title>Can a financial crisis cause a recession?</title>
+<cause>financial crisis</cause>
+<effect>recession</effect>
+<description>
+</description>
+<narrative>
+</narrative>
+</topic>
+</topics>

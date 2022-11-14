@@ -1,21 +1,21 @@
 ---
 layout: default
 nav_active: shared-tasks
-title: Touché at CLEF 2023 - Evidence Retrieval for Causal Questions
-description: Touché at CLEF 2023 - Evidence Retrieval for Causal Questions
+title: Touché at CLEF 2023 - Intra-Multilingual Multi-Target Stance Classification
+description: Touché at CLEF 2023 - Intra-Multilingual Multi-Target Stance Classification
 ---
 <nav class="uk-container">
 <ul class="uk-breadcrumb">
 <li><a href="../../index.html">Touché</a></li>
 <li><a href="../../shared-tasks.html">Shared Tasks</a></li>
-<li class="uk-disabled"><a href="#">Evidence Retrieval for Causal Questions 2023</a></li>
+<li class="uk-disabled"><a href="#">Intra-Multilingual Multi-Target Stance Classification 2023</a></li>
 </ul>
 </nav>
 
 <main>
 <div class="uk-section uk-section-default">
 <div class="uk-container uk-margin-small">
-<h1 class="uk-margin-remove-top uk-margin-remove-bottom">Evidence Retrieval for Causal Questions 2023</h1>
+<h1 class="uk-margin-remove-top uk-margin-remove-bottom">Intra-Multilingual Multi-Target Stance Classification 2023</h1>
 <ul class="uk-list">
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
@@ -32,37 +32,35 @@ description: Touché at CLEF 2023 - Evidence Retrieval for Causal Questions
 
 <h2 id="synopsis">Synopsis</h2>
 <ul>
-<li>Task: Given a causality-related topic, the task is to retrieve and rank documents by relevance to the topic and detect the document "causal" stance.</li>
-<li>Input: [<a href="../touche23-data/topics-task2.xml">topics*</a>]<!--[<a href="https://doi.org/10.5281/zenodo.6801439">data</a>]--></li>
-<li>Submission: will be added soon.<!--[<a href="https://www.tira.io/task/touche-task-1/dataset/touche-task-1-2022-02-16">tira</a>]--></li>
-<li>Evaluation: will be added soon.<!--[<a href="https://zenodo.org/record/6801440/files/topics.xml?download=1">topics</a>]--></li>
+<li>Task: Given a proposal on a socially important issue, the task is to classify whether a comment is in favor, against, or neutral towards the proposal.</li>
+<li>Input: will be added soon<!--[<a href="https://doi.org/10.5281/zenodo.6801439">data</a>]--></li>
+<li>Submission: will be added soon<!--[<a href="https://www.tira.io/task/touche-task-1/dataset/touche-task-1-2022-02-16">tira</a>]--></li>
+<li>Evaluation: will be added soon<!--[<a href="https://zenodo.org/record/6801440/files/topics.xml?download=1">topics</a>]--></li>
 <!--<li>Manual judgments (top-5 pooling): [qrels: <a href="https://zenodo.org/record/6802592/files/touche-task2-2022-relevance.qrels?download=1">relevance</a>, <a href="https://zenodo.org/record/6802592/files/touche-task2-2022-quality.qrels?download=1">quality</a>, <a href="https://zenodo.org/record/6802592/files/touche-task2-2022-stance.qrels?download=1">stance</a>]</li>-->
 </ul>
-<p>*Only titles are now available; we will publish extended topics by mid-November.</p>
 
 <h2 id="task">Task</h2>
-<p>The goal of <strong>Task 2</strong> is to support users who want to understand whether a causal relationship between two events / actions exists. Given a causality-related topic
-and a collection of web documents, the task is to retrieve and rank documents by relevance to the topic and detect the document "causal" stance (i.e., whether a causal relationship from the topic’s title holds.</p>
+<p>The goal of <strong>Task 4</strong> is to support to support opinion formation on socially important topics. Given a proposal on a socially important issue, its title and topic, the task is to classify whether a comment is <em>in favor</em>, <em>against</em>, or <em>neutral</em> towards the proposal. The proposals and titles that can also be written in any of the 24 EU languages (plus
+Catalan and Esperanto) will come with their automatic English translation.</p>
 
 <h2 id="data">Data</h2>
-<p>Example topic for <strong>Task 2</strong> (<a href="../touche23-data/topics-task2.xml">download topics*</a>):</p>
-<pre><code>&lt;topic&gt;
-&lt;number&gt;1&lt;/number&gt;
-&lt;title&gt;Can eating broccoli lead to constipation?&lt;/title&gt;
-&lt;cause&gt;broccoli&lt;/cause&gt;
-&lt;effect&gt;constipation&lt;/effect&gt;
-&lt;description&gt;A young parent has a child experiencing constipation after eating some broccoli for dinner and is wondering [...]&lt;/description&gt;
-&lt;narrative&gt;Relevant documents will discuss if broccoli and other high fiber foods can cause or ease constipation [...]&lt;/narrative&gt;
-&lt;/topic&gt;</code></pre>
-<p>*Only titles are now available; we will publish extended topics by mid-November.</p>
+<p>Example data instance for <strong>Task 4:</strong></p>
 
-
-<p><strong>The corpus</strong> for Task 2 is ClueWeb22. If your organization already has a copy of the corpus, you can start with it; otherwise, we are currently preparing access to the data, which we expect to make available by mid-November.</p>
+<table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+<thead>
+<tr style="text-align: right;"> <th>Title</th> <th>Proposal</th> <th>Comment</th> <th>Label</th> </tr>
+</thead>
+<tbody>
+<tr> <td>Set up a program for returnable food packaging made from recyclable materials.</td>
+ <td>The European Union could set up a program for returnable food packaging made from recyclable materials (e.g. stainless steel, glass). These packaging would be produced on the basis of open standards and cleaned according to [...]</td> 
+ <td>Ja, wir müssen den Verpackungsmül reduzieren.</td> <td>In favor</td></tr>
+</tbody>
+</table>
 <!--<p><strong>The corpus</strong> for Task 2 is a collection of about 0.9 million text passages. [<a href="https://zenodo.org/record/6802592/files/touche-task2-passages-version-002.jsonl.gz?download=1">download</a>]</p>
 <p><strong>Other data</strong> for this task are the topics, quality judgements, and for training a subset of MS MARCO with comparative questions and a collection of text passages expanded with queries generated using DocT5Query. [<a href="https://doi.org/10.5281/zenodo.6797875">download</a>] [<a href="https://github.com/touche-webis-de/touche-code/blob/main/clef22/argument-retrieval-for-comparative-questions/parse_topics.ipynb">topic parser</a>]</p>-->
 
 <h2 id="evaluation">Evaluation</h2>
-<p>Our human assessors will label the retrieved documents according to two relevance dimensions: (1) whether the document is on topic, i.e., contains information about the causal relationship of the events in a question; the direction of causality will considered, e.g., a document stating that B causes A will be considered as off-topic for the question "Does A cause B?" and (2) if the document is on topic, whether the contained evidence is circumstantial (e.g., a single observation of the co-occurrence of two events) or general (e.g., a statement gained through inductive reasoning). We will use nDCG@5 to evaluate rankings and accuracy to evaluate stance detection.</p>
+<p>Results will be evaluated using a micro-averaged F1.</p>
 <!--
 <p>The format of the relevance/quality judgment file:
 <pre><code>qid 0 doc rel</code></pre>
@@ -163,13 +161,10 @@ As soon as your Software is installed in your VM, you can register it in TIRA. A
 -->
 <h2 id="task-committee">Task Committee</h2>
 <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
-{% include people-cards/schlatt.html %}
-{% include people-cards/bondarenko.html %}
-{% include people-cards/froebe.html %}
-{% include people-cards/reimer.html %}
-{% include people-cards/stein.html %}
-{% include people-cards/potthast.html %}
-{% include people-cards/hagen.html %}
+{% include people-cards/barriere.html %}
+{% include people-cards/hemamou.html %}
+{% include people-cards/luck.html %}
+{% include people-cards/ravenet.html %}
 </div>
 <div class="uk-container uk-padding-large uk-padding-remove-bottom">
 {% include organizations/clef-organizations-section.html year=2023 %}
