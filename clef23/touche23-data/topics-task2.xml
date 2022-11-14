@@ -4,10 +4,8 @@
 <title>Can eating broccoli lead to constipation?</title>
 <cause>broccoli</cause>
 <effect>constipation</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user is experiencing constipation and is searching for potential causes of their condition. They want to find out if having eaten broccoli regularly could be the reason.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between eating broccoli and constipation. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents will provide information about other fibrous foods causing or not causing constipation or documents listing other possible conditions caused by eating broccoli. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -15,10 +13,8 @@
 <title>Will slow driving lead to traffic jams?</title>
 <cause>slow driving</cause>
 <effect>traffic jams</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user was following a discussion about speed limits and was wondering if driving slower than the speed limit on highways could result in traffic jams.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between slow driving and traffic jams. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain information about slow driving in connection to other types of congestion. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -26,10 +22,8 @@
 <title>Could sun exposure cause hair loss?</title>
 <cause>sun exposure</cause>
 <effect>hair loss</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user is wondering how to protect against hair loss and specifically, if an increased exposure to sunlight can cause hair loss.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between exposure to sunlight and hair loss (medically: alopecia). This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents include information about the causal relationship between increased UV radiation and hair loss, or list other causes of hair loss that help indirectly conclude that solar radiation is not the cause. Documents containing information on other effects of increased sun exposure that help indirectly conclude that sun radiation is not the cause are relevant. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -37,21 +31,17 @@
 <title>Is climate change an effect of global warming?</title>
 <cause>global warming</cause>
 <effect>climate change</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A student is writing a report for school and is looking for sources and evidence which claim that global warming is causing or not causing climate change.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between global warming and climate change. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Documents providing information about other effects of global warming or other causes of climate change that help indirectly conclude that climate change is not the effect of global warming are relevant. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
 <number>5</number>
-<title>Can consuming GMO's lead to kidney problems?</title>
+<title>Can consuming GMOs lead to kidney problems?</title>
 <cause>gmos</cause>
 <effect>kidney problems</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A worried consumer is looking into the side effects of consuming GMOs. Specifically, they are wondering if drastic health conditions such as kidney problems can occur because of eating GMOs.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between eating genetically modified organisms and kidney problems. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Documents listing a diverse set of other health conditions potentially caused by GMOs are relevant (omission of kidney problems can be interpreted as counter-evidence). Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -59,10 +49,8 @@
 <title>Can erosion cause flooding?</title>
 <cause>erosion</cause>
 <effect>flooding</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user is interested in finding out if increasing erosion could be a contributing factor to the increased flooding occurring around the world.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between erosion and flooding. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Documents providing an account of a single flooding event being caused by erosion, or listing other effects of erosion or other causes of flooding that help indirectly conclude that there is no causal connection are relevant. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -70,10 +58,8 @@
 <title>Is consumerism a cause of global warming?</title>
 <cause>consumerism</cause>
 <effect>global warming</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user is interested in finding out to what degree the increase of consumption of goods has contributed to global warming. Specifically, they want to find out if the two are correlated and if so, if consumerism also has a causal relation to global warming.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between consumerism and global warming. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Documents listing other effects of consumerism or other causes of global warming that help indirectly conclude that there is no causal connection are relevant. Relevant documents may also provide information about a potential causal connection similar concepts to consumerism (overproduction, capitalism, etc.) or ways of measuring consumerism (GDP, amount of trash/waste, etc.). Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -81,10 +67,8 @@
 <title>Is El Nino caused by humans?</title>
 <cause>humans</cause>
 <effect>el nino</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user has recently found out about the El Nino phenomenon in the Pacific Ocean and was curious to know if the humans have a causal influence on the phenomenon.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between humans and El Nino. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist. Documents describing effects of El Nino on humans or human civilization are not relevant.</narrative>
 </topic>
 
 <topic>
@@ -92,10 +76,8 @@
 <title>Could melting snow lead to lahars?</title>
 <cause>melting snow</cause>
 <effect>lahars</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description></description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between melting snow and lahars. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -103,10 +85,8 @@
 <title>Does wood smoke contribute to air pollution?</title>
 <cause>wood smoke</cause>
 <effect>air pollution</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>Given the increasing pollution in residential areas around the world, a user is asking themselves whether wood-fired ovens, stoves, or heating in residential homes is a notable contributor to air pollution.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between wood smoke and air pollution. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Documents containing information about the causal relationship between objects generating wood smoke (wood-fired ovens or stoves, etc.) and air pollution are relevant. Documents about forest fires and non-residential burning of wood are not relevant.</narrative>
 </topic>
 
 <topic>
@@ -114,10 +94,8 @@
 <title>Will illegal immigration lead to higher unemployment?</title>
 <cause>illegal immigration</cause>
 <effect>higher unemployment</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user has seen political commercials about the effects of illegal immigration. Specifically, they are worried about rising unemployment caused by immigration and are looking for sources and evidence supporting or refuting that claim.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between illegal immigration and higher unemployment. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -125,10 +103,8 @@
 <title>Do droughts cause desertification?</title>
 <cause>droughts</cause>
 <effect>desertification</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user is wondering if droughts are one of the main reasons for the increasing desertification of many regions around the globe.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between droughts and desertification. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -136,10 +112,8 @@
 <title>Could dry skin be a result of low humidity?</title>
 <cause>low humidity</cause>
 <effect>dry skin</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user is experiencing dry skin and is wondering if increasing air humidity could grant some relief.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between low humidity and dry skin. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -147,10 +121,8 @@
 <title>Can marijuana use cause brain damage?</title>
 <cause>marijuana use</cause>
 <effect>brain damage</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A concerned consumer is worried if extensive consumption of marijuana can cause brain damage and is looking for evidence for or against that claim.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between marijuana use and brain damage. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Documents containing an extensive list of other potential conditions caused by marijuana, but omitting brain damage, are relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -158,10 +130,8 @@
 <title>Does mercury in childhood vaccines cause autism?</title>
 <cause>mercury in childhood vaccines</cause>
 <effect>autism</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user has heard the claim that autism is caused by mercury in childhood vaccines and is looking for evidence for or against that claim.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between mercury in childhood vaccines and autism. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -169,21 +139,17 @@
 <title>Can drinking wine cause blood in urine?</title>
 <cause>wine</cause>
 <effect>blood in urine</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user has found blood in their urine and is wondering if their recently increased consumption of wine is causing the condition.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between wine and blood in urine. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Documents containing an extensive list of other potential conditions caused by drinking wine, but omitting bloody urine, are relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
 <number>17</number>
-<title>Will grain free dog food cause heart problems?</title>
-<cause>grain free dog food</cause>
+<title>Will grain-free dog food cause heart problems?</title>
+<cause>grain-free dog food</cause>
 <effect>heart problems</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user was told feeding their dog grain-free food has positive effects. They are wondering if their dog, which already has a heart condition, would be at risk of worsening the condition if fed grain-free food.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between grain-free dog food and heart problems. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Documents containing an extensive list of other potential conditions caused by grain-free dog food, but heart problems, are relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -191,10 +157,8 @@
 <title>Does drinking sparkling water cause weight gain?</title>
 <cause>sparkling water</cause>
 <effect>weight gain</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user has heard the rumour that drinking sparkling water can result in weight gain and is looking for evidence for or against that claim.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between sparkling water and weight gain. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -202,10 +166,8 @@
 <title>Does caffeine affect muscle gains?</title>
 <cause>caffeine</cause>
 <effect>muscle gains</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>An athlete saw a commercial of caffeine supplements to aid in weight training and was wondering if these affect muscle gains.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between caffeine and muscle gains. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -213,10 +175,8 @@
 <title>Can a DUI offense lead to deportation?</title>
 <cause>dui</cause>
 <effect>deportation</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user is wondering about the legal consequences of a DUI (driving under the influence). Specifically, if such an offense can be grounds for a deportation.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between dui and deportation. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. The country of jurisdiction is not specified and relevance is assessed irrespective of the country. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -224,10 +184,8 @@
 <title>Is gonorrhea caused by a virus?</title>
 <cause>virus</cause>
 <effect>gonorrhea</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A medical student is looking for background information on gonorrhea. Specifically, what the causative agent of gonorrhea is.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between virus and gonorrhea. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Documents stating that a different causative agent causes gonorrhea are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -235,10 +193,8 @@
 <title>Does taking birth control cause facial hair to grow?</title>
 <cause>birth control</cause>
 <effect>facial hair</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user is debating about taking the birth control pill. They heard that taking birth control can cause facial hair growth and are looking for information supporting or refuting this claim.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between birth control and facial hair. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Documents containing an extensive list of other potential conditions caused by taking birth control, but facial hair, are relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -246,10 +202,8 @@
 <title>Can laying on your left side cause heart problems?</title>
 <cause>laying on your left side</cause>
 <effect>heart problems</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user has heard that sleeping on their left side may lead to heart problems. They are looking for information about whether this is true or not.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between laying on your left side and heart problems. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -257,10 +211,8 @@
 <title>Can long-term antibiotics cause tooth decay?</title>
 <cause>long-term antibiotics</cause>
 <effect>tooth decay</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A patient is wondering whether them taking long-term antibiotics could have contributed to their teeth decaying.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between long-term antibiotics and tooth decay. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Documents containing an extensive list of other potential conditions caused by long-term antibiotics, but tooth decay, are relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -268,21 +220,17 @@
 <title>Could drinking celery juice lead to lower blood pressure?</title>
 <cause>celery juice</cause>
 <effect>lower blood pressure</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user is looking for household remedies against their high blood pressure. They specifically remember reading about celery juice having a positive effect and wonder if they this is the case.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between celery juice and lower blood pressure. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
 <number>26</number>
-<title>Can Christmas trees cause allergies?</title>
+<title>Can Christmas trees cause an allergic reaction?</title>
 <cause>christmas trees</cause>
-<effect>allergies</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<effect>allergic reaction</effect>
+<description>A worried parent has a child with many allergies. They are wondering if getting a Christmas tree could result in their child exhibiting an allergic reaction.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between Christmas trees and allergic reactions. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -290,32 +238,26 @@
 <title>Could kidney stones be a result of drinking soda pop?</title>
 <cause>soda pop</cause>
 <effect>kidney stones</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user is investigating potential side effects of drinking extensive amounts of soda pop. They remember hearing that drinking soda pop may cause kidney stones and are looking for information whether this is true.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between soda pop and kidney stones. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
 <number>28</number>
 <title>Can chemotherapy lead to Alzheimer's disease?</title>
 <cause>chemotherapy</cause>
-<effect>alzheimer’s disease</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<effect>alzheimer's disease</effect>
+<description>A curious patient is worried about potential long-term effects of chemotherapy. Specifically, if having chemotherapy is a risk factor for Alzheimer's disease.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between chemotherapy and alzheimer's disease. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
 <number>29</number>
 <title>Will fracking lead to a contamination of drinking water?</title>
 <cause>fracking</cause>
-<effect>water contamination</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<effect>drinking water contamination</effect>
+<description>A user is following the debate about the positive and negative side effects of fracking. They are looking for more in depth information about whether fracking may contribute to a higher contamination of drinking water.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between fracking and drinking water contamination. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -323,10 +265,8 @@
 <title>Could pirating media cause legal consequences?</title>
 <cause>pirating media</cause>
 <effect>legal consequences</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user is thinking of pirating media and wondering if pirating media could result in legal repercussions.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between pirating media and legal consequences. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Documents describing various types of legal repercussions resulting from pirating media are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -334,10 +274,8 @@
 <title>Does income inequality lead to higher economic growth?</title>
 <cause>income inequality</cause>
 <effect>higher economic growth</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user was following a debate on income inequality. Proponents argued that income inequality leads to higher economic growth. The user is looking for further information supporting or refuting that claim.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between income inequality and higher economic growth. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Documents about the causal relationship between measurements or manifestations of income inequality and economic growth are relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -345,10 +283,8 @@
 <title>Can coconut oil cause heartburn?</title>
 <cause>coconut oil</cause>
 <effect>heartburn</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user has heard about positive health benefits of consuming coconut oil. However, they frequently suffer from heartburn and wonder if coconut oil can cause or increase the frequency of heartburn.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between coconut oil and heartburn. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Documents containing an extensive list of other potential foods causing heartburn, but omitting coconut oil, are relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -356,10 +292,8 @@
 <title>Could eating spicy food cause hemorrhoids?</title>
 <cause>spicy food</cause>
 <effect>hemorrhoids</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user has heard the rumor that eating spicy food regularly can cause hemorrhoids and is wondering whether this is true.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between spicy food and hemorrhoids. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -367,10 +301,8 @@
 <title>Is child labor an effect of poverty?</title>
 <cause>poverty</cause>
 <effect>child labor</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A student is writing a report on child labor. They are looking for potential causes of child labor and are specifically asking if poverty and child labor are correlated or even if poverty is a cause for child labor.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between poverty and child labor. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant. Documents containing information about child labor causing poverty are not relevant.</narrative>
 </topic>
 
 <topic>
@@ -378,10 +310,8 @@
 <title>Is cattle ranching causing deforestation?</title>
 <cause>cattle ranching</cause>
 <effect>deforestation</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A student is writing a report about the deforestation of the Amazon. They are looking for information about the causal effect of cattle ranching on the amount of deforestation.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between cattle ranching and deforestation. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -389,10 +319,8 @@
 <title>Do extracurricular activities lead to improved academic performance?</title>
 <cause>extracurricular activities</cause>
 <effect>improved academic performance</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A parent is debating whether their child should take up another extracurricular activity. They are looking for evidence that extracurricular activities has a positive effect on academic performance in children.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between extracurricular activities and improved academic performance. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Documents relaying instances of a particular extracurricular activity improving academic performance are relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -400,10 +328,8 @@
 <title>Can parking violations lead to increased insurance premiums?</title>
 <cause>parking violations</cause>
 <effect>increased insurance premiums</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>Accidents can lead to increased car insurance premiums. A user is wondering if this also applies to parking violations.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between parking violations and increased insurance premiums. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -411,10 +337,8 @@
 <title>Does high blood pressure medication cause low testosterone?</title>
 <cause>high blood pressure medication</cause>
 <effect>low testosterone</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A patient is wondering whether their medication against high blood pressure may affect their hormonal balance. Specifically, if it may layer their testosterone levels.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between high blood pressure medication and low testosterone. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Documents containing an extensive list of other hormones are affected medication against high blood pressure, but omitting testosterone, are relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -422,10 +346,8 @@
 <title>Do microwave ovens cause cancer?</title>
 <cause>microwave ovens</cause>
 <effect>cancer</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user has recently learned that radiation waves can cause cancer. They are wondering if their microwave oven produces radiation waves and if these are dangerous enough to cause cancer.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between microwave ovens and cancer. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -433,10 +355,8 @@
 <title>Can dark chocolate cause acne?</title>
 <cause>dark chocolate</cause>
 <effect>acne</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user regularly consumed dark chocolate and noticed their acne worsening. They are wondering if these are causally related.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between dark chocolate and acne. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Documents containing an extensive list of other foods causing acne, but omitting dark chocolate, are relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
@@ -444,10 +364,8 @@
 <title>Does acid rain create pollution?</title>
 <cause>pollution</cause>
 <effect>acid rain</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user is wondering about the causes of acid rain, specifically, if the increasing world-wide air pollution may result in acid rain.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between pollution and acid rain. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant. Documents containing information about the acid rain caused by pollution are not relevant.</narrative>
 </topic>
 
 <topic>
@@ -455,21 +373,17 @@
 <title>Can earthquakes cause tsunamis?</title>
 <cause>earthquakes</cause>
 <effect>tsunamis</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user is interested in documents explaining the relation between earthquakes and tsunamis.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between earthquakes and tsunamis. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
 </topic>
 
 <topic>
 <number>43</number>
-<title>Can a lack of sleep be the result of depression?</title>
+<title>Can a lack of sleep lead to depression?</title>
 <cause>lack of sleep</cause>
 <effect>depression</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user if suffering from lack of sleep and wondering about potential side effects. Specifically, if this may cause their depression to reemerge.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between lack of sleep and depression. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant. Documents containing information about if depression can cause sleeplessness are not relevant.</narrative>
 </topic>
 
 <topic>
@@ -477,10 +391,8 @@
 <title>Could an insulin resistance lead to obesity?</title>
 <cause>insulin resistance</cause>
 <effect>obesity</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user has recently heard about the condition of insulin resistance. They are wondering about potential side effects, specifically if this may lead to obesity as they know insulin is required for the processing of blood sugar.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between insulin resistance and obesity. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant. Documents containing information about if obesity can cause insulin resistance are not relevant.</narrative>
 </topic>
 
 <topic>
@@ -488,10 +400,8 @@
 <title>Will a recession lead to a financial crisis?</title>
 <cause>recession</cause>
 <effect>financial crisis</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A student has read about the Great Depression and was wondering if such an economic downturn could lead to crisis of the financial markets today.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between recession and financial crisis. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant. Documents containing information about financial crises causing recessions are not relevant.</narrative>
 </topic>
 
 <topic>
@@ -499,10 +409,8 @@
 <title>Is acid rain a result of pollution?</title>
 <cause>acid rain</cause>
 <effect>pollution</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user has heard about acid rain and was wondering about the potential side effects. Specifically, what kinds of pollution acid rain can cause.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between acid rain and pollution. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Documents providing information about different kinds of pollution caused by acid are relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant. Documents providing information about acid rain causing pollution are not relevant.</narrative>
 </topic>
 
 <topic>
@@ -510,10 +418,8 @@
 <title>Can tsunamis cause earthquakes?</title>
 <cause>tsunamis</cause>
 <effect>earthquakes</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user has heard that earthquakes can cause tsunamis, but was wondering if a large enough tsunami could also potentially cause an earthquake.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between tsunamis and earthquakes. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant. Documents providing information about earthquakes causing tsunamis are not relevant.</narrative>
 </topic>
 
 <topic>
@@ -521,10 +427,8 @@
 <title>Can depression lead to a lack of sleep?</title>
 <cause>depression</cause>
 <effect>lack of sleep</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user is having trouble sleeping and is wondering if this is a side effect of their depression.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between depression and lack of sleep. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant. Documents providing information about sleeplessness causing depression are not relevant.</narrative>
 </topic>
 
 <topic>
@@ -532,10 +436,8 @@
 <title>Could obesity be the result of an insulin resistance?</title>
 <cause>obesity</cause>
 <effect>insulin resistance</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user has heard of the condition of insulin resistance and is wondering if obesity is a potential risk factor.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between obesity and insulin resistance. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant. Documents providing information about obesity leading to an insulin resistance are not relevant.</narrative>
 </topic>
 
 <topic>
@@ -543,9 +445,7 @@
 <title>Can a financial crisis cause a recession?</title>
 <cause>financial crisis</cause>
 <effect>recession</effect>
-<description>
-</description>
-<narrative>
-</narrative>
+<description>A user is worried about a potential financial crisis and is wondering if this may lead to a world-wide recession.</description>
+<narrative>Highly relevant documents will provide information on a potential causal connection between financial crisis and recession. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant. Documents containing information about recessions possibly leading to financial crises are not relevant.</narrative>
 </topic>
 </topics>
