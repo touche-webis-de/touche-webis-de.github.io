@@ -82,7 +82,7 @@ pre .column {
 <li>Task: Given a textual argument and a human value category, classify whether or not the argument draws on that category. [<a href="https://webis.de/publications.html#kiesel_2022b">paper</a>]</li>
 <li>Communication: [mailing lists: <a href="https://groups.google.com/group/valueeval/subscribe">task</a>, <a href="https://groups.google.com/group/valueeval-organizers/subscribe">organizers</a>] [<a href="https://twitter.com/ValueEval">twitter</a>]</li>
 <li>Input: [<a href="https://doi.org/10.5281/zenodo.6814563">data</a>]</li>
-<li>Code: [<a href="https://github.com/webis-de/acl22-identifying-the-human-values-behind-arguments">baselines</a>] [evaluator (coming soon)]</li>
+<li>Submission: [baselines: <a href="https://github.com/webis-de/acl22-identifying-the-human-values-behind-arguments">paper</a>, <a href="https://github.com/touche-webis-de/touche-code/tree/main/semeval23/human-value-detection/random-baseline">tira</a>] [<a href="https://github.com/touche-webis-de/touche-code/tree/main/semeval23/human-value-detection/evaluator">evaluator</a>] [<a href="https://www.tira.io/task/valueeval-at-semeval-2023-human-value-detection">submit</a>]</li>
 </ul>
 <a class="uk-button uk-button-primary" href="https://forms.gle/ib72JUtsxhb3ZMNw5">Register now</a>
 
@@ -419,7 +419,7 @@ Universalism:&nbsp;concern.</p>
 
 
 <h2 id="data">Data</h2>
-<p>Data is provided as tab-separated values files with one header line. We will continuously improve the data until early November 2022. Stay up-to-date, report problems, and suggest new data on the <a href="https://groups.google.com/group/valueeval/subscribe">task mailing list</a>. [<a href="https://doi.org/10.5281/zenodo.6814563">download</a>]</p>
+<p>Data is provided as tab-separated values files with one header line. We will provide an extended training set, a validation set, and the test set (the latter without labels) end of November 2022. Stay up-to-date and report problems on the <a href="https://groups.google.com/group/valueeval/subscribe">task mailing list</a>. [<a href="https://doi.org/10.5281/zenodo.6814563">download</a>]</p>
 <p>The <code>arguments-training/validation/testing.tsv</code> files contain one argument per line: its unique <span class="column">argument ID</span>, the <span class="column">conclusion</span>, the premise's <span class="column">stance</span> towards the conclusion, and the <span class="column">premise</span> itself. Example with tab-separated columns highlighted:</p>
 <pre>
 <span class="column">Argument ID</span>	<span class="column">Conclusion</span>	<span class="column">Stance</span>	<span class="column">Premise</span>
@@ -434,6 +434,7 @@ Universalism:&nbsp;concern.</p>
 <span class="column">A01011</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">1</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">1</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">1</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">1</span>	<span class="column">1</span>
 <span class="column">A01012</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">1</span>	<span class="column">0</span>	<span class="column">0</span>	<span class="column">0</span>
 </pre>
+<!--
 <h4>Call for Data</h4>
 <p>We are looking for data suggestions or contributions to diversify our training and test datasets. Specifically, we are looking for data that fulfill these criteria:</p>
 <ul>
@@ -448,14 +449,19 @@ Universalism:&nbsp;concern.</p>
 <p>We are specifically looking for statements from non-US and non-Western sources. We are grateful for pointers to resources we could use (e.g., specific websites) or to existing corpora.</p>
 <p>After assessing suitability per the criteria outlined above, we will take care of annotation (and adding the "stance"-attribute if not available yet). We will write a paper on the final dataset and invite each data contributor to join as a co-author.</p>
 <p>Please send suggestions or contributions to <a href="mailto:valueeval-organizers@googlegroups.com">our mailing list</a>.</p>
+-->
 
 
 <h2 id="evaluation">Evaluation</h2>
-<p>Runs are evaluated on the basis of F1-score, Precision, and Recall, once averaged over all value categories, but also for each category individually. The runs are ranked according to the F1-score.</p>
+<p>Runs are evaluated on the basis of F1-score, Precision, and Recall: averaged over all value categories and for each category individually. The runs are ranked according to the averaged F1-score.</p>
 
 
 <h2 id="submission">Submission</h2>
-<p>We expect to open the submission system in November 2022. Teams are allowed to submit up to 4 runs each. Teams are allowed to submit one additional "early bird" run on the final data until December 9. The submission format is the same as the <code>labels-training/validation/testing.tsv</code> with value category columns being optional (skip categories for which the run contains no prediction).</p>
+<p>This task uses <a href="https://www.tira.io/task/valueeval-at-semeval-2023-human-value-detection">TIRA</a> for submissions, which allows for both run file upload and Docker image submission. The latter allows for excellent reproducibility of your run. Registered teams will receive links to register with TIRA up to one work day after registration.</p>
+<p>For each topic and stance, include 10 retrieved images. Each registered team can submit up to 4 different runs. Teams are allowed to submit one additional "early bird" run on the final data until December 16. The submission format is the same as the <code>labels-training/validation/testing.tsv</code> with value category columns being optional (skip categories for which the run contains no prediction).</p>
+<p>To submit a run file, go to <a href="https://www.tira.io/task/valueeval-at-semeval-2023-human-value-detection">this task's TIRA page</a>. Log in. Click "SUBMIT". Make sure "UPLOAD SUBMISSION" is selected. Specify your file and the dataset and "UPLOAD".</p>
+<p>To submit a Docker image, go to <a href="https://www.tira.io/task/valueeval-at-semeval-2023-human-value-detection">this task's TIRA page</a>. Log in. Click "SUBMIT". Make sure "DOCKER SUBMISSION" is selected. Click on "UPLOAD IMAGES" and follow the instructions. Once uploaded, click on "ADD CONTAINER". Specify the command and the Docker image and "ADD CONTAINER". A randomly named tab is created. Click on it, specify the dataset and "RUN CONTAINER".</p>
+<p>In case of problems or questions concerning TIRA, please use the <a href="https://www.tira.io/c/touche/9">TIRA forum</a>. Note: At the moment, the TIRA web interface sometimes fails to provide feedback on actions. Reload the page in such cases.</p>
 
 
 <h2 id="task-committee">Task Committee</h2>
