@@ -21,8 +21,8 @@ description: Touché at CLEF 2023 - Argument Retrieval for Controversial Questio
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
-<!--<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
-<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#tira-quickstart">TIRA Quickstart</a></li>
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
+<!--<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#tira-quickstart">TIRA Quickstart</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>-->
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
 </ul>
@@ -76,30 +76,30 @@ With:
 <li><code>rel</code>: The relevance judgment: -2 non-argument (spam), 0 (not relevant) to 3 (highly relevant). The quality judgment: 0 (low) to 3 (high).</li>
 </ul>
 </p>
-
+-->
 <h2 id="submission">Submission</h2>
-<p>We encourage participants to use <a href="https://www.tira.io/">TIRA</a> for their submissions to allow for a better reproducibility. Please also have a look at our <a href="#tira-quickstart">TIRA quickstart</a>&#8212;in case of problems we will be able to assist you. Even though the preferred way of run submission is TIRA, in case of problems you may also submit runs via email. We will try to quickly review your TIRA or email submissions and provide feedback.</p>
-<p>Runs may be either automatic or manual. An automatic run must not "manipulate" the topic titles via manual intervention. A manual run is anything that is not an automatic run. Upon submission, please let us know which of your runs are manual. For each topic, include a minimum of 100 and up to 1000 retrieved sentence pairs. Each team can submit <strong>up to 5</strong> different runs.</p>
-<p>The submission format for the task will follow the standard TREC format:<br><br>
-<code>qid stance pair rank score tag</code><br><br>
+<p>We ask participants to use <a href="https://www.tira.io/">TIRA</a> for result submissions. <!--Please also have a look at our <a href="#tira-quickstart">TIRA quickstart</a>&#8212;in case of problems we will be able to assist you. Even though the preferred way of run submission is TIRA, in case of problems you may also submit runs via email. --></p>
+
+<p>Runs may be either automatic or manual. An automatic run must not "manipulate" the topic titles via manual intervention. A manual run is anything that is not an automatic run. Upon submission, please let us know which of your runs are manual. For each topic, include up to 1,000 retrieved documents. Each team can submit <strong>up to 5</strong> different runs.</p>
+<p>The submission format for the task will follow the standard TREC format:
+<pre><code>qid stance doc rank score tag</code></pre>
 With:
 <ul>
 <li><code>qid</code>: The topic number.</li>
-<li><code>stance</code>: The stance of the sentence pair ("PRO" or "CON").</li>
-<li><code>pair</code>: The pair of sentence IDs (from the provided version of the args.me corpus) returned by your system for the topic <code>qid</code>.</li>
+<li><code>stance</code>: The stance of the document (PRO: supports the topic, CON: against the topic, NEU: neutral stance, NO: no stance).</li>
+<li><code>doc</code>: The document ID <code>qid</code>.</li>
 <li><code>rank</code>: The rank the document is retrieved at.</li>
-<li><code>score</code>: The score (integer or floating point) that generated the ranking. The score must be in descending (non-increasing) order: it is important to handle tied scores.</li>
+<li><code>score</code>: The score (integer or floating point) that generated the ranking. The score must be in descending (non-increasing) order. It is important to handle tied scores.</li>
 <li><code>tag</code>: A tag that identifies your group and the method you used to produce the run.</li>
 </ul>
-The fields should be separated by a whitespace. The individual columns' widths are not restricted (i.e., score can be an arbitrary precision that has no ties) but it is important to include all columns and to separate them with a whitespace.<br><br>
-An example run for Task 1 is:
-<pre><code>1 PRO S71152e5e-A66163a57__CONC__1,S71152e5e-A66163a57__PREMISE__2 1 17.89 myGroupMyMethod
-1 PRO S6c286161-Aafd7e261__CONC__1,S6c286161-Aafd7e261__PREMISE__1 2 16.43 myGroupMyMethod
-1 CON S72f5af83-Afb975dba__PREMISE__1,S72f5af83-Afb975dba__CONC__1 3 16.42 myGroupMyMethod
-...</code></pre>
-If you do not have stance information, use <code>Q0</code> as the value in the stance column.</p>
-<p>Some examples do not contain the conclusion as part of the <code>sentences</code> column although it is present in the <code>conclusion</code> column. This is because we excluded very short conclusions (less than two words) from being a valid argument sentence. We observed that in many cases they did not convey any stance (e.g. <em>home schooling</em>). Since we cannot inspect every short conclusion manually, we applied the length heuristic to filter them. However, if you still want to retrieve such conclusions as part of the final output, please provide <code>[doc_id]__CONC__1</code> as the corresponding sentence ID (e.g., <code>S72f5af83-Afb975dba__CONC__1</code>).</p>
+If you do not classify the stance, use <code>Q0</code> as the value in the stance column. The fields should be separated by a whitespace. The individual columns' widths are not restricted (i.e., score can be an arbitrary precision that has no ties) but it is important to include all columns and to separate them with a whitespace.<br><br>
+An example run for Task 2 is:
+<pre><code>1 PRO clueweb22-en0010-85-29836___1 1 17.89 myGroupMyMethod
+1 CON clueweb22-en0010-86-00457___3 2 16.43 myGroupMyMethod
+1 NEU clueweb22-en0010-86-09202___5 3 16.32 myGroupMyMethod
+...</code></pre></p>
 
+<!--
 <h2 id="tira-quickstart">TIRA Quickstart</h2>
 <p>Participant software is run in a virtual machine. Log in to <a href="https://www.tira.io">TIRA</a>, go to the <a href="https://www.tira.io/task/touche-task-1/dataset/touche-task-1-2022-02-16">task's dataset page</a>, and click on "&gt;_ SUBMIT". Click the "CONNECTION INFO" button for how to connect to the virtual machine. Click on "POWER ON" if the state is not "RUNNING".</p>
 <img width="75%" src="../touche22-figures/task1-tira-vm-overview.png" alt="Virtual machine state in TIRA.">
