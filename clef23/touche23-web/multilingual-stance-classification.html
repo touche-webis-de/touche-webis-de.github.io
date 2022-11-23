@@ -42,20 +42,37 @@ description: Touché at CLEF 2023 - Intra-Multilingual Multi-Target Stance Class
 <h2 id="task">Task</h2>
 <p>The goal of <strong>Task 4</strong> is to support to support opinion formation on socially important topics. Given a proposal on a socially important issue, its title and topic, the task is to classify whether a comment is <em>in favor</em>, <em>against</em>, or <em>neutral</em> towards the proposal.</p>
 
-<p><strong>Subtask 1: Cross-Debate Classification:</strong></p> 
+<p><strong>Subtask 1: Cross-Debate Classification.</strong> In the first subtask, the participants cannot use in their training set examples from debates that are in the test set.</p> 
 
-<p>In the first subtask, the participants cannot use in their training set examples from debates that are in the test set.</p> 
 
-<p><strong>Subtask 2: Only-labeled-data Training:</strong></p>
+<p><strong>Subtask 2: Only-labeled-data Training.</strong> In the second subtask, the participants can use all the available data, labeled or unlabeled.</p>
 
-<p>In the second subtask, the participants can use all the available data, labeled or unlabeled.</p> 
 
 <a class="uk-button uk-button-primary" href="https://clef2023-labs-registration.dei.unipd.it/">Register now</a>
 
 <h2 id="data">Data</h2>
 
+<p>The data used in this Shared Task comes from the CoFE dataset, presented at AACL-IJCNLP 2022 [<a href="https://drive.google.com/file/d/1ARE-Po6rWEvOkTuaCVOZpSj0Eb9qpTk8/view?usp=sharing">oral presentation</a>] [<a href="https://drive.google.com/file/d/1D3ao_A3bKx-Xd1JK0c8t8Uv_x6NSGU8N/view?usp=sharing">slides</a>].</p>
+
+<p><strong>CFS</strong> dataset is composed of 7K comments from CoFE that are annotated with stance by the writer. The annotation is binary: <em>in favor</em> or <em>against</em> [<a href="https://drive.google.com/file/d/1GnUjB_n6Un9EzeM4G9DYzSIox8xUwcUD/view?usp=sharing">download</a>].</p>
+
+<p><strong>CFU</strong> dataset is composed of 12K unlabeled comments from CoFE [<a href="https://drive.google.com/file/d/1GnfmmF1T41n4sEGYIETshNytqL-Ay3TS/view?usp=sharing">download</a>].</p>
+
+<p><strong>CFE-Dev</strong> dataset is composed of multiligual comments that have been annotated by external coders (not the writer of the comment) with 3 stance labels. This dataset will be available in December.</p> 
+
+<p><strong>CFE-Test</strong> dataset is composed of 1.2K comments in English, French, German, Italian, Greek, and Hungarian that have been annotated by external coders (not the writer of the comment) with 3 stance labels. This dataset will be used for testing.</p>
+
+<p>All the <strong>proposals</strong> are in a separate file containing all the 4.2K proposals. [<a href="https://drive.google.com/file/d/1GgUCeF6zDJBWlNsf0v9nXXhRwO-OaiId/view?usp=sharing">download</a>].</p>
+
+Additional metadata:
+
+<ul>
+<li>For the proposals: the title of the proposal, the topic, the ID of the writter, the language of the text and the number of endorsments.</li>
+<li>For the comments: the ID of the writter, the language of the text and the number of up/downvote.</li>
 
 <p>Example data instance for <strong>Task 4:</strong></p>
+
+
 
 <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
 <thead>
