@@ -21,8 +21,8 @@ description: Touché at CLEF 2023 - Intra-Multilingual Multi-Target Stance Class
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
-<!--<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
-<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#tira-quickstart">TIRA Quickstart</a></li>
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
+<!--<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#tira-quickstart">TIRA Quickstart</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li> -->
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
 </ul>
@@ -33,19 +33,28 @@ description: Touché at CLEF 2023 - Intra-Multilingual Multi-Target Stance Class
 <h2 id="synopsis">Synopsis</h2>
 <ul>
 <li>Task: Given a proposal on a socially important issue, the task is to classify whether a comment is in favor, against, or neutral towards the proposal.</li>
-<li>Input: will be added soon<!--[<a href="https://doi.org/10.5281/zenodo.6801439">data</a>]--></li>
-<li>Submission: will be added soon<!--[<a href="https://www.tira.io/task/touche-task-1/dataset/touche-task-1-2022-02-16">tira</a>]--></li>
-<li>Evaluation: will be added soon<!--[<a href="https://zenodo.org/record/6801440/files/topics.xml?download=1">topics</a>]--></li>
+<li>Input: <a href="#data">data</a><!--[<a href="https://doi.org/10.5281/zenodo.6801439">data</a>]--></li>
+<li>Submission: TBA<!--[<a href="https://www.tira.io/task/touche-task-1/dataset/touche-task-1-2022-02-16">tira</a>]--></li>
+<li>Evaluation: TBA<!--[<a href="https://zenodo.org/record/6801440/files/topics.xml?download=1">topics</a>]--></li>
 <!--<li>Manual judgments (top-5 pooling): [qrels: <a href="https://zenodo.org/record/6802592/files/touche-task2-2022-relevance.qrels?download=1">relevance</a>, <a href="https://zenodo.org/record/6802592/files/touche-task2-2022-quality.qrels?download=1">quality</a>, <a href="https://zenodo.org/record/6802592/files/touche-task2-2022-stance.qrels?download=1">stance</a>]</li>-->
 </ul>
 
 <h2 id="task">Task</h2>
-<p>The goal of <strong>Task 4</strong> is to support to support opinion formation on socially important topics. Given a proposal on a socially important issue, its title and topic, the task is to classify whether a comment is <em>in favor</em>, <em>against</em>, or <em>neutral</em> towards the proposal. The proposals and titles that can also be written in any of the 24 EU languages (plus
-Catalan and Esperanto) will come with their automatic English translation.</p>
+<p>The goal of <strong>Task 4</strong> is to support to support opinion formation on socially important topics. Given a proposal on a socially important issue, its title and topic, the task is to classify whether a comment is <em>in favor</em>, <em>against</em>, or <em>neutral</em> towards the proposal.</p>
+
+<p><strong>Subtask 1: Cross-Debate Classification:</strong></p> 
+
+<p>In the first subtask, the participants cannot use in their training set examples from debates that are in the test set.</p> 
+
+<p><strong>Subtask 2: Only-labeled-data Training:</strong></p>
+
+<p>In the second subtask, the participants can use all the available data, labeled or unlabeled.</p> 
 
 <a class="uk-button uk-button-primary" href="https://clef2023-labs-registration.dei.unipd.it/">Register now</a>
 
 <h2 id="data">Data</h2>
+
+
 <p>Example data instance for <strong>Task 4:</strong></p>
 
 <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
