@@ -67,25 +67,31 @@ Additional metadata:
 <li>For the proposals: the title of the proposal, the topic, the ID of the writter, the language of the text and the number of endorsments.</li>
 <li>For the comments: the ID of the writter, the language of the text and the number of up/downvote.</li>
 
-<p>Example data instance for <strong>Task 4:</strong></p>
-
-<h6>Proposals:</h6>
+<p>Example <strong>proposal</strong> instance for <strong>Task 4:</strong></p>
 
 <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
 <thead>
-<tr style="text-align: right;"> <th>Title</th> <th>Proposal</th> <th>Comment</th> <th>Label</th> </tr>
+<tr style="text-align: right;"> <th>id</th> <th>user_name</th> <th>title</th> <th>proposal</th> <th>proposal_en</th> <th>title_en</th> <th>topic</th> <th>lan</th> <th>endorsements</th> </tr>
 </thead>
 <tbody>
-<tr> <td>Set up a program for returnable food packaging made from recyclable materials.</td>
- <td>The European Union could set up a program for returnable food packaging made from recyclable materials (e.g. stainless steel, glass). These packaging would be produced on the basis of open standards and cleaned according to [...]</td> 
- <td>Ja, wir müssen den Verpackungsmül reduzieren.</td> <td>In favor</td></tr>
+<tr>
+<td>43992</td>
+<td>user_4897</td> 
+<td>Massentierhalter EU-Agrarsubventionen</td>
+<td>Die EU hat "schöne" Ideen und arbeitet an Gesetzte für den Tierschutz und die Umwelt. Doch solange immer noch Massentierbetriebe von der EU durch Subventionen unterstützt werden, ist dies alles nicht glaubwürdig!</td>
+<td>The EU has "beautiful" ideas and is working on legislation for animal welfare and the environment. But as long as EU subsidies still support mass animal farms, all of this is not credible!</td>
+<td>Mass livestock farmers EU agricultural subsidies</td>
+<td>GreenDeal</td>
+<td>de</td>
+<td>1</td>
+</tr>
 </tbody>
 </table>
 <!--<p><strong>The corpus</strong> for Task 2 is a collection of about 0.9 million text passages. [<a href="https://zenodo.org/record/6802592/files/touche-task2-passages-version-002.jsonl.gz?download=1">download</a>]</p>
 <p><strong>Other data</strong> for this task are the topics, quality judgements, and for training a subset of MS MARCO with comparative questions and a collection of text passages expanded with queries generated using DocT5Query. [<a href="https://doi.org/10.5281/zenodo.6797875">download</a>] [<a href="https://github.com/touche-webis-de/touche-code/blob/main/clef22/argument-retrieval-for-comparative-questions/parse_topics.ipynb">topic parser</a>]</p>-->
 
 <h2 id="evaluation">Evaluation</h2>
-<p>Results will be evaluated using a micro-averaged F1.</p>
+<p>Results will be evaluated using a micro-averaged F1 over the 3 stance classes.</p>
 <!--
 <p>The format of the relevance/quality judgment file:
 <pre><code>qid 0 doc rel</code></pre>
