@@ -2,7 +2,7 @@
 <topic>
 <number>1</number>
 <title>Can eating broccoli lead to constipation?</title>
-<cause>broccoli</cause>
+<cause>eating broccoli</cause>
 <effect>constipation</effect>
 <description>A user is experiencing constipation and is searching for potential causes of their condition. They want to find out if having eaten broccoli regularly could be the reason.</description>
 <narrative>Highly relevant documents will provide information on a potential causal connection between eating broccoli and constipation. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents will provide information about other fibrous foods causing or not causing constipation or documents listing other possible conditions caused by eating broccoli. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
@@ -38,7 +38,7 @@
 <topic>
 <number>5</number>
 <title>Can consuming GMOs lead to kidney problems?</title>
-<cause>gmos</cause>
+<cause>consuming gmos</cause>
 <effect>kidney problems</effect>
 <description>A worried consumer is looking into the side effects of consuming GMOs. Specifically, they are wondering if drastic health conditions such as kidney problems can occur because of eating GMOs.</description>
 <narrative>Highly relevant documents will provide information on a potential causal connection between eating genetically modified organisms and kidney problems. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Documents listing a diverse set of other health conditions potentially caused by GMOs are relevant (omission of kidney problems can be interpreted as counter-evidence). Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
@@ -173,7 +173,7 @@
 <topic>
 <number>20</number>
 <title>Can a DUI offense lead to deportation?</title>
-<cause>dui</cause>
+<cause>dui offense</cause>
 <effect>deportation</effect>
 <description>A user is wondering about the legal consequences of a DUI (driving under the influence). Specifically, if such an offense can be grounds for a deportation.</description>
 <narrative>Highly relevant documents will provide information on a potential causal connection between dui and deportation. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. The country of jurisdiction is not specified and relevance is assessed irrespective of the country. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
@@ -218,7 +218,7 @@
 <topic>
 <number>25</number>
 <title>Could drinking celery juice lead to lower blood pressure?</title>
-<cause>celery juice</cause>
+<cause>drinking celery juice</cause>
 <effect>lower blood pressure</effect>
 <description>A user is looking for household remedies against their high blood pressure. They specifically remember reading about celery juice having a positive effect and wonder if they this is the case.</description>
 <narrative>Highly relevant documents will provide information on a potential causal connection between celery juice and lower blood pressure. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
@@ -236,7 +236,7 @@
 <topic>
 <number>27</number>
 <title>Could kidney stones be a result of drinking soda pop?</title>
-<cause>soda pop</cause>
+<cause>drinking soda pop</cause>
 <effect>kidney stones</effect>
 <description>A user is investigating potential side effects of drinking extensive amounts of soda pop. They remember hearing that drinking soda pop may cause kidney stones and are looking for information whether this is true.</description>
 <narrative>Highly relevant documents will provide information on a potential causal connection between soda pop and kidney stones. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
@@ -280,8 +280,8 @@
 
 <topic>
 <number>32</number>
-<title>Can coconut oil cause heartburn?</title>
-<cause>coconut oil</cause>
+<title>Can consuming coconut oil cause heartburn?</title>
+<cause>consuming coconut oil</cause>
 <effect>heartburn</effect>
 <description>A user has heard about positive health benefits of consuming coconut oil. However, they frequently suffer from heartburn and wonder if coconut oil can cause or increase the frequency of heartburn.</description>
 <narrative>Highly relevant documents will provide information on a potential causal connection between coconut oil and heartburn. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Documents containing an extensive list of other potential foods causing heartburn, but omitting coconut oil, are relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
@@ -290,7 +290,7 @@
 <topic>
 <number>33</number>
 <title>Could eating spicy food cause hemorrhoids?</title>
-<cause>spicy food</cause>
+<cause>eating spicy food</cause>
 <effect>hemorrhoids</effect>
 <description>A user has heard the rumor that eating spicy food regularly can cause hemorrhoids and is wondering whether this is true.</description>
 <narrative>Highly relevant documents will provide information on a potential causal connection between spicy food and hemorrhoids. This includes documents stating or giving evidence that the first is (or is not) a cause of the other. Documents stating that there is not enough evidence to decide either way are also highly relevant. Relevant documents may contain implicit information on whether the causal relationship exists or does not exist, e.g., by listing all other causes or effects. Documents are not relevant if they either mention one or both concepts, but do not provide any information about their causal relation. Documents not mentioning either concept are also not relevant.</narrative>
