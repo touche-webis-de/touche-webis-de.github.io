@@ -40,8 +40,7 @@ description: Touché at CLEF 2023 - Evidence Retrieval for Causal Questions
 </ul>
 
 <h2 id="task">Task</h2>
-<p>The goal of <strong>Task 2</strong> is to support users who want to understand whether a causal relationship between two events / actions exists. Given a causality-related topic
-and a collection of web documents, the task is to retrieve and rank documents by relevance to the topic and detect the document "causal" stance (i.e., whether a causal relationship from the topic’s title holds).</p>
+<p>The goal of <strong>Task 2</strong> is to support users who want to understand whether a causal relationship between two events / actions exists. Given a causality-related topic and a collection of web documents, the task is to retrieve and rank documents by relevance to the topic and detect the document "causal" stance (i.e., whether the document supports, refutes, or provides no information about the title's causal statement.).</p>
 
 <a class="uk-button uk-button-primary" href="https://clef2023-labs-registration.dei.unipd.it/">Register now</a>
 
@@ -78,13 +77,13 @@ You can use the corresponding <a href="https://github.com/touche-webis-de/touche
 <h2 id="submission">Submission</h2>
 <p>We ask participants to use <a href="https://www.tira.io/">TIRA</a> for result submissions. <!--Please also have a look at our <a href="#tira-quickstart">TIRA quickstart</a>&#8212;in case of problems we will be able to assist you. Even though the preferred way of run submission is TIRA, in case of problems you may also submit runs via email. --></p>
 
-<p>Runs may be either automatic or manual. An automatic run must not "manipulate" the topic titles via manual intervention. A manual run is anything that is not an automatic run. Upon submission, please let us know which of your runs are manual. For each topic, include up to 1,000 retrieved documents. Each team can submit <strong>up to 5</strong> different runs.</p>
+<p>Runs may be either automatic, semi-automatic, or manual. An automatic run must use only the topic title and not "manipulate" these via manual intervention. Semi-automatic runs may additionally use the &lt;cause&gt; and &lt;effect&gt; fields. A manual run is anything that is not an automatic or semi-automatic run. Upon submission, please let us know what the type of your runs is. For each topic, include up to 1,000 retrieved documents. Each team can submit <strong>up to 5</strong> different runs.</p>
 <p>The submission format for the task will follow the standard TREC format:
 <pre><code>qid stance doc rank score tag</code></pre>
 With:
 <ul>
 <li><code>qid</code>: The topic number.</li>
-<li><code>stance</code>: The causal stance of the document (PRO: causal relation holds, CON: causal relation does not hold, NEU: neutral stance, i.e., sometimes holds and sometimes doesn't, NO: no stance).</li>
+<li><code>stance</code>: The causal stance of the document (SUP: document provides evidence for causal relation, REF: causal relation provides evidence against causal relation, NEU: neutral stance, i.e., document provides inconclusive evidence or both supporting and refuting evidence, NO: document provides no evidence).</li>
 <li><code>doc</code>: The document ID <code>qid</code>.</li>
 <li><code>rank</code>: The rank the document is retrieved at.</li>
 <li><code>score</code>: The score (integer or floating point) that generated the ranking. The score must be in descending (non-increasing) order. It is important to handle tied scores.</li>
