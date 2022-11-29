@@ -36,8 +36,8 @@ description: Touché at CLEF 2023 - Argument Retrieval for Controversial Questio
 <li>Input: [<a href="../touche23-data/topics-task1.xml">topics</a>] <!--[<a href="https://doi.org/10.5281/zenodo.6801439">data</a>]--></li>
 <li>Submission: will be added by mid-December.<!--[<a href="https://www.tira.io/task/touche-task-1/dataset/touche-task-1-2022-02-16">tira</a>]--></li>
 <li>Evaluation: will be added by mid-December.<!--[<a href="https://zenodo.org/record/6801440/files/topics.xml?download=1">topics</a>]--></li>
-<!--<li>Manual judgments (top-5 pooling): [qrels: <a href="https://zenodo.org/record/6801440/files/touche-task1-2022-relevance-dedup.qrels?download=1">relevance</a>, <a href="https://zenodo.org/record/6801440/files/touche-task1-2022-quality-dedup.qrels?download=1">quality</a>, <a href="https://zenodo.org/record/6801440/files/touche-task1-2022-coherence-dedup.qrels?download=1">coherence</a>]</li>
-</ul>-->
+<!--<li>Manual judgments (top-5 pooling): [qrels: <a href="https://zenodo.org/record/6801440/files/touche-task1-2022-relevance-dedup.qrels?download=1">relevance</a>, <a href="https://zenodo.org/record/6801440/files/touche-task1-2022-quality-dedup.qrels?download=1">quality</a>, <a href="https://zenodo.org/record/6801440/files/touche-task1-2022-coherence-dedup.qrels?download=1">coherence</a>]</li>-->
+</ul>
 
 <h2 id="task">Task</h2>
 <p>The goal of <strong>Task 1</strong> is to to provide an overview of arguments and opinions on controversial topics. Given a controversial topic and a collection of web documents, the task is to retrieve and rank documents by relevance to the topic, by argument quality, and to detect the document stance. Participants of Task 2 will retrieve and rank documents that contain relevant causal evidence contained in the ClueWeb22 crawl for a given set of 50 search topics.</p>
@@ -81,9 +81,9 @@ With:
 <p>We ask participants to use <a href="https://www.tira.io/">TIRA</a> for result submissions. <!--Please also have a look at our <a href="#tira-quickstart">TIRA quickstart</a>&#8212;in case of problems we will be able to assist you. Even though the preferred way of run submission is TIRA, in case of problems you may also submit runs via email. --></p>
 
 <p>Runs may be either automatic or manual. An automatic run must not "manipulate" the topic titles via manual intervention. A manual run is anything that is not an automatic run. Upon submission, please let us know which of your runs are manual. For each topic, include up to 1,000 retrieved documents. Each team can submit <strong>up to 5</strong> different runs.</p>
-<p>The submission format for the task will follow the standard TREC format:
+<p>The submission format for the task will follow the standard TREC format:</p>
 <pre><code>qid stance doc rank score tag</code></pre>
-With:
+<p>With:</p>
 <ul>
 <li><code>qid</code>: The topic number.</li>
 <li><code>stance</code>: The stance of the document (PRO: supports the topic, CON: against the topic, NEU: neutral stance, NO: no stance).</li>
@@ -92,12 +92,12 @@ With:
 <li><code>score</code>: The score (integer or floating point) that generated the ranking. The score must be in descending (non-increasing) order. It is important to handle tied scores.</li>
 <li><code>tag</code>: A tag that identifies your group and the method you used to produce the run.</li>
 </ul>
-If you do not classify the stance, use <code>Q0</code> as the value in the stance column. The fields should be separated by a whitespace. The individual columns' widths are not restricted (i.e., score can be an arbitrary precision that has no ties) but it is important to include all columns and to separate them with a whitespace.<br><br>
-An example run for Task 2 is:
+<p>If you do not classify the stance, use <code>Q0</code> as the value in the stance column. The fields should be separated by a whitespace. The individual columns' widths are not restricted (i.e., score can be an arbitrary precision that has no ties) but it is important to include all columns and to separate them with a whitespace.<br><br>
+An example run for Task 2 is:</p>
 <pre><code>1 PRO clueweb22-en0010-85-29836___1 1 17.89 myGroupMyMethod
 1 CON clueweb22-en0010-86-00457___3 2 16.43 myGroupMyMethod
 1 NEU clueweb22-en0010-86-09202___5 3 16.32 myGroupMyMethod
-...</code></pre></p>
+...</code></pre>
 
 <!--
 <h2 id="tira-quickstart">TIRA Quickstart</h2>
