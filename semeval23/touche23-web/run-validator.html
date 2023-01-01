@@ -254,11 +254,6 @@ dropZone.addEventListener("drop", event => {
   event.preventDefault();
   dropZone.classList.remove("active");
   for (const file of event.dataTransfer.files) {
-    if (file.type !== "text/plain" && file.type !== "text/tab-separated-values" ) {
-      UIkit.notification("Only text/plain files are allowed, but type of '" + file.name + "' is " + file.type, {status:'danger'});
-      return;
-    }
-
     const reader = new FileReader();
     reader.onload = fileEvent => {
       const runText = reader.result;
