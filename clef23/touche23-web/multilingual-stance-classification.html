@@ -51,33 +51,32 @@ description: Touché at CLEF 2023 - Intra-Multilingual Multi-Target Stance Class
 
 <p>The data used in this Shared Task comes from the CoFE dataset, presented at AACL-IJCNLP 2022 [<a href="https://drive.google.com/file/d/1ARE-Po6rWEvOkTuaCVOZpSj0Eb9qpTk8/view?usp=sharing">oral presentation</a>] [<a href="https://drive.google.com/file/d/1D3ao_A3bKx-Xd1JK0c8t8Uv_x6NSGU8N/view?usp=sharing">slides</a>].</p>
 
-<p><strong>CFS</strong> dataset is composed of 7K comments from CoFE that are annotated with stance by the writer. The annotation is binary: <em>in favor</em> or <em>against</em> [<a href="https://drive.google.com/file/d/1GnUjB_n6Un9EzeM4G9DYzSIox8xUwcUD/view?usp=sharing">download</a>].</p>
+<p><strong>CFS</strong> dataset is composed of 7K comments from CoFE that are annotated with stance by the writer. The annotation is binary: <em>in favor</em> or <em>against</em> [<a href="https://drive.google.com/file/d/1R-zQOVAR7n_YTAB9F3LXI5J6DDAkMu1D/view?usp=sharing">download</a>].</p>
 
-<p><strong>CFU</strong> dataset is composed of 12K unlabeled comments from CoFE [<a href="https://drive.google.com/file/d/1GnfmmF1T41n4sEGYIETshNytqL-Ay3TS/view?usp=sharing">download</a>].</p>
+<p><strong>CFU</strong> dataset is composed of 12K unlabeled comments from CoFE [<a href="https://drive.google.com/file/d/1QyG658oHi5eDd210Hu0QX7n16ouSclB_/view?usp=sharing">download</a>].</p>
 
-<p><strong>CFE-Dev</strong> dataset is composed of multiligual comments that have been annotated by external coders (not the writer of the comment) with 3 stance labels. This dataset will be available in December.</p> 
+<p><strong>CFE-Dev</strong> dataset is composed of multiligual comments that have been annotated by external coders (not the writer of the comment) with 3 stance labels. This dataset will be available in mid January.</p> 
 
 <p><strong>CFE-Test</strong> dataset is composed of 1.2K comments in English, French, German, Italian, Greek, and Hungarian that have been annotated by external coders (not the writer of the comment) with 3 stance labels. This dataset will be used for testing.</p>
 
-<p>All the <strong>proposals</strong> are in a separate file containing all the 4.2K proposals [<a href="https://drive.google.com/file/d/1GgUCeF6zDJBWlNsf0v9nXXhRwO-OaiId/view?usp=sharing">download</a>].</p>
+<p>All the <strong>proposals</strong> are in a separate file containing all the 4.2K proposals [<a href="https://drive.google.com/file/d/1R-eAEghjAns6CjC7P48DH1wOWYKHcvEx/view?usp=sharing">download</a>].</p>
 
 Additional metadata:
 
 <ul>
-<li>For the proposals: the title of the proposal, the topic, the ID of the writter, the language of the text and the number of endorsments.</li>
-<li>For the comments: the ID of the writter, the language of the text and the number of up/downvote.</li>
+<li>For the proposals: the title of the proposal, the topic, the language of the text and the number of endorsments.</li>
+<li>For the comments: the language of the text and the number of up/downvote.</li>
 </ul>
 
 <p>Example <strong>proposal</strong> instance for <strong>Task 4:</strong></p>
 
 <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
 <thead>
-<tr style="text-align: right;"> <th>id</th> <th>user_name</th> <th>title</th> <th>proposal</th> <th>proposal_en</th> <th>title_en</th> <th>topic</th> <th>lan</th> <th>endors.</th> </tr>
+<tr style="text-align: right;"> <th>id</th> <th>title</th> <th>proposal</th> <th>proposal_en</th> <th>title_en</th> <th>topic</th> <th>lan</th> <th>endors.</th> </tr>
 </thead>
 <tbody>
 <tr>
 <td>43992</td>
-<td>user_4897</td> 
 <td>Massentierhalter EU-Agrarsubventionen</td>
 <td>Die EU hat "schöne" Ideen und arbeitet an Gesetzte für den Tierschutz und die Umwelt. Doch solange immer noch Massentierbetriebe von der EU durch Subventionen unterstützt werden, ist dies alles nicht glaubwürdig!</td>
 <td>The EU has "beautiful" ideas and is working on legislation for animal welfare and the environment. But as long as EU subsidies still support mass animal farms, all of this is not credible!</td>
@@ -88,7 +87,6 @@ Additional metadata:
 </tr>
 <tr>
 <td>11138</td>
-<td>user_7109</td> 
 <td>Författningsdomstol</td>
 <td>För att säkra skyddet av konstitutionen i varje EU-land bör krav ställas av EU att en oberoende konstitutionsdomstol finns i varje land. Exempelvis saknas en sådan i Sverige vilket leder till låg kvalité på stiftade lagar samt lagar som inte är anpassade till grundlagen.</td>
 <td>In order to ensure the protection of the Constitution in each EU country, the EU should be required to have an independent constitutional court in each country. For example, there is no one in Sweden, which results in a low quality of enacted laws and laws that are not in line with the Constitution.</td>
@@ -104,12 +102,11 @@ Additional metadata:
 
 <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
 <thead>
-<tr style="text-align: right;"> <th>id</th> <th>user_name</th> <th>id_prop</th> <th>alignment</th> <th>comment</th> <th>depth</th> <th>thread_id</th> <th>last_ comment_ in_thread</th> <th>upvote</th> <th>downvote</th> <th>Topic</th> <th>lan</th> <th>time</th> </tr>
+<tr style="text-align: right;"> <th>id</th> <th>id_prop</th> <th>alignment</th> <th>comment</th> <th>depth</th> <th>thread_id</th> <th>last_ comment_ in_thread</th> <th>upvote</th> <th>downvote</th> <th>Topic</th> <th>lan</th> <th>time</th> </tr>
 </thead>
 <tbody>
 <tr>
 <td>comment_ 90817</td>
-<td>user_5</td>
 <td>89992</td>
 <td>Against</td>
 <td>Europäische Waffenexporte leisten einen großen Beitrag zum zum Elend in der Welt [...]</td>
@@ -124,7 +121,6 @@ Additional metadata:
 </tr>
 <tr>
 <td>comment_ 1330</td>
-<td>user_60</td>
 <td>417</td>
 <td>Against</td>
 <td>Je ne comprend pas très bien ce que l'on reproche a l'UE (vous devriez pouvoir m'éclairer) [...]</td>
