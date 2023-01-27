@@ -84,7 +84,7 @@ pre .column {
 <li>Input: [<a href="https://doi.org/10.5281/zenodo.6814563">data</a>]</li>
 <li>Submission: [<a href="run-validator.html">validator</a>] [<a href="https://github.com/touche-webis-de/touche-code/tree/main/semeval23/human-value-detection/evaluator">evaluator</a>] [<a href="https://github.com/touche-webis-de/touche-code/tree/main/semeval23/human-value-detection">baselines</a>] [<a href="https://www.tira.io/task/valueeval-at-semeval-2023-human-value-detection">submit</a>]</li>
 </ul>
-<a class="uk-button uk-button-primary" href="https://forms.gle/ib72JUtsxhb3ZMNw5">Register now</a> <br>
+<!-- <a class="uk-button uk-button-primary" href="https://forms.gle/ib72JUtsxhb3ZMNw5">Register now</a> <br> -->
 
 <h2 id="video">Video</h2>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZAQ4LELCCY4" title="Introduction to the Human Value Detection Task (ValueEval; SemEval 2023 Task 4)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -93,7 +93,7 @@ pre .column {
 <ul>
 <li><s><strong>In November, 2022:</strong> Run submission opens.</s></li>
 <li><s><strong>December 16, 2022:</strong> Early-bird run submission closes.</s></li>
-<li><strong>January 25, 2023:</strong> Registration closes (extended).</li>
+<li><s><strong>January 25, 2023:</strong> Registration closes.</s></li>
 <li><strong>January 27, 2023:</strong> Run submission closes (extended).</li>
 <li><strong>January 31, 2023:</strong> Run evaluation results out.</li>
 <li><strong>February 28, 2023:</strong> Paper submission deadline.</li>
@@ -461,7 +461,7 @@ In addition, we provide three datasets for evaluating the robustness of your app
 
 
 <h2 id="submission">Submission</h2>
-<p>This task uses <a href="https://www.tira.io/task/valueeval-at-semeval-2023-human-value-detection">TIRA</a> for submissions, which allows for both run file upload and Docker image submission. The latter allows for excellent reproducibility of your run. Registered teams will receive links to register with TIRA up to one work day after registration.</p>
+<p>This task uses <a href="https://www.tira.io/task/valueeval-at-semeval-2023-human-value-detection">TIRA</a> for submissions, which allows for both run file upload and Docker image submission. The latter allows for excellent reproducibility of your run.<!-- Registered teams will receive links to register with TIRA up to one work day after registration.--></p>
 <p>Each registered team can submit up to 4 different runs on the "arguments-test" dataset, 4 different runs on the "arguments-test-nahjalbalagha" dataset, and 4 different runs on the "arguments-test-nyt" dataset. Teams were allowed to submit one additional "early bird" run to this dataset until December 16, 2022. If you submit more runs, please tell us which one you would like to have scored. You can submit an arbitrary amount of runs to the other datasets. The submission format is the same as the <code>labels-training/validation/test.tsv</code> with value category columns being optional (skip categories for which the run contains no prediction).</p>
 <p>To submit a run file, go to <a href="https://www.tira.io/task/valueeval-at-semeval-2023-human-value-detection">this task's TIRA page</a>. Log in. Click "SUBMIT". Make sure "UPLOAD SUBMISSION" is selected. Specify your file and the dataset and "UPLOAD". You can use our <a href="run-validator.html">online validator</a> to check your file before you upload it.</p>
 <p>To submit a Docker image, go to <a href="https://www.tira.io/task/valueeval-at-semeval-2023-human-value-detection">this task's TIRA page</a>. Log in. Click "SUBMIT". Make sure "DOCKER SUBMISSION" is selected. Click on "UPLOAD IMAGES" and follow the instructions. Once uploaded, click on "ADD CONTAINER". Specify the command and the Docker image and "ADD CONTAINER". A randomly named tab is created. Click on it, specify the dataset and "RUN CONTAINER". You can copy the <a href="https://github.com/touche-webis-de/touche-code/tree/main/semeval23/human-value-detection/random-baseline">random baseline</a> to get started with Docker submissions.</p>
