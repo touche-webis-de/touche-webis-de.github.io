@@ -1,13 +1,14 @@
 # Dockerized Software for [ValueEval'23](https://touche.webis.de/semeval23/touche23-web/index.html)
 [TIRA page](https://www.tira.io/task/valueeval-at-semeval-2023-human-value-detection)
 
-<p id="instructions">Place one <code>arguments.tsv</code> from the <a href="https://doi.org/10.5281/zenodo.6814563">dataset</a> in a directory <code>input</code>. Then run the software as described below to produce results in the directory <code>output</code>.</p>
-<p>For each software, three ways to run it are shown below:</p>
-<ul>
-<li id="description-docker"><b>Docker</b>: on the command line (requires <a href="https://docs.docker.com/engine/installation/">Docker</a>)</li>
-<li id="description-tira-cli"><b>TIRA (CLI)</b>: on the command line with <code>tira-run</code> (requires <a href="https://docs.docker.com/engine/installation/">Docker</a> and the <a href="https://pypi.org/project/tira/">Python TIRA package</a>)</li>
-<li id="description-tira-python"><b>TIRA (Python)</b>: in a Python script (requires <a href="https://docs.docker.com/engine/installation/">Docker</a> and the <a href="https://pypi.org/project/tira/">Python TIRA package</a>)</li>
-</ul>
+<p id="instructions">Place one <code>arguments.tsv</code> from the <a href="https://doi.org/10.5281/zenodo.6814563">dataset</a> in a directory <code>input</code>. For example:</p>
+
+```
+mkdir input
+wget https://zenodo.org/record/7550385/files/arguments-test.tsv -O input/arguments.tsv
+```
+
+<p>Then run the software as described below to produce results in the directory <code>output</code> (requires <a href="https://docs.docker.com/engine/installation/">Docker</a>).</p>
 
 ## List of software
 - [Team `aristotle`](#team-aristotle)
