@@ -33,7 +33,7 @@ wget https://zenodo.org/record/7550385/files/arguments-test.tsv -O input/argumen
   - [Software `gold-developer`](#software-gold-developer)
   - [Software `hot-outpost`](#software-hot-outpost)
   - [Software `natural-frequency`](#software-natural-frequency)
-- [Team `niccolo-machiavellie`](#team-touche23-niccolo-machiavellie)
+- [Team `niccolo-machiavelli`](#team-touche23-niccolo-machiavellie)
   - [Software `adjacent-app`](#software-adjacent-app)
   - [Software `pointed-vertex`](#software-pointed-vertex)
 - [Team `seyyed-hossein-nasr`](#team-touche23-seyyed-hossein-nasr)
@@ -147,7 +147,7 @@ docker run --rm -ti -v $PWD/input:/tira-data/input:ro -v $PWD/output:/tira-data/
 
 ---
 
-## Team `niccolo-machiavellie`
+## Team `niccolo-machiavelli`
 [See generic instructions above](#instructions)
 ### Software `adjacent-app`
 ```bash
