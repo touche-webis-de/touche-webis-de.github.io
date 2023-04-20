@@ -8,7 +8,7 @@ mkdir input
 wget https://zenodo.org/record/7550385/files/arguments-test.tsv -O input/arguments.tsv
 ```
 
-<p>Then run the software as described below to produce results in the directory <code>output</code> (requires <a href="https://docs.docker.com/engine/installation/">Docker</a>).</p>
+<p>Then run the software as described below to produce results in the directory <code>output</code> (requires <a href="https://docs.docker.com/engine/installation/">Docker</a>). Commands are given for UNIX-like systems and have to be adapted for Windows.</p>
 
 ## List of software
 - [Team `aristotle`](#team-aristotle)
