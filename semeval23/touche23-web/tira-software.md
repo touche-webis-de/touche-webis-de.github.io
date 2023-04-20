@@ -17,6 +17,8 @@ wget https://zenodo.org/record/7550385/files/arguments-test.tsv -O input/argumen
   - [Software `BERT nocuda`](#software-bert-nocuda)
   - [Software `Random baseline`](#software-random-baseline)
   - [Software `SVM`](#software-svm)
+- [Team `adam-smith`](#team-adam-smith)
+  - [Software `EN-219-Thres-LoD`](#software-en-219-thres-lod)
 - [Team `augustine-of-hippo`](#team-augustine-of-hippo)
   - [Software `augustine`](#software-augustine)
   - [Software `mixture-augustine`](#software-mixture-augustine)
@@ -71,8 +73,19 @@ docker run --rm -ti -v $PWD/input:/tira-data/input:ro -v $PWD/output:/tira-data/
 
 ---
 
+## Team `adam-smith`
+[See generic instructions above](#instructions)
+### Software `EN-219-Thres-LoD`
+[[demo](https://values.args.me)] [[repository](https://github.com/touche-webis-de/team-adam-smith23)]
+```bash
+docker run --rm -ti -v $PWD/input:/tira-data/input:ro -v $PWD/output:/tira-data/output:rw --entrypoint sh ghcr.io/webis-de/valueeval23-adam-smith-12:1.0.0-cpu -c 'python3 /app/predict.py --inputDataset /tira-data/input --outputDir /tira-data/output'
+```
+
+---
+
 ## Team `augustine-of-hippo`
 [See generic instructions above](#instructions)
+[[repository](https://hub.docker.com/r/sergiopicascia/semeval-superaske)]
 ### Software `augustine`
 ```bash
 docker run --rm -ti -v $PWD/input:/tira-data/input:ro -v $PWD/output:/tira-data/output:rw --entrypoint sh docker.io/webis/valueeval-at-semeval-2023-human-value-detection-submissions:augustine-of-hippo-augustine-of-hippo-0-0-5-tira-docker-software-id-glad-directory -c 'python3 /augustine_of_hippo.py --input /tira-data/input/arguments.tsv --output /tira-data/output/predictions.tsv'
