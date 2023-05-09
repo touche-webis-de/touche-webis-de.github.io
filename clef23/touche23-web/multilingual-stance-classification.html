@@ -57,7 +57,7 @@ description: Touché at CLEF 2023 - Intra-Multilingual Multi-Target Stance Class
 
 <p><strong>CF_E-Dev</strong> dataset is composed of multiligual comments that have been annotated by external coders (not the writer of the comment) in a 3-class fashion. It is consider as silver-standard because of a low inter-annotator agreement. The labels are in the columns "label". Note that all the "alignment" of those comments are "None". </p> 
 
-<p><strong>CF_E-Test</strong> dataset is composed of 1.2K comments in English, French, German, Italian, Greek, and Hungarian that have been annotated by external coders (not the writer of the comment) in a 3-class fashion. It is considered as gold-standard because of a higher inter-annotator agreement. This dataset will used for the test phase. This test set will be available a few days before the test phase.</p>
+<p><strong>CF_E-Test</strong> dataset is composed of 1.2K comments in English, French, German, Italian, Greek, and Hungarian that have been annotated by external coders (not the writer of the comment) in a 3-class fashion. It is considered as gold-standard because of a higher inter-annotator agreement. This dataset will used for the test phase. <strong>The test set is now available</strong> [<a href="https://drive.google.com/file/d/1RYfhQcJ-d_HzXCYbGSgCy2Q3vodJD-ZX/view?usp=sharing">here</a>].</p>
 
 <p>The datasets to use for the <strong>Subtask 1: Cross-Debate Classification</strong>:</p>
 
@@ -157,7 +157,7 @@ description: Touché at CLEF 2023 - Intra-Multilingual Multi-Target Stance Class
 <p><strong>Other data</strong> for this task are the topics, quality judgements, and for training a subset of MS MARCO with comparative questions and a collection of text passages expanded with queries generated using DocT5Query. [<a href="https://doi.org/10.5281/zenodo.6797875">download</a>] [<a href="https://github.com/touche-webis-de/touche-code/blob/main/clef22/argument-retrieval-for-comparative-questions/parse_topics.ipynb">topic parser</a>]</p>-->
 
 <h2 id="evaluation">Evaluation</h2>
-<p>Results will be evaluated using a micro-averaged F1 over the 3 stance classes.</p>
+<p>Results will be evaluated using a macro-averaged F1 over the 3 stance classes.</p>
 <!--
 <p>The format of the relevance/quality judgment file:
 <pre><code>qid 0 doc rel</code></pre>
