@@ -7,4 +7,13 @@ LONG papers should be min. 10 pages and max. 12 pages + unlimited references.
 
 We will send you evaluation results and qrels in mid June. Please reserve some space for evaluation part in your working notebook (paper) for the camera-ready version. You are very welcome to use your team name when describing your retrieval systems.
 
-Complete formatting and submission instructions can be found here: https://clef2023.clef-initiative.eu/resources/wn_instructions.pdf
+Complete CLEF formatting and submission instructions can be found here: https://clef2023.clef-initiative.eu/resources/wn_instructions.pdf
+Please, do not forget the copyright form (see the CLEF instructions).
+
+One very important thing is to insert CORRECT INFORMATION AT SUBMISSION TIME IN EASYCHAIR. This means that each paper should have:
+- correct and complete author names,
+- authors listed in the correct order,
+- correct paper title,
+- all the data inserted in Easychair EXACTLY MATCHING the data in the PDF of the paper.
+
+The CEUR-WS proceedings will be produced ONLY by using the information inserted in Easychair and, therefore, it must be accurate and reflect the content of the paper.
