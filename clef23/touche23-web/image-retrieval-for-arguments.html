@@ -35,7 +35,7 @@ description: Touché at CLEF 2023 - Image Retrieval for Arguments
 <h2 id="synopsis">Synopsis</h2>
 <ul>
 <li>Task: Given a controversial topic, the task is to retrieve images (from web pages) for each stance (pro/con) that show support for that stance.</li>
-<li>Input: [<a href="../touche23-data/topics-task3.xml">topics</a>] [<a href="https://webis.de/data.html#touche23-image-retrieval-for-arguments">data</a>]</li>
+<li>Input: [<a href="../touche23-data/topics-task3.xml" download>topics</a>] [<a href="https://webis.de/data.html#touche23-image-retrieval-for-arguments">data</a>]</li>
 <li>Submission: <!-- [queries: <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef23/image-retrieval-for-arguments/query-submission-baselines">baselines code</a>, <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef23/image-retrieval-for-arguments/query-submission-evaluator">validator</a>] --> [<a href="https://www.tira.io/task/touche-task-3">submit</a>]</li>
 </ul>
 
@@ -47,12 +47,12 @@ description: Touché at CLEF 2023 - Image Retrieval for Arguments
 <!--
 <h3 id="query-submission">Query Submission</h3>
 <p>Registered teams can submit queries on each of the 50 topics until December 31, 2022. Both automatically and manually created queries are welcome. We will integrate the results of submitted queries into the dataset in early 2023. submitted queries will be evaluated using precision@k, similar to but separate from the main task, and the results will be published for each topic. a valid submission may include queries on fewer than all 50 topics.</p>
-<p>Submission uses <a href="https://www.tira.io/task/touche-task-3">TIRA</a>, specifically the <code>query-submission-2023</code> dataset. Either substitute "PRO" and "CON" in the <a href="../touche23-data/query-submission-form-task3.tsv">query submission form</a> and use "upload submission" in TIRA to submit it, or provide a generic query expansion method as Docker container and use TIRA's "Docker submission". See the <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef23/image-retrieval-for-arguments/query-submission-baselines">baselines code</a> to get you started with Docker submissions. Up to two valid submissions are allowed per team (please write us a mail if you did more than two submissions). [<a href="../touche23-data/topics-task3.xml">topics</a>] [<a href="../touche23-data/query-submission-form-task3.tsv">form</a>] [<a href="https://www.tira.io/task/touche-task-3">submit</a>]
+<p>Submission uses <a href="https://www.tira.io/task/touche-task-3">TIRA</a>, specifically the <code>query-submission-2023</code> dataset. Either substitute "PRO" and "CON" in the <a href="../touche23-data/query-submission-form-task3.tsv">query submission form</a> and use "upload submission" in TIRA to submit it, or provide a generic query expansion method as Docker container and use TIRA's "Docker submission". See the <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef23/image-retrieval-for-arguments/query-submission-baselines">baselines code</a> to get you started with Docker submissions. Up to two valid submissions are allowed per team (please write us a mail if you did more than two submissions). [<a href="../touche23-data/topics-task3.xml" download>topics</a>] [<a href="../touche23-data/query-submission-form-task3.tsv">form</a>] [<a href="https://www.tira.io/task/touche-task-3">submit</a>]
 <p>In case of problems or questions concerning TIRA, please use the <a href="https://www.tira.io/c/touche/9">TIRA forum</a>. Note: At the moment, the TIRA web interface sometimes fails to provide feedback on actions. Reload the page in such cases.</p>
 -->
 
 <h2 id="evaluation">Evaluation</h2>
-<p>Like last year, systems are evaluated on 50 topics by the ratio of images among the 20 retrieved images for each topic (10 images for each stance) that are relevant for the respective topic and stance. [<a href="../touche23-data/topics-task3.xml">topics</a>]</p>
+<p>Like last year, systems are evaluated on 50 topics by the ratio of images among the 20 retrieved images for each topic (10 images for each stance) that are relevant for the respective topic and stance. [<a href="../touche23-data/topics-task3.xml" download>topics</a>]</p>
 
 <h2 id="submission">Submission</h2>
 <p>This task uses <a href="https://www.tira.io/task/touche-task-3">TIRA</a> for submissions, which allows for both run file upload and Docker image submission. For each topic and stance, include 10 retrieved images. Each team can submit up to 5 different runs.</p>
