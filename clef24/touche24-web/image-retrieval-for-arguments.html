@@ -1,31 +1,31 @@
 ---
 layout: default
 nav_active: shared-tasks
-title: Touché at CLEF 2023 - Image Retrieval for Arguments
-description: Touché at CLEF 2023 - Image Retrieval for Arguments
+title: Touché at CLEF 2024 - Image Retrieval for Arguments
+description: Touché at CLEF 2024 - Image Retrieval for Arguments
 ---
 <nav class="uk-container">
 <ul class="uk-breadcrumb">
 <li><a href="../../index.html">Touché</a></li>
 <li><a href="../../shared-tasks.html">Shared Tasks</a></li>
-<li class="uk-disabled"><a href="#">Image Retrieval for Arguments 2023</a></li>
+<li class="uk-disabled"><a href="#">Image Retrieval for Arguments 2024</a></li>
 </ul>
 </nav>
 
 <main class="uk-section uk-section-default">
 <div class="uk-container">
 <div class="uk-container uk-margin-small">
-<h1 class="uk-margin-remove-top uk-margin-remove-bottom">Image Retrieval for Arguments 2023</h1>
+<h1 class="uk-margin-remove-top uk-margin-remove-bottom">Image Retrieval for Arguments 2024</h1>
 <ul class="uk-list">
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
+<!--
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
-<!--
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#tira-quickstart">TIRA Quickstart</a></li>
--->
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
+-->
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
 </ul>
 </div>
@@ -35,14 +35,16 @@ description: Touché at CLEF 2023 - Image Retrieval for Arguments
 <h2 id="synopsis">Synopsis</h2>
 <ul>
 <li>Task: Given a controversial topic, the task is to retrieve images (from web pages) for each stance (pro/con) that show support for that stance.</li>
-<li>Input: [<a href="../touche23-data/topics-task3.xml" download>topics</a>] [<a href="https://webis.de/data.html#touche23-image-retrieval-for-arguments">data</a>]</li>
-<li>Submission: <!-- [queries: <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef23/image-retrieval-for-arguments/query-submission-baselines">baselines code</a>, <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef23/image-retrieval-for-arguments/query-submission-evaluator">validator</a>] --> [<a href="https://www.tira.io/task/touche-task-3">submit</a>]</li>
+<!-- <li>Input: [<a href="../touche23-data/topics-task3.xml" download>topics</a>] [<a href="https://webis.de/data.html#touche23-image-retrieval-for-arguments">data</a>]</li> -->
+<!-- <li>Submission: [queries: <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef23/image-retrieval-for-arguments/query-submission-baselines">baselines code</a>, <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef23/image-retrieval-for-arguments/query-submission-evaluator">validator</a>] [<a href="https://www.tira.io/task/touche-task-3">submit</a>]</li> -->
 </ul>
 
-<a class="uk-button uk-button-primary" href="https://clef2023-labs-registration.dei.unipd.it/">Register now</a>
+<!-- <a class="uk-button uk-button-primary" href="https://clef2023-labs-registration.dei.unipd.it/">Register now</a> -->
 
+<!--
 <h2 id="data">Data</h2>
 <p>This task uses a focused crawl of about 56K images (and associated web pages) as document collection. The crawl is created from several image search queries for each of the 50 topics. The relevance judgments of <a href="https://touche.webis.de/clef22/touche22-web/image-retrieval-for-arguments.html">last year</a> are available for training supervised approaches. The output of last year's approaches can be inspected on <a href="https://images.args.me">images.args.me</a>. Registered teams were invited in 2022 to submit search queries that were then used to extend the crawl. [<a href="https://webis.de/data.html#touche23-image-retrieval-for-arguments">data</a>]</p>
+-->
 
 <!--
 <h3 id="query-submission">Query Submission</h3>
@@ -51,6 +53,7 @@ description: Touché at CLEF 2023 - Image Retrieval for Arguments
 <p>In case of problems or questions concerning TIRA, please use the <a href="https://www.tira.io/c/touche/9">TIRA forum</a>. Note: At the moment, the TIRA web interface sometimes fails to provide feedback on actions. Reload the page in such cases.</p>
 -->
 
+<!--
 <h2 id="evaluation">Evaluation</h2>
 <p>Like last year, systems are evaluated on 50 topics by the ratio of images among the 20 retrieved images for each topic (10 images for each stance) that are relevant for the respective topic and stance. [<a href="../touche23-data/topics-task3.xml" download>topics</a>]</p>
 
@@ -74,7 +77,9 @@ For example:
 1 CON I000f34bd3f8cb030 2 14.43 myGroupMyMethod
 ...
 </pre>
+-->
   
+<!--
 <h3>TIRA Tutorial and TIRA Baselines</h3>
 <p>
 We provide a TIRA tutorial that provides baselines that can be executed in TIRA at <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef23/image-retrieval-for-arguments/baseline-pyterrier">https://github.com/touche-webis-de/touche-code/tree/main/clef23</a>.
@@ -82,9 +87,8 @@ We provide a TIRA tutorial that provides baselines that can be executed in TIRA 
   
 
 <p>In case of problems or questions concerning TIRA, please use the <a href="https://www.tira.io/c/touche/9">TIRA forum</a>.</p>
-<!-- <p>We provide relevance judgements for submitted runs as binary judgements on topic-image pairs for topic-relevance, the pro-stance, and the con-stance. [<a href="https://zenodo.org/record/6786949/files/touche-task3-001-050-relevance.qrels?download=1">qrels</a>] [<a href="https://github.com/touche-webis-de/touche-code/blob/main/clef22/image-retrieval-for-arguments/submission-evaluator.sh">evaluator</a>]</p> -->
+<p>We provide relevance judgements for submitted runs as binary judgements on topic-image pairs for topic-relevance, the pro-stance, and the con-stance. [<a href="https://zenodo.org/record/6786949/files/touche-task3-001-050-relevance.qrels?download=1">qrels</a>] [<a href="https://github.com/touche-webis-de/touche-code/blob/main/clef22/image-retrieval-for-arguments/submission-evaluator.sh">evaluator</a>]</p>
 
-<!--
 <h2 id="tira-quickstart">TIRA Quickstart</h2>
 <p>Participant software is run in a virtual machine. Log in to <a href="https://www.tira.io">TIRA</a>, go to the <a href="https://www.tira.io/task/touche-task-1/dataset/touche-task-1-2022-02-16">task's dataset page</a>, and click on "&gt;_ SUBMIT". Click the "CONNECTION INFO" button for how to connect to the virtual machine. Click on "POWER ON" if the state is not "RUNNING".</p>
 <img width="75%" src="../touche22-figures/task2-tira-vm-overview.png" alt="Virtual machine state in TIRA.">
@@ -95,6 +99,7 @@ We provide a TIRA tutorial that provides baselines that can be executed in TIRA 
 <p>Create a separate "Software" entry in the TIRA web interface for each of your approaches. NOTE: By submitting your software you retain full copyrights. You agree to grant us usage rights for evaluation of the corresponding data generated by your software. We agree not to share your software with a third party or use it for any purpose other than research.</p>
 -->
 
+<!--
 <h2 id="results">Results</h2>
 
 <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
@@ -119,7 +124,7 @@ We provide a TIRA tutorial that provides baselines that can be executed in TIRA 
 <tr><td>Jean-Luc Picard</td><td>Image text stance detection (2)</td><td>0.369</td><td>0.196</td><td>0.098</td></tr>
 </tbody>
 </table>
-
+-->
 
 <h2><a id="related-work"></a>Related Work</h2>
 <ul>
@@ -130,13 +135,13 @@ We provide a TIRA tutorial that provides baselines that can be executed in TIRA 
 
 <h2 id="task-committee">Task Committee</h2>
 <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+{% include people-cards/heinrich.html gender="male" %}
 {% include people-cards/kiesel.html gender="male" %}
-{% include people-cards/froebe.html gender="male" %}
 {% include people-cards/potthast.html gender="male" %}
 {% include people-cards/stein.html gender="male" %}
 </div>
 <div class="uk-container uk-padding-large uk-padding-remove-bottom">
-{% include organizations/clef-organizations-section.html year=2023 %}
+{% include organizations/clef-organizations-section.html year=2024 %}
 </div>
 </div>
 </div>
