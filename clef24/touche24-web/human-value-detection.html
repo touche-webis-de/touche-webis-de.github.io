@@ -113,6 +113,278 @@ pre .column {
 <p>Identify human values (sub-task 1) and their attainment (sub-task 2) in long texts in eight languages<!-- (Bulgarian, Dutch, English, French,
 German, Hebrew, Italian, and Turkish)-->.<!-- Each referred value can either be mentioned as something that is or should be attained or something that is not attained or constrained. Attainment would mean that whatever is described in the sentence will help lead to fulfilling the value. For example, for Security, (partial) attainment would mean that something is made safer or healthier. In contrast, an event can be stated in a way that thwarts or constrains safety or health.--></p>
 
+<p>The task employs a collection of roughly 3000 human-annotated texts between 400 and 800 words. The annotated values are those of the Schwartz' value continuum (see below and click to see description):</p>
+
+<div class="continuum">
+<svg viewBox="-182 -182 364 364" width="380" height="380">
+<!-- <svg viewBox="-221 -221 442 442" width="380" height="380"> -->
+<g class="backlights">
+<!--
+<path data-level="4b" data-category="self-protection" d="M 0,0 L 219.25,-18.17 A 220 220 0 0 1 -213.27 54.01 z" fill="white"/>
+<path data-level="4b" data-category="growth" d="M 0,0 L -213.27,54.01 A 220 220 0 1 1 219.25 -18.17 z" fill="white"/>
+
+<path data-level="4a" data-category="personal-focus" d="M 0,0 L 0,-200 A 200 200 0 0 1 32.92 197.27 z" fill="white"/>
+<path data-level="4a" data-category="social-focus" d="M 0,0 L 32.92,197.27 A 200 200 0 1 1 0 -200 z" fill="white"/>
+-->
+
+<path data-level="3" data-category="openness-to-change" d="M 0,0 L 0,-180 A 180 180 0 0 1 164.84 -72.31 z" fill="white"/>
+<path data-level="3" data-category="self-enhancement" d="M 0,0 L 164.84,-72.31 A 180 180 0 0 1 110.56 142.05 z" fill="white"/>
+<path data-level="3" data-category="conservation" d="M 0,0 L 110.56,142.05 A 180 180 0 0 1 -174.49 44.19 z" fill="white"/>
+<path data-level="3" data-category="self-transcendence" d="M 0,0 L -174.49,44.19 A 180 180 0 0 1 0,-180 z" fill="white"/>
+
+<path data-level="2" data-category="self-direction-thought" data-parents="openness-to-change,personal-focus,growth" d="M 0,0 L 0,-160 A 160 160 0 0 1 51.95 -151.33 z" fill="white"/>
+<path data-level="2" data-category="self-direction-action" data-parents="openness-to-change,personal-focus,growth" d="M 0,0 L 51.95,-151.33 A 160 160 0 0 1 98.27 -126.26 z" fill="white" />
+<path data-level="2" data-category="stimulation" data-parents="openness-to-change,personal-focus,growth" d="M 0,0 L 98.27,-126.26 A 160 160 0 0 1 133.95 -87.51 z" fill="white" />
+<path data-level="2" data-category="hedonism" data-parents="openness-to-change,self-enhancement,personal-focus,growth" d="M 0,0 L 133.95,-87.51 A 160 160 0 0 1 155.10 -39.28 z" fill="white" />
+<path data-level="2" data-category="achievement" data-parents="self-enhancement,personal-focus,growth,self-protection" d="M 0,0 L 155.10,-39.28 A 160 160 0 0 1 159.45 13.21 z" fill="white" />
+<path data-level="2" data-category="power-dominance" data-parents="self-enhancement,personal-focus,self-protection" d="M 0,0 L 159.45,13.21 A 160 160 0 0 1 146.52 64.27 z" fill="white" />
+<path data-level="2" data-category="power-resources" data-parents="self-enhancement,personal-focus,self-protection" d="M 0,0 L 146.42,64.27 A 160 160 0 0 1 117.72 108.37" fill="white" />
+<path data-level="2" data-category="face" data-parents="self-enhancement,conservation,personal-focus,self-protection" d="M 0,0 L 117.72,108.37 A 160 160 0 0 1 76.15 140.72 z" fill="white" />
+<path data-level="2" data-category="security-personal" data-parents="conservation,personal-focus,self-protection" d="M 0,0 L 76.15,140.72 A 160 160 0 0 1 26.33 157.82 z" fill="white" />
+<path data-level="2" data-category="security-societal" data-parents="conservation,social-focus,self-protection" d="M 0,0 L 26.33,157.82 A 160 160 0 0 1 -26.33 157.82 z" fill="white" />
+<path data-level="2" data-category="tradition" data-parents="conservation,social-focus,self-protection" d="M 0,0 L -76.15,140.72 A 160 160 0 0 0 -26.33 157.82 z" fill="white" />
+<path data-level="2" data-category="conformity-rules" data-parents="conservation,social-focus,self-protection" d="M 0,0 L -117.72,108.37 A 160 160 0 0 0 -76.15 140.72 z" fill="white" />
+<path data-level="2" data-category="conformity-interpersonal" data-parents="conservation,social-focus,self-protection" d="M 0,0 L -146.52,64.27 A 160 160 0 0 0 -117.72 108.37 z" fill="white" />
+<path data-level="2" data-category="humility" data-parents="conservation,self-transcendence,social-focus,self-protection,growth" d="M 0,0 L -159.45,13.21 A 160 160 0 0 0 -146.52 64.27 z" fill="white" />
+<path data-level="2" data-category="benevolence-caring" data-parents="self-transcendence,social-focus,growth" d="M 0,0 L -155.10,-39.28 A 160 160 0 0 0 -159.45 13.21 z" fill="white" />
+<path data-level="2" data-category="benevolence-dependability" data-parents="self-transcendence,social-focus,growth" d="M 0,0 L -133.95,-87.51 A 160 160 0 0 0 -155.10 -39.28 z" fill="white" />
+<path data-level="2" data-category="universalism-concern" data-parents="self-transcendence,social-focus,growth" d="M 0,0 L -98.27,-126.26 A 160 160 0 0 0 -133.95 -87.51 z" fill="white" />
+<path data-level="2" data-category="universalism-nature" data-parents="self-transcendence,social-focus,growth" d="M 0,0 L -51.95,-151.33 A 160 160 0 0 0 -98.27 -126.26 z" fill="white" />
+<path data-level="2" data-category="universalism-tolerance" data-parents="self-transcendence,social-focus,growth" d="M 0,0 L 0,-160 A 160 160 0 0 0 -51.95 -151.33 z" fill="white" />
+</g>
+
+<g class="labels">
+<path id="pathSelfDirection" d="M 0,-146 A 146 146 0 0 1 0 146" fill="none"/>
+<text text-anchor="middle"><textPath href="#pathSelfDirection" startOffset="48.28">Self-direction:</textPath></text>
+<path id="pathPower" d="M 114.77,105.66 A 156 156 0 0 0 156 0" fill="none"/>
+<text text-anchor="middle"><textPath href="#pathPower" startOffset="51.59">Power:</textPath></text>
+<path id="pathSecurity" d="M -25.68,153.87 A 156 156 0 0 0 156 0" fill="none"/>
+<text text-anchor="middle"><textPath href="#pathSecurity" startOffset="51.59">Security:</textPath></text>
+<path id="pathConformity" d="M -142.86,62.66 A 156 156 0 0 0 156 0" fill="none"/>
+<text text-anchor="middle"><textPath href="#pathConformity" startOffset="51.59">Conformity:</textPath></text>
+<path id="pathBenevolence" d="M -145.50,12.06 A 146 146 0 0 1 0 -146" fill="none"/>
+<text text-anchor="middle"><textPath href="#pathBenevolence" startOffset="48.28">Benevolence:</textPath></text>
+<path id="pathUniversalism" d="M -122.23,-79.85 A 146 146 0 0 1 0 -146" fill="none"/>
+<text text-anchor="middle"><textPath href="#pathUniversalism" startOffset="72.42">Universalism:</textPath></text>
+<text transform="translate(134 5) rotate(-80.53 -134 -5)" text-anchor="end">thought</text>
+<text transform="translate(134 5) rotate(-61.58 -134 -5)" text-anchor="end">action</text>
+<text transform="translate(155 5) rotate(-42.63 -155 -5)" text-anchor="end">Stimulation</text>
+<text transform="translate(155 5) rotate(-23.68 -155 -5)" text-anchor="end">Hedonism</text>
+<text transform="translate(155 5) rotate(-4.74 -155 -5)" text-anchor="end">Achievement</text>
+<text transform="translate(134 5) rotate(14.21 -134 -5)" text-anchor="end">dominance</text>
+<text transform="translate(134 5) rotate(33.16 -134 -5)" text-anchor="end">resources</text>
+<text transform="translate(155 5) rotate(52.11 -155 -5)" text-anchor="end">Face</text>
+<text transform="translate(134 5) rotate(71.05 -134 -5)" text-anchor="end">personal</text>
+<text transform="translate(-134 5) rotate(-90 134 -5)" text-anchor="start">societal</text>
+<text transform="translate(-155 5) rotate(-71.05 155 -5)" text-anchor="start">Tradition</text>
+<text transform="translate(-134 5) rotate(-52.11 134 -5)" text-anchor="start">rules</text>
+<text transform="translate(-134 5) rotate(-33.16 134 -5)" text-anchor="start">interpersonal</text>
+<text transform="translate(-155 5) rotate(-14.21 155 -5)" text-anchor="start">Humility</text>
+<text transform="translate(-134 5) rotate(4.74 134 -5)" text-anchor="start">caring</text>
+<text transform="translate(-134 5) rotate(23.68 134 -5)" text-anchor="start">dependability</text>
+<text transform="translate(-134 5) rotate(42.63 134 -5)" text-anchor="start">concern</text>
+<text transform="translate(-134 5) rotate(61.58 134 -5)" text-anchor="start">nature</text>
+<text transform="translate(-134 5) rotate(80.53 134 -5)" text-anchor="start">tolerance</text>
+
+<path id="pathOpennessToChange" d="M 0,-166 A 166 166 0 0 1 166 0" fill="none"/>
+<text text-anchor="middle"><textPath href="#pathOpennessToChange" startOffset="96.06">Openness to change</textPath></text>
+<path id="pathSelfEnhancement" d="M 108.10,138.89 A 176 176 0 0 0 156.82 -79.90" fill="none"/>
+<text text-anchor="middle"><textPath href="#pathSelfEnhancement" startOffset="116.40">Self-enhancement</textPath></text>
+<path id="pathConservation" d="M -170.61,43.21 A 176 176 0 0 0 124.45 124.45" fill="none"/>
+<text text-anchor="middle"><textPath href="#pathConservation" startOffset="174.61">Conservation</textPath></text>
+<path id="pathSelfTranscendence" d="M -160.92,40.75 A 166 166 0 0 1 0 -166" fill="none"/>
+<text text-anchor="middle"><textPath href="#pathSelfTranscendence" startOffset="150.95">Self-transcendence</textPath></text>
+
+<!--
+<path id="pathPersonalFocus" d="M 0,-186 A 186 186 0 0 1 57.48 176.90" fill="none"/>
+<text text-anchor="middle"><textPath href="#pathPersonalFocus" startOffset="276.79">Personal focus</textPath></text>
+<path id="pathSocialFocus" d="M 30.61,183.46 A 186 186 0 1 1 0 -186" fill="none"/>
+<text text-anchor="middle"><textPath href="#pathSocialFocus" startOffset="307.54">Social focus</textPath></text>
+
+<path id="pathSelfProtection" d="M -209.39,53.02 A 216 216 0 0 0 213.34 -33.79" fill="none"/>
+<text text-anchor="middle"><textPath href="#pathSelfProtection" startOffset="321.33">Self-protection, Anxiety-avoidance</textPath></text>
+<path id="pathGrowth" d="M -199.70,50.57 A 206 206 0 1 1 203.46 -32.23" fill="none"/>
+<text text-anchor="middle"><textPath href="#pathGrowth" startOffset="340.62">Growth, Anxiety-free</textPath></text>
+-->
+</g>
+
+<g class="interaction">
+<path data-level="2" data-category="self-direction-thought" data-parents="openness-to-change,personal-focus,growth" d="M 0,0 L 0,-160 A 160 160 0 0 1 51.95 -151.33 z" fill="white"/>
+<path data-level="2" data-category="self-direction-action" data-parents="openness-to-change,personal-focus,growth" d="M 0,0 L 51.95,-151.33 A 160 160 0 0 1 98.27 -126.26 z" fill="white" />
+<path data-level="2" data-category="stimulation" data-parents="openness-to-change,personal-focus,growth" d="M 0,0 L 98.27,-126.26 A 160 160 0 0 1 133.95 -87.51 z" fill="white" />
+<path data-level="2" data-category="hedonism" data-parents="openness-to-change,self-enhancement,personal-focus,growth" d="M 0,0 L 133.95,-87.51 A 160 160 0 0 1 155.10 -39.28 z" fill="white" />
+<path data-level="2" data-category="achievement" data-parents="self-enhancement,personal-focus,growth,self-protection" d="M 0,0 L 155.10,-39.28 A 160 160 0 0 1 159.45 13.21 z" fill="white" />
+<path data-level="2" data-category="power-dominance" data-parents="self-enhancement,personal-focus,self-protection" d="M 0,0 L 159.45,13.21 A 160 160 0 0 1 146.52 64.27 z" fill="white" />
+<path data-level="2" data-category="power-resources" data-parents="self-enhancement,personal-focus,self-protection" d="M 0,0 L 146.42,64.27 A 160 160 0 0 1 117.72 108.37" fill="white" />
+<path data-level="2" data-category="face" data-parents="self-enhancement,conservation,personal-focus,self-protection" d="M 0,0 L 117.72,108.37 A 160 160 0 0 1 76.15 140.72 z" fill="white" />
+<path data-level="2" data-category="security-personal" data-parents="conservation,personal-focus,self-protection" d="M 0,0 L 76.15,140.72 A 160 160 0 0 1 26.33 157.82 z" fill="white" />
+<path data-level="2" data-category="security-societal" data-parents="conservation,social-focus,self-protection" d="M 0,0 L 26.33,157.82 A 160 160 0 0 1 -26.33 157.82 z" fill="white" />
+<path data-level="2" data-category="tradition" data-parents="conservation,social-focus,self-protection" d="M 0,0 L -76.15,140.72 A 160 160 0 0 0 -26.33 157.82 z" fill="white" />
+<path data-level="2" data-category="conformity-rules" data-parents="conservation,social-focus,self-protection" d="M 0,0 L -117.72,108.37 A 160 160 0 0 0 -76.15 140.72 z" fill="white" />
+<path data-level="2" data-category="conformity-interpersonal" data-parents="conservation,social-focus,self-protection" d="M 0,0 L -146.52,64.27 A 160 160 0 0 0 -117.72 108.37 z" fill="white" />
+<path data-level="2" data-category="humility" data-parents="conservation,self-transcendence,social-focus,self-protection,growth" d="M 0,0 L -159.45,13.21 A 160 160 0 0 0 -146.52 64.27 z" fill="white" />
+<path data-level="2" data-category="benevolence-caring" data-parents="self-transcendence,social-focus,growth" d="M 0,0 L -155.10,-39.28 A 160 160 0 0 0 -159.45 13.21 z" fill="white" />
+<path data-level="2" data-category="benevolence-dependability" data-parents="self-transcendence,social-focus,growth" d="M 0,0 L -133.95,-87.51 A 160 160 0 0 0 -155.10 -39.28 z" fill="white" />
+<path data-level="2" data-category="universalism-concern" data-parents="self-transcendence,social-focus,growth" d="M 0,0 L -98.27,-126.26 A 160 160 0 0 0 -133.95 -87.51 z" fill="white" />
+<path data-level="2" data-category="universalism-nature" data-parents="self-transcendence,social-focus,growth" d="M 0,0 L -51.95,-151.33 A 160 160 0 0 0 -98.27 -126.26 z" fill="white" />
+<path data-level="2" data-category="universalism-tolerance" data-parents="self-transcendence,social-focus,growth" d="M 0,0 L 0,-160 A 160 160 0 0 0 -51.95 -151.33 z" fill="white" />
+</g>
+
+<g class="outline">
+<circle cx="0" cy="0" r="160" fill="none" stroke="black" />
+<line x1="0" y1="0" x2="0" y2="-160" stroke="black" />
+<line x1="0" y1="0" x2="46.11" y2="-134.31" stroke="black" />
+<line x1="0" y1="0" x2="98.27" y2="-126.26" stroke="black" />
+<line x1="0" y1="0" x2="133.95" y2="-87.51" stroke="black" />
+<line x1="0" y1="0" x2="155.10" y2="-39.28" stroke="black" />
+<line x1="0" y1="0" x2="159.45" y2="13.21" stroke="black" />
+<line x1="0" y1="0" x2="130.04" y2="57.04" stroke="black" />
+<line x1="0" y1="0" x2="117.72" y2="108.37" stroke="black" />
+<line x1="0" y1="0" x2="76.15" y2="140.72" stroke="black" />
+<line x1="0" y1="0" x2="23.37" y2="140.06" stroke="black" />
+<line x1="0" y1="0" x2="-26.34" y2="157.82" stroke="black" />
+<line x1="0" y1="0" x2="-76.15" y2="140.72" stroke="black" />
+<line x1="0" y1="0" x2="-104.47" y2="96.17" stroke="black" />
+<line x1="0" y1="0" x2="-146.52" y2="64.27" stroke="black" />
+<line x1="0" y1="0" x2="-159.45" y2="13.21" stroke="black" />
+<line x1="0" y1="0" x2="-137.65" y2="-34.86" stroke="black" />
+<line x1="0" y1="0" x2="-133.94" y2="-87.51" stroke="black" />
+<line x1="0" y1="0" x2="-87.22" y2="-112.06" stroke="black" />
+<line x1="0" y1="0" x2="-46.11" y2="-134.31" stroke="black" />
+
+<circle cx="0" cy="0" r="180" fill="none" stroke="black" />
+<line x1="0" y1="-160" x2="0" y2="-180" stroke="black" />
+<line x1="146.52" y1="-64.27" x2="164.84" y2="-72.30" stroke="black" />
+<line x1="98.27" y1="126.26" x2="110.56" y2="142.05" stroke="black" />
+<line x1="-155.10" y1="39.28" x2="-174.49" y2="44.19" stroke="black" />
+
+<!--
+<circle cx="0" cy="0" r="200" fill="none" stroke="black" />
+<line x1="0" y1="-180" x2="0" y2="-200" stroke="black" />
+<line x1="29.63" y1="177.55" x2="32.92" y2="197.27" stroke="black" />
+
+<circle cx="0" cy="0" r="220" fill="none" stroke="black" />
+<line x1="199.32" y1="-16.52" x2="219.25" y2="-18.17" stroke="black" />
+<line x1="-193.88" y1="49.10" x2="-213.27" y2="54.01" stroke="black" />
+-->
+</g>
+</svg>
+<div class="category-descriptions">
+<div class="category-description active" data-category="self-direction-thought">
+  <h4>Self-direction: thought</h4>
+  <i>Freedom to cultivate one's own ideas and abilities.</i>
+  <p>Personal motivation: It is important to be creative, forming own opinions, be unique, have original ideas, learn things for oneself and improve own abilities.</p>
+  <p>The focus of this value is on developing own ideas, wanting to know more and discovering.</p>
+  <!--
+  <h5>Example 1</h5>
+  <p><i>"In the scene, a young child is flipping through the pages of a storybook. At some point, the child comes to a picture she finds interesting and requests the name of the object from the caregiver."</i></p>
+  <p>The child mentioned is not only curious but also acts accordingly by asking, which contributes to the
+fulfilment of the value. Attainment label: (Partially) attained.</p>
+  -->
+</div>
+<div class="category-description" data-category="self-direction-action">
+  <h4>Self-direction: action</h4>
+  <i>Freedom to determine one's own actions.</i>
+  <p>Personal motivation: It is important to make own decisions about life, being independent and having the freedom to choose.</p>
+  <p>The focus of this value in contrast to the "self-direction: thought" aspect is to determine an action, rather than a conviction or thought.</p>
+</div>
+<div class="category-description" data-category="stimulation">
+  <h4>Stimulation</h4>
+  <i>Excitement, novelty, and change.</i>
+  <p>Personal motivation: Always looking for something new to do, doing something exciting, seeking out new experiences, innovating, being bold, seeking adventures and initiating change.</p>
+  <p>In contrast to "hedonism", this value focuses on the novelty and risk aspects of behaviours and thoughts. It is seeking out everything that stimulates the senses.</p>
+</div>
+<div class="category-description" data-category="hedonism">
+  <h4>Hedonism</h4>
+  <i>Pleasure and sensuous gratification.</i>
+  <p>Personal motivation: Having a good time, enjoying life’s pleasures and taking advantage of opportunities to have fun.</p>
+</div>
+<div class="category-description" data-category="achievement">
+  <h4>Achievement</h4>
+  <i>Success according to social standards.</i>
+  <p>Personal motivation: Being ambitious, successful and being admired for achievements and skills.  Demonstrating competence according to social standards or in competition.</p>
+  <p>Important dimension of achievement is that it is perceived within the social standards, and according to the rules of engagement, unlike as for the value of power. Moreover, unlike the value of power, Achievement focuses on performance and not on resource matters.</p>
+</div>
+<div class="category-description" data-category="power-dominance">
+  <h4>Power: dominance</h4>
+  <i>Power through exercising control over people.</i>
+  <p>Personal motivation: Want people to follow you, being the most influential compared to others, be the one to determine directions.</p>
+</div>
+<div class="category-description" data-category="power-resources">
+  <h4>Power: resources</h4>
+  <i>Power through control of material and social resources.</i>
+  <p>Personal motivation: Having lots of money for the power it brings, being wealthy, and pursue social status.</p>
+  <p>This value is not automatically present when terms like budgets, costs, or growth appear in a sentence. Such terms refer to the value only if they make up an essential part of a sentence and are expressed as an important part of decision making with an underlying motivation or justification. For example, when someone is writing about the "huge", "large", "out of control" costs, or in any other way mentioned as important argument. Finally, in contrast to the value of "achievement", it only focuses on resource matters not on performance.</p>
+</div>
+<div class="category-description" data-category="face">
+  <h4>Face</h4>
+  <i>Security and power through maintaining one’s public image and avoiding humiliation.</i>
+  <p>Personal motivation: Does not want to be shamed by others, protecting public image, being treated with respect, honour, and dignity.</p>
+</div>
+<div class="category-description" data-category="security-personal">
+  <h4>Security: personal</h4>
+  <i>Safety in one's immediate environment.</i>
+  <p>Personal motivation: Avoid dangerous situations, value personal security and safety, live in a secure environment, have a secured income, being healthy.</p>
+  <p>Similar to the difference between "benevolence" and "universalism: concern", the decisive difference between "security: personal" and "security: societal" is to whom the value refers. In case of individuals, family and friends, it is personal, e.g., if someone writes in first-person about their own health. In contrast, when it is applied to any group or society as a whole, it is societal. Thus, "security: personal" will most
+likely not appear often in the text only if speaking of individual experiences.</p>
+</div>
+<div class="category-description" data-category="security-societal">
+  <h4>Security: societal</h4>
+  <i>Safety and stability in the wider society.</i>
+  <p>Personal motivation: Country should protect itself against all threats, state should be strong, order and stability in society are important, including economic stability (employment, no recession). Importantly, the value refers not only to a society as a whole but also to socially defined groups like women, parents, etc. within a society. In contrast to the value of "universalism: concern", the value emphasises protection more from a motivation of "preventing", "averting", "ending" dangers or threats and "preserving" security and stability.</p>
+</div>
+<div class="category-description" data-category="tradition">
+  <h4>Tradition</h4>
+  <i>Maintaining and preserving cultural, family, or religious traditions.</i>
+  <p>Personal motivation: Maintain traditional beliefs and values, follow the family or religious customs, valuing traditional practices of one’s culture.</p>
+</div>
+<div class="category-description" data-category="conformity-rules">
+  <h4>Conformity: rules</h4>
+  <i>Compliance with rules, laws, and formal obligations.</i>
+  <p>Personal motivation: Should follow authorities, follow rules even if others are not watching, obey all laws.</p>
+</div>
+<div class="category-description" data-category="conformity-interpersonal">
+  <h4>Conformity: interpersonal</h4>
+  <i>Avoidance of upsetting or harming other people.</i>
+  <p>Personal motivation: Avoid upsetting or annoying others, being tactful to others, showing courtesy, being polite, resisting temptation, respecting elders.</p>
+</div>
+<div class="category-description" data-category="humility">
+  <h4>Humility</h4>
+  <i>Recognizing one's insignificance in the larger scheme of things.</i>
+  <p>Personal motivation: Try not to draw attention, be humble and satisfied with the situation, not asking for more.</p>
+</div>
+<div class="category-description" data-category="benevolence-caring">
+  <h4>Benevolence: caring</h4>
+  <i>Devotion to the welfare of in-group members.</i>
+  <p>Personal motivation: Help and care about close ones, be responsive to family and friends. Actively helping and taking care of someone close.</p>
+  <p>A key difference between "benevolence: caring" and "benevolence: dependability" is that the caring dimension is active about doing something, while the dependability is more about the perception of being there for someone, being trustworthy etc. Furthermore, caring here is not generic or universal, it is limited to specific persons or a delineated in-group within a person’s immediate environment. This last aspect distinguishes "benevolence: caring" from "universalism: concern". Similar to the two sides of security, the decisive difference between "benevolence: caring" and "universalism: concern" is to whom the value refers. In case of individuals, family, and friends, it is "benevolence: caring". In contrast, when it is applied to any social group or people in general, it is "universalism: concern". Thus, "benevolence: caring" will most likely not appear often in the text only if speaking of individual experiences.</p>
+</div>
+<div class="category-description" data-category="benevolence-dependability">
+  <h4>Benevolence: dependability</h4>
+  <i>Being a reliable and trustworthy member of the in-group.</i>
+  <p>Personal motivation: Be loyal to close ones, be dependable and trustworthy, especially to close ones (in-group). Be seen as reliable, others should have confidence in you helping close ones.</p>
+  <p>A key difference between "benevolence" and "universalism" is that "benevolence" is primarily targeted towards close ones, and not towards strangers. In line with "security: personal", close ones are family and friends, not the larger public.</p>
+</div>
+<div class="category-description" data-category="universalism-concern">
+  <h4>Universalism: concern</h4>
+  <i>Commitment to equality, justice, and protection for all people.</i>
+  <p>Personal motivation: Protecting the weak and vulnerable, care about equal opportunities, treat everyone justly.</p>
+  <p>In contrast to the value of "security: societal", protection and caring also goes beyond society boundaries. It is more generic referring to all kinds of people/groups. Moreover, "universalism: concern" focuses more on caring, protecting, promoting well-being, especially of vulnerable people from a motivation of "empathy", "helping" or "a universal justice perspective", whereas "security: societal" focuses on protecting, promoting well-being more from a motivation of "preventing", "averting", "ending" dangers or threats and "preserving" security and stability.</p>
+</div>
+<div class="category-description" data-category="universalism-nature">
+  <h4>Universalism: nature</h4>
+  <i>Preservation of the natural environment.</i>
+  <p>Personal motivation: Care about nature for nature's sake, protect the environment against pollution, destruction and other threats.</p>
+</div>
+<div class="category-description" data-category="universalism-tolerance">
+  <h4>Universalism: tolerance</h4>
+  <i>Acceptance and understanding of those who are different from oneself.</i>
+  <p>Personal motivation: Care about peace and harmony, listen to people with other views, understand even those one disagrees with.</p>
+  <p>The key point here is that it is peace for harmony's sake and not for the protection of the weak, which is covered in "universalism: concern" already.</p>
+</div>
+</div>
+</div>
+
 <!--
 <h2 id="data">Data</h2>
 <p>Data is provided as tab-separated values files with one header line. Stay up-to-date and report problems on the <a href="https://groups.google.com/group/valueeval/subscribe">task mailing list</a>. [<a href="https://doi.org/10.5281/zenodo.6814563">download</a>] [<a href="https://arxiv.org/abs/2301.13771">description paper</a>]</p>
