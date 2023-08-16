@@ -83,17 +83,19 @@ pre .column {
 
 <h2 id="synopsis">Synopsis</h2>
 <ul>
-<li>Task: Given a textual argument and a human value category, classify whether or not the argument draws on that category. [<a href="https://webis.de/publications.html#kiesel_2022b">paper</a>]</li>
+<li>Sub-Task 1: Given a text, for each sentence, detect which human values the sentence refers to.</li>
+<li>Sub-Task 2: Given a text, for each sentence and human value this sentence refers to, detect whether this reference (partially) attains or (partially) constrains the value.</li>
 <li>Communication: [mailing lists: <a href="https://groups.google.com/group/valueeval/subscribe">task</a>, <a href="https://groups.google.com/group/valueeval-organizers/subscribe">organizers</a>] [<a href="https://twitter.com/ValueEval">twitter</a>]</li>
-<li>Input: [data <a href="https://doi.org/10.5281/zenodo.6814563">download</a>, <a href="https://arxiv.org/abs/2301.13771">paper</a>]</li>
-<li>Submission: [<a href="run-validator.html">validator</a>] [<a href="https://github.com/touche-webis-de/touche-code/tree/main/semeval23/human-value-detection/evaluator">evaluator</a>] [<a href="https://github.com/touche-webis-de/touche-code/tree/main/semeval23/human-value-detection">baselines</a>] <!--[<a href="https://www.tira.io/task/valueeval-at-semeval-2023-human-value-detection">submit</a>]--> [paper template: <a href="https://www.overleaf.com/latex/templates/valueeval23-paper-template/htprfrpkkfhh">overleaf</a>, <a href="https://github.com/touche-webis-de/touche-code/raw/main/semeval23/human-value-detection/participant-paper-template/participant-paper-template.zip">download</a>, <a href="https://github.com/touche-webis-de/touche-code/tree/main/semeval23/human-value-detection/participant-tables">tables</a>, <a href="https://github.com/touche-webis-de/touche-code/tree/main/semeval23/human-value-detection/value-radar-plot">radar plots</a>] [<a href="https://www.tira.io/task/valueeval-at-semeval-2023-human-value-detection">tira</a>] <!-- [<a href="https://softconf.com/acl2023/SemEval2023/">paper submission site</a>] --></li>
+<!-- <li>Input: [data <a href="https://doi.org/10.5281/zenodo.6814563">download</a>]</li> -->
+<!-- <li>Submission: [<a href="run-validator.html">validator</a>] [<a href="https://github.com/touche-webis-de/touche-code/tree/main/semeval23/human-value-detection/evaluator">evaluator</a>] [<a href="https://github.com/touche-webis-de/touche-code/tree/main/semeval23/human-value-detection">baselines</a>] <a href="https://www.tira.io/task/valueeval-at-semeval-2023-human-value-detection">submit</a>] [paper template: <a href="https://www.overleaf.com/latex/templates/valueeval23-paper-template/htprfrpkkfhh">overleaf</a>, <a href="https://github.com/touche-webis-de/touche-code/raw/main/semeval23/human-value-detection/participant-paper-template/participant-paper-template.zip">download</a>, <a href="https://github.com/touche-webis-de/touche-code/tree/main/semeval23/human-value-detection/participant-tables">tables</a>, <a href="https://github.com/touche-webis-de/touche-code/tree/main/semeval23/human-value-detection/value-radar-plot">radar plots</a>] [<a href="https://www.tira.io/task/valueeval-at-semeval-2023-human-value-detection">tira</a>] [<a href="https://softconf.com/acl2023/SemEval2023/">paper submission site</a>]</li> -->
 </ul>
 <!-- <a class="uk-button uk-button-primary" href="https://forms.gle/ib72JUtsxhb3ZMNw5">Register now</a> <br> -->
 <!-- <a class="uk-button uk-button-primary" href="https://softconf.com/acl2023/SemEval2023/">Paper submission</a> <br> -->
 
+<!--
 <h2 id="important-dates" class="uk-margin-large-top">Important Dates</h2>
 <ul>
-<li><s><strong>In November, 2022:</strong> Run submission opens.</s></li>
+<li><s><strong>In November, 2023:</strong> Run submission opens.</s></li>
 <li><s><strong>December 16, 2022:</strong> Early-bird run submission closes.</s></li>
 <li><s><strong>January 25, 2023:</strong> Registration closes.</s></li>
 <li><s><strong>January 27, 2023:</strong> Run submission closes (extended).</s></li>
@@ -104,349 +106,14 @@ pre .column {
 <li><strong>July 13-14, 2023:</strong> SemEval Workshop (co-located with <a href="https://2023.aclweb.org/">ACL'23</a> in Toronto, Canada).</li>
 </ul>
 <p>All deadlines are 23:59 <a href="https://time.is/Anywhere_on_Earth">anywhere on earth</a> (UTC-12).</p>
+-->
 
 <h2 id="task">Task</h2>
 
-<p>Given a textual argument and a human value category, classify whether or not the argument draws on that category. This task uses a set of 20 value categories compiled from the social science literature and described in our <a href="https://webis.de/publications.html#kiesel_2022b">ACL paper</a>. Participants can submit runs (also known as approaches or systems) that detect one, a subset, or all of these values in arguments. Arguments are given as premise text, conclusion text, and binary stance of the premise to the conclusion ("in favor of" or "against").</p>
-
-<p>The 20 value categories are shown here on Schwartz' value continuum (click to see description):</p>
-
-<div class="continuum">
-<svg viewBox="-182 -182 364 364" width="380" height="380">
-<!-- <svg viewBox="-221 -221 442 442" width="380" height="380"> -->
-<g class="backlights">
-<!--
-<path data-level="4b" data-category="self-protection" d="M 0,0 L 219.25,-18.17 A 220 220 0 0 1 -213.27 54.01 z" fill="white"/>
-<path data-level="4b" data-category="growth" d="M 0,0 L -213.27,54.01 A 220 220 0 1 1 219.25 -18.17 z" fill="white"/>
-
-<path data-level="4a" data-category="personal-focus" d="M 0,0 L 0,-200 A 200 200 0 0 1 32.92 197.27 z" fill="white"/>
-<path data-level="4a" data-category="social-focus" d="M 0,0 L 32.92,197.27 A 200 200 0 1 1 0 -200 z" fill="white"/>
--->
-
-<path data-level="3" data-category="openness-to-change" d="M 0,0 L 0,-180 A 180 180 0 0 1 164.84 -72.31 z" fill="white"/>
-<path data-level="3" data-category="self-enhancement" d="M 0,0 L 164.84,-72.31 A 180 180 0 0 1 110.56 142.05 z" fill="white"/>
-<path data-level="3" data-category="conservation" d="M 0,0 L 110.56,142.05 A 180 180 0 0 1 -174.49 44.19 z" fill="white"/>
-<path data-level="3" data-category="self-transcendence" d="M 0,0 L -174.49,44.19 A 180 180 0 0 1 0,-180 z" fill="white"/>
-
-<path data-level="2" data-category="self-direction-thought" data-parents="openness-to-change,personal-focus,growth" d="M 0,0 L 0,-160 A 160 160 0 0 1 51.95 -151.33 z" fill="white"/>
-<path data-level="2" data-category="self-direction-action" data-parents="openness-to-change,personal-focus,growth" d="M 0,0 L 51.95,-151.33 A 160 160 0 0 1 98.27 -126.26 z" fill="white" />
-<path data-level="2" data-category="stimulation" data-parents="openness-to-change,personal-focus,growth" d="M 0,0 L 98.27,-126.26 A 160 160 0 0 1 133.95 -87.51 z" fill="white" />
-<path data-level="2" data-category="hedonism" data-parents="openness-to-change,self-enhancement,personal-focus,growth" d="M 0,0 L 133.95,-87.51 A 160 160 0 0 1 155.10 -39.28 z" fill="white" />
-<path data-level="2" data-category="achievement" data-parents="self-enhancement,personal-focus,growth,self-protection" d="M 0,0 L 155.10,-39.28 A 160 160 0 0 1 159.45 13.21 z" fill="white" />
-<path data-level="2" data-category="power-dominance" data-parents="self-enhancement,personal-focus,self-protection" d="M 0,0 L 159.45,13.21 A 160 160 0 0 1 146.52 64.27 z" fill="white" />
-<path data-level="2" data-category="power-resources" data-parents="self-enhancement,personal-focus,self-protection" d="M 0,0 L 146.42,64.27 A 160 160 0 0 1 117.72 108.37" fill="white" />
-<path data-level="2" data-category="face" data-parents="self-enhancement,conservation,personal-focus,self-protection" d="M 0,0 L 117.72,108.37 A 160 160 0 0 1 76.15 140.72 z" fill="white" />
-<path data-level="2" data-category="security-personal" data-parents="conservation,personal-focus,self-protection" d="M 0,0 L 76.15,140.72 A 160 160 0 0 1 26.33 157.82 z" fill="white" />
-<path data-level="2" data-category="security-societal" data-parents="conservation,social-focus,self-protection" d="M 0,0 L 26.33,157.82 A 160 160 0 0 1 -26.33 157.82 z" fill="white" />
-<path data-level="2" data-category="tradition" data-parents="conservation,social-focus,self-protection" d="M 0,0 L -76.15,140.72 A 160 160 0 0 0 -26.33 157.82 z" fill="white" />
-<path data-level="2" data-category="conformity-rules" data-parents="conservation,social-focus,self-protection" d="M 0,0 L -117.72,108.37 A 160 160 0 0 0 -76.15 140.72 z" fill="white" />
-<path data-level="2" data-category="conformity-interpersonal" data-parents="conservation,social-focus,self-protection" d="M 0,0 L -146.52,64.27 A 160 160 0 0 0 -117.72 108.37 z" fill="white" />
-<path data-level="2" data-category="humility" data-parents="conservation,self-transcendence,social-focus,self-protection,growth" d="M 0,0 L -159.45,13.21 A 160 160 0 0 0 -146.52 64.27 z" fill="white" />
-<path data-level="2" data-category="benevolence-caring" data-parents="self-transcendence,social-focus,growth" d="M 0,0 L -155.10,-39.28 A 160 160 0 0 0 -159.45 13.21 z" fill="white" />
-<path data-level="2" data-category="benevolence-dependability" data-parents="self-transcendence,social-focus,growth" d="M 0,0 L -133.95,-87.51 A 160 160 0 0 0 -155.10 -39.28 z" fill="white" />
-<path data-level="2" data-category="universalism-concern" data-parents="self-transcendence,social-focus,growth" d="M 0,0 L -98.27,-126.26 A 160 160 0 0 0 -133.95 -87.51 z" fill="white" />
-<path data-level="2" data-category="universalism-nature" data-parents="self-transcendence,social-focus,growth" d="M 0,0 L -51.95,-151.33 A 160 160 0 0 0 -98.27 -126.26 z" fill="white" />
-<path data-level="2" data-category="universalism-tolerance" data-parents="self-transcendence,social-focus,growth" d="M 0,0 L 0,-160 A 160 160 0 0 0 -51.95 -151.33 z" fill="white" />
-</g>
-<g class="labels">
-<path id="pathSelfDirection" d="M 0,-146 A 146 146 0 0 1 0 146" fill="none"/>
-<text text-anchor="middle"><textPath href="#pathSelfDirection" startOffset="48.28">Self-direction:</textPath></text>
-<path id="pathPower" d="M 114.77,105.66 A 156 156 0 0 0 156 0" fill="none"/>
-<text text-anchor="middle"><textPath href="#pathPower" startOffset="51.59">Power:</textPath></text>
-<path id="pathSecurity" d="M -25.68,153.87 A 156 156 0 0 0 156 0" fill="none"/>
-<text text-anchor="middle"><textPath href="#pathSecurity" startOffset="51.59">Security:</textPath></text>
-<path id="pathConformity" d="M -142.86,62.66 A 156 156 0 0 0 156 0" fill="none"/>
-<text text-anchor="middle"><textPath href="#pathConformity" startOffset="51.59">Conformity:</textPath></text>
-<path id="pathBenevolence" d="M -145.50,12.06 A 146 146 0 0 1 0 -146" fill="none"/>
-<text text-anchor="middle"><textPath href="#pathBenevolence" startOffset="48.28">Benevolence:</textPath></text>
-<path id="pathUniversalism" d="M -122.23,-79.85 A 146 146 0 0 1 0 -146" fill="none"/>
-<text text-anchor="middle"><textPath href="#pathUniversalism" startOffset="72.42">Universalism:</textPath></text>
-<text transform="translate(134 5) rotate(-80.53 -134 -5)" text-anchor="end">thought</text>
-<text transform="translate(134 5) rotate(-61.58 -134 -5)" text-anchor="end">action</text>
-<text transform="translate(155 5) rotate(-42.63 -155 -5)" text-anchor="end">Stimulation</text>
-<text transform="translate(155 5) rotate(-23.68 -155 -5)" text-anchor="end">Hedonism</text>
-<text transform="translate(155 5) rotate(-4.74 -155 -5)" text-anchor="end">Achievement</text>
-<text transform="translate(134 5) rotate(14.21 -134 -5)" text-anchor="end">dominance</text>
-<text transform="translate(134 5) rotate(33.16 -134 -5)" text-anchor="end">resources</text>
-<text transform="translate(155 5) rotate(52.11 -155 -5)" text-anchor="end">Face</text>
-<text transform="translate(134 5) rotate(71.05 -134 -5)" text-anchor="end">personal</text>
-<text transform="translate(-134 5) rotate(-90 134 -5)" text-anchor="start">societal</text>
-<text transform="translate(-155 5) rotate(-71.05 155 -5)" text-anchor="start">Tradition</text>
-<text transform="translate(-134 5) rotate(-52.11 134 -5)" text-anchor="start">rules</text>
-<text transform="translate(-134 5) rotate(-33.16 134 -5)" text-anchor="start">interpersonal</text>
-<text transform="translate(-155 5) rotate(-14.21 155 -5)" text-anchor="start">Humility</text>
-<text transform="translate(-134 5) rotate(4.74 134 -5)" text-anchor="start">caring</text>
-<text transform="translate(-134 5) rotate(23.68 134 -5)" text-anchor="start">dependability</text>
-<text transform="translate(-134 5) rotate(42.63 134 -5)" text-anchor="start">concern</text>
-<text transform="translate(-134 5) rotate(61.58 134 -5)" text-anchor="start">nature</text>
-<text transform="translate(-134 5) rotate(80.53 134 -5)" text-anchor="start">tolerance</text>
-
-<path id="pathOpennessToChange" d="M 0,-166 A 166 166 0 0 1 166 0" fill="none"/>
-<text text-anchor="middle"><textPath href="#pathOpennessToChange" startOffset="96.06">Openness to change</textPath></text>
-<path id="pathSelfEnhancement" d="M 108.10,138.89 A 176 176 0 0 0 156.82 -79.90" fill="none"/>
-<text text-anchor="middle"><textPath href="#pathSelfEnhancement" startOffset="116.40">Self-enhancement</textPath></text>
-<path id="pathConservation" d="M -170.61,43.21 A 176 176 0 0 0 124.45 124.45" fill="none"/>
-<text text-anchor="middle"><textPath href="#pathConservation" startOffset="174.61">Conservation</textPath></text>
-<path id="pathSelfTranscendence" d="M -160.92,40.75 A 166 166 0 0 1 0 -166" fill="none"/>
-<text text-anchor="middle"><textPath href="#pathSelfTranscendence" startOffset="150.95">Self-transcendence</textPath></text>
+<p>Identify human values (sub-task 1) and their attainment (sub-task 2) in long texts in eight languages<!-- (Bulgarian, Dutch, English, French,
+German, Hebrew, Italian, and Turkish)-->.<!-- Each referred value can either be mentioned as something that is or should be attained or something that is not attained or constrained. Attainment would mean that whatever is described in the sentence will help lead to fulfilling the value. For example, for Security, (partial) attainment would mean that something is made safer or healthier. In contrast, an event can be stated in a way that thwarts or constrains safety or health.--></p>
 
 <!--
-<path id="pathPersonalFocus" d="M 0,-186 A 186 186 0 0 1 57.48 176.90" fill="none"/>
-<text text-anchor="middle"><textPath href="#pathPersonalFocus" startOffset="276.79">Personal focus</textPath></text>
-<path id="pathSocialFocus" d="M 30.61,183.46 A 186 186 0 1 1 0 -186" fill="none"/>
-<text text-anchor="middle"><textPath href="#pathSocialFocus" startOffset="307.54">Social focus</textPath></text>
-
-<path id="pathSelfProtection" d="M -209.39,53.02 A 216 216 0 0 0 213.34 -33.79" fill="none"/>
-<text text-anchor="middle"><textPath href="#pathSelfProtection" startOffset="321.33">Self-protection, Anxiety-avoidance</textPath></text>
-<path id="pathGrowth" d="M -199.70,50.57 A 206 206 0 1 1 203.46 -32.23" fill="none"/>
-<text text-anchor="middle"><textPath href="#pathGrowth" startOffset="340.62">Growth, Anxiety-free</textPath></text>
--->
-</g>
-<g class="outline">
-<circle cx="0" cy="0" r="160" fill="none" stroke="black" />
-<line x1="0" y1="0" x2="0" y2="-160" stroke="black" />
-<line x1="0" y1="0" x2="46.11" y2="-134.31" stroke="black" />
-<line x1="0" y1="0" x2="98.27" y2="-126.26" stroke="black" />
-<line x1="0" y1="0" x2="133.95" y2="-87.51" stroke="black" />
-<line x1="0" y1="0" x2="155.10" y2="-39.28" stroke="black" />
-<line x1="0" y1="0" x2="159.45" y2="13.21" stroke="black" />
-<line x1="0" y1="0" x2="130.04" y2="57.04" stroke="black" />
-<line x1="0" y1="0" x2="117.72" y2="108.37" stroke="black" />
-<line x1="0" y1="0" x2="76.15" y2="140.72" stroke="black" />
-<line x1="0" y1="0" x2="23.37" y2="140.06" stroke="black" />
-<line x1="0" y1="0" x2="-26.34" y2="157.82" stroke="black" />
-<line x1="0" y1="0" x2="-76.15" y2="140.72" stroke="black" />
-<line x1="0" y1="0" x2="-104.47" y2="96.17" stroke="black" />
-<line x1="0" y1="0" x2="-146.52" y2="64.27" stroke="black" />
-<line x1="0" y1="0" x2="-159.45" y2="13.21" stroke="black" />
-<line x1="0" y1="0" x2="-137.65" y2="-34.86" stroke="black" />
-<line x1="0" y1="0" x2="-133.94" y2="-87.51" stroke="black" />
-<line x1="0" y1="0" x2="-87.22" y2="-112.06" stroke="black" />
-<line x1="0" y1="0" x2="-46.11" y2="-134.31" stroke="black" />
-
-<circle cx="0" cy="0" r="180" fill="none" stroke="black" />
-<line x1="0" y1="-160" x2="0" y2="-180" stroke="black" />
-<line x1="146.52" y1="-64.27" x2="164.84" y2="-72.30" stroke="black" />
-<line x1="98.27" y1="126.26" x2="110.56" y2="142.05" stroke="black" />
-<line x1="-155.10" y1="39.28" x2="-174.49" y2="44.19" stroke="black" />
-
-<!--
-<circle cx="0" cy="0" r="200" fill="none" stroke="black" />
-<line x1="0" y1="-180" x2="0" y2="-200" stroke="black" />
-<line x1="29.63" y1="177.55" x2="32.92" y2="197.27" stroke="black" />
-
-<circle cx="0" cy="0" r="220" fill="none" stroke="black" />
-<line x1="199.32" y1="-16.52" x2="219.25" y2="-18.17" stroke="black" />
-<line x1="-193.88" y1="49.10" x2="-213.27" y2="54.01" stroke="black" />
--->
-</g>
-</svg>
-<div class="category-descriptions">
-<div class="category-description active" data-category="self-direction-thought">
-  <h4>Self-direction: thought</h4>
-  <i>It is good to have own ideas and interests.</i>
-  <p>Contained values and associated arguments (examples):</p>
-  <ul>
-  <li>Be creative: arguments towards more creativity or imagination</li>
-  <li>Be curious: arguments towards more curiosity, discoveries, or general interestingness</li>
-  <li>Have freedom of thought: arguments toward people figuring things out on their own, towards less censorship, or towards less influence on thoughts</li>
-  </ul>
-</div>
-<div class="category-description" data-category="self-direction-action">
-  <h4>Self-direction: action</h4>
-  <i>It is good to determine one's own actions.</i>
-  <p>Contained values and associated arguments (examples):</p>
-  <ul>
-  <li>Be choosing own goals: arguments towards allowing people to choose what is best for them, to decide on their life, and to follow their dreams</li>
-  <li>Be independent: arguments towards allowing people to plan on their own and not ask for consent</li>
-  <li>Have freedom of action: arguments towards allowing people to be self-determined and able to do what they want</li>
-  <li>Have privacy: arguments towards allowing for private spaces, time alone, and less surveillance, or towards more control on what to disclose and to whom</li>
-  </ul>
-</div>
-<div class="category-description" data-category="stimulation">
-  <h4>Stimulation</h4>
-  <i>It is good to experience excitement, novelty, and change.</i>
-  <p>Contained values and associated arguments (examples):</p>
-  <ul>
-  <li>Have an exciting life: arguments towards allowing people to experience foreign places and special activities or having perspective-changing experiences</li>
-  <li>Have a varied life: arguments towards allowing people to engage in many activities and change parts of their life or towards promoting local clubs (sports, ...)</li>
-  <li>Be daring: arguments towards more risk-taking</li>
-  </ul>
-</div>
-<div class="category-description" data-category="hedonism">
-  <h4>Hedonism</h4>
-  <i>It is good to experience pleasure and sensual gratification.</i>
-  <p>Contained values and associated arguments (examples):</p>
-  <ul>
-  <li>Have pleasure: arguments towards making life enjoyable or providing leisure, opportunities to have fun, and sensual gratification</li>
-  </ul>
-</div>
-<div class="category-description" data-category="achievement">
-  <h4>Achievement</h4>
-  <i>It is good to be successful in accordance with social norms.</i>
-  <p>Contained values and associated arguments (examples):</p>
-  <ul>
-  <li>Be ambitious: arguments towards allowing for ambitions and climbing up the social ladder</li>
-  <li>Have success: arguments towards allowing for success and recognizing achievements</li>
-  <li>Be capable: arguments towards acquiring competence in certain tasks, being more effective, and showing competence in solving tasks</li>
-  <li>Be intellectual: arguments towards acquiring high cognitive skills, being more reflective, and showing intelligence</li>
-  <li>Be courageous: arguments towards being more courageous and having people stand up for their beliefs</li>
-  </ul>
-</div>
-<div class="category-description" data-category="power-dominance">
-  <h4>Power: dominance</h4>
-  <i>It is good to be in positions of control over others.</i>
-  <p>Contained values and associated arguments (examples):</p>
-  <ul>
-  <li>Have influence: arguments towards having more people to ask for a favor, more influence, and more ways to control events</li>
-  <li>Have the right to command: arguments towards allowing the right people to take command, putting experts in charge, and clearer hierarchies of command, or towards fostering leadership</li>
-  </ul>
-</div>
-<div class="category-description" data-category="power-resources">
-  <h4>Power: resources</h4>
-  <i>It is good to have material possessions and social resources.</i>
-  <p>Contained values and associated arguments (examples):</p>
-  <ul>
-  <li>Have wealth: arguments towards allowing people to gain wealth and material possession, show their wealth, and exercise control through wealth, or towards financial prosperity</li>
-  </ul>
-</div>
-<div class="category-description" data-category="face">
-  <h4>Face</h4>
-  <i>It is good to maintain one's public image.</i>
-  <p>Contained values and associated arguments (examples):</p>
-  <ul>
-  <li>Have social recognition: arguments towards allowing people to gain respect and social recognition or avoid humiliation</li>
-  <li>Have a good reputation: arguments towards allowing people to build up their reputation, protect their public image, and spread reputation</li>
-  </ul>
-</div>
-<div class="category-description" data-category="security-personal">
-  <h4>Security: personal</h4>
-  <i>It is good to have a secure immediate environment.</i>
-  <p>Contained values and associated arguments (examples):</p>
-  <ul>
-  <li>Have a sense of belonging: arguments towards allowing people to establish, join, and stay in groups, show their group membership, and show that they care for each other, or towards fostering a sense of belonging</li>
-  <li>Have good health: arguments towards avoiding diseases, preserving health, or having physiological and mental well-being</li>
-  <li>Have no debts: arguments towards avoiding indebtedness and having people return favors</li>
-  <li>Be neat and tidy: arguments towards being more clean, neat, or orderly</li>
-  <li>Have a comfortable life: arguments towards providing subsistence income, having no financial worries, and having a prosperous life, or towards resulting in a higher general happiness</li>
-  </ul>
-</div>
-<div class="category-description" data-category="security-societal">
-  <h4>Security: societal</h4>
-  <i>It is good to have a secure and stable wider society.</i>
-  <p>Contained values and associated arguments (examples):</p>
-  <ul>
-  <li>Have a safe country: arguments towards a state that can better act on crimes, and defend or care for its citizens, or towards a stronger state in general</li>
-  <li>Have a stable society: arguments towards accepting or maintaining the existing social structure or towards preventing chaos and disorder at a societal level</li>
-  </ul>
-</div>
-<div class="category-description" data-category="tradition">
-  <h4>Tradition</h4>
-  <i>It is good to maintain cultural, family, or religious traditions.</i>
-  <p>Contained values and associated arguments (examples):</p>
-  <ul>
-  <li>Be respecting traditions: arguments towards allowing to follow one's family's customs, honoring traditional practices, maintaining traditional values and ways of thinking, or promoting the preservation of customs</li>
-  <li>Be holding religious faith: arguments towards allowing the customs of a religion and to devote one's life to their faith, or towards promoting piety and the spreading of one's religion</li>
-  </ul>
-</div>
-<div class="category-description" data-category="conformity-rules">
-  <h4>Conformity: rules</h4>
-  <i>It is good to comply with rules, laws, and formal obligations.</i>
-  <p>Contained values and associated arguments (examples):</p>
-  <ul>
-  <li>Be compliant: arguments towards abiding to laws or rules and promoting to meet one's obligations or recognizing people who do</li>
-  <li>Be self-disciplined: arguments towards fostering to exercise restraint, follow rules even when no-one is watching, and to set rules for oneself</li>
-  <li>Be behaving properly: arguments towards avoiding to violate informal rules or social conventions or towards fostering good manners</li>
-  </ul>
-</div>
-<div class="category-description" data-category="conformity-interpersonal">
-  <h4>Conformity: interpersonal</h4>
-  <i>It is good to avoid upsetting or harming others.</i>
-  <p>Contained values and associated arguments (examples):</p>
-  <ul>
-  <li>Be polite: arguments towards avoiding to upset other people, taking others into account, and being less annoying for others</li>
-  <li>Be honoring elders: arguments towards following one's parents or showing faith and respect towards one's elders</li>
-  </ul>
-</div>
-<div class="category-description" data-category="humility">
-  <h4>Humility</h4>
-  <i>It is good to recognize one's own insignificance in the larger scheme of things.</i>
-  <p>Contained values and associated arguments (examples):</p>
-  <ul>
-  <li>Be humble: arguments towards demoting arrogance, bragging, and thinking one deserves more than other people, or towards emphasizing the successful group over single persons and giving back to society</li>
-  <li>Have life accepted as is: arguments towards accepting one's fate, submitting to life's circumstances, and being satisfied with what one has</li>
-  </ul>
-</div>
-<div class="category-description" data-category="benevolence-caring">
-  <h4>Benevolence: caring</h4>
-  <i>It is good to work for the welfare of one's group's members.</i>
-  <p>Contained values and associated arguments (examples):</p>
-  <ul>
-  <li>Be helpful: arguments towards helping the people in one's group and promoting to work for the welfare of others in one group</li>
-  <li>Be honest: arguments towards being more honest and recognizing people for their honesty</li>
-  <li>Be forgiving: arguments towards allowing people to forgive each other, giving people a second chance, and being merciful, or towards providing paths to redemption</li>
-  <li>Have the own family secured: arguments towards allowing people to have, protect, and care for their family</li>
-  <li>Be loving: arguments towards fostering close relationships and placing the well-being of others above the own, or towards allowing to show affection, compassion, and sympathy</li>
-  </ul>
-</div>
-<div class="category-description" data-category="benevolence-dependability">
-  <h4>Benevolence: dependability</h4>
-  <i>It is good to be a reliable and trustworthy member of one's group.</i>
-  <p>Contained values and associated arguments (examples):</p>
-  <ul>
-  <li>Be responsible: arguments towards clear responsibilities, fostering confidence, and promoting reliability</li>
-  <li>Have loyalty towards friends: arguments towards being a dependable, trustworthy, and loyal friend, or towards allowing to give friends a full backing</li>
-  </ul>
-</div>
-<div class="category-description" data-category="universalism-concern">
-  <h4>Universalism: concern</h4>
-  <i>It is good to strive for equality, justice, and protection for all people.</i>
-  <p>Contained values and associated arguments (examples):</p>
-  <ul>
-  <li>Have equality: arguments towards fostering people of a lower social status, helping poorer regions of the world, providing all people with equal opportunities in life, and resulting in a world were success is less determined by birth</li>
-  <li>Be just: arguments towards allowing justice to be 'blind' to irrelevant aspects of a case, promoting fairness in competitions, protecting the weak and vulnerable in society, and resulting a world were people are less discriminated based on race, gender, and so on, or towards fostering a general sense for justice</li>
-  <li>Have a world at peace: arguments towards nations ceasing fire, avoiding conflicts, and ending wars, or promoting to see peace as fragile and precious or to care for all of humanity</li>
-  </ul>
-</div>
-<div class="category-description" data-category="universalism-nature">
-  <h4>Universalism: nature</h4>
-  <i>It is good to preserve the natural environment.</i>
-  <p>Contained values and associated arguments (examples):</p>
-  <ul>
-  <li>Be protecting the environment: arguments towards avoiding pollution, fostering to care for nature, or promoting programs to restore nature</li>
-  <li>Have harmony with nature: arguments towards avoiding chemicals and genetically modified organisms (especially in nutrition), or towards treating animals and plants like having souls, promoting a life in harmony with nature, and resulting in more people reflecting the consequences of their actions towards the environment</li>
-  <li>Have a world of beauty: arguments towards allowing people to experience art and stand in awe of nature, or towards promoting the beauty of nature and the fine arts</li>
-  </ul>
-</div>
-<div class="category-description" data-category="universalism-tolerance">
-  <h4>Universalism: tolerance</h4>
-  <i>It is good to accept and try to understand those who are different from oneself.</i>
-  <p>Contained values and associated arguments (examples):</p>
-  <ul>
-  <li>Be broadminded: arguments towards allowing for discussion between groups, clearing up with prejudices, listening to people who are different from oneself, and promoting to life within a different group for some time, or towards promoting tolerance between all kinds of people and groups in general</li>
-  <li>Have the wisdom to accept others: arguments towards allowing people to accept disagreements and people even when one disagrees with them, to promote a mature understanding of different opinions, or to decrease partisanship or fanaticism</li>
-  </ul>
-</div>
-<div class="category-description" data-category="universalism-objectivity">
-  <h4>Universalism: objectivity</h4>
-  <i>It is good to search for the truth and think in a rational and unbiased way.</i>
-  <p>Contained values and associated arguments (examples):</p>
-  <ul>
-  <li>Be logical: arguments towards going for the numbers instead of gut feeling, towards a rational, focused, and consistent way of thinking, towards a rational analysis of circumstances, or towards promoting the scientific method</li>
-  <li>Have an objective view: arguments towards fostering to seek the truth, to take on a neutral perspective, to form an unbiased opinion, and to weigh all pros and cons, or towards providing people with the means to make informed decisions</li>
-  </ul>
-</div>
-</div>
-</div>
-<p data-categories-hover="self-direction-action,achievement,security-personal,security-societal,benevolence-caring,universalism-concern">If you want to focus on a few categories but are unsure which to pick, we suggest to take (from) the most frequent ones in our initial dataset:
-Self-direction:&nbsp;action,
-Achievement,
-Security:&nbsp;personal,
-Security:&nbsp;societal,
-Benevolence:&nbsp;caring,
-Universalism:&nbsp;concern.</p>
-
-
 <h2 id="data">Data</h2>
 <p>Data is provided as tab-separated values files with one header line. Stay up-to-date and report problems on the <a href="https://groups.google.com/group/valueeval/subscribe">task mailing list</a>. [<a href="https://doi.org/10.5281/zenodo.6814563">download</a>] [<a href="https://arxiv.org/abs/2301.13771">description paper</a>]</p>
 <p>The <code>arguments-training/validation/test.tsv</code> files contain one argument per line: its unique <span class="column">argument ID</span>, the <span class="column">conclusion</span>, the premise's <span class="column">stance</span> towards the conclusion, and the <span class="column">premise</span> itself. Example with tab-separated columns highlighted:</p>
@@ -466,154 +133,12 @@ Universalism:&nbsp;concern.</p>
 <p>
 In addition, we provide three datasets for evaluating the robustness of your approaches: <code>validation-zhihu</code> from the recommendation and hotlist section of the Chinese question-answering website Zhihu (labels available), <code>test-nahjalbalagha</code> from and based on the <a href="https://en.wikipedia.org/wiki/Nahj_al-Balagha">Nahj al-Balagha</a> (labels were kept secret during competition), and <code>test-nyt</code> from New York Times articles related to the Coronavirus (labels were kept secret during competition; articles have to be <a href="https://github.com/touche-webis-de/touche-code/tree/main/semeval23/human-value-detection/nyt-downloader">downloaded</a> unless doing a Docker submission).
 </p>
-<!--
-<h4>Call for Data</h4>
-<p>We are looking for data suggestions or contributions to diversify our training and test datasets. Specifically, we are looking for data that fulfill these criteria:</p>
-<ul>
-<li>The data consists of pairs of two causally related short statements (1 to 3 sentences each):
-  <ul>
-  <li>the first statement of the pair must provide one or more reasons</li>
-  <li>the second statement of the pair provides context for the first statement: the first statement must either be in support or in attack of the second statement</li>
-  </ul></li>
-<li>The data contains between 50 and 200 such pairs</li>
-<li>The statements are in English (possibly translated from a different language) and grammatically sound</li>
-</ul>
-<p>We are specifically looking for statements from non-US and non-Western sources. We are grateful for pointers to resources we could use (e.g., specific websites) or to existing corpora.</p>
-<p>After assessing suitability per the criteria outlined above, we will take care of annotation (and adding the "stance"-attribute if not available yet). We will write a paper on the final dataset and invite each data contributor to join as a co-author.</p>
-<p>Please send suggestions or contributions to <a href="mailto:valueeval-organizers@googlegroups.com">our mailing list</a>.</p>
 -->
 
-
+<!--
 <h2 id="evaluation">Evaluation</h2>
 <p>Runs are evaluated on the basis of F1-score, Precision, and Recall in <a href="https://www.tira.io/task/valueeval-at-semeval-2023-human-value-detection">TIRA</a>: averaged over all value categories and for each category individually. For the shared task leaderboard, the runs are ranked according to the averaged F1-score on the "arguments-test" dataset, corresponding to the <code>arguments-test.tsv</code> of the <a href="https://doi.org/10.5281/zenodo.6814563">dataset</a>.</p>
-
-
-<!--
-<h2 id="submission">Submission</h2>
-<p>This task uses <a href="https://www.tira.io/task/valueeval-at-semeval-2023-human-value-detection">TIRA</a> for submissions, which allows for both run file upload and Docker image submission. The latter allows for excellent reproducibility of your run.--><!-- Registered teams will receive links to register with TIRA up to one work day after registration.--><!--</p>
-<p>Each registered team can submit up to 4 different runs on the "arguments-test" dataset, 4 different runs on the "arguments-test-nahjalbalagha" dataset, and 4 different runs on the "arguments-test-nyt" dataset. Teams were allowed to submit one additional "early bird" run to this dataset until December 16, 2022. If you submit more runs, please tell us which one you would like to have scored. You can submit an arbitrary amount of runs to the other datasets. The submission format is the same as the <code>labels-training/validation/test.tsv</code> with value category columns being optional (skip categories for which the run contains no prediction).</p>
-<p>To submit a run file, go to <a href="https://www.tira.io/task/valueeval-at-semeval-2023-human-value-detection">this task's TIRA page</a>. Log in. Click "SUBMIT". Make sure "UPLOAD SUBMISSION" is selected. Specify your file and the dataset and "UPLOAD". You can use our <a href="run-validator.html">online validator</a> to check your file before you upload it.</p>
-<p>To submit a Docker image, go to <a href="https://www.tira.io/task/valueeval-at-semeval-2023-human-value-detection">this task's TIRA page</a>. Log in. Click "SUBMIT". Make sure "DOCKER SUBMISSION" is selected. Click on "UPLOAD IMAGES" and follow the instructions. Once uploaded, click on "ADD CONTAINER". Specify the command and the Docker image and "ADD CONTAINER". A randomly named tab is created. Click on it, specify the dataset and "RUN CONTAINER". You can copy the <a href="https://github.com/touche-webis-de/touche-code/tree/main/semeval23/human-value-detection/random-baseline">random baseline</a> to get started with Docker submissions.</p>
-<p>For a quick comparison, we already run the <a href="https://github.com/touche-webis-de/touche-code/tree/main/semeval23/human-value-detection/random-baseline">random baseline</a> and <a href="https://github.com/touche-webis-de/touche-code/tree/main/semeval23/human-value-detection/1-baseline">1-baseline</a> on the training and validation sets using the team name "aristotle".</p>
-<p>In case of problems or questions concerning TIRA, please use the <a href="https://www.tira.io/c/touche/9">TIRA forum</a>. Note: At the moment, the TIRA web interface sometimes fails to provide feedback on actions. Reload the page in such cases.</p>
 -->
-
-<h2 id="results">Results</h2>
-Download the results for all runs submitted for the deadline as [<a href="../touche23-data/submitted-runs.tsv">tab-separated values file</a>].
-
-<h3 id="arguments-test">Main</h3>
-<div class="uk-overflow-auto">
-<table class="uk-table uk-table-divider uk-table-small uk-table-hover sortable">
-<caption>Best-scoring run of each team on the main test dataset. [<a href="submitted-runs.html#arguments-test">all</a>]</caption>
-<thead>
-<tr><th class="header"><span>Team</span></th><th>Run</th><th colspan="21">F1-score</th></tr>
-<tr><th></th><th></th><th class="header"><span>All</span></th><th class="header"><span>Self-direction: thought</span></th><th class="header"><span>Self-direction: action</span></th><th class="header"><span>Stimulation</span></th><th class="header"><span>Hedonism</span></th><th class="header"><span>Achievement</span></th><th class="header"><span>Power: dominance</span></th><th class="header"><span>Power: resources</span></th><th class="header"><span>Face</span></th><th class="header"><span>Security: personal</span></th><th class="header"><span>Security: societal</span></th><th class="header"><span>Tradition</span></th><th class="header"><span>Conformity: rules</span></th><th class="header"><span>Conformity: interpersonal</span></th><th class="header"><span>Humility</span></th><th class="header"><span>Benevolence: caring</span></th><th class="header"><span>Benevolence: dependability</span></th><th class="header"><span>Universalism: concern</span></th><th class="header"><span>Universalism: nature</span></th><th class="header"><span>Universalism: tolerance</span></th><th class="header"><span>Universalism: objectivity</span></th></tr>
-</thead>
-<tbody>
-<tr><td>Adam Smith</td><td>2023-01-27-17-09-53</td><td>0.56</td><td>0.59</td><td>0.71</td><td>0.22</td><td>0.29</td><td>0.66</td><td>0.48</td><td>0.52</td><td>0.30</td><td>0.79</td><td>0.67</td><td>0.65</td><td>0.61</td><td>0.61</td><td>0.19</td><td>0.60</td><td>0.36</td><td>0.74</td><td>0.84</td><td>0.41</td><td>0.53</td></tr>
-<tr><td>John Arthur</td><td>2023-01-20-14-38-48</td><td>0.55</td><td>0.56</td><td>0.70</td><td>0.27</td><td>0.25</td><td>0.65</td><td>0.50</td><td>0.52</td><td>0.39</td><td>0.76</td><td>0.60</td><td>0.63</td><td>0.60</td><td>0.69</td><td>0.24</td><td>0.55</td><td>0.41</td><td>0.74</td><td>0.86</td><td>0.44</td><td>0.58</td></tr>
-<tr><td>PAI (Theodor Zwinger)</td><td>2023-01-27-04-05-18</td><td>0.54</td><td>0.59</td><td>0.71</td><td>0.29</td><td>0.32</td><td>0.61</td><td>0.45</td><td>0.49</td><td>0.36</td><td>0.79</td><td>0.67</td><td>0.55</td><td>0.59</td><td>0.58</td><td>0.12</td><td>0.58</td><td>0.34</td><td>0.76</td><td>0.85</td><td>0.42</td><td>0.48</td></tr>
-<tr><td>Mao Zedong</td><td>2023-01-26-05-32-20</td><td>0.53</td><td>0.53</td><td>0.70</td><td>0.26</td><td>0.29</td><td>0.60</td><td>0.45</td><td>0.54</td><td>0.31</td><td>0.77</td><td>0.65</td><td>0.58</td><td>0.60</td><td>0.51</td><td>0.16</td><td>0.59</td><td>0.42</td><td>0.73</td><td>0.85</td><td>0.43</td><td>0.55</td></tr>
-<tr><td>Confucius</td><td>2023-01-20-15-27-39</td><td>0.53</td><td>0.52</td><td>0.71</td><td>0.25</td><td>0.32</td><td>0.61</td><td>0.44</td><td>0.53</td><td>0.39</td><td>0.75</td><td>0.64</td><td>0.61</td><td>0.57</td><td>0.47</td><td>0.16</td><td>0.58</td><td>0.40</td><td>0.73</td><td>0.84</td><td>0.42</td><td>0.57</td></tr>
-<tr><td>Arthur Caplan</td><td>2023-01-24-14-13-20</td><td>0.51</td><td>0.53</td><td>0.65</td><td>0.26</td><td>0.30</td><td>0.62</td><td>0.43</td><td>0.52</td><td>0.29</td><td>0.73</td><td>0.62</td><td>0.61</td><td>0.56</td><td>0.48</td><td>0.16</td><td>0.54</td><td>0.34</td><td>0.72</td><td>0.80</td><td>0.40</td><td>0.54</td></tr>
-<tr><td>Hitachi (R. M. Hare)</td><td>2023-01-28-12-36-10</td><td>0.51</td><td>0.48</td><td>0.66</td><td>0.22</td><td>0.23</td><td>0.61</td><td>0.43</td><td>0.45</td><td>0.32</td><td>0.74</td><td>0.63</td><td>0.57</td><td>0.54</td><td>0.47</td><td>0.15</td><td>0.53</td><td>0.36</td><td>0.74</td><td>0.81</td><td>0.42</td><td>0.55</td></tr>
-<tr><td>SUTNLP (David Gauthier)</td><td>2023-01-26-14-20-46</td><td>0.50</td><td>0.55</td><td>0.67</td><td>0.18</td><td>0.18</td><td>0.60</td><td>0.30</td><td>0.53</td><td>0.31</td><td>0.74</td><td>0.60</td><td>0.56</td><td>0.46</td><td>0.55</td><td>0.32</td><td>0.52</td><td>0.30</td><td>0.76</td><td>0.72</td><td>0.43</td><td>0.45</td></tr>
-<tr><td>T&uuml;bingen (Stanley Grenz)</td><td>2023-01-27-23-37-39</td><td>0.50</td><td>0.55</td><td>0.67</td><td>0.10</td><td>0.29</td><td>0.61</td><td>0.34</td><td>0.49</td><td>0.18</td><td>0.77</td><td>0.65</td><td>0.62</td><td>0.52</td><td>0.29</td><td>0.12</td><td>0.57</td><td>0.23</td><td>0.75</td><td>0.79</td><td>0.38</td><td>0.42</td></tr>
-<tr><td>Georg Simmel</td><td>2023-01-25-13-01-01</td><td>0.50</td><td>0.53</td><td>0.64</td><td>0.21</td><td>0.29</td><td>0.59</td><td>0.36</td><td>0.48</td><td>0.26</td><td>0.76</td><td>0.63</td><td>0.47</td><td>0.57</td><td>0.57</td><td>0.22</td><td>0.54</td><td>0.36</td><td>0.72</td><td>0.79</td><td>0.44</td><td>0.43</td></tr>
-<tr><td>T. M. Scanlon</td><td>2023-01-28-08-06-35</td><td>0.49</td><td>0.56</td><td>0.67</td><td>0.18</td><td>0.39</td><td>0.63</td><td>0.36</td><td>0.48</td><td>0.26</td><td>0.75</td><td>0.63</td><td>0.47</td><td>0.53</td><td>0.38</td><td>0.20</td><td>0.50</td><td>0.31</td><td>0.73</td><td>0.82</td><td>0.37</td><td>0.42</td></tr>
-<tr><td>CSECU-DSG (Fazlur Rahman)</td><td>2022-12-29-07-21-27</td><td>0.49</td><td>0.54</td><td>0.69</td><td>0.12</td><td>0.26</td><td>0.60</td><td>0.32</td><td>0.48</td><td>0.02</td><td>0.77</td><td>0.66</td><td>0.64</td><td>0.53</td><td>0.29</td><td>0.08</td><td>0.55</td><td>0.28</td><td>0.78</td><td>0.82</td><td>0.37</td><td>0.51</td></tr>
-<tr><td>Søren Kierkegaard</td><td>2023-01-25-15-47-28</td><td>0.49</td><td>0.53</td><td>0.58</td><td>0.19</td><td>0.30</td><td>0.58</td><td>0.35</td><td>0.50</td><td>0.27</td><td>0.75</td><td>0.62</td><td>0.59</td><td>0.53</td><td>0.58</td><td>0.18</td><td>0.54</td><td>0.15</td><td>0.73</td><td>0.77</td><td>0.38</td><td>0.39</td></tr>
-<tr><td>Prodicus</td><td>2023-01-27-19-12-49</td><td>0.48</td><td>0.53</td><td>0.61</td><td>0.07</td><td>0.27</td><td>0.54</td><td>0.32</td><td>0.41</td><td>0.15</td><td>0.73</td><td>0.62</td><td>0.54</td><td>0.51</td><td>0.35</td><td>0.11</td><td>0.53</td><td>0.15</td><td>0.73</td><td>0.78</td><td>0.37</td><td>0.43</td></tr>
-<tr><td>MaChAmp (Robert S. Hartman)</td><td>2023-01-27-22-02-44</td><td>0.48</td><td>0.52</td><td>0.62</td><td>0.22</td><td>0.23</td><td>0.59</td><td>0.41</td><td>0.45</td><td>0.30</td><td>0.75</td><td>0.62</td><td>0.48</td><td>0.52</td><td>0.49</td><td>0.20</td><td>0.53</td><td>0.24</td><td>0.72</td><td>0.81</td><td>0.36</td><td>0.38</td></tr>
-<tr><td>Andronicus of Rhodes</td><td>2023-01-28-10-02-00</td><td>0.48</td><td>0.47</td><td>0.65</td><td>0.25</td><td>0.29</td><td>0.58</td><td>0.35</td><td>0.54</td><td>0.30</td><td>0.71</td><td>0.60</td><td>0.51</td><td>0.54</td><td>0.27</td><td>0.14</td><td>0.52</td><td>0.31</td><td>0.69</td><td>0.76</td><td>0.39</td><td>0.48</td></tr>
-<tr><td>Rudolf Christoph Eucken</td><td>2023-01-28-10-28-43</td><td>0.48</td><td>0.40</td><td>0.60</td><td>0.20</td><td>0.23</td><td>0.60</td><td>0.41</td><td>0.48</td><td>0.25</td><td>0.70</td><td>0.57</td><td>0.61</td><td>0.51</td><td>0.46</td><td>0.13</td><td>0.49</td><td>0.24</td><td>0.71</td><td>0.80</td><td>0.26</td><td>0.42</td></tr>
-<tr><td>Aristoxenus</td><td>2023-01-23-19-44-41</td><td>0.47</td><td>0.58</td><td>0.66</td><td>0.09</td><td>0.25</td><td>0.58</td><td>0.07</td><td>0.50</td><td>0.29</td><td>0.75</td><td>0.61</td><td>0.56</td><td>0.51</td><td>0.52</td><td>0.27</td><td>0.49</td><td>0.20</td><td>0.76</td><td>0.77</td><td>0.34</td><td>0.40</td></tr>
-<tr><td>Noam Chomsky</td><td>2023-01-28-09-49-59</td><td>0.47</td><td>0.51</td><td>0.59</td><td>0.15</td><td>0.28</td><td>0.59</td><td>0.36</td><td>0.47</td><td>0.22</td><td>0.72</td><td>0.61</td><td>0.48</td><td>0.56</td><td>0.36</td><td>0.15</td><td>0.51</td><td>0.23</td><td>0.71</td><td>0.78</td><td>0.40</td><td>0.41</td></tr>
-<tr><td>Tom Regan</td><td>2023-01-06-04-27-02</td><td>0.47</td><td>0.44</td><td>0.63</td><td>0.17</td><td>0.25</td><td>0.58</td><td>0.18</td><td>0.47</td><td>0.22</td><td>0.72</td><td>0.62</td><td>0.52</td><td>0.47</td><td>0.47</td><td>0.29</td><td>0.50</td><td>0.28</td><td>0.74</td><td>0.66</td><td>0.27</td><td>0.36</td></tr>
-<tr><td>Sina (Seyyed Hossein Nasr)</td><td>2023-01-28-14-23-43</td><td>0.47</td><td>0.42</td><td>0.61</td><td>0.20</td><td>0.21</td><td>0.61</td><td>0.39</td><td>0.55</td><td>0.24</td><td>0.73</td><td>0.58</td><td>0.45</td><td>0.54</td><td>0.52</td><td>0.18</td><td>0.50</td><td>0.24</td><td>0.72</td><td>0.77</td><td>0.38</td><td>0.49</td></tr>
-<tr><td>LRL_NC (George Boole)</td><td>2023-01-19-15-58-21</td><td>0.46</td><td>0.49</td><td>0.61</td><td>0.05</td><td>0.20</td><td>0.61</td><td>0.28</td><td>0.47</td><td>0.23</td><td>0.74</td><td>0.61</td><td>0.49</td><td>0.49</td><td>0.27</td><td>0.19</td><td>0.53</td><td>0.14</td><td>0.71</td><td>0.77</td><td>0.34</td><td>0.41</td></tr>
-<tr><td>Epicurus</td><td>2023-01-26-16-58-03</td><td>0.46</td><td>0.49</td><td>0.59</td><td>0.22</td><td>0.33</td><td>0.57</td><td>0.36</td><td>0.50</td><td>0.23</td><td>0.70</td><td>0.61</td><td>0.47</td><td>0.45</td><td>0.26</td><td>0.19</td><td>0.47</td><td>0.28</td><td>0.68</td><td>0.74</td><td>0.34</td><td>0.52</td></tr>
-<tr><td>I2C Huelva (Marquis de Sade)</td><td>2022-12-22-18-51-57</td><td>0.46</td><td>0.43</td><td>0.60</td><td>0.25</td><td>0.26</td><td>0.53</td><td>0.30</td><td>0.44</td><td>0.29</td><td>0.71</td><td>0.57</td><td>0.47</td><td>0.52</td><td>0.27</td><td>0.22</td><td>0.50</td><td>0.28</td><td>0.68</td><td>0.70</td><td>0.40</td><td>0.41</td></tr>
-<tr><td>Lauri Ingman</td><td>2023-01-23-18-43-06</td><td>0.44</td><td>0.50</td><td>0.62</td><td>0.05</td><td>0.13</td><td>0.54</td><td>0.16</td><td>0.36</td><td>0.21</td><td>0.71</td><td>0.54</td><td>0.49</td><td>0.47</td><td>0.32</td><td>0.33</td><td>0.46</td><td>0.28</td><td>0.69</td><td>0.68</td><td>0.31</td><td>0.37</td></tr>
-<tr><td>Augustine of Hippo</td><td>2023-01-26-23-59-27</td><td>0.44</td><td>0.40</td><td>0.58</td><td>0.22</td><td>0.09</td><td>0.58</td><td>0.33</td><td>0.51</td><td>0.20</td><td>0.71</td><td>0.59</td><td>0.45</td><td>0.50</td><td>0.32</td><td>0.20</td><td>0.47</td><td>0.28</td><td>0.69</td><td>0.72</td><td>0.33</td><td>0.45</td></tr>
-<tr><td>Mary Daly</td><td>2023-01-20-21-50-38</td><td>0.43</td><td>0.41</td><td>0.57</td><td>0.14</td><td>0.17</td><td>0.57</td><td>0.29</td><td>0.51</td><td>0.23</td><td>0.65</td><td>0.53</td><td>0.48</td><td>0.48</td><td>0.31</td><td>0.17</td><td>0.42</td><td>0.29</td><td>0.64</td><td>0.72</td><td>0.36</td><td>0.51</td></tr>
-<tr><td>Niccolò Machiavelli</td><td>2023-01-28-09-56-11</td><td>0.42</td><td>0.52</td><td>0.63</td><td>0.05</td><td>0.14</td><td>0.56</td><td>0.32</td><td>0.37</td><td>0.00</td><td>0.70</td><td>0.61</td><td>0.48</td><td>0.43</td><td>0.00</td><td>0.11</td><td>0.43</td><td>0.20</td><td>0.74</td><td>0.70</td><td>0.24</td><td>0.37</td></tr>
-<tr><td>Philippa Foot</td><td>2022-12-17-16-06-28</td><td>0.42</td><td>0.46</td><td>0.60</td><td>0.05</td><td>0.26</td><td>0.50</td><td>0.17</td><td>0.42</td><td>0.13</td><td>0.72</td><td>0.59</td><td>0.53</td><td>0.42</td><td>0.30</td><td>0.14</td><td>0.48</td><td>0.10</td><td>0.73</td><td>0.60</td><td>0.24</td><td>0.35</td></tr>
-<tr><td>Baseline</td><td>BERT</td><td>0.42</td><td>0.44</td><td>0.55</td><td>0.05</td><td>0.20</td><td>0.56</td><td>0.29</td><td>0.44</td><td>0.13</td><td>0.74</td><td>0.59</td><td>0.43</td><td>0.47</td><td>0.23</td><td>0.07</td><td>0.46</td><td>0.14</td><td>0.67</td><td>0.71</td><td>0.32</td><td>0.33</td></tr>
-<tr><td>Francis Bacon</td><td>2023-01-28-11-41-15</td><td>0.42</td><td>0.40</td><td>0.53</td><td>0.19</td><td>0.28</td><td>0.57</td><td>0.28</td><td>0.49</td><td>0.17</td><td>0.67</td><td>0.54</td><td>0.48</td><td>0.47</td><td>0.24</td><td>0.11</td><td>0.41</td><td>0.27</td><td>0.64</td><td>0.68</td><td>0.34</td><td>0.50</td></tr>
-<tr><td>Tenzin Gyatso</td><td>2023-01-28-10-29-19</td><td>0.41</td><td>0.44</td><td>0.62</td><td>0.07</td><td>0.12</td><td>0.47</td><td>0.33</td><td>0.45</td><td>0.10</td><td>0.70</td><td>0.57</td><td>0.45</td><td>0.42</td><td>0.21</td><td>0.12</td><td>0.47</td><td>0.21</td><td>0.67</td><td>0.73</td><td>0.31</td><td>0.37</td></tr>
-<tr><td>TeamEC (Johann Georg Walch)</td><td>2023-01-27-18-43-12</td><td>0.40</td><td>0.42</td><td>0.50</td><td>0.04</td><td>0.13</td><td>0.53</td><td>0.17</td><td>0.36</td><td>0.10</td><td>0.68</td><td>0.53</td><td>0.47</td><td>0.48</td><td>0.21</td><td>0.17</td><td>0.46</td><td>0.25</td><td>0.68</td><td>0.56</td><td>0.34</td><td>0.37</td></tr>
-<tr><td>StFX-NLP (Jesus of Nazareth)</td><td>2023-01-21-01-07-45</td><td>0.40</td><td>0.40</td><td>0.52</td><td>0.07</td><td>0.17</td><td>0.47</td><td>0.30</td><td>0.40</td><td>0.05</td><td>0.71</td><td>0.55</td><td>0.41</td><td>0.48</td><td>0.07</td><td>0.07</td><td>0.44</td><td>0.17</td><td>0.63</td><td>0.69</td><td>0.36</td><td>0.39</td></tr>
-<tr><td>Quintilian</td><td>2023-01-22-02-01-11</td><td>0.38</td><td>0.49</td><td>0.58</td><td>0.00</td><td>0.00</td><td>0.58</td><td>0.23</td><td>0.44</td><td>0.00</td><td>0.66</td><td>0.52</td><td>0.47</td><td>0.49</td><td>0.00</td><td>0.00</td><td>0.41</td><td>0.30</td><td>0.65</td><td>0.64</td><td>0.38</td><td>0.45</td></tr>
-<tr><td>Joseph Fletcher</td><td>2023-01-21-12-04-51</td><td>0.34</td><td>0.43</td><td>0.45</td><td>0.00</td><td>0.00</td><td>0.40</td><td>0.05</td><td>0.28</td><td>0.09</td><td>0.69</td><td>0.53</td><td>0.46</td><td>0.42</td><td>0.44</td><td>0.05</td><td>0.44</td><td>0.13</td><td>0.71</td><td>0.65</td><td>0.17</td><td>0.19</td></tr>
-<tr><td>Francisco de Vitoria</td><td>2023-01-04-17-45-31</td><td>0.32</td><td>0.47</td><td>0.50</td><td>0.00</td><td>0.00</td><td>0.41</td><td>0.04</td><td>0.32</td><td>0.00</td><td>0.73</td><td>0.54</td><td>0.33</td><td>0.43</td><td>0.00</td><td>0.00</td><td>0.29</td><td>0.00</td><td>0.70</td><td>0.72</td><td>0.03</td><td>0.05</td></tr>
-<tr><td>Baseline</td><td>1-Baseline</td><td>0.26</td><td>0.17</td><td>0.40</td><td>0.09</td><td>0.03</td><td>0.41</td><td>0.13</td><td>0.12</td><td>0.12</td><td>0.51</td><td>0.40</td><td>0.19</td><td>0.31</td><td>0.07</td><td>0.09</td><td>0.35</td><td>0.19</td><td>0.54</td><td>0.17</td><td>0.22</td><td>0.46</td></tr>
-<tr><td>Martha Nussbaum</td><td>2022-12-16-21-16-34</td><td>0.24</td><td>0.34</td><td>0.57</td><td>0.00</td><td>0.00</td><td>0.42</td><td>0.00</td><td>0.27</td><td>0.00</td><td>0.59</td><td>0.48</td><td>0.00</td><td>0.37</td><td>0.00</td><td>0.00</td><td>0.39</td><td>0.03</td><td>0.57</td><td>0.00</td><td>0.10</td><td>0.15</td></tr>
-<tr><td>Johann Friedrich Herbart</td><td>2022-12-27-18-04-28</td><td>0.18</td><td>0.00</td><td>0.21</td><td>0.12</td><td>0.12</td><td>0.03</td><td>0.10</td><td>0.06</td><td>0.09</td><td>0.08</td><td>0.18</td><td>0.18</td><td>0.31</td><td>0.21</td><td>0.03</td><td>0.18</td><td>0.19</td><td>0.18</td><td>0.10</td><td>0.04</td><td>0.24</td></tr>
-<tr><td>Friedrich Nietzsche</td><td>2023-01-30-08-51-04</td><td>0.01</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.01</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.08</td><td>0.03</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.01</td><td>0.04</td><td>0.00</td><td>0.00</td></tr>
-</tbody>
-</table>
-</div>
-
-<br>
-<h3 id="arguments-test-nahjalbalagha">Nahj al-Balagha</h3>
-<div class="uk-overflow-auto">
-<table class="uk-table uk-table-divider uk-table-small uk-table-hover sortable">
-<caption>Best-scoring run of each team on the Nahj al-Balagha test dataset. [<a href="submitted-runs.html#arguments-test-nahjalbalagha">all</a>]</caption>
-<thead>
-<tr><th class="header"><span>Team</span></th><th>Run</th><th colspan="21">F1-score</th></tr>
-<tr><th></th><th></th><th class="header"><span>All</span></th><th class="header"><span>Self-direction: thought</span></th><th class="header"><span>Self-direction: action</span></th><th class="header"><span>Stimulation</span></th><th class="header"><span>Hedonism</span></th><th class="header"><span>Achievement</span></th><th class="header"><span>Power: dominance</span></th><th class="header"><span>Power: resources</span></th><th class="header"><span>Face</span></th><th class="header"><span>Security: personal</span></th><th class="header"><span>Security: societal</span></th><th class="header"><span>Tradition</span></th><th class="header"><span>Conformity: rules</span></th><th class="header"><span>Conformity: interpersonal</span></th><th class="header"><span>Humility</span></th><th class="header"><span>Benevolence: caring</span></th><th class="header"><span>Benevolence: dependability</span></th><th class="header"><span>Universalism: concern</span></th><th class="header"><span>Universalism: nature</span></th><th class="header"><span>Universalism: tolerance</span></th><th class="header"><span>Universalism: objectivity</span></th></tr>
-</thead>
-<tbody>
-<tr><td>Adam Smith</td><td>2023-01-27-18-19-16</td><td>0.40</td><td>0.13</td><td>0.49</td><td>0.40</td><td>0.50</td><td>0.65</td><td>0.25</td><td>0.00</td><td>0.58</td><td>0.50</td><td>0.30</td><td>0.51</td><td>0.28</td><td>0.24</td><td>0.29</td><td>0.33</td><td>0.38</td><td>0.26</td><td>0.67</td><td>0.00</td><td>0.36</td></tr>
-<tr><td>T&uuml;bingen (Stanley Grenz)</td><td>2023-01-28-23-50-12</td><td>0.35</td><td>0.16</td><td>0.39</td><td>0.00</td><td>0.36</td><td>0.64</td><td>0.25</td><td>0.00</td><td>0.30</td><td>0.48</td><td>0.26</td><td>0.40</td><td>0.28</td><td>0.22</td><td>0.22</td><td>0.36</td><td>0.25</td><td>0.33</td><td>0.67</td><td>0.00</td><td>0.44</td></tr>
-<tr><td>MaChAmp (Robert S. Hartman)</td><td>2023-01-27-22-03-07</td><td>0.34</td><td>0.08</td><td>0.35</td><td>0.40</td><td>0.44</td><td>0.61</td><td>0.17</td><td>0.00</td><td>0.55</td><td>0.40</td><td>0.31</td><td>0.33</td><td>0.23</td><td>0.24</td><td>0.23</td><td>0.30</td><td>0.24</td><td>0.25</td><td>0.50</td><td>0.07</td><td>0.36</td></tr>
-<tr><td>Hitachi (R. M. Hare)</td><td>2023-01-28-12-35-33</td><td>0.34</td><td>0.08</td><td>0.31</td><td>0.17</td><td>0.40</td><td>0.62</td><td>0.09</td><td>0.33</td><td>0.51</td><td>0.49</td><td>0.29</td><td>0.45</td><td>0.21</td><td>0.14</td><td>0.21</td><td>0.28</td><td>0.23</td><td>0.27</td><td>0.50</td><td>0.00</td><td>0.25</td></tr>
-<tr><td>Mao Zedong</td><td>2023-01-26-05-34-31</td><td>0.32</td><td>0.06</td><td>0.39</td><td>0.31</td><td>0.44</td><td>0.66</td><td>0.10</td><td>0.33</td><td>0.59</td><td>0.41</td><td>0.16</td><td>0.45</td><td>0.24</td><td>0.16</td><td>0.31</td><td>0.35</td><td>0.20</td><td>0.25</td><td>0.25</td><td>0.00</td><td>0.28</td></tr>
-<tr><td>Confucius</td><td>2023-01-20-15-39-35</td><td>0.31</td><td>0.09</td><td>0.31</td><td>0.25</td><td>0.36</td><td>0.60</td><td>0.12</td><td>0.31</td><td>0.57</td><td>0.43</td><td>0.19</td><td>0.46</td><td>0.22</td><td>0.16</td><td>0.26</td><td>0.30</td><td>0.18</td><td>0.22</td><td>0.29</td><td>0.00</td><td>0.24</td></tr>
-<tr><td>Prodicus</td><td>2023-01-27-19-11-49</td><td>0.30</td><td>0.17</td><td>0.33</td><td>0.00</td><td>0.40</td><td>0.59</td><td>0.00</td><td>0.00</td><td>0.37</td><td>0.42</td><td>0.27</td><td>0.53</td><td>0.26</td><td>0.07</td><td>0.00</td><td>0.38</td><td>0.35</td><td>0.23</td><td>0.00</td><td>0.17</td><td>0.41</td></tr>
-<tr><td>CSECU-DSG (Fazlur Rahman)</td><td>2023-01-26-17-54-26</td><td>0.29</td><td>0.15</td><td>0.29</td><td>0.00</td><td>0.40</td><td>0.57</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.41</td><td>0.24</td><td>0.00</td><td>0.25</td><td>0.00</td><td>0.09</td><td>0.36</td><td>0.38</td><td>0.28</td><td>0.67</td><td>0.00</td><td>0.28</td></tr>
-<tr><td>SUTNLP (David Gauthier)</td><td>2023-01-26-14-23-34</td><td>0.29</td><td>0.14</td><td>0.22</td><td>0.40</td><td>0.00</td><td>0.55</td><td>0.00</td><td>0.00</td><td>0.33</td><td>0.37</td><td>0.24</td><td>0.48</td><td>0.27</td><td>0.08</td><td>0.23</td><td>0.34</td><td>0.30</td><td>0.19</td><td>0.20</td><td>0.10</td><td>0.34</td></tr>
-<tr><td>Baseline</td><td>BERT</td><td>0.28</td><td>0.14</td><td>0.09</td><td>0.00</td><td>0.67</td><td>0.41</td><td>0.00</td><td>0.00</td><td>0.28</td><td>0.28</td><td>0.23</td><td>0.38</td><td>0.18</td><td>0.15</td><td>0.17</td><td>0.35</td><td>0.22</td><td>0.21</td><td>0.00</td><td>0.20</td><td>0.35</td></tr>
-<tr><td>Arthur Caplan</td><td>2023-01-24-15-26-49</td><td>0.28</td><td>0.12</td><td>0.26</td><td>0.00</td><td>0.27</td><td>0.61</td><td>0.13</td><td>0.00</td><td>0.55</td><td>0.51</td><td>0.20</td><td>0.55</td><td>0.24</td><td>0.14</td><td>0.23</td><td>0.25</td><td>0.19</td><td>0.21</td><td>0.33</td><td>0.10</td><td>0.29</td></tr>
-<tr><td>Epicurus</td><td>2023-01-28-11-53-42</td><td>0.27</td><td>0.09</td><td>0.20</td><td>0.00</td><td>0.25</td><td>0.49</td><td>0.17</td><td>0.12</td><td>0.41</td><td>0.38</td><td>0.13</td><td>0.47</td><td>0.21</td><td>0.27</td><td>0.11</td><td>0.29</td><td>0.23</td><td>0.24</td><td>0.25</td><td>0.06</td><td>0.30</td></tr>
-<tr><td>LRL_NC (George Boole)</td><td>2023-01-19-17-13-15</td><td>0.27</td><td>0.07</td><td>0.30</td><td>0.29</td><td>0.22</td><td>0.55</td><td>0.18</td><td>0.00</td><td>0.18</td><td>0.45</td><td>0.21</td><td>0.29</td><td>0.26</td><td>0.27</td><td>0.27</td><td>0.29</td><td>0.30</td><td>0.21</td><td>0.00</td><td>0.10</td><td>0.32</td></tr>
-<tr><td>Noam Chomsky</td><td>2023-01-28-07-22-31</td><td>0.26</td><td>0.09</td><td>0.14</td><td>0.00</td><td>0.44</td><td>0.54</td><td>0.10</td><td>0.13</td><td>0.24</td><td>0.50</td><td>0.19</td><td>0.42</td><td>0.30</td><td>0.13</td><td>0.13</td><td>0.34</td><td>0.22</td><td>0.21</td><td>0.20</td><td>0.11</td><td>0.32</td></tr>
-<tr><td>Aristoxenus</td><td>2023-01-23-19-46-09</td><td>0.25</td><td>0.08</td><td>0.13</td><td>0.00</td><td>0.29</td><td>0.49</td><td>0.00</td><td>0.20</td><td>0.21</td><td>0.36</td><td>0.23</td><td>0.30</td><td>0.27</td><td>0.11</td><td>0.00</td><td>0.35</td><td>0.24</td><td>0.26</td><td>0.18</td><td>0.08</td><td>0.32</td></tr>
-<tr><td>Sina (Seyyed Hossein Nasr)</td><td>2023-01-28-00-25-42</td><td>0.25</td><td>0.07</td><td>0.21</td><td>0.00</td><td>0.40</td><td>0.60</td><td>0.12</td><td>0.00</td><td>0.12</td><td>0.38</td><td>0.19</td><td>0.26</td><td>0.22</td><td>0.17</td><td>0.22</td><td>0.28</td><td>0.18</td><td>0.22</td><td>0.29</td><td>0.12</td><td>0.27</td></tr>
-<tr><td>Niccolò Machiavelli</td><td>2023-01-28-10-21-16</td><td>0.23</td><td>0.12</td><td>0.23</td><td>0.00</td><td>0.57</td><td>0.47</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.45</td><td>0.32</td><td>0.22</td><td>0.28</td><td>0.15</td><td>0.00</td><td>0.29</td><td>0.20</td><td>0.22</td><td>0.00</td><td>0.00</td><td>0.30</td></tr>
-<tr><td>Augustine of Hippo</td><td>2023-01-27-10-31-15</td><td>0.23</td><td>0.08</td><td>0.16</td><td>0.00</td><td>0.10</td><td>0.55</td><td>0.09</td><td>0.10</td><td>0.39</td><td>0.47</td><td>0.14</td><td>0.50</td><td>0.23</td><td>0.00</td><td>0.10</td><td>0.28</td><td>0.23</td><td>0.27</td><td>0.08</td><td>0.00</td><td>0.27</td></tr>
-<tr><td>Quintilian</td><td>2023-01-25-02-34-30</td><td>0.20</td><td>0.03</td><td>0.16</td><td>0.00</td><td>0.10</td><td>0.46</td><td>0.13</td><td>0.20</td><td>0.14</td><td>0.38</td><td>0.19</td><td>0.49</td><td>0.19</td><td>0.00</td><td>0.24</td><td>0.25</td><td>0.16</td><td>0.18</td><td>0.00</td><td>0.00</td><td>0.22</td></tr>
-<tr><td>Baseline</td><td>1-Baseline</td><td>0.13</td><td>0.04</td><td>0.09</td><td>0.01</td><td>0.03</td><td>0.41</td><td>0.04</td><td>0.03</td><td>0.23</td><td>0.38</td><td>0.06</td><td>0.18</td><td>0.13</td><td>0.06</td><td>0.13</td><td>0.17</td><td>0.12</td><td>0.12</td><td>0.01</td><td>0.04</td><td>0.14</td></tr>
-</tbody>
-</table>
-</div>
-
-<br>
-<h3 id="arguments-test-nyt">New York Times</h3>
-<div class="uk-overflow-auto">
-<table class="uk-table uk-table-divider uk-table-small uk-table-hover sortable">
-<caption>Best-scoring run of each team on the New York Times test dataset. [<a href="submitted-runs.html#arguments-test-nyt">all</a>]</caption>
-<thead>
-<tr><th class="header"><span>Team</span></th><th>Run</th><th colspan="21">F1-score</th></tr>
-<tr><th></th><th></th><th class="header"><span>All</span></th><th class="header"><span>Self-direction: thought</span></th><th class="header"><span>Self-direction: action</span></th><th class="header"><span>Stimulation</span></th><th class="header"><span>Hedonism</span></th><th class="header"><span>Achievement</span></th><th class="header"><span>Power: dominance</span></th><th class="header"><span>Power: resources</span></th><th class="header"><span>Face</span></th><th class="header"><span>Security: personal</span></th><th class="header"><span>Security: societal</span></th><th class="header"><span>Tradition</span></th><th class="header"><span>Conformity: rules</span></th><th class="header"><span>Conformity: interpersonal</span></th><th class="header"><span>Humility</span></th><th class="header"><span>Benevolence: caring</span></th><th class="header"><span>Benevolence: dependability</span></th><th class="header"><span>Universalism: concern</span></th><th class="header"><span>Universalism: nature</span></th><th class="header"><span>Universalism: tolerance</span></th><th class="header"><span>Universalism: objectivity</span></th></tr>
-</thead>
-<tbody>
-<tr><td>Hitachi (R. M. Hare)</td><td>2023-01-28-12-37-55</td><td>0.34</td><td>0.22</td><td>0.22</td><td>-</td><td>0.00</td><td>0.48</td><td>0.40</td><td>-</td><td>0.00</td><td>0.53</td><td>0.44</td><td>-</td><td>0.18</td><td>1.00</td><td>0.20</td><td>0.12</td><td>0.29</td><td>0.55</td><td>0.33</td><td>0.00</td><td>0.36</td></tr>
-<tr><td>Mao Zedong</td><td>2023-01-24-03-43-05</td><td>0.32</td><td>0.22</td><td>0.12</td><td>-</td><td>0.00</td><td>0.47</td><td>0.29</td><td>-</td><td>0.22</td><td>0.53</td><td>0.41</td><td>-</td><td>0.32</td><td>0.50</td><td>0.15</td><td>0.21</td><td>0.40</td><td>0.56</td><td>0.33</td><td>0.00</td><td>0.38</td></tr>
-<tr><td>Arthur Caplan</td><td>2023-01-24-11-44-13</td><td>0.32</td><td>0.14</td><td>0.15</td><td>-</td><td>0.00</td><td>0.31</td><td>0.00</td><td>-</td><td>0.50</td><td>0.59</td><td>0.30</td><td>-</td><td>0.18</td><td>1.00</td><td>0.15</td><td>0.11</td><td>0.36</td><td>0.40</td><td>0.29</td><td>0.00</td><td>0.42</td></tr>
-<tr><td>Confucius</td><td>2023-01-20-15-47-59</td><td>0.31</td><td>0.18</td><td>0.17</td><td>-</td><td>0.00</td><td>0.46</td><td>0.20</td><td>-</td><td>0.00</td><td>0.55</td><td>0.35</td><td>-</td><td>0.18</td><td>1.00</td><td>0.00</td><td>0.13</td><td>0.36</td><td>0.46</td><td>0.40</td><td>0.00</td><td>0.38</td></tr>
-<tr><td>Adam Smith</td><td>2023-01-27-18-19-40</td><td>0.27</td><td>0.33</td><td>0.18</td><td>-</td><td>0.00</td><td>0.42</td><td>0.00</td><td>-</td><td>0.00</td><td>0.58</td><td>0.52</td><td>-</td><td>0.18</td><td>0.00</td><td>0.00</td><td>0.21</td><td>0.31</td><td>0.62</td><td>0.50</td><td>0.00</td><td>0.46</td></tr>
-<tr><td>Niccolò Machiavelli</td><td>2023-01-28-10-05-32</td><td>0.25</td><td>0.50</td><td>0.00</td><td>-</td><td>0.00</td><td>0.44</td><td>0.00</td><td>-</td><td>0.00</td><td>0.53</td><td>0.37</td><td>-</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.12</td><td>0.23</td><td>0.50</td><td>1.00</td><td>0.00</td><td>0.42</td></tr>
-<tr><td>Sina (Seyyed Hossein Nasr)</td><td>2023-01-28-11-19-55</td><td>0.24</td><td>0.11</td><td>0.00</td><td>-</td><td>0.00</td><td>0.29</td><td>0.00</td><td>-</td><td>0.33</td><td>0.57</td><td>0.31</td><td>-</td><td>0.23</td><td>0.67</td><td>0.00</td><td>0.21</td><td>0.31</td><td>0.27</td><td>0.33</td><td>0.00</td><td>0.38</td></tr>
-<tr><td>Baseline</td><td>BERT</td><td>0.24</td><td>0.00</td><td>0.00</td><td>-</td><td>0.00</td><td>0.29</td><td>0.00</td><td>-</td><td>0.00</td><td>0.53</td><td>0.43</td><td>-</td><td>0.00</td><td>0.00</td><td>0.57</td><td>0.26</td><td>0.27</td><td>0.36</td><td>0.50</td><td>0.00</td><td>0.32</td></tr>
-<tr><td>Augustine of Hippo</td><td>2023-01-27-09-49-38</td><td>0.19</td><td>0.40</td><td>0.10</td><td>-</td><td>0.00</td><td>0.34</td><td>0.00</td><td>-</td><td>0.00</td><td>0.52</td><td>0.26</td><td>-</td><td>0.17</td><td>0.00</td><td>0.00</td><td>0.19</td><td>0.27</td><td>0.23</td><td>0.10</td><td>0.00</td><td>0.36</td></tr>
-<tr><td>MaChAmp (Robert S. Hartman)</td><td>2023-01-27-23-37-15</td><td>0.19</td><td>0.00</td><td>0.20</td><td>-</td><td>0.00</td><td>0.21</td><td>0.00</td><td>-</td><td>0.00</td><td>0.57</td><td>0.40</td><td>-</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.14</td><td>0.37</td><td>0.33</td><td>0.29</td><td>0.00</td><td>0.43</td></tr>
-<tr><td>Baseline</td><td>1-Baseline</td><td>0.15</td><td>0.05</td><td>0.03</td><td>-</td><td>0.03</td><td>0.28</td><td>0.03</td><td>-</td><td>0.05</td><td>0.51</td><td>0.20</td><td>-</td><td>0.07</td><td>0.03</td><td>0.12</td><td>0.12</td><td>0.26</td><td>0.24</td><td>0.03</td><td>0.03</td><td>0.33</td></tr>
-<tr><td>Quintilian</td><td>2023-01-25-20-23-28</td><td>0.10</td><td>0.05</td><td>0.03</td><td>-</td><td>0.03</td><td>0.28</td><td>0.03</td><td>-</td><td>0.00</td><td>0.51</td><td>0.00</td><td>-</td><td>0.07</td><td>0.00</td><td>0.12</td><td>0.12</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.03</td><td>0.33</td></tr>
-</tbody>
-</table>
-</div>
 
 
 <h2 id="task-committee">Task Committee</h2>
@@ -621,8 +146,10 @@ Download the results for all runs submitted for the deadline as [<a href="../tou
 {% include people-cards/kiesel.html gender="male" %}
 {% include people-cards/alshomary.html gender="male" %}
 {% include people-cards/mirzakhmedova.html gender="female" %}
-{% include people-cards/heinrich.html gender="male" %}
 {% include people-cards/handke.html gender="male" %}
+{% include people-cards/stefanovitch.html gender="male" %}
+{% include people-cards/de-longueville.html gender="male" %}
+{% include people-cards/scharfbillig.html gender="male" %}
 {% include people-cards/wachsmuth.html gender="male" %}
 {% include people-cards/stein.html gender="male" %}
 </div>
@@ -652,22 +179,6 @@ for (const interactionElement of Array.from(document.querySelectorAll("svg .inte
     backlight.classList.add("active");
     const description = document.querySelector(".continuum .category-descriptions [data-category='" + category + "']");
     description.classList.add("active");
-  });
-}
-for (const hoverElement of Array.from(document.querySelectorAll("[data-categories-hover]"))) {
-  hoverElement.addEventListener("mouseover", event => {
-    const categories = event.target.getAttribute("data-categories-hover").split(",");
-    for (const category of categories) {
-      const backlight = document.querySelector(".continuum .backlights [data-category='" + category + "']");
-      backlight.classList.add("hover");
-    }
-  });
-  hoverElement.addEventListener("mouseout", event => {
-    const categories = event.target.getAttribute("data-categories-hover").split(",");
-    for (const category of categories) {
-      const backlight = document.querySelector(".continuum .backlights [data-category='" + category + "']");
-      backlight.classList.remove("hover");
-    }
   });
 }
 </script>
