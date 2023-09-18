@@ -32,14 +32,21 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
 
 <div class="uk-container uk-margin-medium">
 
+  Argumentation is a communicative activity of producing and exchanging reasons to support claims. Most of the time, this is done abstractly with words. This has the advantage that we can formulate exactly, but we need time and effort to understand the words. Images, on the other hand, affect us directly. Look at the example below; what gets your attention first? There is a high chance that you looked at the images before you even read the argument. Also in the pictures, you can see directly how many nuns were involved and what they were wearing, though this is not stated in the written argument. In this regard images are less precise than words but contain more information. In this task, we want to use this power of images for argumentation.
+
 <h2 id="synopsis">Synopsis</h2>
 <ul>
 <li>Task: Given an argument, find images that help to convey the argument’s premise.</li>
 
-  
+
 <!-- <li>Input: [<a href="../touche23-data/topics-task3.xml" download>topics</a>] [<a href="https://webis.de/data.html#touche23-image-retrieval-for-arguments">data</a>]</li> -->
 <!-- <li>Submission: [queries: <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef23/image-retrieval-for-arguments/query-submission-baselines">baselines code</a>, <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef23/image-retrieval-for-arguments/query-submission-evaluator">validator</a>] [<a href="https://www.tira.io/task/touche-task-3">submit</a>]</li> -->
 </ul>
+
+“Convey” is here meant in a general manner; it can depict what is described in the argument,
+  but also show a generalization (e.g., a meme image that illustrates a related abstract concept) or specialization (e.g., a concrete example). 
+
+For this task, an argument consists of one claim and a premise. In addition, we provide the argument's topic and the premise's type. Premises are either facts from a study or anecdotal evidence and are labeled accordingly so that participants can use different approaches for these types. 
 
 <!-- <a class="uk-button uk-button-primary" href="https://clef2023-labs-registration.dei.unipd.it/">Register now</a> -->
 
@@ -61,12 +68,19 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
 
 <h2 id="submission">Submission</h2>
 
-We allow three kinds of submissions, each of the submission styles is displayed in the example.
+We allow three kinds of submissions. Each of the submission styles is displayed in the example.
 
-(1) Retrieval. Like in the last years, participants can retrieve suitable images from a focused crawl, where we also provide automatically recognized text from the image (OCR) and text from web pages that contain the image. 
-(2) Prompted Generation. Following the idea of the infinite index [2], participants can submit prompts for the Stable Diffusion image generator [7] (we will provide a stable API throughout 
-(3) Direct. Participants can employ other reproducible methods to generate images and directly submit these. This includes chart generators to transform a statistics to a chart or a headline generator which transforms the premise to a few words, which can be used as a caption.
+<li> Retrieval. Like in the last years, participants can retrieve suitable images from a focused crawl, where we also provide automatically recognized text from the image (OCR) and text from web pages that contain the image.</li>
+<li> Prompted Generation. Following the idea of the infinite index, participants can submit prompts for the Stable Diffusion image generator. A stable API access will be provided. </li>
+<li> Direct. Participants can employ other reproducible methods for generating images and directly submit them. This includes chart generators, which can generate a bar chart from given numbers in the premise. Also one can use headline generators,
+  to transform the premise to a headline. </li>
 
+
+Example:
+<img width="75%" src="../touche22-figures/task2-tira-vm-overview.png" alt="Virtual machine state in TIRA.">
+
+
+  
 
   
 <p>This task uses <a href="https://www.tira.io/task/touche-task-3">TIRA</a> for submissions, which allows for both run file upload and Docker image submission. For each topic and stance, include 10 retrieved images. Each team can submit up to 5 different runs.</p>
@@ -98,7 +112,7 @@ We provide a TIRA tutorial that provides baselines that can be executed in TIRA 
   
 
 <p>In case of problems or questions concerning TIRA, please use the <a href="https://www.tira.io/c/touche/9">TIRA forum</a>.</p>
-<p>We provide relevance judgements for submitted runs as binary judgements on topic-image pairs for topic-relevance, the pro-stance, and the con-stance. [<a href="https://zenodo.org/record/6786949/files/touche-task3-001-050-relevance.qrels?download=1">qrels</a>] [<a href="https://github.com/touche-webis-de/touche-code/blob/main/clef22/image-retrieval-for-arguments/submission-evaluator.sh">evaluator</a>]</p>
+<p>We provide relevance judgments for submitted runs as binary judgments on topic-image pairs for topic relevance, the pro-stance, and the con-stance. [<a href="https://zenodo.org/record/6786949/files/touche-task3-001-050-relevance.qrels?download=1">qrels</a>] [<a href="https://github.com/touche-webis-de/touche-code/blob/main/clef22/image-retrieval-for-arguments/submission-evaluator.sh">evaluator</a>]</p>
 
 <h2 id="tira-quickstart">TIRA Quickstart</h2>
 <p>Participant software is run in a virtual machine. Log in to <a href="https://www.tira.io">TIRA</a>, go to the <a href="https://www.tira.io/task/touche-task-1/dataset/touche-task-1-2022-02-16">task's dataset page</a>, and click on "&gt;_ SUBMIT". Click the "CONNECTION INFO" button for how to connect to the virtual machine. Click on "POWER ON" if the state is not "RUNNING".</p>
@@ -107,7 +121,7 @@ We provide a TIRA tutorial that provides baselines that can be executed in TIRA 
 <img width="75%" src="../touche22-figures/task2-tira-example-software.png" alt="Software configuration in TIRA.">
 <p>As you "RUN" the software, you will not be able to connect to the virtual machine (takes at least 10 minutes). Once finished, click on "INSPECT" to check on the run and click on "EVALUATE" for a syntax check (give it a few minutes, then check back on the page). Your run will later be reviewed and evaluated by the organizers. If uncertain on something, ask in the <a href="https://www.tira.io/c/touche/9">forum</a> or send a mail/message to <a href="#task-committee">Johannes</a>.</p>
 <img width="75%" src="../touche22-figures/task2-tira-example-evaluation.png" alt="A run in TIRA.">
-<p>Create a separate "Software" entry in the TIRA web interface for each of your approaches. NOTE: By submitting your software you retain full copyrights. You agree to grant us usage rights for evaluation of the corresponding data generated by your software. We agree not to share your software with a third party or use it for any purpose other than research.</p>
+<p>Create a separate "Software" entry in the TIRA web interface for each of your approaches. NOTE: By submitting your software, you retain full copyrights. You agree to grant us usage rights for evaluation of the corresponding data generated by your software. We agree not to share your software with a third party or use it for any purpose other than research.</p>
 -->
 
 <!--
