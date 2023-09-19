@@ -4,16 +4,26 @@ nav_active: shared-tasks
 title: Touché at CLEF 2024 - Image Retrieval for Arguments
 description: Touché at CLEF 2024 - Image Retrieval for Arguments
 ---
+
+
 <style>
+.image_examples_div{
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+  
+}
+  
 .image_example{
-  max-width:33%;
+width: 25%;
   text-align:center;
-  float:left;
 } 
 
 .sing_example_image{
     max-width: 100%;
-
+  border: 2px;
+  border-style: solid;
+  border-color: black;
   }
 </style>
 
@@ -66,8 +76,6 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
 <!-- <a class="uk-button uk-button-primary" href="https://clef2023-labs-registration.dei.unipd.it/">Register now</a> -->
 
 
-<h2 id="data">Data</h2>
-<p>This task uses a focused crawl of about 56K images (and associated web pages) as document collection. The crawl is created from several image search queries for each of the 50 topics. The relevance judgments of <a href="https://touche.webis.de/clef22/touche22-web/image-retrieval-for-arguments.html">last year</a> are available for training supervised approaches. The output of last year's approaches can be inspected on <a href="https://images.args.me">images.args.me</a>. Registered teams were invited in 2022 to submit search queries that were then used to extend the crawl. [<a href="https://webis.de/data.html#touche23-image-retrieval-for-arguments">data</a>]</p>
 
   
 <!--
@@ -84,11 +92,22 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
 
 <ol>
 <li> Retrieval. Like in the last years, participants can retrieve suitable images from a focused crawl, where we also provide automatically recognized text from the image (OCR) and text from web pages that contain the image.</li>
-<li> Prompted Generation. Following the idea of the infinite index, participants can submit prompts for the Stable Diffusion image generator. A stable API access will be provided. </li>
+<li> Prompted Generation. Following the idea of the infinite index, participants can submit prompts for the Stable Diffusion image generator. </li>
 <li> Direct. Participants can employ other reproducible methods for generating images and directly submit them. This includes chart generators, which can generate a bar chart from given numbers in the premise. Also, one can use headline generators
   to transform the premise into a headline. </li>
 </ol>
 
+<h2 id="data">Data</h2>
+<p> For image generation we provide access to a Stable-Diffusion API. For Image Retrieval we provide a focused crawl of about 10K images (and associated web pages) as document collection. 
+
+  <!--
+    The crawl is created from several image search queries for each of the 50 topics. 
+
+  The relevance judgments of <a href="https://touche.webis.de/clef22/touche22-web/image-retrieval-for-arguments.html">last year</a> are available for training supervised approaches. The output of last year's approaches can be inspected on <a href="https://images.args.me">images.args.me</a>. Registered teams were invited in 2022 to submit search queries 
+  that were then used to extend the crawl. [<a href="https://webis.de/data.html#touche23-image-retrieval-for-arguments">data</a>]</p>
+-->
+
+  
 <h2 id="example">Example</h2>
 
 <p>Premise: Indiana’s photo ID law barred twelve retired nuns in
@@ -110,7 +129,7 @@ the polling station></p>
 
 <p>Retrieved/Generated Images</p>
   
-<div class="image_examples">
+<div class="image_examples_div">
   
 <div class="image_example">
 <img class="sing_example_image" src="../touche24-data/image_chart.png" alt="self generated image.">
@@ -206,12 +225,15 @@ We provide a TIRA tutorial that provides baselines that can be executed in TIRA 
 </table>
 -->
 
+
+<!--
 <h2><a id="related-work"></a>Related Work</h2>
 <ul>
 <li>Johannes Kiesel, Nico Reichenbach, Benno Stein, and Martin Potthast. <a href="https://webis.de/publications.html#kiesel_2021e">Image Retrieval for Arguments Using Stance-Aware Query Expansion.</a> 8th Workshop on Argument Mining (ArgMining 2021) at EMNLP, November 2021.</li>
 <li>Dimitar Dimitrov, Bishr Bin Ali, Shaden Shaar, Firoj Alam, Fabrizio Silvestri, Hamed Firooz, Preslav Nakov, and Giovanni Da San Martino. <a href="https://aclanthology.org/2021.semeval-1.7/">SemEval-2021 Task 6: Detection of Persuasion Techniques in Texts and Images</a>. 15th International Workshop on Semantic Evaluation (SemEval 2021), August 2021.</li>
 <li>Keiji Yanai. <a href="https://dl.acm.org/doi/10.1145/1242572.1242816">Image collector III: a web image-gathering system with bag-of-keypoints.</a> 16th International Conference on World Wide Web (WWW 2007), May 2007.</li>
 </ul>
+-->
 
 <h2 id="task-committee">Task Committee</h2>
 <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
