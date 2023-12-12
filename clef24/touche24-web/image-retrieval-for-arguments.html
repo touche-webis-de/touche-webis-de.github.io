@@ -58,35 +58,6 @@ width: 25%;
 
 <div class="uk-container uk-margin-medium">
 
-  <p>Argumentation is a communicative activity of producing and exchanging reasons to support claims. Most of the time, this is done abstractly with words. This has the advantage that we can formulate exactly, but we need time and effort to understand the words. 
-  Images, on the other hand, affect us directly. Look at the example below; what gets your attention first? There is a high chance that you looked at the images before reading the involved argument. Also, in the pictures, you can see directly how many nuns were involved and what the voting station looks like, though this is not stated in the written argument. In this regard, images are less precise than words but contain more information. For this task, we want to use the power of images for argumentation.
-</p>
-
-
-<h2 id="synopsis">Synopsis</h2>
-
-  <ul>
-<li>Task: Given an argument, find images that help to convey the argument’s premise.</li>
-<!-- <li>Input: [<a href="../touche23-data/topics-task3.xml" download>topics</a>] [<a href="https://webis.de/data.html#touche23-image-retrieval-for-arguments">data</a>]</li> -->
-<!-- <li>Submission: [queries: <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef23/image-retrieval-for-arguments/query-submission-baselines">baselines code</a>, <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef23/image-retrieval-for-arguments/query-submission-evaluator">validator</a>] [<a href="https://www.tira.io/task/touche-task-3">submit</a>]</li> -->
-</ul>
-
-<p>“Convey” is here meant in a general manner; it can depict what is described in the argument, but also show a generalization (e.g., a meme image that illustrates a related abstract concept) or specialization (e.g., a concrete example).</p> 
-
-<p>For this task, an argument consists of one claim and a premise. In addition, we provide the argument's topic and the premise's type. Premises are either facts from a study or anecdotal evidence and are labeled accordingly so that participants can use different approaches for these types.</p> 
-
-<!-- <a class="uk-button uk-button-primary" href="https://clef2023-labs-registration.dei.unipd.it/">Register now</a> -->
-
-
-
-  
-<!--
-<h3 id="query-submission">Query Submission</h3>
-<p>Registered teams can submit queries on each of the 50 topics until December 31, 2022. Both automatically and manually created queries are welcome. We will integrate the results of submitted queries into the dataset in early 2023. submitted queries will be evaluated using precision@k, similar to but separate from the main task, and the results will be published for each topic. a valid submission may include queries on fewer than all 50 topics.</p>
-<p>Submission uses <a href="https://www.tira.io/task/touche-task-3">TIRA</a>, specifically the <code>query-submission-2023</code> dataset. Either substitute "PRO" and "CON" in the <a href="../touche23-data/query-submission-form-task3.tsv">query submission form</a> and use "upload submission" in TIRA to submit it, or provide a generic query expansion method as Docker container and use TIRA's "Docker submission". See the <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef23/image-retrieval-for-arguments/query-submission-baselines">baselines code</a> to get you started with Docker submissions. Up to two valid submissions are allowed per team (please write us a mail if you did more than two submissions). [<a href="../touche23-data/topics-task3.xml" download>topics</a>] [<a href="../touche23-data/query-submission-form-task3.tsv">form</a>] [<a href="https://www.tira.io/task/touche-task-3">submit</a>]
-<p>In case of problems or questions concerning TIRA, please use the <a href="https://www.tira.io/c/touche/9">TIRA forum</a>. Note: At the moment, the TIRA web interface sometimes fails to provide feedback on actions. Reload the page in such cases.</p>
--->
-
 
 <h2 id="submission">Submission</h2>
 
@@ -99,17 +70,38 @@ width: 25%;
   to transform the premise into a headline. </li>
 </ol>
 
-<h2 id="data">Data</h2>
-<p> We provide access to a Stable-Diffusion API for image generation. For participants favoring image retrieval, we provide access a focused crawl of about 10K images (and associated web pages) as document collection. 
+Images can be rated in several ways.
 
-  <!--
-    The crawl is created from several image search queries for each of the 50 topics. 
+<table>
+  <tr>
+    <th>Rating</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>-1</td>
+    <td>picture is not related with the argument </td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>picture is very general related to the argument or emphasizes things which are not displayed</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>picture relates to the premise, parts of the premise are illustrated. Some showed details are in conflict with the premise</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>The image relates to the premise, and illustrates parts of the premise. The picture does not explicitly show things that conflict with the premise.</td>
+  </tr>
+</table>
 
-  The relevance judgments of <a href="https://touche.webis.de/clef22/touche22-web/image-retrieval-for-arguments.html">last year</a> are available for training supervised approaches. The output of last year's approaches can be inspected on <a href="https://images.args.me">images.args.me</a>. Registered teams were invited in 2022 to submit search queries 
-  that were then used to extend the crawl. [<a href="https://webis.de/data.html#touche23-image-retrieval-for-arguments">data</a>]</p>
--->
 
-  
+
+<h2 id="synopsis">Rating</h2>
+<p>
+Let's look at some pictures we can use for discussion
+</p>
+
 <h2 id="example">Example</h2>
 
 <p><b>Premise:</b> Indiana’s photo ID law barred twelve retired nuns in
@@ -129,124 +121,108 @@ the polling station></p>
 
 <p><b>Type:</b> Anecdotal</p>
 
-<p><b>Retrieved/Generated Images:</b>
-  
+
+Let's look at some possible pictures and their rating:
+
+
+<div class="rating">
+
 <div class="image_examples_div">
-  
-<div class="image_example">
-<img class="sing_example_image" src="../touche24-data/image_chart.png" alt="self generated image.">
-    <p>Self-generated headline image</p>
+
+  <div class="image_example">
+  <img class="sing_example_image" src="../touche24-data/pope-greetings.jpg" alt="pope greeting.">
 </div>
- <div class="image_example">
-
-<img class="sing_example_image" src="../touche24-data/image_stable_diffusion.jpg" alt="generated by Stable Diffusion.">
-      <p>Image generated by Stable Diffusion</p>
-   </div>
 
 <div class="image_example">
+  <img class="sing_example_image" src="../touche24-data/the-nun-poster.jpg" alt="poster of the nun.">
+</div>
+</div>
 
-<img class="sing_example_image" src="../touche24-data/image_web.jpg" alt="web retrieval.">
-      <p>Image retrieved from the web</p>
+  <p> <b>Relevance:</b> -1</p>
+  These images are not relevant to the topic at all. While the Pope may be more broadly associated with nuns, this is too abstract. The movie "The Nun" includes nuns, but a movie poster has nothing to do with our premise.
+</div>
+
+<div class="rating">
+<div class="image_examples_div">
+  <div class="image_example">
+    <img class="sing_example_image" src="../touche24-data/nun-with-cat-2.jpeg" alt="nun with cat">
   </div>
-
+  <div class="image_example">
+  <img class="sing_example_image" src="../touche24-data/two-nuns-standing.jpeg" alt="two nuns standing.">
 </div>
-</p>
+<div class="image_example">
+  <img class="sing_example_image" src="../touche24-data/nun-voting-paper.jpeg" alt="nun voting paper.">
+</div>
+<div class="image_example">
+  <img class="sing_example_image" src="../touche24-data/two-and-a-half-nun.jpeg" alt="two and a half nuns.">
+</div>
+</div>
 
-<!--
-<h2 id="evaluation">Evaluation</h2>
-<p>Like last year, systems are evaluated on 50 topics by the ratio of images among the 20 retrieved images (10 images for each stance) relevant for the respective topic and stance. [<a href="../touche23-data/topics-task3.xml" download>topics</a>]</p>
--->
-  
-  
-<!--
-<p>This task uses <a href="https://www.tira.io/task/touche-task-3">TIRA</a> for submissions, which allows for both run file upload and Docker image submission. For each topic and stance, include 10 retrieved images. Each team can submit up to 5 different runs.</p>
-<p>The submission format adapts the standard TREC format. Each line corresponds to an image retrieved for some topic and stance at a certain rank, making a run file 1000 lines long (50 topics, 2 stances, 10 ranks). Each line contains the following fields, separated by single whitespaces:</p>
-<ul>
-<li>The topic number (51 to 100).</li>
-<li>The stance ("PRO" or "CON").</li>
-<li>The image's ID (corresponds to the name of the image's directory in the collection; always 17 characters long and starts with "I").</li>
-<li>The rank (1 to 10 in increasing order per topic and stance). Not used in this year's evaluation.</li>
-<li>A score (integer or floating point; non-increasing per topic and stance). Not used in this year's evaluation.</li>
-<li>A tag that identifies your group and the method you used to produce the run.</li>
-</ul>
-For example:
-<pre>
-1 PRO I000330ba4ea0ad13 1 17.89 myGroupMyMethod
-1 PRO I0005e6fe00ea17fd 2 16.43 myGroupMyMethod
-...
-1 CON I0009d5f038fe6f2e 1 15.89 myGroupMyMethod
-1 CON I000f34bd3f8cb030 2 14.43 myGroupMyMethod
-...
-</pre>
--->
-  
-<!--
-<h3>TIRA Tutorial and TIRA Baselines</h3>
-<p>
-We provide a TIRA tutorial that provides baselines that can be executed in TIRA at <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef23/image-retrieval-for-arguments/baseline-pyterrier">https://github.com/touche-webis-de/touche-code/tree/main/clef23</a>.
-</p>
-  
+  <p> <b>Relevance:</b> 0</p>
+  These images are very general, we see nuns that are mentioned in the premise, but they are also doing things that are not mentioned in premise. We might see a voting ballot and nuns but this is displayed very general. 
+</div>
 
-<p>In case of problems or questions concerning TIRA, please use the <a href="https://www.tira.io/c/touche/9">TIRA forum</a>.</p>
-<p>We provide relevance judgments for submitted runs as binary judgments on topic-image pairs for topic relevance, the pro-stance, and the con-stance. [<a href="https://zenodo.org/record/6786949/files/touche-task3-001-050-relevance.qrels?download=1">qrels</a>] [<a href="https://github.com/touche-webis-de/touche-code/blob/main/clef22/image-retrieval-for-arguments/submission-evaluator.sh">evaluator</a>]</p>
+<div class="rating">
 
-<h2 id="tira-quickstart">TIRA Quickstart</h2>
-<p>Participant software is run in a virtual machine. Log in to <a href="https://www.tira.io">TIRA</a>, go to the <a href="https://www.tira.io/task/touche-task-1/dataset/touche-task-1-2022-02-16">task's dataset page</a>, and click on "&gt;_ SUBMIT". Click the "CONNECTION INFO" button for how to connect to the virtual machine. Click on "POWER ON" if the state is not "RUNNING".</p>
-<img width="75%" src="../touche22-figures/task2-tira-vm-overview.png" alt="Virtual machine state in TIRA.">
-<p>The software is executed on the command line with two parameters: (1) <code>$inputDataset</code> refers to a directory that contains the <a href="#data">collection</a>; (2) <code>$outputDir</code> refers to a directory in which the software has to create the <a href="#submission">submission file</a> named <code>run.txt</code>. Specify exactly how each software of your virtual machine is run using the "Command" field in the TIRA web interface:
-<img width="75%" src="../touche22-figures/task2-tira-example-software.png" alt="Software configuration in TIRA.">
-<p>As you "RUN" the software, you will not be able to connect to the virtual machine (takes at least 10 minutes). Once finished, click on "INSPECT" to check on the run and click on "EVALUATE" for a syntax check (give it a few minutes, then check back on the page). Your run will later be reviewed and evaluated by the organizers. If uncertain on something, ask in the <a href="https://www.tira.io/c/touche/9">forum</a> or send a mail/message to <a href="#task-committee">Johannes</a>.</p>
-<img width="75%" src="../touche22-figures/task2-tira-example-evaluation.png" alt="A run in TIRA.">
-<p>Create a separate "Software" entry in the TIRA web interface for each of your approaches. NOTE: By submitting your software, you retain full copyrights. You agree to grant us usage rights for evaluation of the corresponding data generated by your software. We agree not to share your software with a third party or use it for any purpose other than research.</p>
--->
+<div class="image_examples_div">
+  <div class="image_example">
+  <img class="sing_example_image" src="../touche24-data/young-nun-vote-1.jpeg" alt="young nun at voting station.">
+</div>
+<div class="image_example">
+  <img class="sing_example_image" src="../touche24-data/young-nun-vote-2.jpeg" alt="young nun at voting station.">
+</div>
+<div class="image_example">
+  <img class="sing_example_image" src="../touche24-data/young-nun-vote-4.jpeg" alt="pyoung nun at voting station.">
+</div>
+</div>
 
-<!--
-<h2 id="results">Results</h2>
+  <p> <b>Relevance:</b> 1</p>
+  Here we begin to see the premise in the images.We see nuns and they are casting votes.Although the details are not correct, the premise mentions a group of nuns, and the nuns themselves are retired.
+</div>
 
-<table class="uk-table uk-table-divider uk-table-small uk-table-hover">
-  <caption>Results</caption>
-<thead>
-<tr><th>Team</th><th>Tag</th><th colspan="3">Precision@10</th></tr>
-<tr><th></th><th></th><th>On topic</th><th>Argumentative</th><th>On stance</th></tr>
-</thead>
-<tbody>
-<tr><td>Neville Longbottom</td><td>clip_chatgpt_args.raw</td><td>0.785</td><td>0.338</td><td>0.222</td></tr>
-<tr><td>Neville Longbottom</td><td>clip_chatgpt_args.debater</td><td>0.684</td><td>0.341</td><td>0.216</td></tr>
-<tr><td>Hikaru Sulu</td><td>Keywords</td><td>0.664</td><td>0.350</td><td>0.185</td></tr>
-<tr><td>Hikaru Sulu</td><td>Topic-title</td><td>0.770</td><td>0.335</td><td>0.179</td></tr>
-<tr><td>Neville Longbottom</td><td>bm25_chatgpt_args.raw</td><td>0.572</td><td>0.274</td><td>0.166</td></tr>
-<tr><td>Jean-Luc Picard</td><td>No stance detection (0)</td><td>0.523</td><td>0.292</td><td>0.162</td></tr>
-<tr><td>Neville Longbottom</td><td>bm25_chatgpt_args.diff</td><td>0.442</td><td>0.240</td><td>0.150</td></tr>
-<tr><td>Jean-Luc Picard</td><td>Text and image text stance detection (3)</td><td>0.502</td><td>0.272</td><td>0.144</td></tr>
-<tr><td>Jean-Luc Picard</td><td>BM25 Baseline (-1)</td><td>0.536</td><td>0.268</td><td>0.141</td></tr>
-<tr><td>Jean-Luc Picard</td><td>Text stance detection (1)</td><td>0.498</td><td>0.262</td><td>0.136</td></tr>
-<tr><td>Neville Longbottom</td><td>bm25_chatgpt_args.debater</td><td>0.416</td><td>0.201</td><td>0.128</td></tr>
-<tr><td>Minsc</td><td>Aramis</td><td>0.376</td><td>0.194</td><td>0.102</td></tr>
-<tr><td>Jean-Luc Picard</td><td>Image text stance detection (2)</td><td>0.369</td><td>0.196</td><td>0.098</td></tr>
-</tbody>
+<div class="rating">
+<div class="image_examples_div">
+  <div class="image_example">
+  <img class="sing_example_image" src="../touche24-data/old-nuns-1.jpeg" alt="young nun at voting station.">
+</div>
+<div class="image_example">
+  <img class="sing_example_image" src="../touche24-data/old-nuns-2.jpeg" alt="young nun at voting station.">
+</div>
+</div>
+<p> <b>Relevance:</b>2</p>
+We see the premise illustrated in the images. Older nuns are casting votes. 
+</div>
+
+
+
+<p>An alternative system of voting, counting of possible aspects</p>
+
+<table>
+  <tr>
+    <th>Rating</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>-1</td>
+    <td>picture has nothing to do with the argument </td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>picture is very general related to the argument or emphasizes things which are not displayed</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>picture conveys at least two aspects of the premise</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>picture conveys at least three aspects of the premise</td>
+  </tr>
 </table>
--->
 
+<p>
+In addition pictures can be aesthetically pleasing, we introduce an extrapoint for aesthetics or composition. E.g. one likes the conversation</p>
 
-<!--
-<h2><a id="related-work"></a>Related Work</h2>
-<ul>
-<li>Johannes Kiesel, Nico Reichenbach, Benno Stein, and Martin Potthast. <a href="https://webis.de/publications.html#kiesel_2021e">Image Retrieval for Arguments Using Stance-Aware Query Expansion.</a> 8th Workshop on Argument Mining (ArgMining 2021) at EMNLP, November 2021.</li>
-<li>Dimitar Dimitrov, Bishr Bin Ali, Shaden Shaar, Firoj Alam, Fabrizio Silvestri, Hamed Firooz, Preslav Nakov, and Giovanni Da San Martino. <a href="https://aclanthology.org/2021.semeval-1.7/">SemEval-2021 Task 6: Detection of Persuasion Techniques in Texts and Images</a>. 15th International Workshop on Semantic Evaluation (SemEval 2021), August 2021.</li>
-<li>Keiji Yanai. <a href="https://dl.acm.org/doi/10.1145/1242572.1242816">Image collector III: a web image-gathering system with bag-of-keypoints.</a> 16th International Conference on World Wide Web (WWW 2007), May 2007.</li>
-</ul>
--->
-
-<h2 id="task-committee">Task Committee</h2>
-<div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
-{% include people-cards/heinrich.html gender="male" %}
-{% include people-cards/kiesel.html gender="male" %}
-{% include people-cards/potthast.html gender="male" %}
-{% include people-cards/stein.html gender="male" %}
-</div>
-<div class="uk-container uk-padding-large uk-padding-remove-bottom">
-{% include organizations/clef-organizations-section.html year=2024 %}
-</div>
 </div>
 </div>
 </main>
