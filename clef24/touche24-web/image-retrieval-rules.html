@@ -57,9 +57,6 @@ width: 25%;
 </div>
 
 
-
-
-
 <h2 id="submission">Submission</h2>
 
 <p>We allow three kinds of submissions. Each of the submission styles is displayed in the example.</p>
@@ -88,18 +85,17 @@ Images can be rated in several ways.
   </tr>
   <tr>
     <td>1</td>
-    <td>picture relates to the premise, parts of the premise are illustrated</td>
+    <td>picture relates to the premise, parts of the premise are illustrated. Some showed details are in conflict with the premise</td>
   </tr>
   <tr>
     <td>2</td>
-    <td>picture fully relates to premise</td>
+    <td>The image relates to the premise, and illustrates parts of the premise. The picture does not explicitly show things that conflict with the premise.</td>
   </tr>
 </table>
 
 
 
 <h2 id="synopsis">Rating</h2>
-
 <p>
 Let's look at some pictures we can use for discussion
 </p>
@@ -124,14 +120,11 @@ the polling station></p>
 <p><b>Type:</b> Anecdotal</p>
 
 
+Let's look at some possible pictures and their rating:
 
-Let's look at some possible pictures:
-
-  
 <div class="image_examples_div">
-  
+</div>
 
-We would say that this example 
 
 
 <div class="rating">
@@ -145,10 +138,11 @@ We would say that this example
 <div class="rating">
   <img class="sing_example_image" src="../touche24-data/nun-with-cat-2.jpeg" alt="nun with cat">
   <img class="sing_example_image" src="../touche24-data/two-nuns-standing.jpeg" alt="two nuns standing.">
+  <img class="sing_example_image" src="../touche24-data/nun-voting-paper.jpeg" alt="nun voting paper.">
+  <img class="sing_example_image" src="../touche24-data/two-and-a-half-nun.jpeg" alt="two and a half nuns.">
 
   <p> <b>Relevance:</b> 0</p>
-  These images are very general, we see nuns that are mentioned in the premise, but they are doing things that are not mentioned in the premise. The relation to the premise is very general.
-
+  These images are very general, we see nuns that are mentioned in the premise, but they are also doing things that are not mentioned in premise. We might see a voting ballot and nuns but this is displayed very general. 
 </div>
 
 
@@ -158,33 +152,47 @@ We would say that this example
   <img class="sing_example_image" src="../touche24-data/young-nun-vote-4.jpeg" alt="pyoung nun at voting station.">
 
   <p> <b>Relevance:</b> 1</p>
-  Here we begin to see the premise in the images. We see nuns and they are casting votes. Although the details are not correct, the premise mentions a group of nuns and the nuns themselves are retired.
+  Here we begin to see the premise in the images.We see nuns and they are casting votes.Although the details are not correct, the premise mentions a group of nuns, and the nuns themselves are retired.
 </div>
-
 
 <div class="rating">
   <img class="sing_example_image" src="../touche24-data/old-nuns-1.jpeg" alt="young nun at voting station.">
   <img class="sing_example_image" src="../touche24-data/old-nuns-2.jpeg" alt="young nun at voting station.">
 
-  <p> <b>Relevance:</b>2</p>
-  We see the premise illustrated in the images. Older nuns are casting votes. 
+<p> <b>Relevance:</b>2</p>
+We see the premise illustrated in the images. Older nuns are casting votes. 
 </div>
 
 
-Some discussion points: Counting of possible aspects for evaluation; e.g. one aspect nun, two aspects group of nuns, three aspects group of nuns in voting station, other points, but if group of nuns is already two aspects, the premise is not really conveyed.
+
+<p>An alternative system of voting, counting of possible aspects</p>
+
+<table>
+  <tr>
+    <th>Rating</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>-1</td>
+    <td>picture has nothing to do with the argument </td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>picture is very general related to the argument or emphasizes things which are not displayed</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>picture conveys at least two aspects of the premise</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>picture conveys at least three aspects of the premise</td>
+  </tr>
+</table>
+
+<p>
+In addition pictures can be aesthetically pleasing, we introduce an extrapoint for aesthetics or composition. E.g. one likes the conversation</p>
 
 
-
-<h2 id="task-committee">Task Committee</h2>
-<div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
-{% include people-cards/heinrich.html gender="male" %}
-{% include people-cards/kiesel.html gender="male" %}
-{% include people-cards/potthast.html gender="male" %}
-{% include people-cards/stein.html gender="male" %}
-</div>
-<div class="uk-container uk-padding-large uk-padding-remove-bottom">
-{% include organizations/clef-organizations-section.html year=2024 %}
-</div>
-</div>
 </div>
 </main>
