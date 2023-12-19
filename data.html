@@ -18,7 +18,7 @@ description: Datasets used in Touché shared tasks.
 
 <div class="uk-container uk-margin-medium">
 <p>
-This page organizes all corpora which have resulted from or have been used in the Touché series. Most of our released corpora are hosted at <a title="Download: Zenodo" href="https://zenodo.org/communities/webis">Zenodo <img src="data/img/zenodo-icon.png" alt="(Zenodo)"></a> and are indexed in the <a title="Indexed: Google" href="https://toolbox.google.com/datasetsearch/search?query=webis-data-catalog">Google Dataset Search <img src="data/img/google-icon.png" alt="(Google Dataset Search)"></a>; some corpora are accessibly via the <a title="IR datasets" href="https://ir-datasets.com/index.html">IR datasets <img src="data/img/ir-icon.png" alt="(ir_datasets)"></a> library.
+This page organizes all corpora which have resulted from or have been used in the Touché series. Most of our released corpora are hosted at <a title="Download: Zenodo" href="https://zenodo.org/communities/webis">Zenodo <img src="data/img/zenodo-icon.png" alt="(Zenodo)"></a> and are indexed in the <a title="Indexed: Google" href="https://toolbox.google.com/datasetsearch/search?query=webis-data-catalog">Google Dataset Search <img src="data/img/google-icon.png" alt="(Google Dataset Search)"></a>; <!-- a few larger corpora are available in the <a title="Internet Archive" href="https://archive.org/details/webis">Internet Archive <img src="data/img/ia-icon.png" alt="(Internet Archive)"></a>; -->some corpora are accessibly via the <a title="Hugging Face" href="https://huggingface.co/webis">Hugging Face <img src="data/img/huggingface-icon.png" alt="(Huggingface)"></a> and <a title="IR datasets" href="https://ir-datasets.com/index.html">IR datasets <img src="data/img/ir-icon.png" alt="(ir_datasets)"></a> libraries<!--; the <img src="data/img/browser-icon-magnifier.png" alt="Browser"></a> &ndash;symbol indicates a browsing facility for the respective corpus-->.
 </p>
 <div id="search-control">
 <input type="text" class="uk-input" id="filter-field" placeholder="Type here to filter&hellip;"/>
@@ -51,5 +51,8 @@ includeList(document.querySelector(".webis-data-table"), "https://webis.de/data.
   filterFunction(query);
   table.classList.remove("uk-container", "uk-margin-medium");
   initTableHighlightOnClick([table]);
+  for (const linkElement of Array.from(table.querySelectorAll("a:not([href^='https'])[href$='.html']"))) {
+    linkElement.setAttribute("href", "https://webis.de/" + linkElement.getAttribute("href"));
+  } 
 });
 </script>
