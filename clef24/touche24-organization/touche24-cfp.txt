@@ -1,48 +1,40 @@
 Touché 2024: Shared Tasks on Argumentation Systems. Call for Participation.
 ===========================================================================
 
-In its 5th year, Touché is the established series of shared tasks on argumentation systems. It is held in conjunction with the CLEF'24 conference in Grenoble, France, September 9-12 [https://clef2024.clef-initiative.eu/]. 
+In its 5th year, Touché is the established series of shared tasks on argumentation systems. It is held in conjunction with the CLEF'24 conference in Grenoble, France, September 9-12. 
 
 This year, Touché features a selection of three tasks:
 
 1. Human Value Detection (a continuation of ValueEval’23 @ SemEval)
-features two subtasks in ethical argumentation of detecting human values in texts and their attainment, respectively
-https://touche.webis.de/clef24/touche24-web/human-value-detection.html
+   features two subtasks in ethical argumentation of detecting human values in texts and their attainment, respectively
+   https://touche.webis.de/clef24/touche24-web/human-value-detection.html
 
 2. Ideology and Power Identification in Parliamentary Debates (new task)
-features two subtasks in debate analysis of detecting the ideology and position of power of the speaker’s party, respectively
-https://touche.webis.de/clef24/touche24-web/ideology-and-power-identification-in-parliamentary-debates.html
+   features two subtasks in debate analysis of detecting the ideology and position of power of the speaker’s party, respectively
+   https://touche.webis.de/clef24/touche24-web/ideology-and-power-identification-in-parliamentary-debates.html
 
 3. Image Retrieval for Arguments (third edition, joint with ImageCLEF)
-features a task about the retrieval or generation of images to help convey an argument’s premise
-https://touche.webis.de/clef24/touche24-web/image-retrieval-for-arguments.html
+   features a task about the retrieval or generation of images to help convey an argument’s premise
+   https://touche.webis.de/clef24/touche24-web/image-retrieval-for-arguments.html
 
 
-Learn more at https://touche.webis.de/
-
-Register via the CLEF website: https://clef2023-labs-registration.dei.unipd.it/
-
--------------------------------------------------------------------------------
 Important Dates
--------------------------------------------------------------------------------
-Now open: Registration
-April, 2024: Registration closes.
-May, 2024: Approaches submission deadline.
-June, 2024: Participant paper submission.
-July, 2024: Camera-ready participant papers submission.
-Sep. 9-12, 20234 Conference
-One of the conference days: Touché Workshop on Argument and Causal Retrieval
+---------------
+May     6, 2024: Approaches submission deadline.
+May    31, 2024: Participant paper submission.
+June   21, 2024: Participant paper notification.
+July    8, 2024: Camera-ready participant papers submission.
+Sep. 9-12, 2024: Conference
 
--------------------------------------------------------------------------------
-Special Announcements
--------------------------------------------------------------------------------
 
-Touché Open Source Proceedings
+Links
+-----
+Touché:       https://touche.webis.de/
+Contact:      touche@webis.de
+CLEF:         https://clef2024.clef-initiative.eu/
+Registration: https://clef2024-labs-registration.dei.unipd.it/
 
-Touché will host a collection of software developed by participants at GitHub.
-We invite you to publish your software too and invite software submissions using TIRA [ https://www.tira.io/ ].
 
-In case of questions / suggestions / etc., please reach us at touche@webis.de.
-
-Best regards, 
+We are looking forward to your submission! 
 Touché team
+
