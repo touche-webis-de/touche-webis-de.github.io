@@ -17,6 +17,8 @@ This year, Touché features a selection of three tasks:
    features a task about the retrieval or generation of images to help convey an argument’s premise
    https://touche.webis.de/clef24/touche24-web/image-retrieval-for-arguments.html
 
+Registration is now open (via CLEF): https://clef2024-labs-registration.dei.unipd.it/
+
 
 Important Dates
 ---------------
