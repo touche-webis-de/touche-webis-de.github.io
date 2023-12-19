@@ -1,7 +1,7 @@
 Touché 2024: Shared Tasks on Argumentation Systems. Call for Participation.
 ===========================================================================
 
-In its 5th year, Touché is the established series of shared tasks on argumentation systems. It is held in conjunction with the CLEF'24 conference in Grenoble, France, September 9-12. 
+Touché is a series of shared tasks on argumentation systems, now in its 5th year. It is held in conjunction with the CLEF'24 conference in Grenoble, France, September 9-12. 
 
 This year, Touché features a selection of three tasks:
 
