@@ -84,12 +84,12 @@ Please join the <a href="https://groups.google.com/group/ideology-and-power-in-p
 The data is provided as tab-separated text files.  The following shows a toy example:
 
 <pre>
-<span class="column">id</span> <span class="column">speaker</span> <span class="column">sex</span> <span class="column">text</span> <span class="column">label</span> 
-<span class="column">gb01</span> <span class="column">spk1</span>   <span class="column">F</span>   <span class="column">First text.</span> <span class="column">0</span>
-<span class="column">gb02</span> <span class="column">spk2</span>   <span class="column">M</span>   <span class="column">Second text.</span> <span class="column">1</span>
-<span class="column">gb03</span> <span class="column">spk3</span>   <span class="column">M</span>   <span class="column">Third text.</span> <span class="column">0</span>
-<span class="column">gb04</span> <span class="column">spk4</span>   <span class="column">F</span>   <span class="column">Fourth text.</span> <span class="column">1</span>
-<span class="column">gb06</span> <span class="column">spk5</span>   <span class="column">M</span>   <span class="column">Fifth text.</span> <span class="column">0</span>
+<span class="column">id</span> <span class="column">speaker</span> <span class="column">sex</span> <span class="column">text</span> <span class="column">text_en</span> <span class="column">label</span> 
+<span class="column">gb01</span> <span class="column">spk1</span>   <span class="column">F</span>   <span class="column">First text.</span> <span class="column">First text in English.</span> <span class="column">0</span>
+<span class="column">gb02</span> <span class="column">spk2</span>   <span class="column">M</span>   <span class="column">Second text.</span> <span class="column">Second text in English.</span> <span class="column">1</span>
+<span class="column">gb03</span> <span class="column">spk3</span>   <span class="column">M</span>   <span class="column">Third text.</span> <span class="column">Third text in English.</span> <span class="column">0</span>
+<span class="column">gb04</span> <span class="column">spk4</span>   <span class="column">F</span>   <span class="column">Fourth text.</span> <span class="column">Fourth text in English.</span> <span class="column">1</span>
+<span class="column">gb06</span> <span class="column">spk5</span>   <span class="column">M</span>   <span class="column">Fifth text.</span> <span class="column">Fifth text in English.</span> <span class="column">0</span>
 </pre>
 
 <ul>
@@ -100,6 +100,10 @@ The data is provided as tab-separated text files.  The following shows a toy exa
     <li> <b>text</b> is the transcribed text of the parliamentary speech.
         Real examples may include line breaks, and other special
         sequences escaped or quoted.
+    <li> <b>text_en</b> Automatic English translation of the corresponding text.
+        This field may be empty - obviously for speeches in English,
+        but the translation may be missing for a small number of 
+        non-English speeches.
     <li> <b>label</b> is the binary/numeric label. For political
         orientation, <b>0</b> is <b>left</b> and <b>1</b> is right.
         For power identification <b>0</b> indicates <b>opposition</b>
@@ -110,6 +114,10 @@ Participants are not required to use the first four fields,
 but may want to use them for improving the predictions (e.g., in a
 joint/multi-task learning model, or to explain away the effect of
 speaker style for better generalization).
+Similarly the field <b>text_en</b> is provided for convenience.
+It may help building quick multilingual classifiers,
+or help understanding and analyzing data in languages
+participants do not speak.
 The test files will also include exact same fields except <b>label</b>.
 
 A small trial sample is provided for both
