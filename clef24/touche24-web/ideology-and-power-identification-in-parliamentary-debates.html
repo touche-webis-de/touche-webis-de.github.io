@@ -22,8 +22,8 @@ description: Touché at CLEF 2024 - Ideology and Power Identification in Parliam
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
-<!--<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
+<!--<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#tira-quickstart">TIRA Quickstart</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>
 -->
@@ -40,6 +40,7 @@ two important aspects of a speaker in parliamentary debates:
 <li>Sub-Task 1: Given a parliamentary speech in one of several languages, identify the ideology of the speaker's party.</li>
 <li>Sub-Task 2: Given a parliamentary speech in one of several languages, identify whether the speaker's party is currently governing or in opposition.</li>
 <li>Communication: [mailing lists: <a href="https://groups.google.com/g/ideology-and-power-in-parliamentary-speeches">task</a>, <a href="mailto:touche@webis.de">organizers</a>] </li>
+<li>Training data: [<a href="https://zenodo.org/doi/10.5281/zenodo.10450640">download</a>]</li>
 <!-- <li>Input: [<a href="../touche24-data/topics-task3.xml" download>topics</a>]</li> -->
 <!-- <li>Submission: [queries: <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef23/image-retrieval-for-arguments/query-submission-baselines">baselines code</a>, <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef23/image-retrieval-for-arguments/query-submission-evaluator">validator</a>] [<a href="https://www.tira.io/task/touche-task-3">submit</a>]</li> -->
 </ul>
@@ -48,7 +49,7 @@ two important aspects of a speaker in parliamentary debates:
 
 
 <h2 id="important-dates" class="uk-margin-large-top">Important Dates</h2>
-<p>Subscribe to the <a href="https://groups.google.com/g/ideology-and-power-in-parliamentary-speeches/subscribe">mailing list</a> to receive notifications.</p>
+<p>Subscribe to the <a href="https://groups.google.com/g/ideology-and-power-in-parliamentary-speeches">mailing list</a> to receive notifications.</p>
 <ul>
 <li><strong>Dec. 18, 2023:</strong> CLEF Registration opens. [<a href="https://clef2024-labs-registration.dei.unipd.it/">register</a>]</li>
 <li><strong>May   6, 2024:</strong> Approaches submission deadline.</li>
@@ -79,17 +80,17 @@ from <a href="https://www.clarin.eu/parlamint">ParlaMint</a>,
 a multilingual comparable corpora of parliamentary debates.
 The data is sampled from the ParlaMint in a way to reduce the potential confounding variables 
 (e.g., speaker identity). 
-Please join the <a href="https://groups.google.com/g/ideology-and-power-in-parliamentary-speeches/subscribe"> task mailing list</a> to stay up-to-date and report problems.
+Please join the <a href="https://groups.google.com/group/ideology-and-power-in-parliamentary-speeches/subscribe"> task mailing list</a> to stay up-to-date and report problems.
 
 The data is provided as tab-separated text files.  The following shows a toy example:
 
 <pre>
-<span class="column">id</span> <span class="column">speaker</span> <span class="column">sex</span> <span class="column">text</span> <span class="column">label</span> 
-<span class="column">gb01</span> <span class="column">spk1</span>   <span class="column">F</span>   <span class="column">First text.</span> <span class="column">0</span>
-<span class="column">gb02</span> <span class="column">spk2</span>   <span class="column">M</span>   <span class="column">Second text.</span> <span class="column">1</span>
-<span class="column">gb03</span> <span class="column">spk3</span>   <span class="column">M</span>   <span class="column">Third text.</span> <span class="column">0</span>
-<span class="column">gb04</span> <span class="column">spk4</span>   <span class="column">F</span>   <span class="column">Fourth text.</span> <span class="column">1</span>
-<span class="column">gb06</span> <span class="column">spk5</span>   <span class="column">M</span>   <span class="column">Fifth text.</span> <span class="column">0</span>
+<span class="column">id</span> <span class="column">speaker</span> <span class="column">sex</span> <span class="column">text</span> <span class="column">text_en</span> <span class="column">label</span> 
+<span class="column">gb01</span> <span class="column">spk1</span>   <span class="column">F</span>   <span class="column">First text.</span> <span class="column">First text in English.</span> <span class="column">0</span>
+<span class="column">gb02</span> <span class="column">spk2</span>   <span class="column">M</span>   <span class="column">Second text.</span> <span class="column">Second text in English.</span> <span class="column">1</span>
+<span class="column">gb03</span> <span class="column">spk3</span>   <span class="column">M</span>   <span class="column">Third text.</span> <span class="column">Third text in English.</span> <span class="column">0</span>
+<span class="column">gb04</span> <span class="column">spk4</span>   <span class="column">F</span>   <span class="column">Fourth text.</span> <span class="column">Fourth text in English.</span> <span class="column">1</span>
+<span class="column">gb06</span> <span class="column">spk5</span>   <span class="column">M</span>   <span class="column">Fifth text.</span> <span class="column">Fifth text in English.</span> <span class="column">0</span>
 </pre>
 
 <ul>
@@ -97,9 +98,15 @@ The data is provided as tab-separated text files.  The following shows a toy exa
 	<li> <b>speaker</b> is a unique (arbitrary) ID for each speaker.
           There may be multiple speeches from the same speaker.
     <li> <b>sex</b> is the (binary/biological) sex of the speaker.
+        The values in this field can be <b>F</b>emale, <b>M</b>emale,
+        and <b>U</b>nspecified/Unknown.
     <li> <b>text</b> is the transcribed text of the parliamentary speech.
         Real examples may include line breaks, and other special
         sequences escaped or quoted.
+    <li> <b>text_en</b> is the automatic translation of the text to English.
+        This field may be empty - obviously for speeches in English,
+        but the translation may also be missing for a small number of 
+        non-English speeches.
     <li> <b>label</b> is the binary/numeric label. For political
         orientation, <b>0</b> is <b>left</b> and <b>1</b> is right.
         For power identification <b>0</b> indicates <b>opposition</b>
@@ -110,6 +117,10 @@ Participants are not required to use the first four fields,
 but may want to use them for improving the predictions (e.g., in a
 joint/multi-task learning model, or to explain away the effect of
 speaker style for better generalization).
+Similarly the field <b>text_en</b> is provided for convenience.
+It may help building quick multilingual classifiers,
+or help understanding and analyzing data in languages
+participants do not speak.
 The test files will also include exact same fields except <b>label</b>.
 
 A small trial sample is provided for both
@@ -119,65 +130,35 @@ and
 
 We provide training data for the following national or regional parliaments: 
 <ul>
-    <li>Ideology identification:
-            Austria (at),
-            Bosnia and Herzegovina (ba),
-            Belgium (be),
-            Bulgaria (bg),
-            Czech Republic (cz),
-            Denmark (dk),
-            Estonia (ee),
-            Catalonia (es-ct),
-            Galicia (es-ga),
-            Basque Country (es-pv),
-            Spain (es),
-            Finland (fi),
-            France (fr),
-            Great Britain (gb),
-            Greece (gr),
-            Croatia (hr),
-            Hungary (hu),
-            Iceland (is),
-            Italy (it),
-            Latvia (lv),
-            The Netherlands (nl),
-            Norway (no),
-            Poland (pl),
-            Portugal (pt),
-            Serbia (rs),
-            Sweden (se),
-            Slovenia (si),
-            Turkey (tr), and
-            Ukraine (ua)
-    <li>Power identification:
-            Austria (at),
-            Bosnia and Herzegovina (ba),
-            Belgium (be),
-            Bulgaria (bg),
-            Czech Republic (cz),
-            Denmark (dk),
-            Estonia (ee),
-            Catalonia (es-ct),
-            Galicia (es-ga),
-            Basque Country (es-pv),
-            Spain (es),
-            Finland (fi),
-            France (fr),
-            Great Britain (gb),
-            Greece (gr),
-            Croatia (hr),
-            Hungary (hu),
-            Italy (it),
-            Latvia (lv),
-            The Netherlands (nl),
-            Norway (no),
-            Poland (pl),
-            Portugal (pt),
-            Serbia (rs),
-            Sweden (se),
-            Slovenia (si),
-            Turkey (tr), and
-            Ukraine (ua)
+    <li>Austria (at) </li>
+    <li>Bosnia and Herzegovina (ba) </li>
+    <li>Belgium (be) </li>
+    <li>Bulgaria (bg) </li>
+    <li>Czechia (cz) </li>
+    <li>Denmark (dk) </li>
+    <li>Estonia (ee) </li>
+    <li>Spain (es) </li>
+    <li>Catalonia (es-ct) </li>
+    <li>Galicia (es-ga) </li>
+    <li>Basque Country (es-pv) [only power] </li>
+    <li>Finland (fi) </li>
+    <li>France (fr) </li>
+    <li>Great Britain (gb) </li>
+    <li>Greece (gr) </li>
+    <li>Croatia (hr) </li>
+    <li>Hungary (hu) </li>
+    <li>Iceland (is) [only political orientation] </li>
+    <li>Italy (it) </li>
+    <li>Latvia (lv) </li>
+    <li>The Netherlands (nl) </li>
+    <li>Norway (no) [only political orientation] </li>
+    <li>Poland (pl) </li>
+    <li>Portugal (pt) </li>
+    <li>Serbia (rs) </li>
+    <li>Sweden (se) [only political orientation] </li>
+    <li>Slovenia (si) </li>
+    <li>Turkey (tr) </li>
+    <li>Ukraine (ua) </li>
 </ul>
 
 <h2 id="evaluation">Evaluation</h2>
@@ -186,9 +167,19 @@ Both subtasks will use macro-averaged F1-score as the main metric of evaluation.
 The submission system will evaluate runs automatically using F1-score,
 Precision and Recall.
 
-<!--
 <h2 id="submission">Submission</h2>
--->
+
+The participants are welcome to participate in any of the task -
+parliament combinations. We do not provide a special track for
+multilingual models, but participants are encouraged to make use of
+cross-lingual approaches for improving their predictions.
+The participants are allowed to use any external datasets,
+except the source data from ParlaMint.
+
+The submission system will open soon.
+Register on the mailing list to get notified.
+We provide <a href="https://github.com/coltekin/ideology-power-st-baseline">
+    a simple linear baseline</a> with code for reading and writing the files.
 
 <!--
 <h2 id="tira-quickstart">TIRA Quickstart</h2>

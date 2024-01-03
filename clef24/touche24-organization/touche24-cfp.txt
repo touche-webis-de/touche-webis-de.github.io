@@ -1,20 +1,20 @@
 Touché 2024: Shared Tasks on Argumentation Systems. Call for Participation.
 ===========================================================================
 
-In its 5th year, Touché is the established series of shared tasks on argumentation systems. It is held in conjunction with the CLEF'24 conference in Grenoble, France, September 9-12. 
+Touché is a series of shared tasks on argumentation systems, now in its 5th year. It is held in conjunction with the CLEF'24 conference in Grenoble, France, September 9-12. 
 
 This year, Touché features a selection of three tasks:
 
 1. Human Value Detection (a continuation of ValueEval’23 @ SemEval)
-   features two subtasks in ethical argumentation of detecting human values in texts and their attainment, respectively
+   features two subtasks in ethical argumentation on the detection of human values in texts and their attainment, respectively
    https://touche.webis.de/clef24/touche24-web/human-value-detection.html
 
 2. Ideology and Power Identification in Parliamentary Debates (new task)
-   features two subtasks in debate analysis of detecting the ideology and position of power of the speaker’s party, respectively
+   features two subtasks in debate analysis on the detection of the ideology and position of power of the speaker’s party, respectively
    https://touche.webis.de/clef24/touche24-web/ideology-and-power-identification-in-parliamentary-debates.html
 
 3. Image Retrieval for Arguments (third edition, joint with ImageCLEF)
-   features a task about the retrieval or generation of images to help convey an argument’s premise
+   features a task on the retrieval or generation of images to help convey an argument’s premise
    https://touche.webis.de/clef24/touche24-web/image-retrieval-for-arguments.html
 
 Registration is now open (via CLEF): https://clef2024-labs-registration.dei.unipd.it/
