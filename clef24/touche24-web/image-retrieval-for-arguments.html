@@ -44,14 +44,35 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
         /* Let the height scale proportionally */
     }
 
-    .argu_example {
+    .argu_example_general {
+        display: flex;
+        flex-direction: column;
         font-size: larger;
+        align-items: center;
+        justify-content: center;
     }
 
     .image_descriptor {
         font-weight: bold;
         padding: 10px;
+    }
 
+
+    .argument_example_text {
+        width: 100%;
+
+
+    }
+
+
+    .image_example_general {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image_example_general p {
+        font-size: xx-small;
 
     }
 </style>
@@ -76,7 +97,7 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
                         href="#submission">Submission</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right"
-                        href="#example">Example</a></li>
+                        href="#example">Examples</a></li>
 
                 <!--
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
@@ -92,21 +113,17 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
         <div class="uk-container uk-margin-medium">
 
             <h2 id="synopsis">Introduction</h2>
-            Let's look at the following argument:
+            <p> Let's look at the following argument: </p>
 
-            <div class="argu_example">
+            <div class="argu_example_general">
                 <p><b>Claim:</b> Boxing is a dangerous sport!</p>
                 <p><b>Premise:</b> Boxing can lead to serious injuries.</p>
-            </div>
-
-            <p>Now look at this photo:</p>
 
 
-            <div class="image_example_general">
-                <img src="../touche24-data/boxing_injuries.jpg" alt="boxer gets a har hit">
-                <p> Image taken from
-                    https://www.forbes.com/sites/williamhaseltine/2022/07/11/research-on-flies-provides-hope-for-brain-repair/?sh=13c776813e67
-                </p>
+                <div class="image_example_general">
+                    <img src="../touche24-data/boxing_injuries.jpg" alt="boxer gets a har hit">
+                    <p> Source: Sweating fighter is punched in the face - gettyimages </p>
+                </div>
             </div>
 
             <p>
@@ -125,8 +142,8 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
             <h2 id="synopsis">Synopsis</h2>
 
             <div class="task_description">
-                <p>
-                    <b>Task:</b> Given an argument, find images that help to convey the argument's premise.
+
+                <b>Task:</b> Given an argument, find images that help to convey the argument's premise.
                 </p>
             </div>
             <p>For this task, an argument consists of one claim and a premise. In addition, we provide the argument's
@@ -138,10 +155,10 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
                 (e.g., a concrete example).
                 (e.g., a concrete example). The image can also refer to signs and symbols.</p>
 
-            <p> Interested?
-                <a class="uk-button uk-button-primary" href="https://clef2024-labs-registration.dei.unipd.it/">Register
-                    now</a>
-            </p>
+            <p> Interested?</p>
+
+            <a class="uk-button uk-button-primary" href="https://clef2024-labs-registration.dei.unipd.it/">Register
+                now</a>
 
 
             <h2 id="data">Data</h2>
@@ -182,8 +199,8 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
                     could be used for many subjects will not get as many points as
                     images that are premise specific. Also, if the generation approach is chosen, the image should not
                     be too unrealistic, e.g., a person should not have four legs, although minor imperfections are
-                    are fine. See this  <a href="#image_comment">section</a> for further information.
-
+                    are fine. See this <a href="#image_comment">section</a> for further information.
+            </ul>
 
 
             <h2 id="example">Examples</h2>
@@ -196,14 +213,32 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
 
                 <div class="argument_example">
 
-                    <p><b>Topic:</b> Boxing should be banned</p>
-                    <p><b>Premise:</b> Boxing can cause serious injury to your body.</p>
-                    <p><b>Stance:</b> Pro
-                    <p><b>Claim:</b> Boxing is dangerous.</p>
-                    <p><b>Type:</b> Anecdotal</p>
+                    <table>
+
+                        <tr>
+                            <td><b>Topic:</b></td>
+                            <td>Boxing should be banned</td>
+                        </tr>
+                        <tr>
+                            <td><b>Premise:</b></td>
+                            <td>Boxing can cause serious injury to your body.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Stance:</b></td>
+                            <td>Pro</td>
+                        </tr>
+                        <tr>
+                            <td><b>Claim:</b></td>
+                            <td>Boxing is dangerous.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Type:</b></td>
+                            <td>Anecdotal</td>
+                        </tr>
+                    </table>
                 </div>
 
-                <p><b>Retrieved/Generated Images:</b>
+                <p><b>Submissions:</b>
 
                 <div class="image_examples_div">
 
@@ -298,18 +333,33 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
             <div id="example_2">
 
                 <div class="argument_example">
-                    <p><b>Topic:</b> This house believes that democratic governments should require voters to present
-                        photo identification at the polling station</p>
-                    <p><b>Premise:</b> People will forget their IDs and cannot use their democratic right for voting
-                    </p>
-                    <p><b>Stance:</b> Contra
-                    <p><b>Claim:</b> Use of Photo ID will result in exclusion of voters!</p>
-                    <p><b>Type:</b> Anecdotal</p>
-
+                    <table>
+                        <tr>
+                            <td><b>Topic</b></td>
+                            <td>This house believes that democratic governments should require voters to present photo
+                                identification at the polling station</td>
+                        </tr>
+                        <tr>
+                            <td><b>Premise</b></td>
+                            <td>People will forget their IDs and cannot use their democratic right for voting</td>
+                        </tr>
+                        <tr>
+                            <td><b>Stance</b></td>
+                            <td>Contra</td>
+                        </tr>
+                        <tr>
+                            <td><b>Claim</b></td>
+                            <td>Use of Photo ID will result in exclusion of voters!</td>
+                        </tr>
+                        <tr>
+                            <td><b>Type</b></td>
+                            <td>Anecdotal</td>
+                        </tr>
+                    </table>
                 </div>
 
 
-                <p><b>Retrieved/Generated Images:</b>
+                <p><b>Submissions:</b>
 
                 <div class="image_examples_div">
 
@@ -404,17 +454,33 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
             <div id="example_3">
 
                 <div class="argument_example">
+                    <table>
+                        <tr>
+                            <td><b>Topic</b></td>
+                            <td>Should performance-enhancing drugs be accepted in sports?</td>
+                        </tr>
+                        <tr>
+                            <td><b>Premise</b></td>
+                            <td>Performance-enhancing drugs create inequality in sports and undermine the essence of
+                                fair competition.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Stance</b></td>
+                            <td>Contra</td>
+                        </tr>
+                        <tr>
+                            <td><b>Claim</b></td>
+                            <td>Performance-enhancing drugs should not be accepted in sport.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Type</b></td>
+                            <td>Anecdotal</td>
+                        </tr>
+                    </table>
 
-                    <p><b>Topic:</b> Should performance-enhancing drugs be accepted in sports?</p>
-                    <p><b>Premise:</b> Performance-enhancing drugs create inequality in sports and undermine the essence
-                        of
-                        fair competition.</p>
-                    <p><b>Stance:</b> Contra
-                    <p><b>Claim:</b> Performance-enhancing drugs should not be accepted in sport.</p>
-                    <p><b>Type:</b> Anecdotal</p>
                 </div>
 
-                <p><b>Retrieved/Generated Images:</b>
+                <p><b>Submissions:</b>
 
                 <div class="image_examples_div">
 
@@ -508,7 +574,7 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
             </div>
 
 
-            <h3 id="image_comment">A comment on using images</h3>
+            <h2 id="image_comment">A comment on using images</h2>
 
             <p>
                 As we can see from these examples, a rationale can be critical to associating an image with a premise.
@@ -517,23 +583,39 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
                 IDs from the image alone. The connection to the issue is only made through the rationale. It gives the
                 impression that this image could be used for any topic, such as a young woman being surprised about the
                 dangers of boxing. Such images receive a lower relevance rating. The same goes for obviously incorrectly
-                generated images, such as the bar through the athlete's head.  </p>
+                generated images, such as the bar through the athlete's head. </p>
             <div id="example_comments">
 
 
+                <h3>Example 1</h3>
 
                 <div class="argument_example">
-                    <p><b>Topic:</b> This house believes that democratic governments should require voters to present
-                        photo identification at the polling station</p>
-                    <p><b>Premise:</b> People will forget their IDs and cannot use their democratic right for voting
-                    </p>
-                    <p><b>Stance:</b> Contra
-                    <p><b>Claim:</b> Use of Photo ID will result in exclusion of voters!</p>
-                    <p><b>Type:</b> Anecdotal</p>
-
+                    <table>
+                        <tr>
+                            <td><b>Topic</b></td>
+                            <td>This house believes that democratic governments should require voters to present photo
+                                identification at the polling station</td>
+                        </tr>
+                        <tr>
+                            <td><b>Premise</b></td>
+                            <td>People will forget their IDs and cannot use their democratic right for voting</td>
+                        </tr>
+                        <tr>
+                            <td><b>Stance</b></td>
+                            <td>Contra</td>
+                        </tr>
+                        <tr>
+                            <td><b>Claim</b></td>
+                            <td>Use of Photo ID will result in exclusion of voters!</td>
+                        </tr>
+                        <tr>
+                            <td><b>Type</b></td>
+                            <td>Anecdotal</td>
+                        </tr>
+                    </table>
                 </div>
 
-                <p><b>Retrieved/Generated Images:</b>
+                <p><b>Submission:</b>
 
                 <div class="image_examples_div">
 
@@ -561,18 +643,37 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
                         </div>
                     </div>
                 </div>
+                <h3>Example 2</h3>
 
 
                 <div class="argument_example">
 
-                    <p><b>Topic:</b> Should performance-enhancing drugs be accepted in sports?</p>
-                    <p><b>Premise:</b> Performance-enhancing drugs create inequality in sports and undermine the essence
-                        of
-                        fair competition.</p>
-                    <p><b>Stance:</b> Contra
-                    <p><b>Claim:</b> Performance-enhancing drugs should not be accepted in sport.</p>
-                    <p><b>Type:</b> Anecdotal</p>
+                    <table>
+                        <tr>
+                            <td><b>Topic</b></td>
+                            <td>Should performance-enhancing drugs be accepted in sports?</td>
+                        </tr>
+                        <tr>
+                            <td><b>Premise</b></td>
+                            <td>Performance-enhancing drugs create inequality in sports and undermine the essence of
+                                fair competition.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Stance</b></td>
+                            <td>Contra</td>
+                        </tr>
+                        <tr>
+                            <td><b>Claim</b></td>
+                            <td>Performance-enhancing drugs should not be accepted in sport.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Type</b></td>
+                            <td>Anecdotal</td>
+                        </tr>
+                    </table>
                 </div>
+
+                <p><b>Submissions</b>
 
 
                 <div class="image_examples_div">
