@@ -197,7 +197,7 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
 
             You can either submit a docker file that reproduces your results, or you can submit the results directly. In the latter case, the submission format depends on whether you chose the retrieval or the generation approach. If you want to use both methods, please submit separate files for each approach.
             You can assign up to 10 images for one argument. Use the rank key to indicate the order of your submissions, with 1 being the most relevant submission.
-            The result files should be in JSON Lines text format, <a href="https://jsonlines.org/">JSON Lines</a>, where each line is a JSON Object conforming to the conventions below. 
+            The result files should be in <a href="https://jsonlines.org/">JSON Lines</a> text format where each line is a JSON Object conforming to the conventions below. 
 
 
             <pre>
@@ -208,7 +208,7 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
         
             Each JSON object in your "results.jsonl" file should have the following keys:
             
-            argument_id - id of the argument in the arguments.xml file
+            argument_id - id of the argument in the arguments.xml file in the released dataset
             method - retrieval
             image_id - the image's ID - it corresponds to the name of the image's directory in the released dataset
             rationale - additional info or caption for the image to understand how it conveys the premise (optional)
@@ -228,12 +228,12 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
         
             <strong>Image Generation</strong>
         
-            If you are using image generation, submit a .zip file, which should contain a JSONL file called "results.jsonl" 
+            If you are using image generation, submit a zip file, which should contain a JSONL file called "results.jsonl" 
             and a directory called "generated_images "containing the generated images.
         
             Please use the following keys for your JSON Objects in the JSONL file:
         
-            argument_id - id of the arguments in the arguments.xml file
+            argument_id - id of the arguments in the arguments.xml file in the released dataset
             method - generation 
             prompt - the prompt that you have used to generate the image
             image : - name of the generated image, which can be found in the generated_images directory
