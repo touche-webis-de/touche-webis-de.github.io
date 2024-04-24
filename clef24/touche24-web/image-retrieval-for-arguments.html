@@ -229,14 +229,14 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
             <strong>Image Generation</strong>
         
             If you are using image generation, submit a .zip file, which should contain a JSONL file called "results.jsonl" 
-            and a directory called "images "containing the generated images.
+            and a directory called "generated_images "containing the generated images.
         
             Please use the following keys for your JSON Objects in the JSONL file:
         
             argument_id - id of the arguments in the arguments.xml file
             method - generation 
             prompt - the prompt that you have used to generate the image
-            image : - name of the generated image, which can be found in the images directory
+            image : - name of the generated image, which can be found in the generated_images directory
             rationale - additional info or caption for the image to understand how it conveys the premise (optional)
             rank - specifies the preference of your submissions  - 1 is highest
             tag - tag defined by you and your group, identifies your group and the method you used to obtain the results
@@ -256,7 +256,7 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
             Therefore the corresponding zip would have the following structure:
         
             - submissions.jsonl (file)
-            - images (directory)
+            - generated_images (directory)
               - space-pic1.jpg (file)
 
             </pre>
