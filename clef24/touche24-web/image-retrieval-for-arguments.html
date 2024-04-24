@@ -217,12 +217,13 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
         
             An example submission for argument "65302-a-2" would look like the following:
         
-            { "argument_id" : "65302-a-2 ",
-             "method " : "retrieval",
-            "image_id" : "Iffdea3cd664722c736d7d667",
-            "rationale" : "space is the final frontier",
-            "rank" : 1,
-            "tag " : "touche organizers - example submission for image retrieval; manual selection of images"
+            {
+            "argument_id": "65302-a-2",
+            "method": "retrieval",
+            "image_id": "Iffdea3cd664722c736d7d667",
+            "rationale": "space is the final frontier",
+            "rank": 1,
+            "tag": "touche organizers - example submission for image retrieval; manual selection of images"
             }
         
             <strong>Image Generation</strong>
@@ -241,15 +242,16 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
         
             An example looks like this:
         
-            { "argument_id" : "65302-a-2 ",
-             "method " : "generation",
-            "prompt" : "cat looking into the stars",
-            "image_name" : "space-pic1.jpg", 
-            "rationale" : "space is fascinating",
-            "rank" : 1,
-            "tag : "touche organizers - example submission for image generation; manual prompt engineering"
+            {
+                "argument_id": "65302-a-2",
+                "method": "generation",
+                "prompt": "cat looking into the stars",
+                "image_name": "space-pic1.jpg",
+                "rationale": "space is fascinating",
+                "rank": 1,
+                "tag": "touche organizers - example submission for image generation; manual prompt engineering"
             }
-        
+                    
             Therefore the corresponding zip would have the following structure:
         
             - submissions.jsonl
