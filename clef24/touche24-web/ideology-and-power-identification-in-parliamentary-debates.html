@@ -186,8 +186,22 @@ and dockerized software submisions (for better reproducibility).
 
 We provide <a href="https://github.com/coltekin/ideology-power-st-baseline">
 a simple linear baseline and evaluation script</a>,
-which also include a toy example, and examples of how to dockerize
-your submission.
+which also include a toy example, and examples of how to dockerize your submission.
+
+<p>The predictions should be formatted as simple TSV files with two
+columns, id, and the prediction. The prediction files should not
+contain a header row. The names of the files should be formatted as
+<code>team-task-pcode-runname.tsv</code>.
+The <code>task</code> is either 'orientation', or 'power', and the
+<code>pcode</code> is the lowercase code of the parliament (e.g., at, or
+es-ct). The <code>team</code> and <code>runname</code> can be helpful
+for identifying the team and the approach or the run information, but
+they are not significant for the evaluation script. You can set them
+to arbitrary strings, but they cannot be empty, and they should not
+contain a dash (<code>-</code>). All files should be placed in the
+same directory/folder without further hierarchy. If you are
+participating in only a subset of the tasks and/or parliaments, then
+you can submit files only for the combinations that you participate in.
 
 <!--
 <h2 id="tira-quickstart">TIRA Quickstart</h2>
