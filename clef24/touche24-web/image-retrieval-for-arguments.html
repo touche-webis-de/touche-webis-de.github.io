@@ -195,11 +195,9 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
 
             <h3 id="submission">Submission - Format</h3>
 
-            You can either submit a docker file that reproduces your results, or you can submit the results directly. In the latter case, the submission format depends on whether you chose the retrieval or the generation approach. If you want to use both methods, please submit separate files for each approach.
-            You can assign up to 10 images for one argument. Use the rank key to indicate the order of your submissions, with 1 being the most relevant submission.
-            The result files should be in <a href="https://jsonlines.org/">JSON Lines</a> text format where each line is a JSON Object conforming to the conventions below. 
-
-
+            The submission is done through <a href="https://www.tira.io/task-overview/touche-task-3/main-2024-20240419-test">Tira</a>.
+            Each team can submit as many runs as it wants. A run is either a docker image that generates the needed results or a file that contains the results directly. 
+            The exact specifications of this file depend on whether you have chosen the retrieval or the generation approach. If you want to try both methods, please submit separate runs.
             <pre>
 
             <strong>Image Retrieval</strong>
@@ -228,7 +226,7 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
         
             <strong>Image Generation</strong>
         
-            If you are using image generation, submit a zip file, which should contain a JSONL file called "results.jsonl" 
+            If you are using image generation, submit a file called "generation.zip", which should contain a JSONL file called "results.jsonl" 
             and a directory called "generated_images "containing the generated images.
         
             Please use the following keys for your JSON Objects in the JSONL file:
@@ -253,13 +251,19 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
                 "tag": "touche organizers - example submission for image generation; manual prompt engineering"
             }
                     
-            Therefore the corresponding zip would have the following structure:
+            Therefore the corresponding "generation.zip for this submission would have the following structure:
         
             - results.jsonl (file)
             - generated_images (directory)
               - space-pic1.jpg (file)
 
             </pre>
+
+            You can find more information about JSON lines <a href="https://jsonlines.org/"> here </a> and a results.jsonl example <a href=".touche24-data/results.jsonl">here</a>.      
+            You can assign up to 10 images to the same argument.Therefore, you must use the rank key to specify the preference of your images relative to the argument, where 1 is the most relevant image for the corresponding argument.
+            You can see this approach in the results.jsonl example.
+
+            
 
             <h2 id="important_dates">Important Dates</h2>
             <ul>
