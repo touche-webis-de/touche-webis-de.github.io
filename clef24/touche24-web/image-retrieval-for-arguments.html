@@ -231,7 +231,7 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
         
             Please use the following keys for your JSON Objects in the JSONL file:
         
-            argument_id - id of the arguments in the arguments.xml file in the released dataset
+            argument_id - id of the argument in the arguments.xml file in the released dataset
             method - generation 
             prompt - the prompt that you have used to generate the image
             image : - name of the generated image, which can be found in the generated_images directory
@@ -259,8 +259,10 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
 
             </pre>
 
-            You can find more information about JSON lines <a href="https://jsonlines.org/"> here </a> and a results.jsonl example <a href="..touche24-data/results.jsonl">here</a>.                  
-            You can assign up to 10 images to the same argument ID in your results.jsonl, as you can see in the example. The rank key is used to determine the preference order of your images for the corresponding argument, where 1 is the most relevant image. This means that a run containing multiple mappings for an argument ID with the same rank will not be valid.
+            You can find more information about JSON lines <a href="https://jsonlines.org/"> here </a> and a results.jsonl example <a href="../touche24-data/results.jsonl">here</a>.                  
+            You can assign up to 10 images to the same argument ID. The rank key is used to determine the preference order of your images for the corresponding argument, where 1 is the most relevant image. 
+            This means that if you submit for example 5 images for one argument you need to use the rank values from 1 till 5. Also this means that a run containing multiple image assignments for an argument with the same rank will not be valid.
+            Multiole image asssignments to the same argument have also been done in the linked results.jsonl example.
             
 
             <h2 id="important_dates">Important Dates</h2>
