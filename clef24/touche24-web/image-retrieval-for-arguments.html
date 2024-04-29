@@ -226,18 +226,18 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
         
             <strong>Image Generation</strong>
         
-            If you are using image generation, submit a file called "generation.zip", which should contain a JSONL file called "results.jsonl" 
+            If you are using image generation or any other approach that generates images, submit a file called "generation.zip", which should contain a JSONL file called "results.jsonl" 
             and a directory called "generated_images "containing the generated images.
         
             Please use the following keys for your JSON Objects in the JSONL file:
         
             argument_id - id of the argument in the arguments.xml file in the released dataset
             method - generation 
-            prompt - the prompt that you have used to generate the image
+            prompt - the prompt that you have used to generate the image (leave empty if not applicable)
             image - name of the generated image, which can be found in the generated_images directory
             rationale - additional info or caption for the image to understand how it conveys the premise (optional)
             rank - specifies the preference of your image assignment (more below)  - 1 is highest
-            tag - tag defined by you and your group, identifies your group and the particula method you used to obtain the results
+            tag - tag defined by you and your group, identifies your group and the particular method you used to obtain the results
         
             An example looks like this:
         
@@ -251,7 +251,7 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
                 "tag": "touche organizers - example submission for image generation; manual prompt engineering"
             }
                     
-            Therefore the corresponding "generation.zip for this submission would have the following structure:
+            Therefore the corresponding "generation.zip" for this submission would have the following structure:
         
             - results.jsonl (file)
             - generated_images (directory)
@@ -259,10 +259,10 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
 
             </pre>
 
-            You can find more information about JSON lines <a href="https://jsonlines.org/"> here </a> and a results.jsonl example for retrieval <a href="../touche24-data/results.jsonl">here</a>.                  
+            You can find more information about JSON lines <a href="https://jsonlines.org/"> here </a> and a "results.jsonl" example for retrieval <a href="../touche24-data/results.jsonl">here</a>.                  
             In each run you can assign up to 10 images to the same argument ID. The rank key is used to determine the preference order of your images for the corresponding argument, where 1 is the most relevant image. 
             This means that if you submit for example 5 images for one argument you need to use the rank values from 1 till 5. Also this means that a run containing multiple image assignments for an argument with the same rank will not be valid.
-            You can find an examples for such multiple image asssignments to the same argument in the linked results.jsonl example.
+            You can find an examples for such multiple image asssignments to the same argument in the linked "results.jsonl" example.
             
 
             <h2 id="important_dates">Important Dates</h2>
