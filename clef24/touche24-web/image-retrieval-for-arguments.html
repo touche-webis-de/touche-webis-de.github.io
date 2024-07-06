@@ -162,15 +162,14 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
             <p> Interested?</p>
             
             <p>
-            <a class="uk-button uk-button-primary" href="https://clef2024-labs-registration.dei.unipd.it/">Register
-                now</a></p>
+            <a class="uk-button uk-button-primary" href="https://www.tira.io/task-overview/touche-task-3/touche-task-3-2022-01-21">Submit</a></p>
             <p>If you would like to use the Stable Diffusion API for this task, just contact us and we will provide you with the details. </p>
 
             <h2 id="data">Data</h2>
 
 
             The current version dataset can be found <a href="https://doi.org/10.5281/zenodo.10696055">here</a>. Besides
-            the arguments, the corpus also contains a crawl of about 5000 images (and associated web pages) as document
+            the arguments, the corpus also contains a crawl of about 9000 images (and associated web pages) as document
             collection. For the retrieved images we also provide additional information such as an automatically
             generated image caption. For participants favoring image generation, we provide access to a <a href="https://touche24-image-generation.web.webis.de/"> Stable Diffusion API </a>. Contact us if you want access.
 
@@ -193,19 +192,89 @@ description: Touché at CLEF 2024 - Image Retrieval for Arguments
 
             <p>Images alone can be ambiguous and difficult to understand without context, e.g. if they refer to symbolism. That's why we offer the option to submit a rationale along with the image. The rationale is a piece of text that helps us understand the image. For example, it could be a caption or contextual information about the image. The image and rationale will be evaluated together to see how this combination conveys the premise.</p>
 
+            <h3 id="submission">Submission - Format</h3>
 
+            The submission is done through <a href="https://www.tira.io/task-overview/touche-task-3/main-2024-20240419-test">Tira</a>.
+            Each team can submit as many runs as it wants. A run, represents a particular method you have used for the task and is either a docker image that generates the needed results or a file that contains the results directly. 
+            The exact specifications of this file depend on whether you have chosen the retrieval or the generation approach. If you want to try both methods, please submit separate runs.
+            <pre>
+
+            <strong>Image Retrieval</strong>
+        
+            If you have chosen the retrieval approach, please submit your results in a file called "results.jsonl". 
+        
+            Each JSON object in your "results.jsonl" file should have the following keys:
+            
+            argument_id - id of the argument in the arguments.xml file in the released dataset
+            method - retrieval
+            image_id - the image's ID - it corresponds to the name of the image's directory in the released dataset
+            rationale - additional info or caption for the image to understand how it conveys the premise (optional)
+            rank - specifies the preference of your image assignemnt (more below) - 1 is highest
+            tag - tag defined by you and your group, identifies your group and the particular method you used to obtain the results
+        
+            An example submission for argument "65302-a-2" would look like the following:
+        
+            {
+            "argument_id": "65302-a-2",
+            "method": "retrieval",
+            "image_id": "Iffdea3cd664722c736d7d667",
+            "rationale": "space is the final frontier",
+            "rank": 1,
+            "tag": "touche organizers - example submission for image retrieval; manual selection of images"
+            }
+        
+            <strong>Image Generation</strong>
+        
+            If you are using image generation or any other approach that generates images, submit a file called "generation.zip", which should contain a JSONL file called "results.jsonl" 
+            and a directory called "generated_images "containing the generated images.
+        
+            Please use the following keys for your JSON Objects in the JSONL file:
+        
+            argument_id - id of the argument in the arguments.xml file in the released dataset
+            method - generation 
+            prompt - the prompt that you have used to generate the image (leave empty if not applicable)
+            image - name of the generated image, which can be found in the generated_images directory
+            rationale - additional info or caption for the image to understand how it conveys the premise (optional)
+            rank - specifies the preference of your image assignment (more below)  - 1 is highest
+            tag - tag defined by you and your group, identifies your group and the particular method you used to obtain the results
+        
+            An example looks like this:
+        
+            {
+                "argument_id": "65302-a-2",
+                "method": "generation",
+                "prompt": "cat looking into the stars",
+                "image_name": "space-pic1.jpg",
+                "rationale": "space is fascinating",
+                "rank": 1,
+                "tag": "touche organizers - example submission for image generation; manual prompt engineering"
+            }
+                    
+            Therefore the corresponding "generation.zip" for this submission would have the following structure:
+        
+            - results.jsonl (file)
+            - generated_images (directory)
+              - space-pic1.jpg (file)
+
+            </pre>
+
+            You can find more information about JSON lines <a href="https://jsonlines.org/"> here </a> and a "results.jsonl" example for retrieval <a href="../touche24-data/results.jsonl">here</a>.                  
+            In each run you can assign up to 10 images to the same argument ID. The rank key is used to determine the preference order of your images for the corresponding argument, where 1 is the most relevant image. 
+            This means that if you submit for example 5 images for one argument you need to use the rank values from 1 till 5. Also this means that a run containing multiple image assignments for an argument with the same rank will not be valid.
+            You can find an examples for such multiple image asssignments to the same argument in the linked "results.jsonl" example. If there are any questions, please feel free to contact us.
+            
 
             <h2 id="important_dates">Important Dates</h2>
             <ul>
             <li><strong>Dec. 18, 2023:</strong> CLEF Registration opens. [<a href="https://clef2024-labs-registration.dei.unipd.it/">register</a>]</li>
             <li><strong>May   6, 2024:</strong> Approaches submission deadline.</li>
             <li><strong>May  31, 2024:</strong> Participant paper submission<!-- [<a href="../touche23-data/touche-paper-template.zip">template</a>] [<a href="../touche23-data/instructions.txt">short instructions</a>] [<a href="https://clef2023.clef-initiative.eu/resources/wn_instructions.pdf">full instructions</a>] [<a href="https://www.easychair.org/my/conference?conf=clef2023">submit</a>]-->.</li>
-            <li><strong>June 21, 2024:</strong> Peer review notification.</li>
+            <li><strong>June 24, 2024:</strong> Peer review notification.</li>
             <li><strong>July  8, 2024:</strong> Camera-ready participant papers submission<!--[<a href="../touche23-data/touche-paper-template.zip">template</a>] [<a href="../touche23-data/instructions.txt">short instructions</a>] [<a href="https://clef2023.clef-initiative.eu/resources/wn_instructions.pdf">full instructions</a>] [<a href="https://www.easychair.org/my/conference?conf=clef2023">submit</a>]-->.</li>
             <li><strong>Sep. 9-12, 2024:</strong> <a href="https://clef2024.imag.fr/">CLEF Conference</a> in Grenoble and Touché Workshop.</li>
             <!-- <li><strong>September 8, 2024:</strong> Touché Workshop.</li> -->
             </ul>
-            <p>All deadlines are 23:59 <a href="https://time.is/Anywhere_on_Earth">anywhere on earth</a> (UTC-12).</p>
+            <p>All deadlines are 23:59 <a href="https://time.is/CEST">CEST</a> (UTC+2).</p>
             
 
 

@@ -41,6 +41,9 @@ two important aspects of a speaker in parliamentary debates:
 <li>Sub-Task 2: Given a parliamentary speech in one of several languages, identify whether the speaker's party is currently governing or in opposition.</li>
 <li>Communication: [mailing lists: <a href="https://groups.google.com/g/ideology-and-power-in-parliamentary-speeches">task</a>, <a href="mailto:touche@webis.de">organizers</a>] </li>
 <li>Training data: [<a href="https://zenodo.org/doi/10.5281/zenodo.10450640">download</a>]</li>
+<li>Test data: [<a href="https://zenodo.org/doi/10.5281/zenodo.11061649">download</a>]</li>
+<li>Submission: [<a href="https://github.com/coltekin/ideology-power-st-baseline">baseline</a>] [<a href="https://github.com/coltekin/ideology-power-st-baseline/tree/main/evaluation">evaluator</a>] [<a href="https://www.tira.io/c/touche/">forum</a>] [<a href="https://www.tira.io/task-overview/ideology-and-power-identification-in-parliamentary-debates-2024">submit</a>]</li>
+
 <!-- <li>Input: [<a href="../touche24-data/topics-task3.xml" download>topics</a>]</li> -->
 <!-- <li>Submission: [queries: <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef23/image-retrieval-for-arguments/query-submission-baselines">baselines code</a>, <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef23/image-retrieval-for-arguments/query-submission-evaluator">validator</a>] [<a href="https://www.tira.io/task/touche-task-3">submit</a>]</li> -->
 </ul>
@@ -52,14 +55,14 @@ two important aspects of a speaker in parliamentary debates:
 <p>Subscribe to the <a href="https://groups.google.com/g/ideology-and-power-in-parliamentary-speeches">mailing list</a> to receive notifications.</p>
 <ul>
 <li><strong>Dec. 18, 2023:</strong> CLEF Registration opens. [<a href="https://clef2024-labs-registration.dei.unipd.it/">register</a>]</li>
-<li><strong>May   6, 2024:</strong> Approaches submission deadline.</li>
+<li><strong>May  20, 2024:</strong> EXTENDED approaches submission deadline.</li>
 <li><strong>May  31, 2024:</strong> Participant paper submission<!-- [<a href="../touche23-data/touche-paper-template.zip">template</a>] [<a href="../touche23-data/instructions.txt">short instructions</a>] [<a href="https://clef2023.clef-initiative.eu/resources/wn_instructions.pdf">full instructions</a>] [<a href="https://www.easychair.org/my/conference?conf=clef2023">submit</a>]-->.</li>
-<li><strong>June 21, 2024:</strong> Peer review notification.</li>
+<li><strong>June 24, 2024:</strong> Peer review notification.</li>
 <li><strong>July  8, 2024:</strong> Camera-ready participant papers submission<!--[<a href="../touche23-data/touche-paper-template.zip">template</a>] [<a href="../touche23-data/instructions.txt">short instructions</a>] [<a href="https://clef2023.clef-initiative.eu/resources/wn_instructions.pdf">full instructions</a>] [<a href="https://www.easychair.org/my/conference?conf=clef2023">submit</a>]-->.</li>
 <li><strong>Sep. 9-12, 2024:</strong> <a href="https://clef2024.imag.fr/">CLEF Conference</a> in Grenoble and Touché Workshop.</li>
 <!-- <li><strong>September 8, 2024:</strong> Touché Workshop.</li> -->
 </ul>
-<p>All deadlines are 23:59 <a href="https://time.is/Anywhere_on_Earth">anywhere on earth</a> (UTC-12).</p>
+<p>All deadlines are 23:59 <a href="https://time.is/CEST">CEST</a> (UTC+2).</p>
 
 <h2 id="task">Task</h2>
 Debates in national parliaments do not only affect
@@ -109,8 +112,8 @@ The data is provided as tab-separated text files.  The following shows a toy exa
         non-English speeches.
     <li> <b>label</b> is the binary/numeric label. For political
         orientation, <b>0</b> is <b>left</b> and <b>1</b> is right.
-        For power identification <b>0</b> indicates <b>opposition</b>
-        and <b>1</b> indicates <b>coalition</b> (or governing party).
+        For power identification <b>1</b> indicates <b>opposition</b>
+        and <b>0</b> indicates <b>coalition</b> (or governing party).
 </ul>
 
 Participants are not required to use the first four fields,
@@ -176,10 +179,33 @@ cross-lingual approaches for improving their predictions.
 The participants are allowed to use any external datasets,
 except the source data from ParlaMint.
 
-The submission system will open soon.
-Register on the mailing list to get notified.
+Submission are now accepted through
+<a href="https://www.tira.io/task-overview/ideology-and-power-identification-in-parliamentary-debates-2024">TIRA</a>.
+You need to register your team on TIRA (in addition to a registration at CLEF) and pick an alias for your team name (submission is anonymous; you can reveal you true team name after final paper acceptance).
+You can submit both predictoins
+and dockerized software submisions (for better reproducibility).
+Please note that you will not be able to see your results on the test dataset until after the deadline.
+However, your will be informed if your submission failed because of a
+formatting or software error.
+
 We provide <a href="https://github.com/coltekin/ideology-power-st-baseline">
-    a simple linear baseline</a> with code for reading and writing the files.
+a simple linear baseline and evaluation script</a>,
+which also include a toy example, and examples of how to dockerize your submission.
+
+<p>The predictions should be formatted as simple TSV files with two
+columns, id, and the prediction. The prediction files should not
+contain a header row. The names of the files should be formatted as
+<code>team-task-pcode-runname.tsv</code>.
+The <code>task</code> is either 'orientation', or 'power', and the
+<code>pcode</code> is the lowercase code of the parliament (e.g., at, or
+es-ct). The <code>team</code> and <code>runname</code> can be helpful
+for identifying the team and the approach or the run information, but
+they are not significant for the evaluation script. You can set them
+to arbitrary strings, but they cannot be empty, and they should not
+contain a dash (<code>-</code>). All files should be placed in the
+same directory/folder without further hierarchy. If you are
+participating in only a subset of the tasks and/or parliaments, then
+you can submit files only for the combinations that you participate in.
 
 <!--
 <h2 id="tira-quickstart">TIRA Quickstart</h2>
