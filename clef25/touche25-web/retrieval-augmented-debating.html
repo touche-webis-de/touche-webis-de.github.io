@@ -18,6 +18,7 @@ description: Touché at CLEF 2025 - Retrieval-Augmented Debating
 <h1 class="uk-margin-remove-top uk-margin-remove-bottom">Retrieval-Augmented Debating 2025</h1>
 <ul class="uk-list">
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#important_dates">Important Dates</a></li>
 <!--
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
@@ -30,6 +31,8 @@ description: Touché at CLEF 2025 - Retrieval-Augmented Debating
 
 <div class="uk-container uk-margin-medium">
 
+
+
 <h2 id="synopsis">Synopsis</h2>
 <ul>
 <li>Sub-Task 1: Generate responses to argue against a simulated debate partner.</li>
@@ -40,6 +43,8 @@ description: Touché at CLEF 2025 - Retrieval-Augmented Debating
 
 <a href="https://groups.google.com/g/touche-lab" class="uk-button uk-button-primary">Join the Touché mailing list</a>
 <!-- <a class="uk-button uk-button-primary" href="https://clef2024-labs-registration.dei.unipd.it/">Register now</a> -->
+
+
 
 <h2 id="important-dates" class="uk-margin-large-top">Important Dates</h2>
 <p>Subscribe to the <a href="https://groups.google.com/g/touche-lab">Touché mailing list</a> to receive notifications.</p>
@@ -52,6 +57,31 @@ description: Touché at CLEF 2025 - Retrieval-Augmented Debating
 <li><strong>Sep. 2025:</strong> <a href="http://clef2025.clef-initiative.eu/index.php">CLEF Conference</a> in Madrid and Touché Workshop.</li>
 </ul>
 <p>All deadlines are 23:59 <a href="https://time.is/CEST">CEST</a> (UTC+2).</p>
+
+
+
+<h2 id="task" class="uk-margin-large-top">Task</h2>
+
+<p>This task serves to develop generative retrieval systems that argue against their users to support users in forming or confirming opinions or to train their debating skills. Participating systems are debated by simulated users in multiple turns (following the procedure shown below) and evaluated based on their responses.</p>
+
+<figure class="chat">
+<div class="user"><span>U<sub>1</sub>: Claim statement</span></div>
+<div class="system"><span>S<sub>1</sub>: Supposed to attack U<sub>1</sub></span></div>
+<div class="user"><span>U<sub>2</sub>: Attacks S<sub>1</sub></span></div>
+<div class="system"><span>S<sub>2</sub>: Supposed to respond to U<sub>2</sub></span></div>
+<div class="user"><span>U<sub>3</sub>: Attacks S<sub>1</sub> or S<sub>2</sub></span></div>
+<div class="system"><span>S<sub>3</sub>: Supposed to respond to U<sub>3</sub></span></div>
+<div class="user"><span>U<sub>4</sub>: Attacks S<sub>1</sub> or S<sub>2</sub> or S<sub>3</sub></span></div>
+<div class="system"><span>S<sub>4</sub>: Supposed to respond to U<sub>4</sub></span></div>
+<figcaption>Debate procedure for sub-task&nbsp;1. The simulated user always starts by stating a claim and later attacks the system's responses. The system is expected to respond, either by counterattacking or defending.</figcaption>
+</figure>
+
+<p>Sub-Task 1: Participants submit systems that respond with an utterance S<sub>i</sub>, to a (simulated) user's utterance U<sub>i</sub> by (1)&nbsp;retrieving either counterarguments (to U<sub>i</sub>) or supporting evidence (for the attacked S) from a provided argument collection and (2)&nbsp;generating a response (of at most 60&nbsp;words) from the retrieved data.</p>
+
+<p>Sub-Task 2: Participants submit systems that assess the participating systems of sub-task&nbsp;1 in terms of one or more of these criteria: (1)&nbsp;relevance of the retrieved counterarguments or evidence; (2)&nbsp;faithfulness of the generated response to the retrieved data; (3)&nbsp;coherence of system responses for the conversation; and (4)&nbsp;argumentative quality of the response.</p>
+
+<p>We will release more information on data, evaluation procedure, and baselines in the next months. <a href="https://groups.google.com/g/touche-lab">Join the Touché mailing list</a> to stay up-to-date.</p>
+
 
 
 <h2 id="task-committee">Task Committee</h2>
@@ -70,3 +100,48 @@ description: Touché at CLEF 2025 - Retrieval-Augmented Debating
 </div>
 </div>
 </main>
+
+
+
+<style>
+figcaption {
+  font-style: italic;
+}
+.chat {
+  max-width: 300px;
+}
+.chat > div {
+  display: flex;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.chat > div::before, .chat > div::after {
+  white-space: nowrap;
+  align-content: center;
+}
+.chat > div.user::before {
+  content: "User —";
+}
+.chat > div.system::after {
+  content: "— System";
+}
+.chat > div.user {
+  margin-right: 10px;
+}
+.chat > div.system {
+  text-align: right;
+  margin-left: 10px;
+}
+.chat > div > span {
+  flex-grow: 1;
+  border: 1px solid black;
+  padding: 5px;
+  text-align: left;
+}
+.chat > div.user > span {
+  background-color: #E6F8B8;
+}
+.chat > div.system > span {
+  background-color: #D3F8F7;
+}
+</style>
