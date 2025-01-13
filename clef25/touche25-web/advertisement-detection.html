@@ -75,7 +75,7 @@ summary:hover {
 <p>Create relevant responses for a given query and insert advertisements (Sub-Task 1) and detect such advertisements (Sub-Task 2).</p>
 
 <h2 id="data">Data</h2>
-<p>For response generation (Sub-Task 1), we provide a list of queries and for each query a list of 20 to 100 candidate segments that a search engine retrieved for the query. For each query, the data also specifies which items should be advertised. A response needs to be generated for each item plus one response without advertisement. [<a href="https://zenodo.org/records/13912630">download</a>]</p>
+<p>For response generation (Sub-Task 1), we provide a list of queries and for each query a list of 20 to 100 candidate segments that a search engine retrieved for the query. For each query, the data also specifies which items should be advertised. A response needs to be generated for each item plus one response without advertisement. [<a href="https://zenodo.org/records/14636849">download</a>]</p>
 
 <details>
 <summary>Example for a query with two candidate segments (click to see)</summary>
@@ -103,7 +103,13 @@ summary:hover {
             'headings': 'Best Oculus Rift Fitness Games 2020 | Great Virtual Reality Workouts Best Oculus Rift Fitness Games 2020\nBest Oculus Rift Fitness Games 2020\nTop 20 Oculus Rift Workout Titles\nAudica\nAudio Trip\nBardo\nBeat Saber\nBlade and Sorcery\nBoxVR\nCreed: Rise to Glory\nDance Central VR\nEcho VR\nHot Squat 1 &amp; 2\nPath of the Warrior\nPistol Whip\nPowerBeats VR\nRacket Fury: Table Tennis VR\nRacket Nx\nSoundboxing\nSports Scramble\nSprint Vector\nSuperhot VR\nThe Thrill of the Fight\nFollow Us On Social\nStay Up-To-Date On All The Latest VR Fitness News\nWhat do you think?\nAngry',
             'segment': 'Best Oculus Rift Fitness Games 2020\nBest Oculus Rift Fitness Games 2020\nTop 20 Oculus Rift Workout Titles\nAudica\nAudio Trip\nBardo\nBeat Saber\nBlade and Sorcery\nBoxVR\nCreed: Rise to Glory\nDance Central VR\nEcho VR\nHot Squat 1 &amp; 2\nPath of the Warrior\nPistol Whip\nPowerBeats VR\nRacket Fury: Table Tennis VR\nRacket Nx\nSoundboxing\nSports Scramble\nSprint Vector\nSuperhot VR\nThe Thrill of the Fight\nFollow Us On Social\nStay Up-To-Date On All The Latest VR Fitness News\nWhat do you think?\nAngry\n These games are an excellent part of anyone?s fitness journey. If you own a different headset, check out our lists of the top 25 VR fitness games, and our headset specific lists for HTC Vive, Valve Index , PlayStation VR, Oculus Go, and Oculus Quest. Top 20 Oculus Rift Workout Titles\nAudica\nCredit to: Harmonix\nThanks to its successful Guitar Hero and Rock Band series, Harmonix has become the face of the rhythm game genre. As such, it should come as no surprise that its virtual reality title Audica is a fantastic blend of action and music. The first-person shooter is filled with 33 catchy songs (with even more available as downloadable content) and is quite the atmospheric experience. The in-game action gets hectics as players alternate between using their two differently colored guns to hit targets of the same color. Thanks to its multiple difficulty levels, this can be picked up and played by anyone. The expert difficulty will keep players coming back for more as they try to master the challenge. The fully featured title also features custom beat map modding support, making it one of the best Oculus Rift fitness games.'
         },
-    }]
+    }
+    ],
+    'advertisements': [
+        None,
+        {'item': 'TRX Training System', 'type': ' product', 'qualities': 'versatile, space-saving full-body workout system'},
+        {'item': 'Zwift', 'type': 'service', 'qualities': 'immersive, gamified indoor cycling & running workout'}
+    ]
 }
 </code></pre>
 <p>With<ul>
@@ -115,7 +121,20 @@ summary:hover {
         <li><code>edu_value</code>: Educational value of the <code>segment</code> as estimated by the <a href="https://huggingface.co/kenhktsui/llm-data-textbook-quality-fasttext-classifier-v2">llm-data-textbook-quality-fasttext-classifier-v2 </a>.</li>
         <li><code>doc</code>: A candidate segment consisting of the <code>url</code>, <code>title</code>, and <code>headings</code> of the containing web document as well as the <code>segment</code> text.</li>
     </ul>
+    <li><code>advertisements</code>: A list where each entry is either <code>None</code> or a dictionary.</li>
+    <ul>
+        <li><code>item</code>: Name of the brand, service, or product to be advertised.</li>
+        <li><code>type</code>: Describes the type of the item (e.g., brand or specific type of product).</li>
+        <li><code>qualities</code>: A descriptive string of item attributes for use in the ad.</li>
+    </ul>
 </ul></p>
+
+For the query "virtual reality workout", three different responses need to be generated:
+
+- A response free of advertisements.
+    A response promoting 'TRX Training System', highlighting it as a 'versatile, space-saving full-body workout system'.
+    A response promoting 'Zwift' as an 'immersive, gamified indoor cycling & running workout'.
+
 </details>
 
 <p>For  advertisement classification (Sub-Task 2), we provide a list of responses (generated as in Sub-Task 1). For development we provide the <a href="https://zenodo.org/records/10802427">Webis Generated Native Ads 2024</a> dataset. A new unpublished test dataset that has the same format as the Webis Generated Native Ads 2024 dataset will be used for evaluation.</p>
@@ -166,9 +185,9 @@ summary:hover {
 <pre><code>{
     'qid': '290889445',
     'topic': 'virtual reality workout',
-    'references': ['msmarco_v2.1_doc_57_189213226#17_415725734', 'msmarco_v2.1_doc_57_189213226#1_415698019', 'msmarco_v2.1_doc_57_189164751#15_415625053', 'msmarco_v2.1_doc_49_230395858#3_455686232']
+    'references': ['msmarco_v2.1_doc_57_189213226#17_415725734', 'msmarco_v2.1_doc_57_189213226#1_415698019', 'msmarco_v2.1_doc_57_189164751#15_415625053', 'msmarco_v2.1_doc_49_230395858#3_455686232'],
     'response': 'Virtual reality workouts have become an exciting trend, offering immersive and engaging ways to stay fit. With a plethora of VR fitness games available, you can now mix entertainment with exercise. Among the popular options for Oculus Rift users are games such as Beat Saber, BoxVR, and Creed: Rise to Glory, which combine fun gameplay with physical activity. Hot Squat, and its sequel, bring a unique twist to leg day, making squats entertaining while supporting charity through its purchases.\nFor those in search of high-intensity workouts, titles like Audio Trip, The Thrill of the Fight, and PowerBeats VR provide exhilarating experiences that get your heart pumping. OhShape, available on multiple VR platforms, challenges you to match body shapes and dodge obstacles, while allowing you to customize the soundtrack to suit your preferences.',
-    'advertisement': ''
+    'advertisement': '',
     'tag': 'myGroupMyMethod'
 }</code></pre>
 </details>
@@ -178,9 +197,9 @@ summary:hover {
 <pre><code>{
     'qid': '290889445',
     'topic': 'virtual reality workout',
-    'references': ['msmarco_v2.1_doc_57_189213226#17_415725734', 'msmarco_v2.1_doc_57_189213226#1_415698019', 'msmarco_v2.1_doc_57_189164751#15_415625053', 'msmarco_v2.1_doc_49_230395858#3_455686232']
-    'response': Virtual reality workouts have become an exciting trend, offering immersive and engaging ways to stay fit. With a plethora of VR fitness games available, you can now mix entertainment with exercise. Among the popular options for Oculus Rift users are games such as Beat Saber, BoxVR, and Creed: Rise to Glory, which combine fun gameplay with physical activity. Hot Squat, and its sequel, bring a unique twist to leg day, making squats entertaining while supporting charity through its purchases.\nFor those in search of high-intensity workouts, titles like Audio Trip, The Thrill of the Fight, and PowerBeats VR provide exhilarating experiences that get your heart pumping. OhShape, available on multiple VR platforms, challenges you to match body shapes and dodge obstacles, while allowing you to customize the soundtrack to suit your preferences. And for the ultimate in quality and flexibility, consider the Meta Quest 3, a VR headset that enhances your workout experience with seamless performance and versatile features, transforming any space into your personal gym.,
-    'advertisement': 'Meta Quest 3'
+    'references': ['msmarco_v2.1_doc_57_189213226#17_415725734', 'msmarco_v2.1_doc_57_189213226#1_415698019', 'msmarco_v2.1_doc_57_189164751#15_415625053', 'msmarco_v2.1_doc_49_230395858#3_455686232'],
+    'response': 'Virtual reality workouts have become an exciting trend, offering immersive and engaging ways to stay fit. With a plethora of VR fitness games available, you can now mix entertainment with exercise. Among the popular options for Oculus Rift users are games such as Beat Saber, BoxVR, and Creed: Rise to Glory, which combine fun gameplay with physical activity. Hot Squat, and its sequel, bring a unique twist to leg day, making squats entertaining while supporting charity through its purchases.\nFor those in search of high-intensity workouts, titles like Audio Trip, The Thrill of the Fight, and PowerBeats VR provide exhilarating experiences that get your heart pumping. OhShape, available on multiple VR platforms, challenges you to match body shapes and dodge obstacles, while allowing you to customize the soundtrack to suit your preferences. And for the ultimate in quality and flexibility, consider the Meta Quest 3, a VR headset that enhances your workout experience with seamless performance and versatile features, transforming any space into your personal gym.',
+    'advertisement': 'Meta Quest 3',
     'tag': 'myGroupMyMethod'
 }</code></pre>
 </details>
