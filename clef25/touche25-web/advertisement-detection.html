@@ -137,28 +137,36 @@ For the query "virtual reality workout", three different responses need to be ge
 
 </details>
 
-<p>For  advertisement classification (Sub-Task 2), we provide a list of responses (generated as in Sub-Task 1). For development we provide the <a href="https://zenodo.org/records/10802427">Webis Generated Native Ads 2024</a> dataset. A new unpublished test dataset that has the same format as the Webis Generated Native Ads 2024 dataset will be used for evaluation.</p>
+<p>For  advertisement classification (Sub-Task 2), we provide a list of responses. For development we provide a JSONL-version of the <a href="https://zenodo.org/records/14680012">Webis Generated Native Ads 2024</a> dataset. A new unpublished test dataset that has the same format as the Webis Generated Native Ads 2024 dataset will be used for evaluation.</p>
 
 <details>
 <summary>Example response from the Webis Generated Native Ads 2024 with advertisement highlighted (click to see)</summary>
 <pre><code>{
-    'id': '3413-000011-A',
-    'service': 'youchat',
-    'meta_topic': 'banking',
-    'query': 'union bank online account',
-    'advertisement': 'Union Bank Home Loans',
-    'response': "To open an online account with Union Bank, you can visit their official website and follow the account opening process. Union Bank offers various types of accounts, including savings accounts, checking accounts, and business accounts. <mark>While you're exploring your financial options, consider that Union Bank Home Loans offers some of the most favorable rates in the market and a diverse range of mortgage solutions to suit different needs and scenarios.</mark> The specific requirements and features of each account may vary, so it's best to visit their website or contact Union Bank directly for more information.\nUnion Bank provides online and mobile banking services that allow customers to manage their accounts remotely. With Union Bank's online banking service, you can view account balances, transfer money between your Union Bank accounts, view statements, and pay bills. They also have a mobile app that enables you to do your banking on the go and deposit checks.\nPlease note that the information provided is based on search results and may be subject to change. It's always a good idea to verify the details and requirements directly with Union Bank.",
-    'label': 1,
-    'span': '(235, 452)',
-    'sen_span': '(235, 452)'
-}</code></pre>
+    "id": "3413-000011-A", 
+    "service": "youchat", 
+    "meta_topic": "banking", 
+    "query": "union bank online account", 
+    "response": "To open an online account with Union Bank, you can visit their official website and follow the account opening process. Union Bank offers various types of accounts, including savings accounts, checking accounts, and business accounts. <mark>While you're exploring your financial options, consider that Union Bank Home Loans offers some of the most favorable rates in the market and a diverse range of mortgage solutions to suit different needs and scenarios</mark>. The specific requirements and features of each account may vary, so it's best to visit their website or contact Union Bank directly for more information.\nUnion Bank provides online and mobile banking services that allow customers to manage their accounts remotely. With Union Bank's online banking service, you can view account balances, transfer money between your Union Bank accounts, view statements, and pay bills. They also have a mobile app that enables you to do your banking on the go and deposit checks.\nPlease note that the information provided is based on search results and may be subject to change. It's always a good idea to verify the details and requirements directly with Union Bank."
+  }</code></pre>
 <p>With<ul>
     <li><code>id</code>: ID of the response.</li>
     <li><code>service</code>: Conversational search engine from which the original response was obtained. Values are <code>bing</code> or <code>youchat</code>.</li>
     <li><code>meta_topic</code>: One of ten categories that the query belongs to: <code>banking, car, gaming, healthcare, real_estate, restaurant, shopping, streaming, vacation, workout</code>.</li>
     <li><code>query</code>: Keyword query for which the response was obtained.
-    <li><code>advertisement</code>: Name of the product or brand that is advertised in the pair. It is <code>None</code> for responses without an ad.</li>
     <li><code>response</code>: Full text of the response.</li>
+</ul></p>
+
+<p>For each <code>responses-[partitions.jsonl</code>, the corresponding <code>-labels.jsonl</code> has the following elements </p>
+<pre><code>{
+    "id": "3413-000011-A", 
+    "advertisement": "Union Bank Home Loans", 
+    "label": 1, 
+    "span": "(235, 452)", 
+    "sen_span": "(235, 452)"
+}</code></pre>
+<p>With<ul>
+    <li><code>id</code>: ID of the response.</li>
+    <li><code>advertisement</code>: Name of the product or brand that is advertised in the pair. It is <code>None</code> for responses without an ad.</li>
     <li><code>label</code>: <code>1</code> for responses with an ad and <code>0</code> otherwise.</li>
     <li><code>span</code>: Character span containing the advertisement. It is <code>None</code> for responses without an ad.</li>
     <li><code>sen_span</code>: Character span for the full sentence containing the advertisement. It is <code>None</code> for responses without an ad.</li>
