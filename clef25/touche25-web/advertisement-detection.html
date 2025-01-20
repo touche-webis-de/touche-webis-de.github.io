@@ -129,12 +129,12 @@ summary:hover {
     </ul>
 </ul></p>
 
-For the query "virtual reality workout", three different responses need to be generated:
-
-- A response free of advertisements.
-    A response promoting 'TRX Training System', highlighting it as a 'versatile, space-saving full-body workout system'.
-    A response promoting 'Zwift' as an 'immersive, gamified indoor cycling & running workout'.
-
+<p>
+For the query "virtual reality workout", three different responses need to be generated:<ul>
+    <li>A response free of advertisements.</li>
+    <li>A response promoting 'TRX Training System', highlighting it as a 'versatile, space-saving full-body workout system'.</li>
+    <li>A response promoting 'Zwift' as an 'immersive, gamified indoor cycling & running workout'.</li>
+</ul></p>
 </details>
 
 <p>For  advertisement classification (Sub-Task 2), we provide a list of responses. For development we provide a JSONL-version of the <a href="https://zenodo.org/records/14680012">Webis Generated Native Ads 2024</a> dataset. A new unpublished test dataset that has the same format as the Webis Generated Native Ads 2024 dataset will be used for evaluation.</p>
@@ -180,7 +180,7 @@ For the query "virtual reality workout", three different responses need to be ge
 <h3>Sub-Task 1</h3>
 <p>The submissions for Sub-Task 1 should be made in a JSONL format. Each line in the JSONL file should be in the following JSON format:</p>
 <p><ul>
-    <li><code>qid</code>: The topic id.</li>
+    <li><code>id</code>: The ID of the response that was generated. The ID needs to be based on the ID of the topic (query) that was provided. Example: With the query ID <code>290889445</code>, the responses should have IDs <code>290889445-0</code> (No advertisement), <code>290889445-1</code> (1st item), <code>290889445-2</code> (2nd item), ...</li>
     <li><code>topic</code>: The topic (query) used for response generation.</li>
     <li><code>references</code>: Array of IDs of segments used in generating the response.</li>
     <li><code>response</code>: The response generated from the segments.</li>
@@ -191,7 +191,7 @@ For the query "virtual reality workout", three different responses need to be ge
 <details>
 <summary>Example JSON line when no item to advertise was provided (click to see)</summary>
 <pre><code>{
-    'qid': '290889445',
+    'id': '290889445-0',
     'topic': 'virtual reality workout',
     'references': ['msmarco_v2.1_doc_57_189213226#17_415725734', 'msmarco_v2.1_doc_57_189213226#1_415698019', 'msmarco_v2.1_doc_57_189164751#15_415625053', 'msmarco_v2.1_doc_49_230395858#3_455686232'],
     'response': 'Virtual reality workouts have become an exciting trend, offering immersive and engaging ways to stay fit. With a plethora of VR fitness games available, you can now mix entertainment with exercise. Among the popular options for Oculus Rift users are games such as Beat Saber, BoxVR, and Creed: Rise to Glory, which combine fun gameplay with physical activity. Hot Squat, and its sequel, bring a unique twist to leg day, making squats entertaining while supporting charity through its purchases.\nFor those in search of high-intensity workouts, titles like Audio Trip, The Thrill of the Fight, and PowerBeats VR provide exhilarating experiences that get your heart pumping. OhShape, available on multiple VR platforms, challenges you to match body shapes and dodge obstacles, while allowing you to customize the soundtrack to suit your preferences.',
@@ -203,7 +203,7 @@ For the query "virtual reality workout", three different responses need to be ge
 <details>
 <summary>Example JSON line when an item to advertise was provided (click to see)</summary>
 <pre><code>{
-    'qid': '290889445',
+    'id': '290889445-2',
     'topic': 'virtual reality workout',
     'references': ['msmarco_v2.1_doc_57_189213226#17_415725734', 'msmarco_v2.1_doc_57_189213226#1_415698019', 'msmarco_v2.1_doc_57_189164751#15_415625053', 'msmarco_v2.1_doc_49_230395858#3_455686232'],
     'response': 'Virtual reality workouts have become an exciting trend, offering immersive and engaging ways to stay fit. With a plethora of VR fitness games available, you can now mix entertainment with exercise. Experience ultimate immersion and gamified training through Zwift, where indoor cycling and running transform everyday workouts into thrilling virtual adventures. Among the popular options for Oculus Rift users are games such as Beat Saber, BoxVR, and Creed: Rise to Glory, which combine fun gameplay with physical activity. Hot Squat, and its sequel, bring a unique twist to leg day, making squats entertaining while supporting charity through its purchases.\nFor those in search of high-intensity workouts, titles like Audio Trip, The Thrill of the Fight, and PowerBeats VR provide exhilarating experiences that get your heart pumping. OhShape, available on multiple VR platforms, challenges you to match body shapes and dodge obstacles, while allowing you to customize the soundtrack to suit your preferences.',
@@ -213,18 +213,19 @@ For the query "virtual reality workout", three different responses need to be ge
 </details>
 
 <h3>Sub-Task 2</h3>
-<p>The submission format for Sub-Task 2 is a table with whitespace-separated columns with each line having the following four columns in this order:</p>
+<p>The submissions for Sub-Task 2 should be made in a JSONL format. Each line in the JSONL file should be in the following JSON format:</p>
 <ul>
-<li><code>rid</code>: The ID of the response that was classified.</li>
+<li><code>id</code>: The ID of the response that was classified.</li>
 <li><code>label</code>: The label assigned by your classifier. <code>1</code> if the response contains an ad and <code>0</code> otherwise.</li>
 <li><code>tag</code>: A tag that identifies your group and the method you used to produce the run.</li>
 </ul>
 <details>
 <summary>Example submission file (click to see)</summary>
-<pre><code>3413-000011-A 1 myGroupMyMethod
-3413-000012-A 1 myGroupMyMethod
-3413-000013-N 0 myGroupMyMethod
-...</code></pre>
+<pre><code>{
+    'id': '290889445-2', 
+    'label': 1, 
+    'tag': 'myGroupMyMethod'
+}</code></pre>
 </details>
 
 
