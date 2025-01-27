@@ -1,0 +1,324 @@
+---
+layout: default
+nav_active: shared-tasks
+title: Touché at CLEF 2025 - Image Retrieval/Generation for Arguments - Run Validator
+description: Touché at CLEF 2025 - Image Retrieval/Generation for Arguments - Run Validator
+additional_css: /clef25/touche25-web/image-retrieval-for-arguments/css/lightbox.css
+---
+<style>
+main {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.drop-zone {
+  width: 100%;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-width: 1px;
+  border-style: dashed;
+  border-radius: 5px;
+}
+.drop-zone.active {
+  background: lightcyan;
+}
+.drop-zone label {
+  border: 1px solid;
+  padding: 3px;
+  cursor: pointer;
+  background: lightgray;
+}
+.drop-zone label:hover {
+  background: gray;
+}
+.drop-zone input[type="file"] {
+  display: none;
+}
+.run-buttons button {
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.log {
+  width: 100%;
+  height: 50ex;
+  resize: vertical;
+}
+
+
+.argument .id {
+  font-weight: bold;
+  margin-right: 5px;
+}
+.argument .image-ranking {
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+.argument .image-ranking li {
+  display: inline;
+  margin-left: 10px;
+}
+.argument .image-ranking li img {
+  height: 100px;
+  border: 1px solid black;
+}
+</style>
+
+<nav class="uk-container">
+<ul class="uk-breadcrumb">
+<li><a href="../../../index.html">Touché</a></li>
+<li><a href="../../../shared-tasks.html">Shared Tasks</a></li>
+<li><a href="../image-retrieval-for-arguments.html">Image Retrieval/Generation for Arguments 2025</a></li>
+<li class="uk-disabled"><a href="#">Run Validator</a></li>
+</ul>
+</nav>
+
+<main class="uk-section uk-section-default">
+<div class="uk-container">
+
+<h1 class="uk-margin-remove-top uk-margin-remove-bottom">Run Validator</h1>
+<p>Checks if a file is in the <a href="../image-retrieval-for-arguments.html#submission">run submission format</a> and displays the images.
+</p>
+
+<div id="dropZone" class="drop-zone">
+Drop run files here or <label for="runFilePicker">browse...</label><input type="file" id="runFilePicker" name="runFile" onchange="addPickedRun(this);">
+</div>
+
+<h2 id="validationLog">Validation Log</h2>
+<textarea id="validationLogArea" class="log" disabled="disabled"></textarea>
+
+<h2 id="images">Images</h2>
+<div id="arguments"></div>
+
+</div>
+</main>
+
+<script src="js/lightbox.js"></script>
+<script>
+lightbox.option({
+  fadeDuration: 0,
+  imageFadeDuration: 0,
+  resizeDuration: 0
+});
+
+
+const corpusUrl = "https://files.webis.de/corpora/corpora-webis/corpus-touche-image-search-25/";
+const imageBaseUrl = corpusUrl + "images/";
+const argumentsByIdPromise = fetch(corpusUrl + "arguments.xml")
+  .then(response => response.text())
+  .then(text => new window.DOMParser().parseFromString(text, "text/xml"))
+  .then(argumentsDocument => Array.from(argumentsDocument.querySelectorAll("argument")).map(argument => {
+      return {
+        id: argument.querySelector("id").textContent,
+        topic: argument.querySelector("topic").textContent,
+        claim: argument.querySelector("claim").textContent
+      };
+    }).reduce((accumulator, value) => ({ ...accumulator, [value["id"]]: value}), {}));
+const imageIdsPromise = fetch(corpusUrl + "images.txt")
+  .then(response => response.text())
+  .then(text => new Set(text.trim().split("\n")));
+
+
+const validationLogAreaElement = document.getElementById("validationLogArea");
+function validationLog(text) {
+  validationLogAreaElement.textContent = validationLogAreaElement.textContent + text + "\n";
+}
+const argumentsElement = document.getElementById("arguments");
+function clearRun() {
+  validationLogAreaElement.textContent = "";
+  argumentsElement.textContent = "";
+}
+
+async function display(runLines) {
+  const argumentsById = await argumentsByIdPromise;
+  for (let lineNumber = 1; lineNumber <= runLines.length; ++lineNumber) {
+    const line = runLines[lineNumber - 1];
+    if (line !== "") {
+      const data = JSON.parse(line);
+      let argumentElement = argumentsElement.querySelector("[data-argument-id='" + data["argument_id"] + "']");
+      if (argumentElement === null) {
+        argumentElement = document.createElement("div");
+        argumentElement.classList.add("argument");
+        argumentElement.setAttribute("data-argument-id", data["argument_id"]);
+
+        const argumentIdElement = document.createElement("label");
+        argumentIdElement.classList.add("id");
+        argumentIdElement.textContent = data["argument_id"];
+        argumentElement.appendChild(argumentIdElement);
+
+        const argumentClaimElement = document.createElement("span");
+        argumentClaimElement.classList.add("claim");
+        argumentClaimElement.textContent = argumentsById[data["argument_id"]].claim;
+        argumentElement.appendChild(argumentClaimElement);
+
+        const imageRankingElement = document.createElement("ol");
+        imageRankingElement.classList.add("image-ranking");
+        argumentElement.appendChild(imageRankingElement);
+
+        argumentsElement.appendChild(argumentElement);
+      }
+
+      const imageId = data["image_id"];
+      const imageUrl = imageBaseUrl + "/" + imageId.substr(0, 3) + "/" + imageId + "/image.webp";
+      const imageRankingElement = argumentElement.querySelector(".image-ranking");
+      const imageContainerElement = document.createElement("li");
+      const imageLinkElement = document.createElement("a");
+      imageLinkElement.setAttribute("href", imageUrl);
+      imageLinkElement.setAttribute("data-lightbox", data["argument_id"]);
+      const imageElement = document.createElement("img");
+      imageElement.setAttribute("src", imageUrl);
+      imageLinkElement.appendChild(imageElement);
+      imageContainerElement.appendChild(imageLinkElement);
+      imageRankingElement.appendChild(imageContainerElement);
+    }
+  }
+}
+
+async function validateRunLine(runLine, lineNumber, ranks, tags) {
+  const argumentsById = await argumentsByIdPromise;
+  const imageIds = await imageIdsPromise;
+  try {
+    const data = JSON.parse(runLine);
+    for (const requiredAttribute of ["argument_id", "method", "image_id", "rank", "tag"]) {
+      if (!data[requiredAttribute]) {
+        validationLog("ERROR: Missing required attribute '" + requiredAttribute + "' in line " + lineNumber);
+        return false;
+      }
+    }
+
+    // argument_id
+    const argumentId = data["argument_id"];
+    if (argumentsById[argumentId] === undefined) {
+      validationLog("ERROR: Unknown argument_id '" + argumentId + "' in line " + lineNumber);
+      return false;
+    }
+
+    // rank
+    if (ranks[argumentId] === undefined) { ranks[argumentId] = 0; }
+    if (data["rank"] !== (ranks[argumentId] + 1)) {
+      validationLog("ERROR: Next rank for argument_id '" + argumentId + "' would have been " + (ranks[argumentId] + 1) + ", but was " + data["rank"] + " in line " + lineNumber);
+      return false;
+    }
+    ranks[argumentId] += 1;
+
+    // method
+    if (!["retrieval"].includes(data["method"])) {
+      validationLog("ERROR: Unknown method '" + data["method"] + "' in line " + lineNumber);
+      return false;
+    }
+
+    // image_id
+    if (data["method"] === "retrieval") {
+      if (!imageIds.has(data["image_id"])) {
+        validationLog("ERROR: Unknown image_id '" + data["image_id"] + "' in line " + lineNumber);
+        return false;
+      }
+    }
+
+    // tag
+    if (!tags.has(data["tag"])) {
+      if (tags.size !== 0) {
+        validationLog("ERROR: Another tag '" + data["tag"] + "' in line " + lineNumber);
+        tags.add(data["tag"]);
+        return false;
+      }
+      tags.add(data["tag"]);
+    }
+  } catch (e) {
+    console.error(e);
+    validationLog("ERROR: Failed to parse line '" + runLine + "' in line " + lineNumber);
+    return false;
+  }
+  return true;
+}
+
+async function validateRun(runLines) {
+  if (runLines.length < 1) {
+    validationLog("ERROR: No lines.");
+    return false;
+  }
+
+  let validLines = 0;
+  let erroneousLines = 0;
+  const ranks = {};
+  const tags = new Set();
+  for (let lineNumber = 1; lineNumber <= runLines.length; ++lineNumber) {
+    const line = runLines[lineNumber - 1];
+    if (line !== "") {
+      if (await validateRunLine(line, lineNumber, ranks, tags)) {
+        validLines += 1;
+      } else {
+        erroneousLines += 1;
+      }
+    }
+  }
+
+  if (erroneousLines > 0) {
+    validationLog("ERROR: Had erroneous records.");
+    return false;
+  } else if (validLines == 0) {
+    validationLog("ERROR: No records.");
+    return false;
+  } else {
+    validationLog("SUCCESS: Run file valid\n");
+    display(runLines);
+    return true;
+  }
+}
+
+function addRun(runText) {
+  clearRun();
+  const runLines = runText.trim().split(/\r?\n/);
+  validationLog("INFO: Starting run file validation at " + new Date());
+  validateRun(runLines);
+}
+
+function addPickedRun(fileElement) {
+  const files = fileElement.files;
+  if (files.length > 0) {
+    const file = files[0];
+    const reader = new FileReader();
+    reader.onload = fileEvent => {
+      const runText = reader.result;
+      addRun(runText);
+    };
+    reader.readAsText(file);
+  }
+}
+
+// Drag & Drop
+
+const dropZone = document.getElementById("dropZone");
+dropZone.addEventListener("dragenter", event => {
+  event.stopPropagation();
+  event.preventDefault();
+  dropZone.classList.add("active");
+}, false);
+dropZone.addEventListener("dragleave", event => {
+  event.stopPropagation();
+  event.preventDefault();
+  if (document.elementFromPoint(event.clientX, event.clientY).closest("#dropZone") === null) {
+    dropZone.classList.remove("active");
+  }
+}, false);
+dropZone.addEventListener("dragover", event => {
+  event.stopPropagation();
+  event.preventDefault();
+}, false);
+dropZone.addEventListener("drop", event => {
+  event.stopPropagation();
+  event.preventDefault();
+  dropZone.classList.remove("active");
+  for (const file of event.dataTransfer.files) {
+    const reader = new FileReader();
+    reader.onload = fileEvent => {
+      const runText = reader.result;
+      addRun(runText);
+    };
+    reader.readAsText(file);
+  }
+}, false);
+
+</script>
