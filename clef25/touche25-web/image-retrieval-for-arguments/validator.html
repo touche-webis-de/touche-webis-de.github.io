@@ -79,7 +79,7 @@ main {
 <div class="uk-container">
 
 <h1 class="uk-margin-remove-top uk-margin-remove-bottom">Run Validator</h1>
-<p>Checks if a file is in the <a href="../image-retrieval-for-arguments.html#submission">run submission format</a> and displays the images.
+<p>Checks if a file is in the <a href="../image-retrieval-for-arguments.html#submission">run submission format</a> and displays the images. Supports only jsonl submissions at the moment.
 </p>
 
 <div id="dropZone" class="drop-zone">
@@ -162,11 +162,13 @@ async function display(runLines) {
 
       const imageId = data["image_id"];
       const imageUrl = imageBaseUrl + "/" + imageId.substr(0, 3) + "/" + imageId + "/image.webp";
+      const claim = argumentElement.querySelector(".claim").textContent;
       const imageRankingElement = argumentElement.querySelector(".image-ranking");
       const imageContainerElement = document.createElement("li");
       const imageLinkElement = document.createElement("a");
       imageLinkElement.setAttribute("href", imageUrl);
-      imageLinkElement.setAttribute("data-lightbox", data["argument_id"]);
+      imageLinkElement.setAttribute("data-lightbox", "album");
+      imageLinkElement.setAttribute("data-title", "Rank " + data["rank"] + " for " + data["argument_id"] + ", \"" + claim + "\"");
       const imageElement = document.createElement("img");
       imageElement.setAttribute("src", imageUrl);
       imageLinkElement.appendChild(imageElement);
