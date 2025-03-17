@@ -5,77 +5,6 @@ title: Touché at CLEF 2025 - Image Retrieval for Arguments
 description: Touché at CLEF 2025 - Image Retrieval for Arguments
 ---
 
-<style>
-    .task_description {
-        text-align: center;
-    }
-
-    .image_examples_div {
-        display: flex;
-
-    }
-
-
-    .image_example_submission {
-        max-width: 33%;
-        margin: 10px;
-        max-height: 100%;
-        display: flex;
-        flex-direction: column;
-        /* Ensure child items are aligned in a column */
-        align-items: center;
-        /* Center image vertically */
-
-    }
-
-    .sing_example_image_container {
-        /* border: 10px solid blue; */
-        max-width: 100%;
-        height: 70%;
-    }
-
-    .sing_example_image {
-        max-width: 100%;
-        /* Ensure image does not exceed container width */
-        max-height: 100%;
-        /* Ensure image does not exceed container height */
-        height: auto;
-        /* Let the height scale proportionally */
-    }
-
-    .argu_example_general {
-        display: flex;
-        flex-direction: column;
-        font-size: larger;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .image_descriptor {
-        font-weight: bold;
-        padding: 10px;
-    }
-
-
-    .argument_example_text {
-        width: 100%;
-    }
-
-
-    .image_example_general {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .image_example_general p {
-        font-size: xx-small;
-
-    }
-</style>
-
-
-
 <nav class="uk-container">
 <ul class="uk-breadcrumb">
 <li><a href="../../index.html">Touché</a></li>
@@ -92,36 +21,14 @@ description: Touché at CLEF 2025 - Image Retrieval for Arguments
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#important_dates">Important Dates</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
-<!--
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
--->
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
 </ul>
 </div>
 
-<div class="uk-container uk-margin-medium">
-
-    <h2 id="introduction">Introduction</h2>
-    <p> Let's look at the following argument: </p>
-
-    <div class="argu_example_general">
-        <p> Boxing leads to serious injuries.</p>
-
-        <div class="image_example_general">
-            <img src="../touche25-data/boxing_injuries.jpg" alt="boxer gets a har hit">
-            <p> Source: Sweating fighter is punched in the face - gettyimages </p>
-        </div>
-    </div>
-
-    <p>
-        Chances are, you glanced at the photo before reading the entire argument. The image almost lets us feel the pain of the blow and hear the impact, making the point even more compelling. This demonstrates the power of visuals—they engage our senses and emotions, making them far more memorable than words alone.
-    </p>
-
-
 
 <h2 id="synopsis">Synopsis</h2>
-
 
 <ul>
 <li>Task: Given an argument, find (retrieve or generate) images that help to convey the argument's premise.</li>
@@ -133,7 +40,15 @@ description: Touché at CLEF 2025 - Image Retrieval for Arguments
 <a class="uk-button uk-button-primary" href="https://clef2025-labs-registration.dei.unipd.it/">Register for participation</a>
 <a href="https://groups.google.com/g/touche-lab" class="uk-button uk-button-primary"> Join the Touché mailing list</a>
 
+<figure>
+Example image for claim "Boxing leads to serious injuries":
+<br/><br/>
+<img style="max-width:400px" src="image-retrieval-for-arguments/images/boxing-example.jpg" alt="Boxer gets a hard hit">
+<figcaption>Source: Sweating fighter is punched in the face - gettyimages</figcaption>
+</figure>
+
 <p>The final dataset is currently being created. Participants who wish to generate images will also have access to a Stable Diffusion API <a href="https://touche25-image-generation-info.web.webis.de/">here</a>. For access, please leave us a <a href="mailto:maximilian.heinrich@uni-weimar.de">message</a>.</p>
+
 
 <h2 id="important-dates" class="uk-margin-large-top">Important Dates</h2>
 <p>Subscribe to the <a href="https://groups.google.com/g/touche-lab">Touché mailing list</a> to receive notifications.</p>
@@ -147,12 +62,64 @@ description: Touché at CLEF 2025 - Image Retrieval for Arguments
 </ul>
 <p>All deadlines are 23:59 <a href="https://time.is/CEST">CEST</a> (UTC+2).</p>
 
+
 <h2 id="data">Data</h2>
 The latest version of the dataset is on <a href="https://doi.org/10.5281/zenodo.14258397">Zenodo</a>. The <code>arguments.xml</code> contains the claims for which images should be found. The dataset also contains the image collection for retrieval. Contact us for access to the image generation API. The current version of the dataset contains about 10% of the claims and images of the final dataset.
 <!-- <a href="https://touche24-image-generation.web.webis.de/">Stable Diffusion API</a> -->
 
+
+<h2 id="submission">Submission</h2>
+Our submission system in TIRA will open soon. You can use our [<a href="image-retrieval-for-arguments/validator.html">validator</a>] to check whether your submission file is valid. Each team can submit up to 5 runs (as docker image or results file).
+
+<p>
+For a run with retrieved images, submit a JSONL file. Each line in the JSONL file should be in the following JSON format:
+<ul>
+<li><code>argument_id</code>: The ID of the argument in the arguments.xml file in the dataset for which the image was retrieved.</li>
+<li><code>method</code>: The string "<code>retrieval</code>".</li>
+<li><code>image_id</code>: The image's ID (name of the image's directory in the dataset).</li>
+<li><code>rank</code>: The rank of the image in your result list for the argument (starting at 1 per argument, up to 10).</li>
+<li><code>tag</code>: A tag that identifies your group and the method you used to produce the run.</li>
+</ul></p>
+
+<details>
+<summary>Example JSON line (click to see)</summary>
+<pre><code>{
+    "argument_id": "1-5",
+    "method": "retrieval",
+    "image_id": "I002e616104f6ec04fd1a24d5",
+    "rank": 1,
+    "tag": "touche organizers - example submission for image retrieval; manual selection of images"
+}</code></pre>
+</details>
+
+<p>
+For a run with generated images, submit a ZIP file which contains a <code>results.jsonl</code> file and the generated images in a directory called <code>generated_images</code>. Each line in the <code>results.jsonl</code> file should be in the following JSON format:
+<ul>
+<li><code>argument_id</code>: The ID of the argument in the arguments.xml file in the dataset for which the image was generated.</li>
+<li><code>method</code>: The string "<code>generation</code>".</li>
+<li><code>prompt</code>: The prompt you used to generate the image.</li>
+<li><code>image</code>: Filename of the image in the <code>generated_images</code> directory.</li>
+<li><code>rank</code>: The rank of the image in your result list for the argument (starting at 1 per argument, up to 10).</li>
+<li><code>tag</code>: A tag that identifies your group and the method you used to produce the run.</li>
+</ul></p>
+
+<details>
+<summary>Example JSON line (click to see)</summary>
+<pre><code>{
+    "argument_id": "1-5",
+    "method": "generation",
+    "prompt": "Worker loosing job due to automation",
+    "image": "1-5-1.jpg",
+    "rank": 1,
+    "tag": "touche organizers - example submission for image generation; manual prompt engineering"
+}</code></pre>
+</details>
+
+
+
 <h2 id="evaluation">Evaluation</h2>
-Determining whether an image aligns with an argument is often subjective. For a strong evaluation, arguments are chosen to allow clear and effective visualization. In addition, key aspects are defined for each argument, which specify what the corresponding image should represent.
+Runs will be assessed manually using top-k pooling. We identified two key aspects for each argument and will check for submitted images whether these are represented in the images. Runs will be compared using NDCG.
+
 
 <h2 id="task-committee">Task Committee</h2>
 <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
