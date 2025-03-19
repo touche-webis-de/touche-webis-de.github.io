@@ -57,6 +57,7 @@ pre {
 <li>Sub-Task 1: Generate responses to argue against a simulated debate partner.</li>
 <li>Sub-Task 2: Evaluate systems of sub-task 1.</li>
 <li>Communication: [mailing lists: <a href="https://groups.google.com/g/touche-lab">participants</a>, <a href="mailto:touche@webis.de">organizers</a>] </li>
+<li>Data: [arguments: <a href="https://touche25-rad.webis.de/arguments/">api</a>, <a href="https://doi.org/10.5281/zenodo.14987936">index</a>, image: <code>registry.webis.de/code-lib/public-images/touche25-rad-claimrev-index:latest</code>, <a href="https://github.com/touche-webis-de/touche-code/blob/main/clef25/retrieval-augmented-debating/retrieval/">example queries</a>] [<a href="https://doi.org/10.5281/zenodo.14989642">training claims</a>]</li>
 </ul>
 
 
@@ -97,19 +98,25 @@ pre {
 
 <p>Sub-Task 1: Participants submit systems that respond with an utterance S<sub>i</sub>, to a (simulated) user's utterance U<sub>i</sub> by (1)&nbsp;retrieving either counterarguments (to U<sub>i</sub>) or supporting evidence (for the attacked S) from a provided argument collection and (2)&nbsp;generating a response (of at most 60&nbsp;words) from the retrieved data.</p>
 
-<p>Sub-Task 2: Participants submit systems that assess the participating systems of sub-task&nbsp;1 in terms of one or more of these criteria: (1)&nbsp;relevance of the retrieved counterarguments or evidence; (2)&nbsp;faithfulness of the generated response to the retrieved data; (3)&nbsp;coherence of system responses for the conversation; and (4)&nbsp;argumentative quality of the response.</p>
+<p>Sub-Task 2: Participants submit systems that assess the participating systems of sub-task&nbsp;1 in terms of one or more of these criteria:</p>
+<ul>
+<li>Quantity: be informative. Does the response contain at least one (attack or defense) argument, and at most one of each type of defense and attack?</li>
+<li>Quality: be truthful. Can the response be deduced from the retrieved arguments?</li>
+<li>Relation: be relevant. Is the response coherent with the conversation and does it express a contrary stance to the user?</li>
+<li>Manner: be clear. Is the response clear and precise?</li>
+</ul>
 
-<p>We will release more information on data, evaluation procedure, and baselines in the next months. <a href="https://groups.google.com/g/touche-lab">Join the Touché mailing list</a> to stay up-to-date.</p>
+
+<p><a href="https://groups.google.com/g/touche-lab">Join the Touché mailing list</a> to stay up-to-date.</p>
 
 
 <h2 id="data">Data</h2>
 
-  <p>To build debate systems (Sub-Task 1), we release a search index containing about 300 000 arguments from the <a href="https://github.com/GabriellaSky/claimrev?tab=readme-ov-file">ClaimRev dataset</a>.  Additionally, we release 100 curated claims sourced from the ChangeMyView subreddit. These claims will be used to simulate 100 debates between baseline systems and
-simulated users, which will then be evaluated by experts based on the quality criteria outlined in Sub-Task 2.</p>
+<p>Debate systems (Sub-Task 1) have to use our <a href="#data-argument-index">argument index</a> to retrieve arguments for the simulated debates. We further provide a set of 100 curated <a href="#data-claims-and-debates">claims</a> sourced from the ChangeMyView subreddit and simulated debates (judged by us) for training debate systems (Sub-Task 1) or evaluation systems (Sub-Task 2).</p>
 
 <h3 id="data-argument-index">Argument Index</h3>
 
-<p>Arguments for Sub-Task 1 can be retrieved either by making requests to our publicly available Elasticsearch API at <a href="https://touche25-rad.webis.de/arguments/">https://touche25-rad.webis.de/arguments/</a> or by deploying a local instance of Elasticsearch. A local instance of Elasticsearch can be deployed with Docker using our prebuilt image <code>registry.webis.de/code-lib/public-images/touche25-rad-claimrev-index:latest</code>. The Elasticsearch instance from that image contains the preinstalled argument index. If an already deployed version of Elasticsearch is to be used, we provide a snapshot of the index on <a href="https://doi.org/10.5281/zenodo.14987936">Zenodo</a>. Instructions on how to restore this snapshot can be found in the repository.</p>
+<p>We provide a collection of about 300 000 arguments from the <a href="https://github.com/GabriellaSky/claimrev?tab=readme-ov-file">ClaimRev dataset</a>. Arguments can be retrieved either by making requests to our publicly available Elasticsearch API at <a href="https://touche25-rad.webis.de/arguments/">https://touche25-rad.webis.de/arguments/</a> (<a href="https://github.com/touche-webis-de/touche-code/blob/main/clef25/retrieval-augmented-debating/retrieval/">example queries</a>) or by deploying a local instance of Elasticsearch either using our Docker image with the index included (<code>registry.webis.de/code-lib/public-images/touche25-rad-claimrev-index:latest</code>) or our <a href="https://doi.org/10.5281/zenodo.14987935">index snapshot</a>.</p>
 
 <p>An argument from the index consists of the following fields:
 <ul>
@@ -125,10 +132,12 @@ simulated users, which will then be evaluated by experts based on the quality cr
 <li><code>references</code>: A list of references to back up the argument.</li>
 <li><code>original</code>: This field indicates if either <code>attacks</code> or <code>supports</code> was part of the ClaimRev dataset or was automatically generated by us.</li>
 </ul>
-The embeddings have been created by the <code>stella_en_400M_v5</code> model which is available on <a href="https://huggingface.co/NovaSearch/stella_en_400M_v5">Huggingface</a>. These embeddings enable dense retrieval through <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/knn-search.html">kNN search with Elasticsearch</a>. An example on how to use dense retrieval with our index can be found <a href="https://github.com/touche-webis-de/touche-code/blob/main/clef25/retrieval-augmented-debating/retrieval/example_dense_retrieval.ipynb"> here</a>. Below you can find examples on how to query our argument index with BM25.</p>
+The embeddings have been created by the <code>stella_en_400M_v5</code> model which is available on <a href="https://huggingface.co/NovaSearch/stella_en_400M_v5">Huggingface</a>. These embeddings enable dense retrieval through <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/knn-search.html">kNN search with Elasticsearch</a> (<a href="https://github.com/touche-webis-de/touche-code/blob/main/clef25/retrieval-augmented-debating/retrieval/example_dense_retrieval.ipynb">example query</a>).</p>
 
 <details>
-<summary>Example query to find arguments that support <em>pineapple belongs on pizza</em>.</summary>
+<summary>Example query to find arguments that support <em>pineapple belongs on pizza</em> using BM25.</summary>
+<br>
+Request
 <pre>
 <code>
 curl -X POST "https://touche25-rad.webis.de/arguments/claimrev/_search?pretty&size=10" -H "Content-Type: application/json" -d '
@@ -147,10 +156,8 @@ curl -X POST "https://touche25-rad.webis.de/arguments/claimrev/_search?pretty&si
 }'
 </code>
 </pre>
-</details>
 
-<details>
-<summary>Example response for above query.</summary>
+Response
 <pre>
 <code>
 {
@@ -238,7 +245,7 @@ curl -X POST "https://touche25-rad.webis.de/arguments/claimrev/_search?pretty&si
 
 <h3 id="data-claims-and-debates">Claims and Debates</h3>
 
-<p>100 claims from ChangeMyView to test the debate systems are released on <a href="https://doi.org/10.5281/zenodo.14989643">Zenodo</a>. Additional information to the data format can be found in the associated repository.</p>
+<p>We provide 100 claims from ChangeMyView, debates simulated based on these, and human judgment of the system responses on <a href="https://doi.org/10.5281/zenodo.14989642">Zenodo</a> (see there for more information).</p>
 
 <details>
 <summary>Example claim about <em>school uniforms</em>.</summary>
@@ -252,8 +259,6 @@ curl -X POST "https://touche25-rad.webis.de/arguments/claimrev/_search?pretty&si
 </code>
 </pre>
 </details>
-
-<p>Simulated debates for the given claims are currently being annotated by experts and will be released soon.</p>
 
 <h2 id="task-committee">Task Committee</h2>
 <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
