@@ -43,12 +43,14 @@ pre {
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
 </ul>
 </div>
+<h2 id="synopsis">Introduction</h2>
+
+<p>Images are a powerful tool for conveying meaning and enhancing understanding. Arguments, on the other hand, are often perceived as formal and logical. In this shared task, we aim to combine these two areas and explore how images can effectively illustrate key aspects of arguments, enhancing their clarity and impact.</p>
 
 
 <h2 id="synopsis">Synopsis</h2>
-
 <ul>
-<li>Task: Given an argument, find (retrieve or generate) images that help to convey the argument's premise.</li>
+<li>Task: Given an argument, find (retrieve or generate) images that help to convey central aspects of the argument's claim.</li>
 <li>Communication: [mailing lists: <a href="https://groups.google.com/g/touche-lab">participants</a>, <a href="mailto:touche@webis.de">organizers</a>] </li>
 <li>Data: [<a href="https://doi.org/10.5281/zenodo.14258397">download</a>]</li>
 <li>Submission: [<a href="image-retrieval-for-arguments/validator.html">validator</a>]</li>
@@ -57,14 +59,16 @@ pre {
 <a class="uk-button uk-button-primary" href="https://clef2025-labs-registration.dei.unipd.it/">Register for participation</a>
 <a href="https://groups.google.com/g/touche-lab" class="uk-button uk-button-primary"> Join the Touché mailing list</a>
 
+<p>An argument typically consists of a claim supported by one or more premises, which provide evidence for its validity. To maintain brevity in our data creation process, we designed arguments to be concise. Consequently, each argument in our dataset includes only a single claim without supporting premises.</p> 
+
 <figure>
-Example image for claim "Boxing leads to serious injuries":
+Example image for the argument "Boxing leads to serious injuries":
 <br/><br/>
 <img style="max-width:400px" src="image-retrieval-for-arguments/images/boxing-example.jpg" alt="Boxer gets a hard hit">
 <figcaption>Source: Sweating fighter is punched in the face - gettyimages</figcaption>
 </figure>
 
-<p>The final dataset is currently being created. Participants who wish to generate images will also have access to a Stable Diffusion API <a href="https://touche25-image-generation-info.web.webis.de/">here</a>. For access, please leave us a <a href="mailto:maximilian.heinrich@uni-weimar.de">message</a>.</p>
+<p>The final dataset is currently being created.</p>
 
 
 <h2 id="important-dates" class="uk-margin-large-top">Important Dates</h2>
@@ -81,12 +85,14 @@ Example image for claim "Boxing leads to serious injuries":
 
 
 <h2 id="data">Data</h2>
-The latest version of the dataset is on <a href="https://doi.org/10.5281/zenodo.14258397">Zenodo</a>. The <code>arguments.xml</code> contains the claims for which images should be found. The dataset also contains the image collection for retrieval. Contact us for access to the image generation API.
+
+<p>The latest version of the dataset is on <a href="https://doi.org/10.5281/zenodo.14258397">Zenodo</a>. The <code>arguments.xml</code> contains the claims for which images should be found. The dataset also contains the image collection for retrieval.  Participants who wish to generate images will also have access to a Stable Diffusion API <a href="https://touche25-image-generation-info.web.webis.de/">here</a>. For access, please leave us a <a href="mailto:maximilian.heinrich@uni-weimar.de">message</a>.</p>
 <!-- <a href="https://touche24-image-generation.web.webis.de/">Stable Diffusion API</a> -->
 
 
 <h2 id="submission">Submission</h2>
-Our submission system in TIRA will open soon. You can use our [<a href="image-retrieval-for-arguments/validator.html">validator</a>] to check whether your submission file is valid. Each team can submit up to 5 runs (as docker image or results file).
+
+<p>Our submission system in TIRA will open soon. You can use our [<a href="image-retrieval-for-arguments/validator.html">validator</a>] to check whether your submission file is valid. Each team can submit up to 5 runs (as docker image or results file).</p>
 
 <p>
 For a run with retrieved images, submit a JSONL file. Each line in the JSONL file should be in the following JSON format:
@@ -135,7 +141,8 @@ For a run with generated images, submit a ZIP file which contains a <code>result
 
 
 <h2 id="evaluation">Evaluation</h2>
-Runs will be assessed manually using top-k pooling. We identified two key aspects for each argument and will check for submitted images whether these are represented in the images. Runs will be compared using NDCG.
+
+<p>Runs will be assessed manually using top-k pooling. We identified two key aspects for each argument and will check for submitted images whether these are represented in the images. Runs will be compared using NDCG</p>.
 
 
 <h2 id="task-committee">Task Committee</h2>
