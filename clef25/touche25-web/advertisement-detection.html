@@ -75,7 +75,7 @@ summary:hover {
 <p>Create relevant responses for a given query and insert advertisements (Sub-Task 1) and detect such advertisements (Sub-Task 2). Participants can choose to only participate in one of the two Sub-Tasks.</p>
 
 <h2 id="data">Data</h2>
-<p>For response generation (Sub-Task 1), we provide a list of queries and for each query a list of 20 to 100 candidate segments that a search engine retrieved for the query. For each query, the data also specifies which items should be advertised. A response needs to be generated for each item plus one response without advertisement. [<a href="https://zenodo.org/records/14699130">download</a>]</p>
+<p>For response generation (Sub-Task 1), we provide a list of queries and for each query a list of 20 to 100 candidate segments that a search engine retrieved for the query. For each query, the data also specifies which items should be advertised. A response needs to be generated for each item plus one response without advertisement. [<a href="https://zenodo.org/records/15347992">download</a>]</p>
 
 <details>
 <summary>Example for a query with two candidate segments (click to see)</summary>
@@ -137,7 +137,7 @@ For the query "virtual reality workout", three different responses need to be ge
 </ul></p>
 </details>
 
-<p>For  advertisement classification (Sub-Task 2), we provide a list of responses. For development we provide a JSONL-version of the <a href="https://zenodo.org/records/14680012">Webis Generated Native Ads 2024</a> dataset. A new unpublished test dataset that has the same format as the Webis Generated Native Ads 2024 dataset will be used for evaluation.</p>
+<p>For  advertisement classification (Sub-Task 2), we provide a list of responses. For development we provide a JSONL-version of the <a href="https://zenodo.org/records/15270283">Webis Generated Native Ads 2024</a> dataset. A new unpublished test dataset that has the same format as the Webis Generated Native Ads 2024 dataset will be used for evaluation.</p>
 
 <details>
 <summary>Example response from the Webis Generated Native Ads 2024 with advertisement highlighted (click to see)</summary>
@@ -186,8 +186,24 @@ For the query "virtual reality workout", three different responses need to be ge
 <h2 id="submission">Submission</h2>
 <p>We ask participants to use <a href="https://www.tira.io/">TIRA</a> for result submissions. Each team can submit <b>one or two</b> approaches for Sub-Task 1 and <b>up to five</b> approaches for Sub-Task 2.</p>
 
+<h3>TIRA Tutorial and TIRA Baselines</h3>
+<p>
+Please refer to the TIRA documentation for preparing and submitting your approaches: <a href="https://docs.tira.io/participants/participate.html">https://docs.tira.io/participants/participate.html</a>.</p> 
+
+<p>Example baselines that can be executed in TIRA can be found at <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef25/advertisement-detection">https://github.com/touche-webis-de/touche-code/tree/main/clef25</a>. The README files of the baselines illustrate how to</p> 
+<p><ul>
+    <li>Use your approach locally to make predictions on a dataset provided on TIRA (find available datasets. <a href="https://archive.tira.io/datasets?query=ads-in-rag">here</a>).</li>
+    <li>Evaluate your predictions locally on a small exemplary spot-check dataset.</li>
+    <li>Submit your code or locally created run to the TIRA platform (also explained in more detail in the <a href="https://docs.tira.io/participants/participate.html">documentation</a>).</li>
+</ul></p>
+
+<p>In case of problems or questions concerning TIRA, please use the <a href="https://www.tira.io/c/touche/">TIRA forum</a>.</p>
+
+
 <h3>Sub-Task 1</h3>
-<p>The submissions for Sub-Task 1 should be made in a JSONL format. Each line in the JSONL file should be in the following JSON format:</p>
+<p>The submissions for Sub-Task 1 can be made as (1) a <b>code submission</b> or (2) a <b>run submission</b> of a file  was created outside of TIRA. Please refer to the  <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef25/advertisement-detection/subtask-1-generation">generation baseline</a> on how to do that.</p>
+    
+<p>The output of the code submission and the run file need to be a JSONL. Each line in the JSONL file should be in the following JSON format:</p>
 <p><ul>
     <li><code>id</code>: The ID of the response that was generated. The ID needs to be based on the ID of the topic (query) that was provided. Example: With the query ID <code>290889445</code>, the responses should have IDs <code>290889445-0</code> (No advertisement), <code>290889445-1</code> (1st item), <code>290889445-2</code> (2nd item), ...</li>
     <li><code>topic</code>: The topic (query) used for response generation.</li>
@@ -222,7 +238,9 @@ For the query "virtual reality workout", three different responses need to be ge
 </details>
 
 <h3>Sub-Task 2</h3>
-<p>The submissions for Sub-Task 2 should be made in a JSONL format. Each line in the JSONL file should be in the following JSON format:</p>
+<p>The submissions for Sub-Task 2 need to be made as a <b>code submission</b>. Please refer to the  <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef25/advertisement-detection/subtask-2-classification/">classification baselines</a> on how to do that.</p>
+    
+<p>The output of the code submission needs to be a JSONL file. Each line in the JSONL file should be in the following JSON format:</p>
 <ul>
 <li><code>id</code>: The ID of the response that was classified.</li>
 <li><code>label</code>: The label assigned by your classifier. <code>1</code> if the response contains an ad and <code>0</code> otherwise.</li>
@@ -236,15 +254,6 @@ For the query "virtual reality workout", three different responses need to be ge
     'tag': 'myGroupMyMethod'
 }</code></pre>
 </details>
-
-
-<h3>TIRA Tutorial and TIRA Baselines</h3>
-<p>
-Please refer to the TIRA documentation for preparing and submitting your approaches: <a href="https://docs.tira.io/participants/participate.html">https://docs.tira.io/participants/participate.html</a>. Example baselines that can be executed in TIRA can be found at <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef25/advertisement-detection">https://github.com/touche-webis-de/touche-code/tree/main/clef25</a>. The README files of the baselines explain commands to (1) use your approach locally to make predictions on a dataset provided on TIRA (find available datasets <a href="https://archive.tira.io/datasets?query=native-ads">here</a>), (2) evaluate your predictions locally on a small exemplary spot-check dataset, and (3) submit your approach to the TIRA platform (also explained in more detail in the <a href="https://docs.tira.io/participants/participate.html">documentation</a>).
-</p>  
-
-<p>In case of problems or questions concerning TIRA, please use the <a href="https://www.tira.io/c/touche/9">TIRA forum</a>.</p>
-
 
 <h2 id="task-committee">Task Committee</h2>
 <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
