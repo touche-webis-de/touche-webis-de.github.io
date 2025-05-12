@@ -90,7 +90,7 @@ Example image for the argument "Boxing leads to serious injuries":
 
 <h2 id="submission">Submission</h2>
 
-<p>You can submit your files via <a href="https://www.tira.io/task-overview/touche-task-3/image-retrieval-generation-for-arguments-2025-20250507-test">Tira</a> The dataset for which you are submitting is called Image Retrieval/Generation for Arguments 2025.  You can use our [<a href="image-retrieval-for-arguments/validator.html">validator</a>] to check whether your submission file is valid. Each team can submit up to 5 runs (as docker image or results file).</p>
+<p>You can submit your files via <a href="https://www.tira.io/task-overview/touche-task-3/image-retrieval-generation-for-arguments-2025-20250507-test">Tira</a> The dataset for which you are submitting is called Image Retrieval/Generation for Arguments 2025.  You can use our [<a href="image-retrieval-for-arguments/validator.html">validator</a>] to check whether your submission file is valid. Each team can submit up to 5 runs (as docker image or results file). Please submit five ranked images for each argument.</p>
 
 <p>
 For a run with retrieved images, submit a JSONL file. Each line in the JSONL file should be in the following JSON format:
@@ -98,7 +98,7 @@ For a run with retrieved images, submit a JSONL file. Each line in the JSONL fil
 <li><code>argument_id</code>: The ID of the argument in the arguments.xml file in the dataset for which the image was retrieved.</li>
 <li><code>method</code>: The string "<code>retrieval</code>".</li>
 <li><code>image_id</code>: The image's ID (name of the image's directory in the dataset).</li>
-<li><code>rank</code>: The rank of the image in your result list for the argument (starting at 1 per argument, up to 10).</li>
+<li><code>rank</code>: The rank of the image in your result list for the argument (starting at 1 per argument, up to 5).</li>
 <li><code>tag</code>: A tag that identifies your group and the method you used to produce the run.</li>
 </ul></p>
 
@@ -119,8 +119,8 @@ For a run with generated images, submit a ZIP file which contains a <code>result
 <li><code>argument_id</code>: The ID of the argument in the arguments.xml file in the dataset for which the image was generated.</li>
 <li><code>method</code>: The string "<code>generation</code>".</li>
 <li><code>prompt</code>: The prompt you used to generate the image.</li>
-<li><code>image</code>: Filename of the image in the <code>generated_images</code> directory.</li>
-<li><code>rank</code>: The rank of the image in your result list for the argument (starting at 1 per argument, up to 10).</li>
+<li><code>image_id</code>: Filename of the image in the <code>generated_images</code> directory.</li>
+<li><code>rank</code>: The rank of the image in your result list for the argument (starting at 1 per argument, up to 5).</li>
 <li><code>tag</code>: A tag that identifies your group and the method you used to produce the run.</li>
 </ul></p>
 
@@ -130,7 +130,7 @@ For a run with generated images, submit a ZIP file which contains a <code>result
     "argument_id": "1-5",
     "method": "generation",
     "prompt": "Worker loosing job due to automation",
-    "image": "1-5-1.jpg",
+    "image_id": "1-5-1.jpg",
     "rank": 1,
     "tag": "touche organizers - example submission for image generation; manual prompt engineering"
 }</code></pre>
