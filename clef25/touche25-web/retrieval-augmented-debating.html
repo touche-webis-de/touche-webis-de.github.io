@@ -40,8 +40,8 @@ pre {
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
 
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
-<!--
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
+<!--
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
 -->
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
@@ -58,6 +58,7 @@ pre {
 <li>Sub-Task 2: Evaluate systems of sub-task 1.</li>
 <li>Communication: [mailing lists: <a href="https://groups.google.com/g/touche-lab">participants</a>, <a href="mailto:touche@webis.de">organizers</a>] </li>
 <li>Data: [arguments: <a href="https://touche25-rad.webis.de/arguments/">api</a>, <a href="https://doi.org/10.5281/zenodo.14987936">index</a>, image: <code>registry.webis.de/code-lib/public-images/touche25-rad-claimrev-index:latest</code>, <a href="https://github.com/touche-webis-de/touche-code/blob/main/clef25/retrieval-augmented-debating/retrieval/">example queries</a>] [<a href="https://doi.org/10.5281/zenodo.14989642">training claims</a>]</li>
+<li>Submission: [examples: <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef25/retrieval-augmented-debating/debating-systems/basic-elastic-js">sub-task 1 elastic in javascript</a>, <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef25/retrieval-augmented-debating/debating-systems/basic-elastic-py">sub-task 1 elastic in python</a>] [<a href="https://github.com/touche-webis-de/touche-code/tree/main/clef25/retrieval-augmented-debating/evaluation-systems/evaluation-1-baseline-py">sub-task 2 1-baseline in python</a>] [<a href="https://www.tira.io/c/touche/">forum</a>] [<a href="https://www.tira.io/task-overview/retrieval-augmented-debating-2025/">submit</a>]</li>
 </ul>
 
 
@@ -259,6 +260,16 @@ Response
 </code>
 </pre>
 </details>
+
+
+<h2 id="submission">Submission</h2>
+
+<p>Submit your approach via <a href="https://www.tira.io/task-overview/retrieval-augmented-debating-2025/">TIRA</a>. Ask in the <a href="https://www.tira.io/c/touche/">Forum</a> in case of problems. You need to register your team (in addition to a registration at CLEF) and pick an alias for your team name (submission is anonymous; you can reveal you true team name after final paper acceptance).</p>
+  
+<p>This task allows for code submissions and Docker submissions: see the instructions in TIRA. To test your submission use the datasets <code>rad25-2025-01-16-toy</code> for sub-task 1 (<a href="https://github.com/touche-webis-de/touche-code/blob/main/clef25/retrieval-augmented-debating/debating-systems/toy-parameter-file.tsv">two topics</a>) and <code>rad25-sub-task-2-toy</code> for sub-task 2 (<a href="https://zenodo.org/records/15401620">two debates</a>).</p>
+
+<p>We highly recommend to start from our example systems: for Sub-task 1 <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef25/retrieval-augmented-debating/debating-systems/basic-elastic-js">in JavaScript</a>, <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef25/retrieval-augmented-debating/debating-systems/basic-elastic-py">in Python</a> and for sub-task 2 <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef25/retrieval-augmented-debating/evaluation-systems/evaluation-1-baseline-py">in Python</a>]. They all provide endpoints for a <a href="https://github.com/webis-de/GenIRSim">GenIRSim</a> service that runs in the background and is automatically started as they extend our <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef25/retrieval-augmented-debating/debating-systems/base">base image</a>. By adapting the examples, you do not need to care about such a service and can focus on providing the endpoints, e.g., for sub-task 1 <a href="https://github.com/touche-webis-de/touche-code/blob/ee6056630141737a54287ec9b25c2b4a9f936a51/clef25/retrieval-augmented-debating/debating-systems/basic-elastic-js/index.js#L2">in JavaScript</a> and <a href="https://github.com/touche-webis-de/touche-code/blob/ee6056630141737a54287ec9b25c2b4a9f936a51/clef25/retrieval-augmented-debating/debating-systems/basic-elastic-py/main.py#L18">in Python</a> and for sub-task 2 <a href="https://github.com/touche-webis-de/touche-code/blob/b9138c906f2b716a6922a1bdf3543ab81e64c1bd/clef25/retrieval-augmented-debating/evaluation-systems/evaluation-1-baseline-py/main.py#L32-L70">in Python</a>.</p>
+
 
 <h2 id="task-committee">Task Committee</h2>
 <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
