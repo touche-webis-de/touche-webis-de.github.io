@@ -37,18 +37,16 @@ pre {
 <ul class="uk-list">
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#important_dates">Important Dates</a></li>
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
 </ul>
 </div>
-<h2 id="synopsis">Introduction</h2>
-
-<p>Images are a powerful tool for conveying meaning and enhancing understanding. Arguments, on the other hand, are often perceived as formal and logical. In this shared task, we aim to combine these two areas and explore how images can effectively illustrate key aspects of arguments, enhancing their clarity and impact.</p>
-
 
 <h2 id="synopsis">Synopsis</h2>
+
 <ul>
 <li>Task: Given an argument, find (retrieve or generate) images that help to convey central aspects of the argument's claim.</li>
 <li>Communication: [mailing lists: <a href="https://groups.google.com/g/touche-lab">participants</a>, <a href="mailto:touche@webis.de">organizers</a>] </li>
@@ -58,6 +56,24 @@ pre {
 
 <a class="uk-button uk-button-primary" href="https://clef2025-labs-registration.dei.unipd.it/">Register for participation</a>
 <a href="https://groups.google.com/g/touche-lab" class="uk-button uk-button-primary"> Join the Touché mailing list</a>
+
+
+<h2 id="important-dates" class="uk-margin-large-top">Important Dates</h2>
+<p>Subscribe to the <a href="https://groups.google.com/g/touche-lab">Touché mailing list</a> to receive notifications.</p>
+<ul>
+<li><strong>2024-11:</strong> CLEF Registration opened [<a href="https://clef2025-labs-registration.dei.unipd.it/">register</a>]</li>
+<li><strong>2025-05-23:</strong> Approaches submission deadline [<a href="#submission">submit</a>]</li>
+<li><strong>2025-05-30:</strong> Participant paper submission [<a href="https://github.com/touche-webis-de/touche-code/raw/refs/heads/main/touche-paper-template.zip">paper template + submission instructions</a>]</li>
+<li><strong>2025-06-10:</strong> Peer review notification</li>
+<li><strong>2025-07-07:</strong> Camera-ready participant papers submission</li>
+<li><strong>2025-09:</strong> <a href="http://clef2025.clef-initiative.eu/index.php">CLEF Conference</a> in Madrid and Touché Workshop</li>
+</ul>
+<p>All deadlines are 23:59 <a href="https://time.is/CEST">CEST</a> (UTC+2).</p>
+
+
+<h2 id="task">Task</h2>
+<p>Images are a powerful tool for conveying meaning and enhancing understanding. Arguments, on the other hand, are often perceived as formal and logical. In this shared task, we aim to combine these two areas and explore how images can effectively illustrate key aspects of arguments, enhancing their clarity and impact.</p>
+
 
 <p>An argument typically consists of a claim supported by one or more premises, which provide evidence for its validity. To maintain brevity in our data creation process, we designed arguments to be concise. Consequently, each argument in our dataset includes only a single claim without supporting premises.</p> 
 
@@ -69,19 +85,6 @@ Example image for the argument "Boxing leads to serious injuries":
 </figure>
 
 <p>The final dataset is now relased and can be found <a href="https://doi.org/10.5281/zenodo.14258397">here</a>.</p>
-
-
-<h2 id="important-dates" class="uk-margin-large-top">Important Dates</h2>
-<p>Subscribe to the <a href="https://groups.google.com/g/touche-lab">Touché mailing list</a> to receive notifications.</p>
-<ul>
-<li><strong>2024-11:</strong> CLEF Registration opened [<a href="https://clef2025-labs-registration.dei.unipd.it/">register</a>]</li>
-<li><strong>2025-05-23:</strong> Approaches submission deadline</li>
-<li><strong>2025-05-30:</strong> Participant paper submission</li>
-<li><strong>2025-06-10:</strong> Peer review notification</li>
-<li><strong>2025-07-07:</strong> Camera-ready participant papers submission</li>
-<li><strong>2025-09:</strong> <a href="http://clef2025.clef-initiative.eu/index.php">CLEF Conference</a> in Madrid and Touché Workshop</li>
-</ul>
-<p>All deadlines are 23:59 <a href="https://time.is/CEST">CEST</a> (UTC+2).</p>
 
 
 <h2 id="data">Data</h2>
@@ -142,7 +145,7 @@ For a run with generated images, submit a ZIP file which contains a <code>result
 
 <h2 id="evaluation">Evaluation</h2>
 
-<p>Runs will be assessed manually using top-k pooling. We identified two key aspects for each argument and will check for submitted images whether these are represented in the images. Runs will be compared using NDCG</p>.
+<p>Runs will be assessed manually using top-k pooling. We identified two key aspects for each argument and will check for submitted images whether these are represented in the images. Runs will be compared using NDCG.</p>
 
 
 <h2 id="task-committee">Task Committee</h2>
