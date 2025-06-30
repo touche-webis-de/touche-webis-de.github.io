@@ -255,6 +255,60 @@ Please refer to the TIRA documentation for preparing and submitting your approac
 }</code></pre>
 </details>
 
+<h2 id="results">Results</h2>
+<h3 id="results-sub-task-1">Sub-Task 1</h3>
+<p>For sub-task 1, we report the effectiveness scores of our trained classifier on the submitted responses. The lower the recall, the more ads were hidden successfully. We sampled 100 responses per submission to manually evaluate the labels of the classifier and analyze the submissions.</p>
+<div class='uk-overflow-auto'><table class='uk-table uk-table-divider uk-table-small uk-table-hover sortable'><caption>Submitted run of each team for sub-task 1.</caption>
+<thead><tr><th class='header'><span>Team</span></th><th>Run</th><th class='header'>Precision</th><th class='header'>Recall</th><th class='header'>F1-Score</th></tr></thead><tbody></tbody>
+<tr><td>JU-NLP</td><td>ORPO_Mistral7b_v2</td><td>1.000</td><td>0.721</td><td>0.838</td></tr>
+<tr><td>JU-NLP</td><td>ORPO_Mistral7b</td><td>0.995</td><td>0.830</td><td>0.905</td></tr>
+<tr><td>TeamCMU</td><td>Adrewriting-BestOfN</td><td>0.821</td><td>0.858</td><td>0.839</td></tr>
+<tr><td>Git Gud</td><td>Qwen2.5 7B V2</td><td>0.960</td><td>0.910</td><td>0.935</td></tr>
+<tr><td>Git Gud</td><td>Qwen3 4B V2</td><td>0.984</td><td>0.918</td><td>0.950</td></tr>
+<tr><td>Baselines</td><td>generate-baseline</td><td>0.796</td><td>0.996</td><td>0.885</td></tr>
+</tbody></table></div>
+
+<h3 id="results-sub-task-2">Sub-Task 2</h3>
+<p>For sub-task 2, we report the effectiveness of the submitted classifiers on the test-split of a new version of the Webis Generated Native Ads dataset.</p>
+
+<div class='uk-overflow-auto'><table class='uk-table uk-table-divider uk-table-small uk-table-hover sortable'><caption>Submitted run of each team for sub-task 2.</caption>
+<thead><tr><th class='header'><span>Team</span></th><th>Run</th><th class='header'>Precision</th><th class='header'>Recall</th><th class='header'>F1-Score</th></tr></thead>
+<tr><td>JU-NLP</td><td>DebertaFineTuned</td><td>0.788</td><td>0.758</td><td>0.773</td></tr>
+<tr><td>Git Gud</td><td>Deberta-Large-V2</td><td>0.983</td><td>0.473</td><td>0.639</td></tr>
+<tr><td>TeamCMU</td><td>deberta-synthetic-curriculum</td><td>0.945</td><td>0.479</td><td>0.636</td></tr>
+<tr><td>Git Gud</td><td>Roberta-Large</td><td>0.985</td><td>0.460</td><td>0.627</td></tr>
+<tr><td>Baseline</td><td>minilm-baseline</td><td>0.728</td><td>0.482</td><td>0.580</td></tr>
+<tr><td>Pirate Passau</td><td>MPnet-finetuned</td><td>0.399</td><td>0.917</td><td>0.556</td></tr>
+<tr><td>Pirate Passau</td><td>Tf-IDF-Logestic-Regression</td><td>0.395</td><td>0.734</td><td>0.514</td></tr>
+<tr><td>JU-NLP</td><td>Finetuned_MPNET_v2</td><td>0.977</td><td>0.346</td><td>0.511</td></tr>
+<tr><td>JU-NLP</td><td>Finetuned_MPNET</td><td>0.305</td><td>1.000</td><td>0.467</td></tr>
+<tr><td>Baseline</td><td>naive-bayes-10</td><td>0.307</td><td>0.968</td><td>0.467</td></tr>
+<tr><td>Baseline</td><td>naive-bayes-25</td><td>0.319</td><td>0.638</td><td>0.425</td></tr>
+<tr><td>Pirate Passau</td><td>All-mini-LM-v2-finetuned</td><td>0.664</td><td>0.294</td><td>0.408</td></tr>
+<tr><td>Git Gud</td><td>Deberta Large</td><td>0.312</td><td>0.355</td><td>0.332</td></tr>
+<tr><td>Baseline</td><td>naive-bayes-40</td><td>0.367</td><td>0.257</td><td>0.302</td></tr>
+<tr><td>Pirate Passau</td><td>all-mini+Random-forest</td><td>0.341</td><td>0.022</td><td>0.042</td></tr>
+<tr><td>Pirate Passau</td><td>LLM-llama3.1</td><td>0.500</td><td>0.000</td><td>0.001</td></tr>
+</tbody></table></div>
+
+<h3 id="test-results">Test Results for Sub-Task 1</h3>
+<p>Some teams submitted more than two approaches to sub-task 1. Below, we report the effectiveness scores of our trained classifier on the submitted responses. In contrast to the "main" results, we did not manually verify the responses.</p>
+
+<div class='uk-overflow-auto'><table class='uk-table uk-table-divider uk-table-small uk-table-hover sortable'><caption>Test run of each team for sub-task 1.</caption>
+<thead><tr><th class='header'><span>Team</span></th><th>Approach</th><th class='header'>Precision</th><th class='header'>Recall</th><th class='header'>F1-Score</th></tr></thead>
+<tr><td>JU-NLP</td><td>relaxed-hound</td><td>0.984</td><td>0.712</td><td>0.826</td></tr>
+<tr><td>JU-NLP</td><td>quick-parapet</td><td>1.000</td><td>0.728</td><td>0.843</td></tr>
+<tr><td>Git Gud</td><td>Llama 3.1 8B</td><td>0.954</td><td>0.772</td><td>0.853</td></tr>
+<tr><td>JU-NLP</td><td>humongous-swamp</td><td>0.711</td><td>0.794</td><td>0.750</td></tr>
+<tr><td>Git Gud</td><td>Llama 3.1 8B V2</td><td>1.000</td><td>0.873</td><td>0.932</td></tr>
+<tr><td>Git Gud</td><td>LLama 3.1 8B Instruct</td><td>1.000</td><td>0.880</td><td>0.936</td></tr>
+<tr><td>Git Gud</td><td>Qwen3 4B</td><td>0.992</td><td>0.906</td><td>0.947</td></tr>
+<tr><td>Git Gud</td><td>Qwen2.5 7B</td><td>0.980</td><td>0.910</td><td>0.944</td></tr>
+<tr><td>JU-NLP</td><td>inflammable-amplifier</td><td>1.000</td><td>0.914</td><td>0.955</td></tr>
+<tr><td>JU-NLP</td><td>sour-key</td><td>0.946</td><td>0.920</td><td>0.933</td></tr>
+<tr><td>Git Gud</td><td>Phi 4 mini Instruct V2</td><td>0.965</td><td>0.921</td><td>0.943</td></tr>
+</tbody></table></div>
+
 <h2 id="task-committee">Task Committee</h2>
 <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
 {% include people-cards/heineking.html gender="male" %}
