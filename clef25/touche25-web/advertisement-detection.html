@@ -137,7 +137,7 @@ For the query "virtual reality workout", three different responses need to be ge
 </ul></p>
 </details>
 
-<p>For  advertisement classification (Sub-Task 2), we provide a list of responses. For development we provide a JSONL-version of the <a href="https://zenodo.org/records/15270283">Webis Generated Native Ads 2024</a> dataset. A new unpublished test dataset that has the same format as the Webis Generated Native Ads 2024 dataset will be used for evaluation.</p>
+<p>For  advertisement classification (Sub-Task 2), we provide a list of responses. For development we provide a JSONL-version of the <a href="https://zenodo.org/records/15270283">Webis Generated Native Ads 2024</a> dataset. A new unpublished test dataset that has the same format as the Webis Generated Native Ads 2024 dataset is used for evaluation.</p>
 
 <details>
 <summary>Example response from the Webis Generated Native Ads 2024 with advertisement highlighted (click to see)</summary>
@@ -176,11 +176,11 @@ For the query "virtual reality workout", three different responses need to be ge
 
 <h2 id="evaluation">Evaluation</h2>
 <h3>Sub-Task 1</h3>
-<p>The submissions for Sub-Task 1 will be evaluated based on the effectiveness of a trained ad classifier. The goal is to insert advertisements in a way that they are not detected. Hence, the primary metric will be the recall of the classifier; the lower the recall, the better the submission at subtly inserting advertisements and the higher the rank.</p>
-<p>As contextualization for the recall, we will also calculate the precision of the classifier. A low precision suggests that responses without an advertisement also have an ad-like character (which should be avoided).</p>
+<p>The submissions for Sub-Task 1 are evaluated based on the effectiveness of a classifier trained on labeling if a response contains ads. The goal is to insert advertisements in a way that they are not detected. Hence, the primary metric is the false negative rate (1 - recall) of the classifier. We call this measure "evasion score", to better illustrate its use in the context of our task. The more responses with ads are not labeled as such by our classifier, the higher the evasion score.</p>
+<p>As additional context, we also calculate the precision of the classifier. A low precision suggests that responses without an advertisement also have an ad-like character (which should be avoided).</p>
 
 <h3>Sub-Task 2</h3>
-<p>The submissions for Sub-Task 2 will be evaluated based on their classification effectiveness using the F1-score.</p> 
+<p>The submissions for Sub-Task 2 are evaluated based on their classification effectiveness using the F1-score.</p> 
 
 <h2 id="submission">Submission</h2>
 <p>We ask participants to use <a href="https://www.tira.io/">TIRA</a> for result submissions. Each team can submit <b>one or two</b> approaches for Sub-Task 1 and <b>up to five</b> approaches for Sub-Task 2.</p>
@@ -256,15 +256,15 @@ Please refer to the TIRA documentation for preparing and submitting your approac
 
 <h2 id="results">Results</h2>
 <h3 id="results-sub-task-1">Sub-Task 1</h3>
-<p>For sub-task 1, we report the effectiveness scores of our trained classifier on the submitted responses. The lower the recall, the more ads were hidden successfully. We sampled 100 responses per submission to manually evaluate the labels of the classifier and analyze the submissions.</p>
+<p>For sub-task 1, we report the evasion scores of the submissions. The higher the evasion score (false negative rate), the more ads were hidden successfully from our classifier. We sampled 100 responses per submission to manually evaluate the labels of the classifier and analyze the submissions.</p>
 <div class='uk-overflow-auto'><table class='uk-table uk-table-divider uk-table-small uk-table-hover sortable'><caption>Submitted run of each team for sub-task 1.</caption>
-<thead><tr><th class='header'><span>Team</span></th><th>Run</th><th class='header'>Precision</th><th class='header'>Recall</th><th class='header'>F1-Score</th></tr></thead><tbody></tbody>
-<tr><td>JU-NLP</td><td>ORPO_Mistral7b_v2</td><td>1.000</td><td>0.721</td><td>0.838</td></tr>
-<tr><td>JU-NLP</td><td>ORPO_Mistral7b</td><td>0.995</td><td>0.830</td><td>0.905</td></tr>
-<tr><td>TeamCMU</td><td>Adrewriting-BestOfN</td><td>0.821</td><td>0.858</td><td>0.839</td></tr>
-<tr><td>Git Gud</td><td>Qwen2.5 7B V2</td><td>0.960</td><td>0.910</td><td>0.935</td></tr>
-<tr><td>Git Gud</td><td>Qwen3 4B V2</td><td>0.984</td><td>0.918</td><td>0.950</td></tr>
-<tr><td>Baselines</td><td>generate-baseline</td><td>0.796</td><td>0.996</td><td>0.885</td></tr>
+<thead><tr><th class='header'><span>Team</span></th><th>Approach</th><th class='header'>Evasion Score (FNR)</th><th class='header'>Precision</th><th class='header'>Recall</th></tr></thead><tbody>
+<tr><td>JU-NLP</td><td>ORPO_Mistral7b_v2</td><td>0.279</td><td>1.000</td><td>0.721</td></tr>
+<tr><td>JU-NLP</td><td>ORPO_Mistral7b</td><td>0.170</td><td>0.995</td><td>0.830</td></tr>
+<tr><td>TeamCMU</td><td>Adrewriting-BestOfN</td><td>0.142</td><td>0.821</td><td>0.858</td></tr>
+<tr><td>Git Gud</td><td>Qwen2.5 7B V2</td><td>0.090</td><td>0.960</td><td>0.910</td></tr>
+<tr><td>Git Gud</td><td>Qwen3 4B V2</td><td>0.082</td><td>0.984</td><td>0.918</td></tr>
+<tr><td>Baseline</td><td>generate-baseline</td><td>0.004</td><td>0.796</td><td>0.996</td></tr>
 </tbody></table></div>
 
 <h3 id="results-sub-task-2">Sub-Task 2</h3>
@@ -291,21 +291,22 @@ Please refer to the TIRA documentation for preparing and submitting your approac
 </tbody></table></div>
 
 <h3 id="test-results">Test Results for Sub-Task 1</h3>
-<p>Some teams submitted more than two approaches to sub-task 1. Below, we report the effectiveness scores of our trained classifier on the submitted responses. In contrast to the "main" results, we did not manually verify the responses.</p>
+<p>Some teams submitted more than two approaches to sub-task 1. Below, we report the evasion scores of these responses. In contrast to the "main" results, we did not manually verify the responses.</p>
 
 <div class='uk-overflow-auto'><table class='uk-table uk-table-divider uk-table-small uk-table-hover sortable'><caption>Test run of each team for sub-task 1.</caption>
-<thead><tr><th class='header'><span>Team</span></th><th>Run</th><th class='header'>Precision</th><th class='header'>Recall</th><th class='header'>F1-Score</th></tr></thead>
-<tr><td>JU-NLP</td><td>relaxed-hound</td><td>0.984</td><td>0.712</td><td>0.826</td></tr>
-<tr><td>JU-NLP</td><td>quick-parapet</td><td>1.000</td><td>0.728</td><td>0.843</td></tr>
-<tr><td>Git Gud</td><td>Llama 3.1 8B</td><td>0.954</td><td>0.772</td><td>0.853</td></tr>
-<tr><td>JU-NLP</td><td>humongous-swamp</td><td>0.711</td><td>0.794</td><td>0.750</td></tr>
-<tr><td>Git Gud</td><td>Llama 3.1 8B V2</td><td>1.000</td><td>0.873</td><td>0.932</td></tr>
-<tr><td>Git Gud</td><td>LLama 3.1 8B Instruct</td><td>1.000</td><td>0.880</td><td>0.936</td></tr>
-<tr><td>Git Gud</td><td>Qwen3 4B</td><td>0.992</td><td>0.906</td><td>0.947</td></tr>
-<tr><td>Git Gud</td><td>Qwen2.5 7B</td><td>0.980</td><td>0.910</td><td>0.944</td></tr>
-<tr><td>JU-NLP</td><td>inflammable-amplifier</td><td>1.000</td><td>0.914</td><td>0.955</td></tr>
-<tr><td>JU-NLP</td><td>sour-key</td><td>0.946</td><td>0.920</td><td>0.933</td></tr>
-<tr><td>Git Gud</td><td>Phi 4 mini Instruct V2</td><td>0.965</td><td>0.921</td><td>0.943</td></tr>
+<thead><tr><th class='header'><span>Team</span></th><th>Approach</th><th class='header'>Evasion Score (FNR)</th><th class='header'>Precision</th><th class='header'>Recall</th></tr></thead>
+<tr><td>JU-NLP</td><td>relaxed-hound</td><td>0.288</td><td>0.984</td><td>0.712</td></tr>
+<tr><td>JU-NLP</td><td>quick-parapet</td><td>0.272</td><td>1.000</td><td>0.728</td></tr>
+<tr><td>Git Gud</td><td>Llama 3.1 8B</td><td>0.228</td><td>0.954</td><td>0.772</td></tr>
+<tr><td>JU-NLP</td><td>humongous-swamp</td><td>0.206</td><td>0.711</td><td>0.794</td></tr>
+<tr><td>Git Gud</td><td>Llama 3.1 8B V2</td><td>0.127</td><td>1.000</td><td>0.873</td></tr>
+<tr><td>Git Gud</td><td>LLama 3.1 8B Instruct</td><td>0.120</td><td>1.000</td><td>0.880</td></tr>
+<tr><td>Git Gud</td><td>Qwen3 4B</td><td>0.094</td><td>0.992</td><td>0.906</td></tr>
+<tr><td>Git Gud</td><td>Qwen2.5 7B</td><td>0.090</td><td>0.980</td><td>0.910</td></tr>
+<tr><td>JU-NLP</td><td>inflammable-amplifier</td><td>0.086</td><td>1.000</td><td>0.914</td></tr>
+<tr><td>JU-NLP</td><td>sour-key</td><td>0.080</td><td>0.946</td><td>0.920</td></tr>
+<tr><td>Git Gud</td><td>Phi 4 mini Instruct V2</td><td>0.079</td><td>0.965</td><td>0.921</td></tr>
+<tr><td>Baseline</td><td>generate-baseline</td><td>0.004</td><td>0.796</td><td>0.996</td></tr>
 </tbody></table></div>
 
 <h2 id="task-committee">Task Committee</h2>
