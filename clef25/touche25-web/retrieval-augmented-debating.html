@@ -271,6 +271,49 @@ Response
 <p>We highly recommend to start from our example systems: for Sub-task 1 <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef25/retrieval-augmented-debating/debating-systems/basic-elastic-js">in JavaScript</a>, <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef25/retrieval-augmented-debating/debating-systems/basic-elastic-py">in Python</a> and for sub-task 2 <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef25/retrieval-augmented-debating/evaluation-systems/evaluation-1-baseline-py">in Python</a>]. They all provide endpoints for a <a href="https://github.com/webis-de/GenIRSim">GenIRSim</a> service that runs in the background and is automatically started as they extend our <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef25/retrieval-augmented-debating/debating-systems/base">base image</a>. By adapting the examples, you do not need to care about such a service and can focus on providing the endpoints, e.g., for sub-task 1 <a href="https://github.com/touche-webis-de/touche-code/blob/ee6056630141737a54287ec9b25c2b4a9f936a51/clef25/retrieval-augmented-debating/debating-systems/basic-elastic-js/index.js#L2">in JavaScript</a> and <a href="https://github.com/touche-webis-de/touche-code/blob/ee6056630141737a54287ec9b25c2b4a9f936a51/clef25/retrieval-augmented-debating/debating-systems/basic-elastic-py/main.py#L18">in Python</a> and for sub-task 2 <a href="https://github.com/touche-webis-de/touche-code/blob/b9138c906f2b716a6922a1bdf3543ab81e64c1bd/clef25/retrieval-augmented-debating/evaluation-systems/evaluation-1-baseline-py/main.py#L32-L70">in Python</a>.</p>
 
 
+
+<h2 id="results">Results</h2>
+
+<h3 id="results-subtask-1">Sub-Task 1</h3>
+<p>We report results of sub-task 1 as the percentage of responses in the test debates that fulfill the specific criterion (quantity, quality, relation, or manner).</p>
+
+<div class='uk-overflow-auto'><table class='uk-table uk-table-divider uk-table-small uk-table-hover sortable'><caption>Submitted run of each team for sub-task 1.</caption>
+<thead><tr><th class='header'><span>Team</span></th><th>Run</th><th class='header'>Score (avg)</th><th class='header'>Quantity</th><th class='header'>Quality</th><th class='header'>Relation</th><th class='header'>Manner</th></tr></thead>
+<tr><td>Team DS@GT</td><td>gpt-4.1</td><td><b>0.70</b></td><td><b>0.95</b></td><td>0.17</td><td>0.82</td><td><b>0.84</b></td></tr>
+<tr><td>Team DS@GT</td><td>gemini-2.5</td><td>0.65</td><td>0.94</td><td>0.26</td><td>0.74</td><td>0.67</td></tr>
+<tr><td>Baseline</td><td>baseline</td><td>0.62</td><td>0.35</td><td><b>1.00</b></td><td>0.32</td><td>0.80</td></tr>
+<tr><td>Team SINAI</td><td>run</td><td>0.54</td><td>0.70</td><td>0.02</td><td>0.86</td><td>0.59</td></tr>
+<tr><td>Team DS@GT</td><td>gemini-2.5-flash</td><td>0.50</td><td>0.70</td><td>0.07</td><td>0.80</td><td>0.41</td></tr>
+<tr><td>Team DS@GT</td><td>claude-opus-4</td><td>0.42</td><td>0.41</td><td>0.31</td><td>0.87</td><td>0.09</td></tr>
+<tr><td>Team DS@GT</td><td>gpt-4o</td><td>0.42</td><td>0.20</td><td>0.02</td><td>0.86</td><td>0.58</td></tr>
+<tr><td>Team DS@GT</td><td>claude-sonnet-4</td><td>0.38</td><td>0.35</td><td>0.05</td><td><b>0.94</b></td><td>0.17</td></tr>
+</table></div>
+
+<h3 id="results-subtask-2">Sub-Task 2</h3>
+<p>We report results of sub-task 2 as precision (P), recall (R) and F1-score for the task of classifying for each response in the test debates whether it fulfills the specific criterion (quantity, quality, relation, or manner).</p>
+
+<div class='uk-overflow-auto'><table class='uk-table uk-table-divider uk-table-small uk-table-hover sortable'><caption>Submitted run of each team for sub-task 2.</caption>
+<thead><tr><th class='header'><span>Team</span></th><th>Run</th><th>Score (F1)</th><th colspan="3" class='header' style="text-align: center">Quantity</th><th colspan="3" style="text-align: center" class='header'>Quality</th><th style="text-align: center" colspan="3" class='header'>Relation</th><th style="text-align: center" colspan="3" class='header'>Manner</th></tr>
+<tr><th colspan="3"></th><th>P</th><th>R</th><th>F1</th><th>P</th><th>R</th><th>F1</th><th>P</th><th>R</th><th>F1</th><th>P</th><th>R</th><th>F1</th></tr>
+</thead>
+<tr><td>Baseline</td><td>1-baseline</td> <td><b>0.67</b></td><td>0.57</td> <td><b>1.00</b></td> <td><b>0.73</b></td> <td><b>0.24</b></td> <td><b>1.00</b></td> <td><b>0.38</b></td> <td>0.78</td> <td><b>1.00</b></td> <td>0.87</td> <td>0.52</td> <td><b>1.00</b></td> <td><b>0.68</b></td></tr>
+<tr><td>Team DS@GT</td><td>gemini-2.5-flash</td><td>0.64</td><td>0.59</td> <td>0.86</td> <td>0.70</td> <td>0.18</td> <td>0.66</td> <td>0.29</td> <td>0.81</td> <td>0.99</td> <td>0.89</td> <td>0.52</td> <td>0.99</td> <td><b>0.68</b></td></tr>
+<tr><td>Team DS@GT</td><td>gpt-4o</td><td>0.64</td><td>0.59</td> <td>0.88</td> <td>0.71</td> <td>0.17</td> <td>0.63</td> <td>0.27</td> <td>0.82</td> <td>0.99</td> <td>0.89</td> <td>0.52</td> <td>0.97</td> <td>0.67</td></tr>
+<tr><td>Team DS@GT</td><td>gpt-4.1</td><td>0.62</td><td>0.58</td> <td>0.75</td> <td>0.65</td> <td>0.15</td> <td>0.52</td> <td>0.24</td> <td>0.82</td> <td>0.98</td> <td><b>0.90</b></td> <td>0.52</td> <td>0.99</td> <td><b>0.68</b></td></tr>
+<tr><td>Team DS@GT</td><td>gemini-2.5-pro</td><td>0.62</td><td>0.59</td> <td>0.67</td> <td>0.63</td> <td>0.17</td> <td>0.52</td> <td>0.25</td> <td>0.84</td> <td>0.97</td> <td><b>0.90</b></td> <td>0.52</td> <td>0.98</td> <td><b>0.68</b></td></tr>
+<tr><td>Team SINAI</td><td>gritty-stock</td><td>0.56</td><td>0.60</td> <td>0.60</td> <td>0.60</td> <td>0.19</td> <td>0.40</td> <td>0.25</td> <td>0.84</td> <td>0.86</td> <td>0.85</td> <td>0.50</td> <td>0.57</td> <td>0.53</td></tr>
+<tr><td>Team DS@GT</td><td>claude-sonnet-4</td><td>0.56</td>  <td>0.56</td> <td>0.43</td> <td>0.49</td> <td>0.15</td> <td>0.36</td> <td>0.21</td> <td>0.83</td> <td>0.92</td> <td>0.88</td> <td>0.51</td> <td>0.93</td> <td>0.66</td></tr>
+<tr><td>Team SINAI</td><td>staff-frame</td><td>0.55</td><td>0.59</td><td>0.64</td><td>0.61</td><td>0.16</td><td>0.32</td><td>0.21</td><td>0.84</td><td>0.80</td><td>0.82</td><td>0.52</td><td>0.64</td><td>0.57</td></tr>
+<tr><td>Team SINAI</td><td>radiant-tread</td><td>0.54</td><td>0.58</td> <td>0.53</td> <td>0.55</td> <td>0.20</td> <td>0.35</td> <td>0.25</td> <td><b>0.87</b></td> <td>0.75</td> <td>0.81</td> <td><b>0.53</b></td> <td>0.56</td> <td>0.54</td></tr>
+<tr><td>Team SINAI</td><td>iron-rhythm</td><td>0.52</td><td>0.57</td> <td>0.46</td> <td>0.51</td> <td>0.15</td> <td>0.37</td> <td>0.21</td> <td>0.84</td> <td>0.79</td> <td>0.81</td> <td>0.50</td> <td>0.63</td> <td>0.56</td></tr>
+<tr><td>Team DS@GT</td><td>claude-opus-4</td> <td>0.51</td> <td>0.49</td> <td>0.21</td> <td>0.29</td> <td>0.16</td> <td>0.31</td> <td>0.21</td> <td>0.85</td> <td>0.90</td> <td>0.88</td> <td>0.51</td> <td>0.92</td> <td>0.66</td></tr>
+<tr><td>Team SINAI</td><td>grating-dragster</td><td>0.49</td><td>0.59</td> <td>0.63</td> <td>0.61</td> <td>0.20</td> <td>0.58</td> <td>0.30</td> <td>0.84</td> <td>0.39</td> <td>0.53</td> <td>0.50</td> <td>0.54</td> <td>0.52</td></tr>
+<tr><td>Team SINAI</td><td>coped-message</td><td>0.39</td><td>0.57</td> <td>0.32</td> <td>0.41</td> <td>0.17</td> <td>0.21</td> <td>0.19</td> <td>0.84</td> <td>0.67</td> <td>0.74</td> <td>0.45</td> <td>0.16</td> <td>0.24</td></tr>
+<tr><td>Team SINAI</td><td>sizzling-coulomb</td><td>0.35</td><td><b>0.63</b></td> <td>0.40</td> <td>0.49</td> <td>0.16</td> <td>0.17</td> <td>0.16</td> <td>0.84</td> <td>0.44</td> <td>0.58</td> <td>0.41</td> <td>0.10</td> <td>0.16</td></tr>
+</table>
+</div>
+
+
 <h2 id="task-committee">Task Committee</h2>
 <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
 {% include people-cards/gohsen.html gender="male" %}
