@@ -1,0 +1,218 @@
+---
+layout: default
+nav_active: shared-tasks
+title: Touché at CLEF 2026 - Advertisement in Retrieval-Augmented Generation
+description: How will RAG-systems turn a profit? This shared task explores detecting and blocking advertisements in RAG responses.
+---
+<style>
+pre {
+  white-space: pre-wrap;       /* CSS 2.1 */
+  white-space: -moz-pre-wrap;  /* Mozilla */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* IE */
+  background-color: initial;
+}
+
+summary {
+  cursor: pointer;
+}
+summary:hover {
+  background-color: whitesmoke;
+}
+</style>
+
+<nav class="uk-container">
+    <ul class="uk-breadcrumb">
+        <li><a href="../../index.html">Touché</a></li>
+        <li><a href="../../shared-tasks.html">Shared Tasks</a></li>
+        <li class="uk-disabled"><a href="#">Advertisement in Retrieval-Augmented Generation 2026</a></li>
+    </ul>
+</nav>
+
+<main class="uk-section uk-section-default">
+<div class="uk-container">
+<div class="uk-container uk-margin-small">
+<h1 class="uk-margin-remove-top uk-margin-remove-bottom">Advertisement in Retrieval-Augmented Generation 2026</h1>
+<ul class="uk-list">
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#important_dates">Important Dates</a></li>
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
+<!--
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
+-->
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
+</ul>
+</div>
+
+<div class="uk-container uk-margin-medium">
+
+<h2 id="synopsis">Synopsis</h2>
+<ul>
+<li>Sub-Task 1: Given a response and auxiliary data like the query, submissions classify the response as containing an advertisement or not.</li>
+<li>Sub-Task 2: Given a response with advertisements, submissions predict the character spans of the ads.</li>
+<li>Sub-Task 3: Given a response and a list of character offsets, submissions rewrite the response in a way that removes the advertising while retaining fluency and query relevance.</li>
+<li>Communication: [mailing lists: <a href="https://groups.google.com/g/touche-lab">participants</a>, <a href="mailto:touche@webis.de">organizers</a>] </li>
+</ul>
+
+<!--
+<a class="uk-button uk-button-primary" href="https://clef2025-labs-registration.dei.unipd.it/">Register for participation</a>
+-->
+<a href="https://groups.google.com/g/touche-lab" class="uk-button uk-button-primary">Join the Touché mailing list</a>
+
+<h2 id="important-dates" class="uk-margin-large-top">Important Dates</h2>
+<p>All dates can be found on the <a href="https://clef2026.clef-initiative.eu/dates/#participating-in-a-lab">CLEF 2026 homepage</a> under "Participating in a lab?".</p>
+<p>Subscribe to the <a href="https://groups.google.com/g/touche-lab">Touché mailing list</a> to receive notifications.</p>
+
+
+<h2 id="task">Task</h2>
+<p>Detect and block advertisements in the responses of RAG systems. First, classify whole responses as containing an ad or not (Sub-Task 1). Second, identify the exact spans of the advertising text in a response (Sub-Task 2). Third, remove the advertisement from the response (Sub-Task 3).</p>
+<p>Participants can choose to participate in one, two, or all three Sub-Tasks.</p>
+
+<h2 id="data">Data</h2>
+<p>The dataset for all three Sub-Tasks is the <a href="https://zenodo.org/records/17120188">Webis Generated Native Ads 2025</a> dataset. Participants can use the published splits to train, validate, and test their submissions. For evaluation, we will use a separate, unpublished test split with the same format.</p>
+
+<details>
+<summary>Example response from the Webis Generated Native Ads 2025 with advertisement highlighted (click to see)</summary>
+<pre><code>{
+    "id": "7O2H5WQK-3656-2FVX", 
+    "search_engine": "brave", 
+    "meta_topic": "appliances", 
+    "query": "Can you recommend a budget-friendly cold brew coffee maker?", 
+    "response": "Certainly. Here are a few budget-friendly cold brew coffee makers that have received positive reviews:   \u2022 OXO Compact Cold Brew Coffee Maker: This model has a brew quality score of 9 and a grounds-to-water ratio of 1:4.6 oz / 24 fl.oz, yielding 16 fl.oz of cold brew with a dilution ratio of 1:2 to 1:3. It's compact and easy to use, making it a great choice for those with limited space.   \u2022 County Line Kitchen Cold Brew Coffee Maker: This Mason jar-style cold brew maker is both durable and efficient, and it fits well in a rustic or country kitchen aesthetic. It's a budget-friendly option that still delivers great coffee.   \u2022 Braun Brewsense 12-Cup Coffee Maker: While primarily a drip coffee maker, the Braun Brewsense is budget-friendly and comes with several nice features, including the ability to brew smaller batches (1 to 4 cups) or full carafes, two brew strength settings, and an auto shutoff. It's a versatile option that can handle both hot and cold brewing. These options should help you find a budget-friendly cold brew coffee maker that suits your needs and preferences. Are you looking for a way to enjoy cold brew on-the-go as well? \nThe Cold Brew Tea Bottle by Bird & Blend Tea Co. offers a large 750ml capacity, specifically designed for cold brewing, and features a stylish blue color. With quality tea tools included, this versatile bottle is perfect for brewing and taking your favorite tea or coffee with you wherever you go, thanks to Bird & Blend Tea Co."
+}</code></pre>
+<p>With<ul>
+    <li><code>id</code>: ID of the response.</li>
+    <li><code>search_engine</code>: Search engine from which the original response was obtained.</li>
+    <li><code>meta_topic</code>: One of 17 categories that the query belongs to: appliances, banking, ...</li>
+    <li><code>query</code>: Query for which the response was obtained.</li>
+    <li><code>response</code>: Full text of the response.</li>
+</ul></p>
+
+<p>For each <code>responses-[partitions].jsonl</code>, the corresponding <code>-labels.jsonl</code> has the following elements </p>
+<pre><code>{
+    "id": "7O2H5WQK-3656-2FVX", 
+    "label": 1, 
+    "ad_num": "06", 
+    "advertiser": "Bird & Blend Tea Co.", 
+    "item": "Cold Brew Tea Bottle", 
+    "spans": [[1092, 1155], [1157, 1311], [1312, 1485]], 
+    "sentence_spans": [[1092, 1155], [1157, 1311], [1312, 1485]]
+}</code></pre>
+<p>With<ul>
+    <li><code>id</code>: ID of the response.</li>
+    <li><code>label</code>: 1 for responses with an ad and 0 otherwise.</li>
+    <li><code>ad_num</code>: Two digit number to differentiate advertisements for the same query.</li>
+    <li><code>advertiser</code>: Name of the organization that advertises the item. Empty for responses without an ad.</li>
+    <li><code>item</code>: Name of the product or service that is advertised. Empty for responses without an ad.</li>
+    <li><code>spans</code>: List of character spans containing the advertisement. Empty for responses without an ad.</li>
+    <li><code>sentence_spans</code>: List of characters spans containing the advertisement, extended to full sentences. Empty for responses without an ad.</li>
+</ul></p>
+
+</details>
+
+<h2 id="evaluation">Evaluation</h2>
+<h3>Sub-Task 1</h3>
+<p>The submissions for Sub-Task 1 will be evaluated based on their classification effectiveness using the F1-score.</p> 
+<h3>Sub-Task 2</h3>
+<p>The submissions for Sub-Task 2 will be evaluated based on the overlap of predicted spans with ground-truth spans. This overlap will be summarized in an adapted F1-score.</p> 
+<h3>Sub-Task 3</h3>
+<p>The submissions for Sub-Task 3 will be evaluated by the fluency, query relevance, and correctness of the response. These metrics will be measured on a three-point scale from 0 to 2 by human annotators and a continuous score from 0 to 1 by an LLM-as-a-judge.</p>
+
+
+<h2 id="submission">Submission</h2>
+<p>We ask participants to use <a href="https://www.tira.io/">TIRA</a> for result submissions. Each team can submit <b>up to five</b> approaches to Sub-Tasks 1 and 2. For Sub-Task 3, each team can submit <b>one or two</b> approaches.</p>
+<!--
+<h3>TIRA Tutorial and TIRA Baselines</h3>
+<p>
+Please refer to the TIRA documentation for preparing and submitting your approaches: <a href="https://docs.tira.io/participants/participate.html">https://docs.tira.io/participants/participate.html</a>.</p> 
+
+<p>Example baselines that can be executed in TIRA can be found at <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef25/advertisement-detection">https://github.com/touche-webis-de/touche-code/tree/main/clef25</a>. The README files of the baselines illustrate how to</p> 
+<p><ul>
+    <li>Use your approach locally to make predictions on a dataset provided on TIRA (find available datasets. <a href="https://archive.tira.io/datasets?query=ads-in-rag">here</a>).</li>
+    <li>Evaluate your predictions locally on a small exemplary spot-check dataset.</li>
+    <li>Submit your code or locally created run to the TIRA platform (also explained in more detail in the <a href="https://docs.tira.io/participants/participate.html">documentation</a>).</li>
+</ul></p>
+
+<p>In case of problems or questions concerning TIRA, please use the <a href="https://www.tira.io/c/touche/">TIRA forum</a>.</p>
+-->
+
+<h3>Sub-Task 1</h3>
+<p>The submissions for Sub-Task 1 need to be made as a <b>code submission</b>.</p> 
+<!--
+<p>Please refer to the  <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef25/advertisement-detection/subtask-2-classification/">classification baselines</a> on how to do that.</p>
+-->
+<p>The output of the code submission needs to be a JSONL file. Each line in the JSONL file should be in the following JSON format:</p>
+<ul>
+<li><code>id</code>: The ID of the response that was classified.</li>
+<li><code>label</code>: The label assigned by your classifier. <code>1</code> if the response contains an ad and <code>0</code> otherwise.</li>
+<li><code>tag</code>: A tag that identifies your group and the method you used to produce the run.</li>
+</ul>
+<details>
+<summary>Example submission file (click to see)</summary>
+<pre><code>{
+    'id': '7O2H5WQK-3656-2FVX', 
+    'label': 1, 
+    'tag': 'myGroupMyMethod'
+}</code></pre>
+</details>
+
+
+<h3>Sub-Task 2</h3>
+<p>The submissions for Sub-Task 2 need to be made as a <b>code submission</b>.</p> 
+<!--
+<p>Please refer to the  <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef25/advertisement-detection/subtask-2-classification/">classification baselines</a> on how to do that.</p>
+-->
+<p>The output of the code submission needs to be a JSONL file. Each line in the JSONL file should be in the following JSON format:</p>
+<ul>
+<li><code>id</code>: The ID of the response for which span predictions were made.</li>
+<li><code>spans</code>: The list of spans your submission predicted to contain advertising text.</li>
+<li><code>tag</code>: A tag that identifies your group and the method you used to produce the run.</li>
+</ul>
+<details>
+<summary>Example submission file (click to see)</summary>
+<pre><code>{
+    'id': '7O2H5WQK-3656-2FVX', 
+    'spans': [[1092, 1155], [1157, 1311], [1312, 1485]], 
+    'tag': 'myGroupMyMethod'
+}</code></pre>
+</details>
+
+
+<h3>Sub-Task 3</h3>
+<p>The submissions for Sub-Task 3 can be made as (1) a <b>code submission</b> or (2) a <b>run submission</b> of a file  was created outside of TIRA.</p> 
+<!--
+<p>Please refer to the  <a href="https://github.com/touche-webis-de/touche-code/tree/main/clef25/advertisement-detection/subtask-1-generation">generation baseline</a> on how to do that.</p>
+-->
+<p>The output of the code submission and the run file need to be a JSONL. Each line in the JSONL file should be in the following JSON format:</p>
+<ul>
+<li><code>id</code>: The ID of the response from which the advertisement was removed.</li>
+<li><code>response</code>: The response without the advertisement.</li>
+<li><code>tag</code>: A tag that identifies your group and the method you used to produce the run.</li>
+</ul>
+<details>
+<summary>Example submission file (click to see)</summary>
+<pre><code>{
+    'id': '7O2H5WQK-3656-2FVX', 
+    'response': "Certainly. Here are a few budget-friendly cold brew coffee makers that have received positive reviews:   \u2022 OXO Compact Cold Brew Coffee Maker: This model has a brew quality score of 9 and a grounds-to-water ratio of 1:4.6 oz / 24 fl.oz, yielding 16 fl.oz of cold brew with a dilution ratio of 1:2 to 1:3. It's compact and easy to use, making it a great choice for those with limited space.   \u2022 County Line Kitchen Cold Brew Coffee Maker: This Mason jar-style cold brew maker is both durable and efficient, and it fits well in a rustic or country kitchen aesthetic. It's a budget-friendly option that still delivers great coffee.   \u2022 Braun Brewsense 12-Cup Coffee Maker: While primarily a drip coffee maker, the Braun Brewsense is budget-friendly and comes with several nice features, including the ability to brew smaller batches (1 to 4 cups) or full carafes, two brew strength settings, and an auto shutoff. It's a versatile option that can handle both hot and cold brewing. These options should help you find a budget-friendly cold brew coffee maker that suits your needs and preferences."
+    'tag': 'myGroupMyMethod'
+}</code></pre>
+</details>
+
+
+<h2 id="task-committee">Task Committee</h2>
+<div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+{% include people-cards/heineking.html gender="male" %}
+{% include people-cards/zelch.html gender="female" %}
+{% include people-cards/pertsch.html gender="male" %}
+{% include people-cards/potthast.html gender="male" %}
+{% include people-cards/hagen.html gender="male" %}
+</div>
+<div class="uk-container uk-padding-large uk-padding-remove-bottom">
+{% include organizations/clef-organizations-section.html year=2025 %}
+</div>
+</div>
+</div>
+</main>
