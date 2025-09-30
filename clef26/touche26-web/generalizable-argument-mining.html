@@ -4,6 +4,15 @@ nav_active: shared-tasks
 title: Touché at CLEF 2026 - Generalizability of Argument Identification in Context
 description: TODO.
 ---
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+  };
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
 <nav class="uk-container">
     <ul class="uk-breadcrumb">
         <li><a href="../../index.html">Touché</a></li>
@@ -19,12 +28,10 @@ description: TODO.
 <ul class="uk-list">
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#important_dates">Important Dates</a></li>
-<!--
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
--->
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
 </ul>
 </div>
@@ -33,7 +40,7 @@ description: TODO.
 
 <h2 id="synopsis">Synopsis</h2>
 <ul>
-<li>Sub-Task 1: TODO.</li>
+<li>Task: Decide if a sentence, in its context, constitutes an argument or not.</li>
 <li>Communication: [mailing lists: <a href="https://groups.google.com/g/touche-lab">participants</a>, <a href="mailto:touche@webis.de">organizers</a>] </li>
 </ul>
 
@@ -46,29 +53,30 @@ description: TODO.
 <p>See the <a href="https://clef2026.clef-initiative.eu/dates/#participating-in-a-lab">CLEF 2026 homepage</a>.</p>
 <p>Subscribe to the <a href="https://groups.google.com/g/touche-lab">Touché mailing list</a> to receive notifications.</p>
 
-<!--
+
 <h2 id="task">Task</h2>
-<p>TODO</p>
--->
+<p>Given a sentence from a dataset along with metadata about its provenance, such as the source text and the dataset's annotation guidelines, predict whether the sentence can be annotated as an argument or not. In particular, participants are encouraged to develop robust systems that generalize beyond lexical shortcuts to unseen datasets and investigate ways to exploit rich context information for this purpose.</p>
 
-<!--
+
+
 <h2 id="data">Data</h2>
-<p>TODO</p>
--->
+<p>For the task, training data will be provided as a subset of the 17 benchmark datasets totaling about 345k labeled sentences and identified as most relevant for argument identification in <a href="https://aclanthology.org/2025.acl-long.1164/">this paper</a>.
+This subset includes sentences each labeled as <i>argument</i> or <i>no-argument</i>, according to the respective dataset annotations, along with accompanying metadata such as IDs, generated training and development splits, links to original data sources and annotation guidelines, as well as the scripts used for data preparation.</p>
 
-<!--
 <h2 id="evaluation">Evaluation</h2>
-<p>TODO</p>
--->
+<p>The systems will be evaluated on test data that differs from the development data. This includes partially or fully held-out portions of the datasets used for sampling, as well as newly created data reflecting diverse domains and annotation guidelines. This setup addresses the risk of data contamination in LLMs and for participants’ potential use of additional datasets during training.
 
-<!--
+Generalizability will be measured using the macro F$_1$-score. To evaluate the systems, the macro F$_1$-score will be specified for each test dataset, along with the overall average of all these values.</p>
+
 <h2 id="submission">Submission</h2>
-<p>We ask participants to use <a href="https://www.tira.io/">TIRA</a> for submissions. In case of problems or questions concerning TIRA, please use the <a href="https://www.tira.io/c/touche/">TIRA forum</a>. Each team can submit <b>up to TODO</b> approaches to Sub-Tasks TODO.</p>
--->
+<p>We ask participants to use <a href="https://www.tira.io/">TIRA</a> for submissions. Each team can submit <b>up to 1</b> approaches to the task.</p>
 
 <h2 id="task-committee">Task Committee</h2>
 <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
 {% include people-cards/feger.html gender="male" %}
+{% include people-cards/boland.html gender="female" %}
+{% include people-cards/romberg.html gender="female" %}
+{% include people-cards/dietze.html gender="male" %}
 </div>
 <div class="uk-container uk-padding-large uk-padding-remove-bottom">
 {% include organizations/clef-organizations-section.html year=2026 %}
