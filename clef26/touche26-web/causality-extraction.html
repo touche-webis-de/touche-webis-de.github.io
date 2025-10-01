@@ -2,7 +2,7 @@
 layout: default
 nav_active: shared-tasks
 title: Touché at CLEF 2026 - Causality Extraction
-description: TODO.
+description: Causality lies at the heart of human reasoning. This shared task explores how causal claims and their counterclaims can be extracted from text.
 ---
 <nav class="uk-container">
     <ul class="uk-breadcrumb">
@@ -33,7 +33,9 @@ description: TODO.
 
 <h2 id="synopsis">Synopsis</h2>
 <ul>
-<li>Sub-Task 1: TODO.</li>
+<li>Sub-Task 1: Given a natural language text, classify whether it contains causal information or not.</li>
+<li>Sub-Task 2: Given a natural language text, identify text spans that are good candidates to express events or concepts that are stated to partake in a causal relationship.</li>
+<li>Sub-Task 3: Given a natural language text and a candidate pair of events or concepts, E<sub>1</sub> and E<sub>2</sub>, classify the type of causal relationship expressed between E<sub>1</sub> and E<sub>2</sub>.</li>
 <li>Communication: [mailing lists: <a href="https://groups.google.com/g/touche-lab">participants</a>, <a href="mailto:touche@webis.de">organizers</a>] </li>
 </ul>
 
@@ -46,29 +48,88 @@ description: TODO.
 <p>See the <a href="https://clef2026.clef-initiative.eu/dates/#participating-in-a-lab">CLEF 2026 homepage</a>.</p>
 <p>Subscribe to the <a href="https://groups.google.com/g/touche-lab">Touché mailing list</a> to receive notifications.</p>
 
-<!--
 <h2 id="task">Task</h2>
-<p>TODO</p>
--->
+<p>Given a natural language sentence, the extraction of causal statements, causality extraction, can be split into three steps; each of which is its own sub-task:
+<ol>
+<li>Classify for the entire sentence if contains causal information or not.</li>
+<li>Identify text-spans that are good candidates to partake in a claimed or refuted causal relationship.</li>
+<li>Given a pair of candidates, classify whether the sentence supports (procausal) or refutes (concausal) a causal relationship, or makes no statement how the pair relates (uncausal).</li>
+</ol>
+</p>
+<p>Participants can choose to participate in one, two, or all three Sub-Tasks.</p>
 
 <!--
 <h2 id="data">Data</h2>
 <p>TODO</p>
 -->
 
-<!--
 <h2 id="evaluation">Evaluation</h2>
-<p>TODO</p>
--->
+<h3>Sub-Task 1</h3>
+<p>Sub-Task 1 is evaluated as a binary classification task using the F<sub>1</sub>-score.</p>
 
-<!--
+<h3>Sub-Task 2</h3>
+<p>Sub-Task 2 is evaluated as a token classification problem with BIO-tags using the F<sub>1</sub>-score.</p>
+
+<h3>Sub-Task 3</h3>
+<p>Sub-Task 3 is evaluated as a ternary classification task using the F<sub>1</sub>-score.</p>
+
 <h2 id="submission">Submission</h2>
-<p>We ask participants to use <a href="https://www.tira.io/">TIRA</a> for submissions. In case of problems or questions concerning TIRA, please use the <a href="https://www.tira.io/c/touche/">TIRA forum</a>. Each team can submit <b>up to TODO</b> approaches to Sub-Tasks TODO.</p>
--->
+<p>We ask participants to use <a href="https://www.tira.io/">TIRA</a> for result submissions.<!-- In case of problems or questions concerning TIRA, please use the <a href="https://www.tira.io/c/touche/">TIRA forum</a>.--> Each team can submit <b>up to one</b> approach per Sub-Task.</p>
+<h3>Sub-Task 1</h3>
+<p>The submissions for Sub-Task 1 need to be made as a <b>code submission</b>.</p>
+<p>The output of the code submission needs to be a JSONL file. Each line in the JSONL file should be in the following JSON format:</p>
+<ul>
+<li><code>id</code>: The ID of the text that was classified.</li>
+<li><code>label</code>: The label assigned by your classifier. <code>1</code> if the response contains (pro-/con-)causal information and <code>0</code> otherwise.</li>
+<li><code>tag</code>: A tag that identifies your group and the method you used to produce the run.</li>
+</ul>
+<details>
+<summary>Example submission file (click to see)</summary>
+<pre><code>{
+    'id': 'cnc_train_01_0_234_0', 
+    'label': 1, 
+    'tag': 'myGroupMyMethod'
+}</code></pre>
+</details>
+
+<h3>Sub-Task 2</h3>
+<p>The submissions for Sub-Task 2 need to be made as a <b>code submission</b>.</p>
+<p>The output of the code submission needs to be a JSONL file. Each line in the JSONL file should be in the following JSON format:</p>
+<ul>
+<li><code>id</code>: The ID of the text that was classified.</li>
+<li><code>spans</code>: The list of spans your submission predicted to partake in a causal relationship according to the input text. A span is a pair of two positive integers that give the start and end index in characrers.</li>
+<li><code>tag</code>: A tag that identifies your group and the method you used to produce the run.</li>
+</ul>
+<details>
+<summary>Example submission file (click to see)</summary>
+<pre><code>{
+    'id': 'cnc_train_01_0_234_0', 
+    'label': [[0, 10], [20, 25]], 
+    'tag': 'myGroupMyMethod'
+}</code></pre>
+</details>
+
+<h3>Sub-Task 3</h3>
+<p>The submissions for Sub-Task 3 need to be made as a <b>code submission</b>.</p>
+<p>The output of the code submission needs to be a JSONL file. Each line in the JSONL file should be in the following JSON format:</p>
+<ul>
+<li><code>id</code>: The ID of the text that was classified.</li>
+<li><code>label</code>: The label assigned by your classifier. <code>0</code> if the marked spans (ARG0 and ARG1) are uncausal (nothing can be said about how ARG0 causally influences ARG1), <code>1</code> if they are pro-causal (ARG0 causes ARG1) and <code>2</code> if they are con-causal (ARG0 does not cause ARG1).</li>
+<li><code>tag</code>: A tag that identifies your group and the method you used to produce the run.</li>
+</ul>
+<details>
+<summary>Example submission file (click to see)</summary>
+<pre><code>{
+    'id': 'cnc_train_01_0_234_0_1', 
+    'label': 1,
+    'tag': 'myGroupMyMethod'
+}</code></pre>
+</details>
 
 <h2 id="task-committee">Task Committee</h2>
 <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
 {% include people-cards/hagen-tim.html gender="male" %}
+{% include people-cards/potthast.html gender="male" %}
 </div>
 <div class="uk-container uk-padding-large uk-padding-remove-bottom">
 {% include organizations/clef-organizations-section.html year=2026 %}
