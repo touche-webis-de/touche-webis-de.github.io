@@ -2,14 +2,11 @@
 # Front matter to ensure Jekyll is processing the file.
 ---
 
-@use "sass:meta";
-@use "../_sass/variables";
-
-
 // Theme variable overrides
 @import url("https://assets.webis.de/css/style.css?{{site.time | date: '%s'}}");
+@import "../_sass/variables";
 
 // Styles
-@include meta.load-css("../_sass/index");
-@include meta.load-css("../_sass/tasks");
-@include meta.load-css("../_sass/thumbnail_cards");
+@import "../_sass/index";
+@import "../_sass/tasks";
+@import "../_sass/thumbnail_cards";

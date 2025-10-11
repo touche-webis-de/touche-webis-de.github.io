@@ -1,4 +1,3 @@
-@use "sass:color";
 // Webis theme variable overrides
 
 $navbar-breakpoint: 850px;
@@ -8,7 +7,7 @@ $table-entry-target-color: #d9e7f7;
 
 // other assets-variables used in dependent scss
 $global-secondary-background: #323232;
-$global-secondary-background-lighter: color.adjust($global-secondary-background, $lightness: 6%);
+$global-secondary-background-lighter: lighten($global-secondary-background, 6);
 
 $global-large-font-size: 1.5rem !default;
 $text-lead-font-size: $global-large-font-size !default;
