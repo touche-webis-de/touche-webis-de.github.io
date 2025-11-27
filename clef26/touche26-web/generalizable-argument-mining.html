@@ -71,6 +71,67 @@ Generalizability will be measured using the macro F$_1$-score. To evaluate the s
 
 <h2 id="submission">Submission</h2>
 <p>We ask participants to use <a href="https://www.tira.io/">TIRA</a> for submissions. Each team can submit <b>up to 3</b> approaches to the task.</p>
+<p>The submissions for this task must be made as a <b>run submission</b>, meaning the test data will be provided in the same format as the training and development data, and participants must return their predictions.
+
+<h3 id="output">Output Format</h3>
+<p>The output of the submission needs to be a <b>JSONL</b> file. Each line in the file must be in the following <b>JSON</b> format:
+<ul>
+<li><code>dataset_id</code>: The ID of the sentence that was classified.</li>
+<li><code>label</code>: The label assigned by your classifier. <code>Argument</code> if the sentence is an argument and <code>No-Argument</code> otherwise.</li>
+</ul>
+<details>
+<summary>Example JSONL file (click to see)</summary>
+<pre><code>
+    {
+        "dataset_id": "5_1976_10_1213",
+        "label": "Argument"
+    }
+    {
+        "dataset_id": "LNR_G5B2_10.1007_s00267-008-9197-0_2",
+        "label": "No-Argument"
+    }
+</code></pre>
+</details>
+<h3 id="input">Input Format</h3>
+<p>The input for the submission will also be provided as a <b>JSONL</b> file, where each line follows the <b>JSON</b> structure below:</p>
+<ul>
+  <li><code>dataset</code>: The name of the dataset from which the example originates.</li>
+  <li><code>dataset_id</code>: The unique identifier of the text instance.</li>
+  <li><code>paper</code>: A link to the corresponding dataset paper.</li>
+  <li><code>document</code>: A link to the source document from which the sentence was extracted.</li>
+  <li><code>guidelines</code>: A link to the annotation guidelines used to label the sentence.</li>
+  <li><code>split</code>: The dataset split, either <code>train</code> or <code>dev</code>.</li>
+  <li><code>label</code>: The gold label, where <code>Argument</code> indicates an argument sentence and <code>No-Argument</code> otherwise.</li>
+  <li><code>sentence</code>: The sentence itself.</li>
+</ul>
+
+<p>Please note that the links provided under <code>paper</code> and <code>guidelines</code> point to <b>PDF</b> files, while <code>document</code> links to a <b>TXT</b> file. If a field is set to <code>-</code>, this indicates that no corresponding resource (e.g., no guidelines) is available.</p>
+
+<details>
+<summary>Example JSONL file (click to see)</summary>
+<pre><code>
+    {
+        "dataset": "ABSTRCT",
+        "dataset_id": "neoplasm_train_12569144_13",
+        "paper": "https://ecai2020.eu/papers/1470_paper",
+        "document": "https://raw.githubusercontent.com/TomatenMarc/GAIC-2026/refs/heads/main/datasets/ABSTRCT/data/neoplasm_train_12569144.txt",
+        "guidelines": "https://raw.githubusercontent.com/TomatenMarc/GAIC-2026/refs/heads/main/datasets/ABSTRCT/guidelines/AnnotationGuidelines.pdf",
+        "split": "train",
+        "label": "Argument",
+        "sentence": "Therefore, single-fraction radiotherapy should be considered as the palliative treatment of choice for cancer patients with painful bone metastases."
+    }
+    {
+        "dataset": "FINARG",
+        "dataset_id": "FB_Q3_2016_17273_7_0",
+        "paper": "https://aclanthology.org/2022.finnlp-1.22/",
+        "document": "https://raw.githubusercontent.com/TomatenMarc/GAIC-2026/refs/heads/main/datasets/FINARG/data/FB_Q3_2016_17273.txt",
+        "guidelines": "-",
+        "split": "dev",
+        "label": "No-Argument",
+        "sentence": "I can take the first one, Brian, on the time spent metric."
+    }
+</code></pre>
+</details>
 
 <h2><a id="related-work"></a>Related Work</h2>
 <ul>
