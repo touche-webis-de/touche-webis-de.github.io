@@ -83,11 +83,11 @@ Generalizability will be measured using the macro F$_1$-score. To evaluate the s
 <summary>Example JSONL file (click to see)</summary>
 <pre><code>
     {
-        "dataset_id": "5_1976_10_1213",
+        "dataset_id": "SCIARK-test-21",
         "label": "Argument"
     }
     {
-        "dataset_id": "LNR_G5B2_10.1007_s00267-008-9197-0_2",
+        "dataset_id": "USELEC-test-171",
         "label": "No-Argument"
     }
 </code></pre>
@@ -95,43 +95,44 @@ Generalizability will be measured using the macro F$_1$-score. To evaluate the s
 <h3 id="input">Input Format</h3>
 <p>The input for the submission will also be provided as a <b>JSONL</b> file, where each line follows the <b>JSON</b> structure below:</p>
 <ul>
-  <li><code>dataset</code>: The name of the dataset from which the example originates.</li>
-  <li><code>dataset_id</code>: The unique identifier of the text instance.</li>
+  <li><code>id</code>: A unique sentence identifier composed of a dataset prefix, the split name, and a running number (e.g., <code>ABSTRCT-train-1</code>).</li>
   <li><code>paper</code>: A link to the corresponding dataset paper.</li>
   <li><code>document</code>: A link to the source document from which the sentence was extracted.</li>
   <li><code>guidelines</code>: A link to the annotation guidelines used to label the sentence.</li>
-  <li><code>split</code>: The dataset split, either <code>train</code> or <code>dev</code>.</li>
   <li><code>label</code>: The gold label, where <code>Argument</code> indicates an argument sentence and <code>No-Argument</code> otherwise.</li>
   <li><code>sentence</code>: The sentence itself.</li>
 </ul>
-
-<p>Please note that the links provided under <code>paper</code> and <code>guidelines</code> point to <b>PDF</b> files, while <code>document</code> links to a <b>TXT</b> file. If a field is set to <code>-</code>, this indicates that no corresponding resource (e.g., no guidelines) is available.</p>
 
 <details>
 <summary>Example JSONL file (click to see)</summary>
 <pre><code>
     {
-        "dataset": "ABSTRCT",
-        "dataset_id": "neoplasm_train_12569144_13",
+        "id": "ABSTRCT-train-402",
         "paper": "https://ecai2020.eu/papers/1470_paper.pdf",
-        "document": "https://raw.githubusercontent.com/TomatenMarc/GAIC-2026/refs/heads/main/datasets/ABSTRCT/data/neoplasm_train_12569144.txt",
+        "document": "https://raw.githubusercontent.com/TomatenMarc/GAIC-2026/refs/heads/main/datasets/ABSTRCT/data/ABSTRCT-19.txt",
         "guidelines": "https://raw.githubusercontent.com/TomatenMarc/GAIC-2026/refs/heads/main/datasets/ABSTRCT/guidelines/AnnotationGuidelines.pdf",
-        "split": "train",
         "label": "Argument",
         "sentence": "Therefore, single-fraction radiotherapy should be considered as the palliative treatment of choice for cancer patients with painful bone metastases."
     }
     {
-        "dataset": "FINARG",
-        "dataset_id": "FB_Q3_2016_17273_7_0",
+        "id": "FINARG-dev-262",
         "paper": "https://aclanthology.org/2022.finnlp-1.22.pdf",
-        "document": "https://raw.githubusercontent.com/TomatenMarc/GAIC-2026/refs/heads/main/datasets/FINARG/data/FB_Q3_2016_17273.txt",
+        "document": "https://raw.githubusercontent.com/TomatenMarc/GAIC-2026/refs/heads/main/datasets/FINARG/data/FINARG-631.txt",
         "guidelines": "-",
-        "split": "dev",
         "label": "No-Argument",
         "sentence": "I can take the first one, Brian, on the time spent metric."
     }
 </code></pre>
 </details>
+
+<h4 id="Please Note">Please Note</h4>
+<ul>
+  <li>Links provided under <code>paper</code> and <code>guidelines</code> point to a <b>PDF</b> file.</li>
+  <li>Links provided under <code>document</code> point to a <b>TXT</b> file.</li>
+  <li>Context materials (e.g., documents) are currently hosted on <a href="https://github.com/TomatenMarc/GAIC-2026">GitHub</a> for example purposes (WIP; example links are stable).</li>
+  <li>The final data will be provided via <a href="https://www.tira.io/">TIRA</a> in a folder structure mirroring the repository layout (e.g., <code>./datasets/ABSTRCT/data/ABSTRCT-19.txt</code>).</li>
+  <li>Individual files for the train, dev, and test splits will also be provided via <a href="https://www.tira.io/">TIRA</a>.</li>
+</ul>
 
 <h2><a id="related-work"></a>Related Work</h2>
 <ul>
