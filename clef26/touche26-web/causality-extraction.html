@@ -20,9 +20,7 @@ description: Causality lies at the heart of human reasoning. This shared task ex
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#important_dates">Important Dates</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
-<!--
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
--->
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
@@ -58,10 +56,36 @@ description: Causality lies at the heart of human reasoning. This shared task ex
 </p>
 <p>Participants can choose to participate in one, two, or all three Sub-Tasks.</p>
 
-<!--
 <h2 id="data">Data</h2>
-<p>TODO</p>
--->
+<p>The dataset for all three of the Sub-Tasks will be published at a later date. For now, a <a href="https://zenodo.org/records/17776007">dummy dataset</a> is provided that uses the same format as the dataset. Participants can use the published splits to train and validate their submission. For evaluation, we will use a separate, unpublished test split with the same format.</p>
+
+<details>
+<summary>Data format (click to see)</summary>
+The dataset follows the <a href="https://huggingface.co/docs/hub/datasets-cards">Dataset Card Specification</a> which configures the file structure and tasks for each subtask and split. To open the dataset, it should be downloaded and unpacked from Zenodo. Then, <a href="https://huggingface.co/docs/datasets/">HF Datasets</a> can be used to open the dataset. The following Python code opens the dataset and prints the first entry in the training set for each subtask (<code>causality detection</code>, <code>causal candidate extraction</code>, and <code>causality identification</code>) to the console. 
+<pre><code>from pathlib import Path
+from datasets import load_dataset
+
+path_to_dataset = Path(".")  # Replace me with the actual path!
+
+dataset = load_dataset(str(path_to_dataset.absolute()), "causality detection")
+print("Causality Detection")
+print("Splits:", list(dataset.keys()))
+print("Example:", dataset["train"][0])
+print()
+
+dataset = load_dataset(str(path_to_dataset.absolute()), "causal candidate extraction")
+print("Causal Candidate Extraction")
+print("Splits:", list(dataset.keys()))
+print("Example:", dataset["train"][0])
+print()
+
+dataset = load_dataset(str(path_to_dataset.absolute()), "causality identification")
+print("Causality Identification")
+print("Splits:", list(dataset.keys()))
+print("Example:", dataset["train"][0])
+print()
+</code></pre>
+</details>
 
 <h2 id="submission">Submission</h2>
 <p>We ask participants to use <a href="https://www.tira.io/">TIRA</a> for result submissions.<!-- In case of problems or questions concerning TIRA, please use the <a href="https://www.tira.io/c/touche/">TIRA forum</a>.--> Each team can submit <b>up to one</b> approach per Sub-Task.</p>
