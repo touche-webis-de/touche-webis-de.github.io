@@ -1,7 +1,7 @@
 Touché @ CLEF 2026: Shared Tasks on Argumentation Systems (Fallacies, Causality, Generalizability, Advertisements)
 Call for Participation
 
-We'd like to invite you to participate in the following shared tasks at Touché 2026 held in conjunction with the CLEF conference in Jena, Germany in September.
+We invite you to participate in the following shared tasks at Touché 2026 held in conjunction with the CLEF conference.
 
 1. Fallacy Detection.
 Given an argument, determine whether it is fallacious and what type of fallacy it is.
@@ -22,6 +22,12 @@ https://touche.webis.de/clef25/touche25-web/advertisement-detection.html
 Find out more at https://touche.webis.de/clef26/touche26-web/
 and join our mailing list at https://groups.google.com/g/touche-lab for staying up to date.
 
+
+Awards
+--------------------------
+The best submission for each task will receive an award. In addition, our partners at Methods Hub (https://methodshub.gesis.org/) have agreed to provide priority support to the award-winning teams in developing their submissions into fully reusable software packages to maximize your impact.
+
+
 Important Dates
 --------------------------
 2025-05-07: Approaches submission deadline
@@ -29,6 +35,7 @@ Important Dates
 2025-06-30: Peer review notification
 2025-07-06: Camera-ready participant papers submission
 2025-09 21-24: CLEF Conference in Jena and Touché Workshop
+
 
 Links
 --------------------------
