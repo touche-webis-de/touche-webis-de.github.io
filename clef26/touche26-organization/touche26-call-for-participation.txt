@@ -30,11 +30,11 @@ The best submission for each task will receive an award. In addition, our partne
 
 Important Dates
 --------------------------
-2025-05-07: Approaches submission deadline
-2025-05-28: Participant paper submission
-2025-06-30: Peer review notification
-2025-07-06: Camera-ready participant papers submission
-2025-09 21-24: CLEF Conference in Jena and Touché Workshop
+2026-05-07: Approaches submission deadline
+2026-05-28: Participant paper submission
+2026-06-30: Peer review notification
+2026-07-06: Camera-ready participant papers submission
+2026-09 21-24: CLEF Conference in Jena and Touché Workshop
 
 
 Links
