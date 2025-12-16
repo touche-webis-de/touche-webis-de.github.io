@@ -74,18 +74,18 @@ Generalizability will be measured using the macro F$_1$-score. To evaluate the s
 <h3 id="output">Output Format</h3>
 <p>The output of the submission needs to be a <b>JSONL</b> file. Each line in the file must be in the following <b>JSON</b> format:
 <ul>
-<li><code>dataset_id</code>: The ID of the sentence that was classified.</li>
+<li><code>id</code>: The ID of the sentence that was classified.</li>
 <li><code>label</code>: The label assigned by your classifier. <code>Argument</code> if the sentence is an argument and <code>No-Argument</code> otherwise.</li>
 </ul>
 <details>
 <summary>Example JSONL file (click to see)</summary>
 <pre><code>
     {
-        "dataset_id": "SCIARK-test-21",
+        "id": "SCIARK-test-21",
         "label": "Argument"
     }
     {
-        "dataset_id": "USELEC-test-171",
+        "id": "USELEC-test-171",
         "label": "No-Argument"
     }
 </code></pre>
