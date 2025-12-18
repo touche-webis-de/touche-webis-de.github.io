@@ -74,13 +74,15 @@ argument schemes. We adopt argument schemes as defined in
 
 <p>
 The following example illustrates the Fallacy Detection task. Participants are given a short text
-from which arguments are extracted. For Sub-Tasks&nbsp;2 and&nbsp;3, the classification
-(<i>Non-Fallacy</i> or <i>Fallacy</i>) is already disclosed, allowing participants to focus on identifying
-the specific argument scheme or fallacy type. Participants may optionally provide a short
+from which arguments have been extracted. In Sub-Task&nbsp;1, participants must determine the
+value of the <code>classification</code> field. For Sub-Tasks&nbsp;2 and&nbsp;3, the classification
+(<i>Non-Fallacy</i> or <i>Fallacy</i>) is already provided, and participants are required to identify
+the corresponding argument scheme or fallacy type. Participants may optionally provide a short
 explanation to justify their decision.
 </p>
 
-<h3>Shortened Full Text (Raw, Simplified)</h3>
+
+<h3>Full Text </h3>
 
 <p>
 The United States has previously encouraged Chiang Kai-shek to withdraw his troops to Formosa,
@@ -98,40 +100,38 @@ Communist expansion. Forcing U.S. allies to leave them would encourage further a
 eventually threaten Formosa.
 </p>
 
-<h3>Extracted Arguments and Fallacy Determination</h3>
+<h3>Extracted Arguments and Classification</h3>
 
-<p><b>Argument&nbsp;1:</b><br>
-The U.S. should defend Formosa, and past U.S. actions support focusing defense there.
-</p>
 <p>
+<b>Argument&nbsp;1:</b><br>
+The U.S. should defend Formosa, and past U.S. actions support focusing defense there.<br>
 <b>Classification:</b> Non-Fallacy<br>
 <b>Type:</b> Argument Scheme – Practical Reasoning (Argument from Consequences)<br>
-<b>Explanation (optional):</b> The argument recommends a course of action (defending Formosa)
+<b>Explanation:</b> The argument recommends a course of action (defending Formosa)
 based on its consistency with past policy and its expected positive consequences, without relying
 on faulty or manipulative reasoning.
 </p>
 
-<p><b>Argument&nbsp;2:</b><br>
-Defending Quemoy and Matsu is unwise because respected leaders say the islands are not
-strategically defensible or essential.
-</p>
 <p>
+<b>Argument&nbsp;2:</b><br>
+Defending Quemoy and Matsu is unwise because respected leaders say the islands are not
+strategically defensible or essential.<br>
 <b>Classification:</b> Fallacy<br>
 <b>Type:</b> Appeal to Authority<br>
-<b>Explanation (optional):</b> The argument relies mainly on the opinions of well-known figures rather
+<b>Explanation:</b> The argument relies mainly on the opinions of well-known figures rather
 than on independent evidence or logical analysis.
 </p>
 
-<p><b>Argument&nbsp;3:</b><br>
-Giving up Quemoy and Matsu will lead to disaster like Korea and encourage Communist expansion
-toward Formosa.
-</p>
 <p>
+<b>Argument&nbsp;3:</b><br>
+Giving up Quemoy and Matsu will lead to disaster like Korea and encourage Communist expansion
+toward Formosa.<br>
 <b>Classification:</b> Fallacy<br>
 <b>Type:</b> Appeal to Emotion (Fear)<br>
-<b>Explanation (optional):</b> The argument uses fear of past disasters and emotionally charged
+<b>Explanation:</b> The argument uses fear of past disasters and emotionally charged
 language instead of clearly demonstrating that such outcomes will occur.
 </p>
+
     
 <h2 id="evaluation">Evaluation</h2>
 <p>Evaluation uses a held-out test set for each subtask and standard
