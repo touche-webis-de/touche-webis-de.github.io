@@ -75,7 +75,7 @@ Generalizability will be measured using the macro F$_1$-score. To evaluate the s
 <p>The output of the submission needs to be a <b>JSONL</b> file. Each line in the file must be in the following <b>JSON</b> format:
 <ul>
 <li><code>id</code>: The ID of the sentence that was classified.</li>
-<li><code>label</code>: The label assigned by your classifier. <code>Argument</code> if the sentence is an argument and <code>No-Argument</code> otherwise.</li>
+<li><code>label</code>: The label assigned by your classifier (<code>Argument</code> if the sentence is an argument and <code>No-Argument</code> otherwise).</li>
 </ul>
 <details>
 <summary>Example JSONL file (click to see)</summary>
@@ -127,9 +127,8 @@ Generalizability will be measured using the macro F$_1$-score. To evaluate the s
 <ul>
   <li>Links provided under <code>paper</code> and <code>guidelines</code> point to a <b>PDF</b> file.</li>
   <li>Links provided under <code>document</code> point to a <b>TXT</b> file.</li>
-  <li>Context materials (e.g., documents) are currently hosted on <a href="https://github.com/TomatenMarc/GAIC-2026">GitHub</a> for example purposes (WIP; example links are stable).</li>
-  <li>The final data will be provided via <a href="https://www.tira.io/">TIRA</a> in a folder structure mirroring the repository layout (e.g., <code>./ABSTRCT/data/ABSTRCT-19.txt</code>).</li>
-  <li>Individual files for the train, dev, and test splits will also be provided via <a href="https://www.tira.io/">TIRA</a>.</li>
+  <li>The data will be distributed via <a href="https://www.tira.io/">TIRA</a>, with a folder structure mirroring the corresponding <a href="https://github.com/TomatenMarc/GAIC-2026">GitHub repository</a>.</li>
+  <li>Separate files for the <code>train</code>, <code>dev</code>, and <code>test</code> splits will be provided, with paths relative to the <code>data/</code> directory (e.g., <code>./ABSTRCT/data/ABSTRCT-19.txt</code>).</li>
 </ul>
 
 <h2><a id="related-work"></a>Related Work</h2>
