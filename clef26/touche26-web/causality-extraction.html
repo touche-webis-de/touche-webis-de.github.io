@@ -33,7 +33,7 @@ description: Causality lies at the heart of human reasoning. This shared task ex
 <ul>
 <li>Sub-Task 1: Given a natural language text, classify whether it contains causal information or not.</li>
 <li>Sub-Task 2: Given a natural language text, identify text spans that are good candidates to express events or concepts that are stated to partake in a causal relationship.</li>
-<li>Sub-Task 3: Given a natural language text and a candidate pair of events or concepts, E<sub>1</sub> and E<sub>2</sub>, classify the type of causal relationship expressed between E<sub>1</sub> and E<sub>2</sub>.</li>
+<li>Sub-Task 3: Given a natural language text and a candidate pair of events or concepts, E<sub>0</sub> and E<sub>1</sub>, classify the type of causal relationship expressed between E<sub>0</sub> and E<sub>1</sub>.</li>
 <li>Communication: [mailing lists: <a href="https://groups.google.com/g/touche-lab">participants</a>, <a href="mailto:touche@webis.de">organizers</a>] </li>
 </ul>
 
@@ -49,17 +49,17 @@ description: Causality lies at the heart of human reasoning. This shared task ex
 <ol>
 <li>Classify for the entire sentence if contains causal information or not.</li>
 <li>Identify text-spans that are good candidates to partake in a claimed or refuted causal relationship.</li>
-<li>Given a pair of candidates, classify whether the sentence supports (procausal) or refutes (concausal) a causal relationship, or makes no statement how the pair relates (uncausal).</li>
+<li>Given a pair of candidates, classify whether the sentence supports a causal relationship, refutes it (countercausal), or makes no statement how the pair relates (uncausal).</li>
 </ol>
 </p>
 <p>Participants can choose to participate in one, two, or all three Sub-Tasks.</p>
 
 <h2 id="data">Data</h2>
-<p>The dataset for all three of the Sub-Tasks will be published at a later date. For now, a <a href="https://zenodo.org/records/17776007">dummy dataset</a> is provided that uses the same format as the dataset. Participants can use the published splits to train and validate their submission. For evaluation, we will use a separate, unpublished test split with the same format.</p>
+<p>The dataset for all three of the Sub-Tasks is the <a href="https://zenodo.org/records/18183665">Countercausal News Corpus</a>. Participants can use the published splits to train and validate their submission. For evaluation, we will use a separate, unpublished test split with the same format.</p>
 
 <details>
 <summary>Data format (click to see)</summary>
-The dataset follows the <a href="https://huggingface.co/docs/hub/datasets-cards">Dataset Card Specification</a> which configures the file structure and tasks for each subtask and split. To open the dataset, it should be downloaded and unpacked from Zenodo. Then, <a href="https://huggingface.co/docs/datasets/">HF Datasets</a> can be used to open the dataset. The following Python code opens the dataset and prints the first entry in the training set for each subtask (<code>causality detection</code>, <code>causal candidate extraction</code>, and <code>causality identification</code>) to the console. 
+To open the dataset, it should be downloaded and unpacked from Zenodo. Then you may use <a href="https://huggingface.co/docs/datasets/">HF Datasets</a> to open the dataset, since it follows the follows the <a href="https://huggingface.co/docs/hub/datasets-cards">Dataset Card Specification</a>. The following Python code opens the dataset and prints the first entry in the training set for each subtask (<code>causality detection</code>, <code>causal candidate extraction</code>, and <code>causality identification</code>) to the console.
 <pre><code>from pathlib import Path
 from datasets import load_dataset
 
@@ -81,6 +81,28 @@ dataset = load_dataset(str(path_to_dataset.absolute()), "causality identificatio
 print("Causality Identification")
 print("Splits:", list(dataset.keys()))
 print("Example:", dataset["train"][0])
+print()
+</code></pre>
+
+Alternatively to HF Datasets, you can also use pandas or parse the <code>&lt;task&gt;-&lt;split&gt;.jsonl</code> files yourself:
+<pre><code>from pathlib import Path
+import pandas as pd
+
+path_to_dataset = Path("./dataset")  # Replace me with the actual path!
+
+dataset = pd.read_json(path_to_dataset / "causality-detection-train.jsonl", lines=True)
+print("Causality Detection")
+print("Example:", dict(dataset.iloc[0]))
+print()
+
+dataset = pd.read_json(path_to_dataset / "causal-candidate-extraction-train.jsonl", lines=True)
+print("Causal Candidate Extraction")
+print("Example:", dict(dataset.iloc[0]))
+print()
+
+dataset = pd.read_json(path_to_dataset / "causality-identification-train.jsonl", lines=True)
+print("Causality Identification")
+print("Example:", dict(dataset.iloc[0]))
 print()
 </code></pre>
 </details>
@@ -127,7 +149,7 @@ print()
 <p>The output of the code submission needs to be a JSONL file. Each line in the JSONL file should be in the following JSON format:</p>
 <ul>
 <li><code>id</code>: The ID of the text that was classified.</li>
-<li><code>label</code>: The label assigned by your classifier. <code>0</code> if the marked spans (ARG0 and ARG1) are uncausal (nothing can be said about how ARG0 causally influences ARG1), <code>1</code> if they are pro-causal (ARG0 causes ARG1) and <code>2</code> if they are con-causal (ARG0 does not cause ARG1).</li>
+<li><code>label</code>: The label assigned by your classifier. <code>0</code> if the marked spans (e0 and e1) are uncausal (nothing can be said about how e0 causally influences e1), <code>1</code> if they are causal (e0 causes e1) and <code>2</code> if they are countercausal (e0 does not cause e1).</li>
 <li><code>tag</code>: A tag that identifies your group and the method you used to produce the run.</li>
 </ul>
 <details>
@@ -145,7 +167,7 @@ print()
 <p>Sub-Task 1 is evaluated as a binary classification task using the F<sub>1</sub>-score.</p>
 
 <h3>Evaluation for Sub-Task 2</h3>
-<p>Sub-Task 2 is evaluated as a token classification problem with BIO-tags using the F<sub>1</sub>-score.</p>
+<p>Sub-Task 2 is evaluated using F<sub>1</sub>-score.</p>
 
 <h3>Evaluation for Sub-Task 3</h3>
 <p>Sub-Task 3 is evaluated as a ternary classification task using the F<sub>1</sub>-score.</p>
