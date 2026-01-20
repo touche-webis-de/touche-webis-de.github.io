@@ -56,16 +56,15 @@ description: 👉 To be an argument or not to be an argument — that is the que
 <h2 id="task">Task</h2>
 <p>Given a sentence from a dataset along with metadata about its provenance, such as the source text and the dataset's annotation guidelines, predict whether the sentence can be annotated as an argument or not. In particular, participants are encouraged to develop robust systems that generalize beyond lexical shortcuts to unseen datasets and investigate ways to exploit rich context information for this purpose.</p>
 
-
-
 <h2 id="data">Data</h2>
-<p>For the task, training data will be provided as a subset of the 17 benchmark datasets totaling about 345k labeled sentences and identified as most relevant for argument identification in <a href="https://aclanthology.org/2025.acl-long.1164/">this paper</a>.
-This subset includes sentences each labeled as <i>argument</i> or <i>no-argument</i>, according to the respective dataset annotations, along with accompanying metadata such as IDs, generated training and development splits, links to original data sources and annotation guidelines, as well as the scripts used for data preparation.</p>
+<p>A subset from 10 established, publicly available benchmark datasets (<a href="https://ecai2020.eu/papers/1470_paper">ABSTRCT</a>, <a href="https://aclanthology.org/W19-4516/">ACQUA</a>, <a href="https://aclanthology.org/W15-4631/">AEC</a>, <a href="https://aclanthology.org/W16-3636/">AFS</a>, <a href="https://aclanthology.org/W18-5206/">ARGUMINSCI</a>, <a href="https://aclanthology.org/2022.finnlp-1.22/">FINARG</a>, <a href="https://aclanthology.org/2022.acl-long.162/">IAM</a>, <a href="https://aclanthology.org/J17-3005/">PE</a>, <a href="https://aclanthology.org/2021.argmining-1.10/">SCIARK</a>, <a href="https://aclanthology.org/P19-1463/">USELEC</a>), which <a href="https://aclanthology.org/2025.acl-long.1164/">this paper</a> considers most relevant for argument identification, will be used.
+Each consists of 1.7k labeled sentences, partitioned with a 60/20/20 ratio into training, development, and test splits.
+Additionally, a new evaluation-only dataset will be released.
+Overall, the data includes sentences labeled as <i>Argument</i> or <i>No-Argument</i>, according to the respective dataset annotations.
+Accompanying metadata includes sentence IDs, generated splits, and (where available) context-relevant information via the original data sources, as well as annotation guidelines and corresponding papers.</p>
 
 <h2 id="evaluation">Evaluation</h2>
-<p>The systems will be evaluated on test data that differs from the development data. This includes partially or fully held-out portions of the datasets used for sampling, as well as newly created data reflecting diverse domains and annotation guidelines. This setup addresses the risk of data contamination in LLMs and for participants’ potential use of additional datasets during training.
-
-Generalizability will be measured using the macro F$_1$-score. To evaluate the systems, the macro F$_1$-score will be specified for each test dataset, along with the overall average of all these values.</p>
+<p>Systems will primarily be evaluated on the newly created, evaluation-only dataset. For further insights, evaluation results on the established test splits from the held-out benchmark data will also be provided but not used for ranking. This setup addresses the risk of data contamination in LLMs and for participants’ potential use of additional datasets during training. To evaluate the systems for their generalizability, the macro F$_1$-score will be measured for each test split, along with the overall average of all these values.</p>
 
 <h2 id="submission">Submission</h2>
 <p>We ask participants to use <a href="https://www.tira.io/">TIRA</a> for submissions. Each team can submit <b>up to 3</b> approaches to the task.</p>
@@ -127,8 +126,10 @@ Generalizability will be measured using the macro F$_1$-score. To evaluate the s
 <ul>
   <li>Links provided under <code>paper</code> and <code>guidelines</code> point to a <b>PDF</b> file.</li>
   <li>Links provided under <code>document</code> point to a <b>TXT</b> file.</li>
-  <li>The data will be distributed via <a href="https://www.tira.io/">TIRA</a>, with a folder structure mirroring the corresponding <a href="https://github.com/TomatenMarc/GAIC-2026">GitHub repository</a>.</li>
-  <li>Separate files for the <code>train</code>, <code>dev</code>, and <code>test</code> splits will be provided, with paths relative to the <code>data/</code> directory (e.g., <code>./ABSTRCT/data/ABSTRCT-1.txt</code>).</li>
+  <li>The respective <code>train/dev/test</code> splits will be published sequentially in <code>./data/</code> as separate files (e.g., <code>train.jsonl</code>).</li>
+  <li>Each <code>train/dev/test</code> split will have a separate file containing the labels (e.g., <code>train_labels.jsonl</code>).</li>
+  <li>The paths in each split are relative to the <code>./data/</code> working directory and point to the respective files (e.g., <code>./ABSTRCT/data/ABSTRCT-1.txt</code>).</li>
+  <li>The data will be distributed via <a href="https://www.tira.io/">TIRA</a>, but is already published in this <a href="https://github.com/TomatenMarc/GAIC-2026">GitHub repository</a>.</li>
 </ul>
 
 <h2><a id="related-work"></a>Related Work</h2>
