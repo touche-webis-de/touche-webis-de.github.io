@@ -21,6 +21,8 @@ description: Shared task on detecting whether an argument is sound (and why).
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#important_dates">Important Dates</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#remarks">Remarks</a></li>
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#output-format">Output Format</a></li>
 <!--
 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
 -->
@@ -33,10 +35,11 @@ description: Shared task on detecting whether an argument is sound (and why).
 <div class="uk-container uk-margin-medium">
 
 <h2 id="synopsis">Synopsis</h2>
+<p>The task consists of three sub-tasks:</p>
 <ul>
-<li>Sub-Task 1: Given an argument, determine whether it is fallacious.</li>
-<li>Sub-Task 2: Given a non-fallacious argument, determine the argument scheme it follows.</li>
-<li>Sub-Task 3: Given a fallacy, identify the specific type of fallacy.</li>
+<li>Sub-Task 1 &mdash; Fallacy Detection: Given an argument, determine whether it is fallacious.</li>
+<li>Sub-Task 2 &mdash; Fallacy Classification: Given a fallacious argument, identify the specific type of fallacy.</li>
+<li>Sub-Task 3 &mdash; Argument Scheme Classification: Given a non-fallacious argument, determine which argumentation scheme it follows.</li>
 <li>Communication: [mailing lists: <a href="https://groups.google.com/g/touche-lab">participants</a>, <a href="mailto:touche@webis.de">organizers</a>] </li>
 </ul>
 
@@ -44,7 +47,20 @@ description: Shared task on detecting whether an argument is sound (and why).
 <a href="https://groups.google.com/g/touche-lab" class="uk-button uk-button-primary">Join the Touché mailing list</a>
 
 <h2 id="important-dates" class="uk-margin-large-top">Important Dates</h2>
-<p>See the <a href="https://clef2026.clef-initiative.eu/dates/#participating-in-a-lab">CLEF 2026 homepage</a>.</p>
+<table class="uk-table uk-table-divider uk-table-small">
+<thead>
+<tr><th>Event</th><th>Date</th></tr>
+</thead>
+<tbody>
+<tr><td>Participant Registration Opens</td><td>November 17, 2025</td></tr>
+<tr><td>Participant Registration Closes</td><td>April 23, 2026</td></tr>
+<tr><td>Run Submission</td><td><s>May 7, 2026</s> &mdash; extended to <b>May 21, 2026</b></td></tr>
+<tr><td>Notebook Paper Submission</td><td>May 28, 2026</td></tr>
+<tr><td>Notebook Paper Notification</td><td>June 30, 2026</td></tr>
+<tr><td>Notebook Camera Ready</td><td>July 6, 2026</td></tr>
+</tbody>
+</table>
+<p>All times are in Anywhere on Earth (AoE) timezone. See also the <a href="https://clef2026.clef-initiative.eu/dates/#participating-in-a-lab">CLEF 2026 homepage</a>.</p>
 <p>Subscribe to the <a href="https://groups.google.com/g/touche-lab">Touché mailing list</a> to receive notifications.</p>
 
 <h2 id="task">Task</h2>
@@ -54,85 +70,144 @@ that text. The arguments constitute the main units of analysis.
 </p>
 <p>
 In <b>Sub-Task&nbsp;1</b>, participants must determine whether a given argument is fallacious or not.
-In <b>Sub-Task&nbsp;2</b>, it is known that the argument is <i>non-fallacious</i>, and participants must
-identify the <b>argument scheme</b> it follows.
-In <b>Sub-Task&nbsp;3</b>, it is known that the argument is <i>fallacious</i>, and participants must
+In <b>Sub-Task&nbsp;2</b>, it is known that the argument is <i>fallacious</i>, and participants must
 identify the <b>specific type of fallacy</b>.
+In <b>Sub-Task&nbsp;3</b>, it is known that the argument is <i>non-fallacious</i>, and participants must
+identify the <b>argument scheme</b> it follows.
 </p>
+<p>Participants can choose to participate in any one, any two, or all three sub-tasks.</p>
 <p>
-This first edition of the task focuses on the five most frequently occurring types of fallacies and
-argument schemes. We adopt argument schemes as defined in
-<a href="#macagno22">Macagno’s framework</a>.
+This first edition of the task focuses on the most frequently occurring types of fallacies and
+argument schemes. Rather than predicting individual argumentation schemes directly, we adopt the
+two orthogonal dimensions (<code>argument_goal</code> and <code>argument_basis</code>) from
+<a href="#macagno22">Macagno&rsquo;s framework</a>, which group many diverse schemes by shared
+underlying properties (see <a href="#remarks">Remarks</a>).
 </p>
 
     
 <h2 id="data">Data</h2>
-<p>The dataset comprises over 1,000 examples collected from student quiz websites, online debate platforms, and synthetically generated arguments.</p>
-
-
-<h2 id="example">Example</h2>
-
 <p>
-The following example illustrates the Fallacy Detection task. Participants are given a short text
-from which arguments have been extracted. In Sub-Task&nbsp;1, participants must determine the
-value of the <code>classification</code> field. For Sub-Tasks&nbsp;2 and&nbsp;3, the classification
-(<i>Non-Fallacy</i> or <i>Fallacy</i>) is already provided, and participants are required to identify
-the corresponding argument scheme or fallacy type. Participants may optionally provide a short
-explanation to justify their decision.
+The data is taken from <a href="#sahai21">Sahai et al.</a> and is called <b>informal_fallacies</b>.
+It is the sole source of fallacies used in this task.
+The dataset is going to be released soon.
+</p>
+<p>Each data entry contains the following fields:</p>
+
+<table class="uk-table uk-table-divider uk-table-small">
+<thead>
+<tr><th>Field</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>id</code></td><td>Unique identifier for the entry.</td></tr>
+<tr><td><code>text_raw</code></td><td>The original Reddit comment.</td></tr>
+<tr><td><code>text_raw_parent</code></td><td>The parent comment of <code>text_raw</code>.</td></tr>
+<tr><td><code>text_raw_title</code></td><td>Title of the thread <code>text_raw</code> originates from.</td></tr>
+<tr><td><code>text_base</code></td><td>Self-contained rewrite of <code>text_raw</code> that incorporates relevant information from <code>text_raw_parent</code> and <code>text_raw_title</code>.</td></tr>
+<tr><td><code>argument_base</code></td><td><code>{claim, supports}</code> extracted from <code>text_base</code>, making the argument structure explicit.</td></tr>
+<tr><td><code>text_enhanced</code></td><td>Rewrite of <code>text_base</code> that explicitly surfaces fallacy and scheme information.</td></tr>
+<tr><td><code>argument_enhanced</code></td><td><code>{claim, supports}</code> extracted from <code>text_enhanced</code>.</td></tr>
+<tr><td><code>fallacy_exists</code></td><td>Binary label (0/1) indicating whether the entry contains a fallacy &mdash; used in <b>Sub-Task&nbsp;1 (Fallacy Detection)</b>.</td></tr>
+<tr><td><code>fallacy_type</code></td><td>The specific type of fallacy &mdash; used in <b>Sub-Task&nbsp;2 (Fallacy Classification)</b>.</td></tr>
+<tr><td><code>classification</code></td><td><code>{argument_goal, argument_basis}</code> &mdash; used in <b>Sub-Task&nbsp;3 (Argument Scheme Classification)</b>.</td></tr>
+</tbody>
+</table>
+
+<h2 id="remarks">Remarks</h2>
+
+<h3>Claim and Supports</h3>
+<p>
+An argument generally consists of a conclusion and one or more premises. Because real-world arguments
+are informal, we use the term <b>support</b> rather than <i>premise</i> to emphasize that a support
+may be partial and may not fully justify the claim.
 </p>
 
-
-<h3>Full Text </h3>
-
+<h3>Base vs. Enhanced Fields</h3>
 <p>
-The United States has previously encouraged Chiang Kai-shek to withdraw his troops to Formosa,
-and I strongly believe Formosa should be defended. Quemoy and Matsu are small islands close to
-Communist China and far from Formosa. Many military and government leaders have argued that
-these islands are not strategically defensible or necessary for Formosa’s security. Defending them
-could pull the United States into a larger war, possibly even a world war, so the defense line should
-be drawn around Formosa itself.
+Arguments on Reddit are often unclear and rely on background assumptions. The <code>text_base</code>
+field addresses this by producing a self-contained version of the argument that integrates context
+from the parent comment and thread title.
+</p>
+<p>
+Fallacy detection and argument scheme detection are both difficult tasks. To make the data more
+tractable, we additionally provide the <b>enhanced</b> fields (<code>text_enhanced</code>,
+<code>argument_enhanced</code>), which have been rewritten with knowledge of the corresponding
+scheme and fallacy labels.
+</p>
+<p>
+Participants may choose which fields to use. Systems that rely <b>only on the original
+(non-enhanced) data</b> are evaluated separately from systems that use the enhanced fields.
 </p>
 
+<h3>Argument Scheme Classification (Sub-Task&nbsp;3)</h3>
 <p>
-The opposing view argues that abandoning these islands would repeat the mistake made before the
-Korean War. The islands matter not because of their size, but because they represent resistance to
-Communist expansion. Forcing U.S. allies to leave them would encourage further aggression and
-eventually threaten Formosa.
+The <code>argument_goal</code> and <code>argument_basis</code> dimensions are drawn from
+<a href="#macagno22">Macagno&rsquo;s</a> classification of argumentation schemes. These are <b>not</b> argumentation schemes themselves
+&mdash; rather, they are two orthogonal dimensions that group many diverse schemes together
+according to shared underlying properties. We adopt them as the two fundamental axes for this task.
 </p>
+<p><b><code>argument_goal</code></b> &mdash; the <i>purpose</i> of the argument:</p>
+<ul>
+<li><b>Practical</b> &mdash; arguments aimed at assessing the <i>desirability of a course of action</i>.</li>
+<li><b>Epistemic</b> &mdash; arguments aimed at establishing the <i>acceptability of a judgment about a state of affairs</i>.</li>
+</ul>
+<p><b><code>argument_basis</code></b> &mdash; the kind of <i>means</i> the argument uses to support the claim:</p>
+<ul>
+<li><b>Internal</b> &mdash; based on properties of the subject matter itself (e.g., causes, consequences, definitions, values).</li>
+<li><b>External</b> &mdash; based on the source of the statement (e.g., authority, expertise, popular opinion, ad hominem).</li>
+</ul>
 
-<h3>Extracted Arguments and Classification</h3>
+<h2 id="output-format">Output Format</h2>
+<p>Submissions must be a <b>JSONL file</b>, with one JSON object per line. Each object must contain the following fields:</p>
 
-<p>
-<b>Argument&nbsp;1:</b><br>
-The U.S. should defend Formosa, and past U.S. actions support focusing defense there.<br>
-<b>Classification:</b> Non-Fallacy<br>
-<b>Type:</b> Argument Scheme – Practical Reasoning (Argument from Consequences)<br>
-<b>Explanation:</b> The argument recommends a course of action (defending Formosa)
-based on its consistency with past policy and its expected positive consequences, without relying
-on faulty or manipulative reasoning.
-</p>
+<table class="uk-table uk-table-divider uk-table-small">
+<thead>
+<tr><th>Field</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>task</code></td><td>The sub-task the prediction corresponds to. One of: <code>fallacy_detection</code>, <code>fallacy_classification</code>, <code>scheme_classification</code>.</td></tr>
+<tr><td><code>id</code></td><td>The ID of the argument being classified.</td></tr>
+<tr><td><code>label</code></td><td>The label predicted by your system (see allowed labels per sub-task below).</td></tr>
+</tbody>
+</table>
 
-<p>
-<b>Argument&nbsp;2:</b><br>
-Defending Quemoy and Matsu is unwise because respected leaders say the islands are not
-strategically defensible or essential.<br>
-<b>Classification:</b> Fallacy<br>
-<b>Type:</b> Appeal to Authority<br>
-<b>Explanation:</b> The argument relies mainly on the opinions of well-known figures rather
-than on independent evidence or logical analysis.
-</p>
+<h3>Allowed Labels per Sub-Task</h3>
 
-<p>
-<b>Argument&nbsp;3:</b><br>
-Giving up Quemoy and Matsu will lead to disaster like Korea and encourage Communist expansion
-toward Formosa.<br>
-<b>Classification:</b> Fallacy<br>
-<b>Type:</b> Appeal to Emotion (Fear)<br>
-<b>Explanation:</b> The argument uses fear of past disasters and emotionally charged
-language instead of clearly demonstrating that such outcomes will occur.
-</p>
+<p><b>Sub-Task&nbsp;1 &mdash; <code>fallacy_detection</code>:</b></p>
+<ul>
+<li><code>fallacy</code></li>
+<li><code>non-fallacy</code></li>
+</ul>
 
-    
+<p><b>Sub-Task&nbsp;2 &mdash; <code>fallacy_classification</code>:</b></p>
+<ul>
+<li><code>authority</code></li>
+<li><code>black-white</code></li>
+<li><code>hasty_generalization</code></li>
+<li><code>natural</code></li>
+<li><code>population</code></li>
+<li><code>slippery_slope</code></li>
+<li><code>tradition</code></li>
+<li><code>worse_problems</code></li>
+</ul>
+
+<p><b>Sub-Task&nbsp;3 &mdash; <code>scheme_classification</code>:</b></p>
+<p>Labels are the combination of <code>argument_goal</code> and <code>argument_basis</code>, joined by a hyphen:</p>
+<ul>
+<li><code>practical-internal</code></li>
+<li><code>practical-external</code></li>
+<li><code>epistemic-internal</code></li>
+<li><code>epistemic-external</code></li>
+</ul>
+
+<h3>Example</h3>
+<pre><code>{"task": "fallacy_detection", "id": "informal_fallacies-test-171", "label": "fallacy"}
+{"task": "fallacy_classification", "id": "informal_fallacies-test-204", "label": "hasty_generalization"}
+{"task": "scheme_classification", "id": "informal_fallacies-test-309", "label": "practical-internal"}
+{"task": "scheme_classification", "id": "informal_fallacies-test-412", "label": "epistemic-external"}</code></pre>
+
+<p>If you have any questions, please do not hesitate to contact us.</p>
+
+
 <h2 id="evaluation">Evaluation</h2>
 <p>Evaluation uses a held-out test set for each subtask and standard
 evaluation metrics: precision, recall, and F1-score.</p>
@@ -147,11 +222,18 @@ evaluation metrics: precision, recall, and F1-score.</p>
 <li id="macagno22">Fabrizio Macagno,
 <a href="https://doi.org/10.1016/j.pragma.2022.01.022">Argumentation profiles and the manipulation of common ground. The arguments of populist leaders on Twitter</a>,
 Journal of Pragmatics, Volume 191, 2022, Pages 67-82, ISSN 0378-2166.</li>
+<li id="sahai21">Saumya Sahai, Oana Balalau, and Roxana Horincar,
+<a href="https://aclanthology.org/2021.acl-long.53">Breaking Down the Invisible Wall of Informal Fallacies in Online Discussions</a>,
+Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics
+and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers),
+August 2021, pp. 644&ndash;657,
+doi:<a href="https://doi.org/10.18653/v1/2021.acl-long.53">10.18653/v1/2021.acl-long.53</a>.</li>
 </ul>
 
 <h2 id="task-committee">Task Committee</h2>
 <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
 {% include people-cards/heinrich.html gender="male" %}
+{% include people-cards/mathews.html gender="male" %}
 {% include people-cards/froebe.html gender="male" %}
 {% include people-cards/stein.html gender="male" %}
 {% include people-cards/kiesel.html gender="male" %}
