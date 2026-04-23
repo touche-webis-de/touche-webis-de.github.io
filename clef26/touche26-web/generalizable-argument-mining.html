@@ -49,6 +49,10 @@ description: 👉 To be an argument or not to be an argument — that is the que
 <a href="https://groups.google.com/g/touche-lab" class="uk-button uk-button-primary">Join the Touché mailing list</a>
 
 <h2 id="important-dates" class="uk-margin-large-top">Important Dates</h2>
+<ul>
+    <li>14.01.26: The training and development data is released.</li>
+    <li>24.04.26: The test data is released.</li>
+</ul>
 <p>See the <a href="https://clef2026.clef-initiative.eu/dates/#participating-in-a-lab">CLEF 2026 homepage</a>.</p>
 <p>Subscribe to the <a href="https://groups.google.com/g/touche-lab">Touché mailing list</a> to receive notifications.</p>
 
@@ -64,7 +68,8 @@ Overall, the data includes sentences labeled as <i>Argument</i> or <i>No-Argumen
 Accompanying metadata includes sentence IDs, generated splits, and (where available) context-relevant information via the original data sources, as well as annotation guidelines and corresponding papers.</p>
 
 <h2 id="evaluation">Evaluation</h2>
-<p>Systems will primarily be evaluated on the newly created, evaluation-only dataset. For further insights, evaluation results on the established test splits from the held-out benchmark data will also be provided but not used for ranking. This setup addresses the risk of data contamination in LLMs and for participants’ potential use of additional datasets during training. To evaluate the systems for their generalizability, the macro F$_1$-score will be measured for each test split, along with the overall average of all these values.</p>
+<p>Systems will primarily be evaluated on the newly created, evaluation-only dataset.
+    This dataset comprises 340 test sentences from the enhanced and anonymized <a href="https://aclanthology.org/2024.lrec-main.1349/">TACO</a> dataset, each annotated with its original labels as well as labels aligned with the <a href="https://aclanthology.org/J17-3005/">PE</a> and <a href="https://aclanthology.org/P19-1463/">USELEC</a> guidelines (1.020 in total). For further insights, evaluation results on the established test splits from the held-out benchmark data will also be provided but not used for ranking. This setup addresses the risk of data contamination in LLMs and for participants’ potential use of additional datasets during training. To evaluate the systems for their generalizability, the macro F$_1$-score will be measured for each test split, along with the overall average of all these values.</p>
 
 <h2 id="submission">Submission</h2>
 <p>We ask participants to use <a href="https://www.tira.io/">TIRA</a> for submissions. Each team can submit <b>up to 3</b> approaches to the task.</p>
@@ -90,7 +95,7 @@ Accompanying metadata includes sentence IDs, generated splits, and (where availa
 </code></pre>
 </details>
 <h3 id="input">Input Format</h3>
-<p>The input for the submission will also be provided as a <b>JSONL</b> file, where each line follows the <b>JSON</b> structure below:</p>
+<p>The input for the submission will also be provided as <b>JSONL</b> files (e.g., <code>train.jsonl</code> and <code>train_labels.jsonl</code>), which can be combined to follow the <b>JSON</b> structure below:</p>
 <ul>
   <li><code>id</code>: A unique sentence identifier composed of a dataset prefix, the split name, and a running number (e.g., <code>ABSTRCT-train-1</code>).</li>
   <li><code>paper</code>: A link to the corresponding dataset paper.</li>
@@ -119,6 +124,14 @@ Accompanying metadata includes sentence IDs, generated splits, and (where availa
         "label": "No-Argument",
         "sentence": "I can take the first one, Brian, on the time spent metric."
     }
+    {
+        "id":"TAUS-test-90",
+        "paper":"./TACO/paper/TACO.pdf",
+        "document":"./TACO/data/TACO-19.txt",
+        "guidelines":"./TAUS/guidelines/TAUS-Guidelines.pdf",
+        "label": "No-Argument",
+        "sentence":"@Mrs._Diane_Reyes Theon killed was the cherry on top."
+    }
 </code></pre>
 </details>
 
@@ -129,7 +142,10 @@ Accompanying metadata includes sentence IDs, generated splits, and (where availa
   <li>The respective <code>train/dev/test</code> splits will be published sequentially in <code>./data/</code> as separate files (e.g., <code>train.jsonl</code>).</li>
   <li>Each <code>train/dev/test</code> split will have a separate file containing the labels (e.g., <code>train_labels.jsonl</code>).</li>
   <li>The paths in each split are relative to the <code>./data/</code> working directory and point to the respective files (e.g., <code>./ABSTRCT/data/ABSTRCT-1.txt</code>).</li>
+  <li>The three <a href="https://aclanthology.org/2024.lrec-main.1349/">TACO</a> test variants (<a href="https://aclanthology.org/2024.lrec-main.1349/">TACO</a>, <a href="https://aclanthology.org/2024.lrec-main.1349/">TACO</a>-<a href="https://aclanthology.org/J17-3005/">PE</a>, <a href="https://aclanthology.org/2024.lrec-main.1349/">TACO</a>-<a href="https://aclanthology.org/P19-1463/">USELEC</a>) will accompany the held-out data and use standard IDs (e.g., <code>taco-test-1</code>, <code>tape-test-1</code>, <code>taus-test-1</code>).</li>
+  <li>For <a href="https://aclanthology.org/2024.lrec-main.1349/">TACO</a>-<a href="https://aclanthology.org/J17-3005/">PE</a> and <a href="https://aclanthology.org/2024.lrec-main.1349/">TACO</a>-<a href="https://aclanthology.org/P19-1463/">USELEC</a>, the original guidelines were applied, and deviations are documented respectively (e.g., <code>./TAPE/guidelines/TAPE-Guidelines.pdf</code>).</li>
   <li>The data will be distributed via <a href="https://www.tira.io/">TIRA</a>, but is already published in this <a href="https://github.com/TomatenMarc/GAIC-2026">GitHub repository</a>.</li>
+  <li>If you encounter any issues, please feel free to contact any of the maintainers.</li>
 </ul>
 
 <h2><a id="related-work"></a>Related Work</h2>
