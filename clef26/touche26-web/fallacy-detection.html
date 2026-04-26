@@ -172,7 +172,7 @@ according to shared underlying properties. We adopt them as the two fundamental 
 
     
 <h2 id="output-format">Output Format</h2>
-<p>Submissions must be a <b>JSONL file</b>, with one JSON object per line. Each object must contain the following fields:</p>
+<p>For each sub-task, participants submit a separate <b>JSONL file</b> (one JSON object per line). Each object must contain the following fields:</p>
 
 <table class="uk-table uk-table-divider uk-table-small">
 <thead>
@@ -182,6 +182,8 @@ according to shared underlying properties. We adopt them as the two fundamental 
 <tr><td><code>task</code></td><td>The sub-task the prediction corresponds to. One of: <code>fallacy_detection</code>, <code>fallacy_classification</code>, <code>scheme_classification</code>.</td></tr>
 <tr><td><code>id</code></td><td>The ID of the argument being classified.</td></tr>
 <tr><td><code>label</code></td><td>The label predicted by your system (see allowed labels per sub-task below).</td></tr>
+<tr><td><code>tag</code></td><td>Either <code>base</code> or <code>enhanced</code>, indicating whether the system used only the original (non-enhanced) fields or also the enhanced fields.</td></tr>
+<tr><td><code>system_description</code></td><td><i>Optional.</i> A short free-text description of the approach, for easier identification of runs. Can be left empty.</td></tr>
 </tbody>
 </table>
 
@@ -214,11 +216,19 @@ according to shared underlying properties. We adopt them as the two fundamental 
 <li><code>epistemic-external</code></li>
 </ul>
 
-<h3>Example</h3>
-<pre><code>{"task": "fallacy_detection", "id": "informal_fallacies-test-171", "label": "fallacy"}
-{"task": "fallacy_classification", "id": "informal_fallacies-test-204", "label": "hasty_generalization"}
-{"task": "scheme_classification", "id": "informal_fallacies-test-309", "label": "practical-internal"}
-{"task": "scheme_classification", "id": "informal_fallacies-test-412", "label": "epistemic-external"}</code></pre>
+<h3>Examples</h3>
+
+<p><b>Run file for Sub-Task&nbsp;1 (Fallacy Detection):</b></p>
+<pre><code>{"task": "fallacy_detection", "id": "informal_fallacies-test-171", "label": "fallacy", "tag": "base", "system_description": "RoBERTa fine-tuned on text_base"}
+{"task": "fallacy_detection", "id": "informal_fallacies-test-172", "label": "non-fallacy", "tag": "base", "system_description": "RoBERTa fine-tuned on text_base"}</code></pre>
+
+<p><b>Run file for Sub-Task&nbsp;2 (Fallacy Classification):</b></p>
+<pre><code>{"task": "fallacy_classification", "id": "informal_fallacies-test-204", "label": "hasty_generalization", "tag": "enhanced", "system_description": ""}
+{"task": "fallacy_classification", "id": "informal_fallacies-test-205", "label": "authority", "tag": "enhanced", "system_description": ""}</code></pre>
+
+<p><b>Run file for Sub-Task&nbsp;3 (Scheme Classification):</b></p>
+<pre><code>{"task": "scheme_classification", "id": "informal_fallacies-test-309", "label": "practical-internal", "tag": "base", "system_description": ""}
+{"task": "scheme_classification", "id": "informal_fallacies-test-412", "label": "epistemic-external", "tag": "base", "system_description": ""}</code></pre>
 
 <p>If you have any questions, please do not hesitate to contact us.</p>
 
