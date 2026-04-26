@@ -106,6 +106,7 @@ The dataset is going to be released soon.
 <tr><td><code>argument_enhanced</code></td><td><code>{claim, supports}</code> extracted from <code>text_enhanced</code>.</td></tr>
 <tr><td><code>fallacy_exists</code></td><td>Binary label (0/1) indicating whether the entry contains a fallacy &mdash; used in <b>Sub-Task&nbsp;1 (Fallacy Detection)</b>.</td></tr>
 <tr><td><code>fallacy_type</code></td><td>The specific type of fallacy &mdash; used in <b>Sub-Task&nbsp;2 (Fallacy Classification)</b>.</td></tr>
+<tr><td><code>resembles_fallacy</code></td><td>The fallacy type this argument most closely resembles. For fallacious entries, this equals <code>fallacy_type</code>. For non-fallacious entries, it identifies which fallacy type the argument could plausibly be confused with &mdash; i.e., the argument exhibits a similar reasoning pattern but does not commit the fallacy.</td></tr>
 <tr><td><code>classification</code></td><td><code>{argument_goal, argument_basis}</code> &mdash; used in <b>Sub-Task&nbsp;3 (Argument Scheme Classification)</b>.</td></tr>
 </tbody>
 </table>
@@ -117,6 +118,16 @@ The dataset is going to be released soon.
 An argument generally consists of a conclusion and one or more premises. Because real-world arguments
 are informal, we use the term <b>support</b> rather than <i>premise</i> to emphasize that a support
 may be partial and may not fully justify the claim.
+</p>
+
+<h3>Resembles Fallacy</h3>
+<p>
+Each non-fallacious entry in the dataset was selected because its reasoning pattern resembles a
+specific fallacy type. For example, a non-fallacious entry with
+<code>resembles_fallacy: authority</code> contains a legitimate appeal to an authority figure &mdash;
+structurally similar to a fallacious appeal to authority, but without committing the fallacy.
+This pairing is useful for <b>Sub-Task&nbsp;1 (Fallacy Detection)</b>, as it ensures that systems
+must distinguish genuinely fallacious arguments from superficially similar but valid ones.
 </p>
 
 <h3>Base vs. Enhanced Fields</h3>
