@@ -32,6 +32,10 @@ description: Shared task on detecting whether an argument is sound (and why).
 
 <div class="uk-container uk-margin-medium">
 
+<div class="uk-alert uk-alert-primary" data-uk-alert>
+<p><b>April 30, 2026:</b> The <a href="https://zenodo.org/records/19925569">dataset</a> for this task is now available. <a href="#data">See Data section for details.</a></p>
+</div>
+
 <h2 id="synopsis">Synopsis</h2>
 <p>The task consists of three sub-tasks:</p>
 <ul>
@@ -85,9 +89,8 @@ underlying properties (see <a href="#remarks">Remarks</a>).
     
 <h2 id="data">Data</h2>
 <p>
-The data is taken from <a href="#sahai21">Sahai et al.</a> and is called <b>informal_fallacies</b>.
+The data is taken from <a href="#sahai21">Sahai et al.</a> and is called <a href="https://zenodo.org/records/19925569"><b>touchefallacy_2026</b></a>.
 It is the sole source of fallacies used in this task.
-The dataset is going to be released soon.
 </p>
 <p>Each data entry contains the following fields:</p>
 
@@ -172,7 +175,13 @@ according to shared underlying properties. We adopt them as the two fundamental 
 
     
 <h2 id="output-format">Output Format</h2>
-<p>For each sub-task, participants submit a separate <b>JSONL file</b> (one JSON object per line). Each object must contain the following fields:</p>
+<p>For each sub-task, participants submit a separate <b>JSONL file</b> (one JSON object per line)
+containing predictions for <b>all</b> test entries. For Sub-Task&nbsp;2 (Fallacy Classification),
+this means submitting a fallacy type prediction for every argument in the test set; evaluation
+will filter to the relevant subset (i.e., only the actually fallacious arguments are scored).
+The same applies to Sub-Task&nbsp;3 (Argument Scheme Classification), where only non-fallacious
+arguments are scored.</p>
+<p>Each object must contain the following fields:</p>
 
 <table class="uk-table uk-table-divider uk-table-small">
 <thead>
@@ -219,16 +228,16 @@ according to shared underlying properties. We adopt them as the two fundamental 
 <h3>Examples</h3>
 
 <p><b>Run file for Sub-Task&nbsp;1 (Fallacy Detection):</b></p>
-<pre><code>{"task": "fallacy_detection", "id": "informal_fallacies-test-171", "label": "fallacy", "tag": "base", "system_description": "RoBERTa fine-tuned on text_base"}
-{"task": "fallacy_detection", "id": "informal_fallacies-test-172", "label": "non-fallacy", "tag": "base", "system_description": "RoBERTa fine-tuned on text_base"}</code></pre>
+<pre><code>{"task": "fallacy_detection", "id": "informal_fallacies:171", "label": "fallacy", "tag": "base", "system_description": "RoBERTa fine-tuned on text_base"}
+{"task": "fallacy_detection", "id": "informal_fallacies:172", "label": "non-fallacy", "tag": "base", "system_description": "RoBERTa fine-tuned on text_base"}</code></pre>
 
 <p><b>Run file for Sub-Task&nbsp;2 (Fallacy Classification):</b></p>
-<pre><code>{"task": "fallacy_classification", "id": "informal_fallacies-test-204", "label": "hasty_generalization", "tag": "enhanced", "system_description": ""}
-{"task": "fallacy_classification", "id": "informal_fallacies-test-205", "label": "authority", "tag": "enhanced", "system_description": ""}</code></pre>
+<pre><code>{"task": "fallacy_classification", "id": "informal_fallacies:204", "label": "hasty_generalization", "tag": "enhanced", "system_description": ""}
+{"task": "fallacy_classification", "id": "informal_fallacies:205", "label": "authority", "tag": "enhanced", "system_description": ""}</code></pre>
 
 <p><b>Run file for Sub-Task&nbsp;3 (Scheme Classification):</b></p>
-<pre><code>{"task": "scheme_classification", "id": "informal_fallacies-test-309", "label": "practical-internal", "tag": "base", "system_description": ""}
-{"task": "scheme_classification", "id": "informal_fallacies-test-412", "label": "epistemic-external", "tag": "base", "system_description": ""}</code></pre>
+<pre><code>{"task": "scheme_classification", "id": "informal_fallacies:309", "label": "practical-internal", "tag": "base", "system_description": ""}
+{"task": "scheme_classification", "id": "informal_fallacies:412", "label": "epistemic-external", "tag": "base", "system_description": ""}</code></pre>
 
 <p>If you have any questions, please do not hesitate to contact us.</p>
 
