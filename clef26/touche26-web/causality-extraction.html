@@ -132,14 +132,14 @@ print()
 <p>The output of the code submission needs to be a JSONL file. Each line in the JSONL file should be in the following JSON format:</p>
 <ul>
 <li><code>id</code>: The ID of the text that was classified.</li>
-<li><code>spans</code>: The list of spans your submission predicted to partake in a causal relationship according to the input text. A span is a pair of two positive integers that give the start and end index in characrers.</li>
+<li><code>entity</code>: The list of spans your submission predicted to partake in a causal relationship according to the input text. A span is a pair of two positive integers that give the start and end index in characrers.</li>
 <li><code>tag</code>: A tag that identifies your group and the method you used to produce the run.</li>
 </ul>
 <details>
 <summary>Example submission file (click to see)</summary>
 <pre><code>{
     'id': 'cnc_train_01_0_234_0', 
-    'label': [[0, 10], [20, 25]], 
+    'entity': [[0, 10], [20, 25]], 
     'tag': 'myGroupMyMethod'
 }</code></pre>
 </details>
