@@ -4,14 +4,6 @@ nav_active: shared-tasks
 title: Touché at CLEF 2026 - Generalizability of Argument Identification in Context
 description: 👉 To be an argument or not to be an argument — that is the question that current models cannot answer and is raised by this task @ CLEF 2026 🤞
 ---
-<script>
-  window.MathJax = {
-    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
-  };
-</script>
-<script id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
 
 <nav class="uk-container">
     <ul class="uk-breadcrumb">
@@ -70,7 +62,7 @@ Accompanying metadata includes sentence IDs, generated splits, and (where availa
 
 <h2 id="evaluation">Evaluation</h2>
 <p>Systems will primarily be evaluated on the newly created, evaluation-only dataset.
-    This dataset comprises 340 test sentences from the enhanced and anonymized <a href="https://aclanthology.org/2024.lrec-main.1349/">TACO</a> dataset, each annotated with its original labels as well as labels aligned with the <a href="https://aclanthology.org/J17-3005/">PE</a> and <a href="https://aclanthology.org/P19-1463/">USELEC</a> guidelines (1.020 in total). For further insights, evaluation results on the established test splits from the held-out benchmark data will also be provided but not used for ranking. This setup addresses the risk of data contamination in LLMs and for participants’ potential use of additional datasets during training. To evaluate the systems for their generalizability, the macro F$_1$-score will be measured for each test split, along with the overall average of all these values.</p>
+    This dataset comprises 340 test sentences from the enhanced and anonymized <a href="https://aclanthology.org/2024.lrec-main.1349/">TACO</a> dataset, each annotated with its original labels as well as labels aligned with the <a href="https://aclanthology.org/J17-3005/">PE</a> and <a href="https://aclanthology.org/P19-1463/">USELEC</a> guidelines (1.020 in total). For further insights, evaluation results on the established test splits from the held-out benchmark data will also be provided but not used for ranking. This setup addresses the risk of data contamination in LLMs and for participants’ potential use of additional datasets during training. To evaluate the systems for their generalizability, the macro F<sub>1</sub>-score will be measured for each test split, along with the overall average of all these values.</p>
 
 <h2 id="submission">Submission</h2>
 <p>We ask participants to use <a href="https://www.tira.io/">TIRA</a> for submissions. Each team can submit <b>up to 3</b> approaches to the task.</p>
@@ -155,6 +147,256 @@ Accompanying metadata includes sentence IDs, generated splits, and (where availa
 <li>Terne Sasha Thorn Jakobsen, Maria Barrett, and Anders Søgaard. <a href="https://aclanthology.org/2021.starsem-1.25/">Spurious Correlations in Cross-Topic Argument Mining</a>. In Proceedings of *SEM 2021: The Tenth Joint Conference on Lexical and Computational Semantics, August 2021.</li>
 <li>Robert Geirhos, Jörn-Henrik Jacobsen, Claudio Michaelis, Robert Zemel, Wieland Brendel, Matthias Bethge & Felix A. Wichmann. <a href="https://doi.org/10.1038/s42256-020-00257-z">Shortcut learning in deep neural networks</a>. Nature Machine Intelligence, November 2020.</li>
 </ul>
+
+<h2 id="results">Results</h2>
+<h3 id="results-small">Condensed Results</h3>
+<p>The condensed results are shown below, as described in <a href="#evaluation">Evaluation</a>. <b>Main</b> refers to the averaged macro F<sub>1</sub>-scores of the three new evaluation-only datasets used for the official ranking, while <b>Supplementary</b> denotes the average across the 10 publicly available training benchmarks.</p>
+
+<div class='uk-overflow-auto'>
+<table class="dataframe uk-table uk-table-divider uk-table-small uk-table-hover sortable">
+  <thead>
+    <tr style="text-align: right;">
+      <th>team</th>
+      <th>id</th>
+      <th>name</th>
+      <th>Main</th>
+      <th>Supplementary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>context-awakens</td>
+      <td>2026-05-08-15-04-50</td>
+      <td>Full GAIC Testset</td>
+      <td>0.7955</td>
+      <td>0.7308</td>
+    </tr>
+    <tr>
+      <td>arginvariant</td>
+      <td>2026-05-06-16-07-49</td>
+      <td>arginvariant_1</td>
+      <td>0.7834</td>
+      <td>0.7899</td>
+    </tr>
+    <tr>
+      <td>arginvariant</td>
+      <td>2026-05-06-16-08-30</td>
+      <td>arinvariant_2</td>
+      <td>0.7829</td>
+      <td>0.7533</td>
+    </tr>
+    <tr>
+      <td>the-wildcards</td>
+      <td>2026-05-18-16-29-20</td>
+      <td>hybrid</td>
+      <td>0.7822</td>
+      <td>0.8128</td>
+    </tr>
+    <tr>
+      <td>the-wildcards</td>
+      <td>2026-05-21-18-35-58</td>
+      <td>local</td>
+      <td>0.7693</td>
+      <td>0.8057</td>
+    </tr>
+    <tr>
+      <td>arginvariant</td>
+      <td>2026-05-06-16-09-54</td>
+      <td>arginvariant_3</td>
+      <td>0.7561</td>
+      <td>0.6531</td>
+    </tr>
+    <tr>
+      <td>code-doctors</td>
+      <td>2026-04-29-21-22-47</td>
+      <td>run_1</td>
+      <td>0.6502</td>
+      <td>0.8000</td>
+    </tr>
+    <tr>
+      <td>the-wildcards</td>
+      <td>2026-05-21-18-34-10</td>
+      <td>solo</td>
+      <td>0.5938</td>
+      <td>0.8148</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3 id="results-big">Detailed Results</h3>
+<p>The detailed results used to compute the official scores in the previous section are shown below.</p>
+
+<div class='uk-overflow-auto'>
+<table class="dataframe uk-table uk-table-divider uk-table-small uk-table-hover sortable">
+  <thead>
+    <tr style="text-align: right;">
+      <th>team</th>
+      <th>id</th>
+      <th>name</th>
+      <th>ABSTRCT</th>
+      <th>ACQUA</th>
+      <th>AEC</th>
+      <th>AFS</th>
+      <th>ARGUMINSCI</th>
+      <th>FINARG</th>
+      <th>IAM</th>
+      <th>PE</th>
+      <th>SCIARK</th>
+      <th>TACO</th>
+      <th>TAPE</th>
+      <th>TAUS</th>
+      <th>USELEC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>context-awakens</td>
+      <td>2026-05-08-15-04-50</td>
+      <td>Full GAIC Testset</td>
+      <td>0.8735</td>
+      <td>0.7882</td>
+      <td>0.9141</td>
+      <td>0.7119</td>
+      <td>0.7933</td>
+      <td>0.4764</td>
+      <td>0.7146</td>
+      <td>0.6646</td>
+      <td>0.6682</td>
+      <td>0.8408</td>
+      <td>0.7604</td>
+      <td>0.7853</td>
+      <td>0.7029</td>
+    </tr>
+    <tr>
+      <td>arginvariant</td>
+      <td>2026-05-06-16-07-49</td>
+      <td>arginvariant_1</td>
+      <td>0.8529</td>
+      <td>0.8529</td>
+      <td>0.9588</td>
+      <td>0.7475</td>
+      <td>0.8032</td>
+      <td>0.6705</td>
+      <td>0.7041</td>
+      <td>0.8137</td>
+      <td>0.7465</td>
+      <td>0.8133</td>
+      <td>0.7757</td>
+      <td>0.7612</td>
+      <td>0.7490</td>
+    </tr>
+    <tr>
+      <td>arginvariant</td>
+      <td>2026-05-06-16-08-30</td>
+      <td>arinvariant_2</td>
+      <td>0.8466</td>
+      <td>0.7968</td>
+      <td>0.9381</td>
+      <td>0.6441</td>
+      <td>0.7505</td>
+      <td>0.6372</td>
+      <td>0.6795</td>
+      <td>0.7881</td>
+      <td>0.7203</td>
+      <td>0.8133</td>
+      <td>0.7757</td>
+      <td>0.7598</td>
+      <td>0.7316</td>
+    </tr>
+    <tr>
+      <td>the-wildcards</td>
+      <td>2026-05-18-16-29-20</td>
+      <td>hybrid</td>
+      <td>0.9000</td>
+      <td>0.8617</td>
+      <td>0.9588</td>
+      <td>0.8265</td>
+      <td>0.8146</td>
+      <td>0.6728</td>
+      <td>0.7529</td>
+      <td>0.7706</td>
+      <td>0.8234</td>
+      <td>0.8265</td>
+      <td>0.7465</td>
+      <td>0.7735</td>
+      <td>0.7468</td>
+    </tr>
+    <tr>
+      <td>the-wildcards</td>
+      <td>2026-05-21-18-35-58</td>
+      <td>local</td>
+      <td>0.9000</td>
+      <td>0.7910</td>
+      <td>0.9588</td>
+      <td>0.8265</td>
+      <td>0.8146</td>
+      <td>0.6728</td>
+      <td>0.7529</td>
+      <td>0.7706</td>
+      <td>0.8234</td>
+      <td>0.7912</td>
+      <td>0.7506</td>
+      <td>0.7660</td>
+      <td>0.7468</td>
+    </tr>
+    <tr>
+      <td>arginvariant</td>
+      <td>2026-05-06-16-09-54</td>
+      <td>arginvariant_3</td>
+      <td>0.7924</td>
+      <td>0.7455</td>
+      <td>0.8076</td>
+      <td>0.5998</td>
+      <td>0.6132</td>
+      <td>0.5598</td>
+      <td>0.7041</td>
+      <td>0.4696</td>
+      <td>0.6760</td>
+      <td>0.8101</td>
+      <td>0.7204</td>
+      <td>0.7377</td>
+      <td>0.5632</td>
+    </tr>
+    <tr>
+      <td>code-doctors</td>
+      <td>2026-04-29-21-22-47</td>
+      <td>run_1</td>
+      <td>0.8587</td>
+      <td>0.8205</td>
+      <td>0.9559</td>
+      <td>0.7941</td>
+      <td>0.8265</td>
+      <td>0.6715</td>
+      <td>0.7382</td>
+      <td>0.7676</td>
+      <td>0.8056</td>
+      <td>0.6025</td>
+      <td>0.6748</td>
+      <td>0.6734</td>
+      <td>0.7617</td>
+    </tr>
+    <tr>
+      <td>the-wildcards</td>
+      <td>2026-05-21-18-34-10</td>
+      <td>solo</td>
+      <td>0.9000</td>
+      <td>0.8258</td>
+      <td>0.9588</td>
+      <td>0.8265</td>
+      <td>0.8382</td>
+      <td>0.6728</td>
+      <td>0.7529</td>
+      <td>0.7880</td>
+      <td>0.8234</td>
+      <td>0.5098</td>
+      <td>0.6216</td>
+      <td>0.6499</td>
+      <td>0.7617</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 <h2 id="task-committee">Task Committee</h2>
 <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
