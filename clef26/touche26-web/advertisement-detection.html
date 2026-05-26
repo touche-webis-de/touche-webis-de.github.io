@@ -191,6 +191,123 @@ Please refer to the TIRA documentation for preparing and submitting your approac
 <h3>Evaluation for Sub-Task 3</h3>
 <p>The submissions for Sub-Task 3 will be evaluated by the fluency, query relevance, and correctness of the response. These metrics will be measured on a four-point scale from 0 (bad) to 3 (very good) by human annotators and a continuous score from 0 to 1 by an LLM-as-a-judge.</p>
 
+<h2 id="results">Results</h2>
+<h3 id="results-sub-task-1">Results Sub-Task 1</h3>
+<p>The results for sub-task 1 are shown below, as described in <a href="#evaluation">Evaluation</a>. 
+The submitted classifiers were evaluated on a private test-split of the Webis Generated Native Ads 2025.</p>
+
+<div class='uk-overflow-auto'>
+<table class="dataframe uk-table uk-table-divider uk-table-small uk-table-hover sortable">
+    <thead>
+	    <tr style="text-align: right;"></tr>
+		    <th>Team</th>						
+		    <th>Approach</th>
+		    <th>F1</th>
+		    <th>Accuracy</th>
+		    <th>Precision</th>
+		    <th>Recall</th>
+	    </tr>
+    </thead>
+    <tbody>
+        <tr>
+		    <td>zhaw</td>						
+		    <td>CompactQueryClassifier</td>			
+		    <td>0.985</td>	
+		    <td>0.991</td>	
+		    <td>0.990</td>	
+		    <td>0.981</td>	
+	    </tr>
+	    <tr>
+		    <td>Baseline</td>	
+		    <td>minilm</td>		
+		    <td>0.915</td>	
+		    <td>0.949</td>	
+		    <td>0.930</td>	
+		    <td>0.900</td>	
+	    </tr>
+	    <tr>
+		    <td>zhaw</td>						
+		    <td>QwenResidualStackV2</td>				
+		    <td>0.638</td>	
+		    <td>0.768</td>	
+		    <td>0.608</td>	
+		    <td>0.671</td>	
+	    </tr>
+	    <tr>
+		    <td>zhaw</td>						
+		    <td>QwenResidualOnlyV2</td>				
+		    <td>0.613</td>	
+		    <td>0.765</td>	
+		    <td>0.616</td>	
+		    <td>0.610</td>
+	    </tr>
+	    <tr>
+		    <td>zhaw</td>						
+		    <td>BaseStack</td>						
+		    <td>0.601</td>	
+		    <td>0.721</td>	
+		    <td>0.532</td>	
+		    <td>0.691</td>	
+	    </tr>
+	    <tr>
+		    <td>modernbert-adhunter</td>			
+		    <td>jovial-branch</td>					
+		    <td>0.447</td>	
+		    <td>0.779</td>	
+		    <td>0.942</td>
+		    <td>0.293</td>	
+	    </tr>
+	    <tr>
+		    <td>Baseline</td>	
+		    <td>naive-bayes</td>	
+		    <td>0.348</td>	
+		    <td>0.678</td>	
+		    <td>0.453</td>	
+		    <td>0.282</td>
+	    </tr>
+    </tbody>
+</table>
+</div>
+
+<h3 id="results-sub-task-2">Results Sub-Task 2</h3>
+<p>The results for sub-task 2 are shown below, as described in <a href="#evaluation">Evaluation</a>.
+In addition to classification metrics, we report the Intersection over Union (IoU). 
+The submitted classifiers were evaluated on a private test-split of the Webis Generated Native Ads 2025.</p>
+<div class='uk-overflow-auto'>
+<table class="dataframe uk-table uk-table-divider uk-table-small uk-table-hover sortable">
+    <thead>
+	    <tr style="text-align: right;"></tr>
+			<th>Team</th>						
+			<th>Approach</th>
+			<th>F1</th>
+			<th>Precision</th>
+			<th>Recall</th>
+			<th>IoU</th>
+		</tr>
+    </thead>
+	<tbody>
+		<tr>
+			<td>Baseline</td>
+			<td>last-sents</td>
+			<td>0.472</td>
+			<td>0.605</td>
+			<td>0.454</td>
+			<td>0.397</td>	
+		</tr>
+		<tr>
+			<td>modernbert-adhunter</td>
+			<td>messy-key</td>
+			<td>0.198</td>
+			<td>0.279</td>
+			<td>0.178</td>
+			<td>0.189</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<h3 id="results-sub-task-3">Results Sub-Task 3</h3>
+<p>Sub-task 3 received no submissions.</p>
 
 <h2 id="task-committee">Task Committee</h2>
 <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
