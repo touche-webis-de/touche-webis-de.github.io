@@ -307,7 +307,10 @@ Note that the metrics below are the mean values across all responses with ads fr
 </div>
 
 <h3 id="results-sub-task-3">Results Sub-Task 3</h3>
-<p>Sub-task 3 received no submissions, we have added the results of our baseline that removes advertising text without replacement.</p>
+<p>Sub-task 3 received one submission that implemented the same approach as our baseline. Hence, we replicated the annotations between the baseline and the submission.</p>
+
+<h4 id="results-sub-task-3-manual">Manual Annotations</h3>
+<p>Three annotators evaluated each reponse for (1) relevance to the query, (2) factual correctness in comparison to the original, ad-free response, and (3) fluency. All annotations were made on a four-point scale from 0 to 3</p>
 <div class='uk-overflow-auto'>
 <table class="dataframe uk-table uk-table-divider uk-table-small uk-table-hover sortable">
     <thead>
@@ -320,6 +323,45 @@ Note that the metrics below are the mean values across all responses with ads fr
 		</tr>
     </thead>
 	<tbody>
+		<tr>
+			<td>code-doctors</td>
+			<td>remove</td>
+			<td>2.763</td>
+			<td>2.180</td>
+			<td>2.883</td>
+		</tr>
+        <tr>
+			<td>Baseline</td>
+			<td>remove</td>
+			<td>2.763</td>
+			<td>2.180</td>
+			<td>2.883</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<h4 id="results-sub-task-3-llm">LLM Annotations</h3>
+<p>We used GPT-5.4-mini with <a href="https://deepeval.com/">deepeval</a> to annoate the blocked responses for the same dimensions as the manual annotations. Our evaluation script is available <a href="https://github.com/touche-webis-de/touche-code/blob/main/clef26/advertisement-detection/task_eval/blocking_llm.py">here</a>.</p>
+<div class='uk-overflow-auto'>
+<table class="dataframe uk-table uk-table-divider uk-table-small uk-table-hover sortable">
+    <thead>
+	    <tr style="text-align: right;"></tr>
+			<th>Team</th>						
+			<th>Approach</th>
+			<th>Correctness</th>
+			<th>Fluency</th>
+			<th>Relevance</th>
+		</tr>
+    </thead>
+	<tbody>
+		<tr>
+			<td>code-doctors</td>
+			<td>remove</td>
+			<td>0.859</td>
+			<td>0.659</td>
+			<td>0.889</td>
+		</tr>
         <tr>
 			<td>Baseline</td>
 			<td>remove</td>
