@@ -33,6 +33,14 @@ description: Shared task on detecting whether an argument is sound (and why).
 <div class="uk-container uk-margin-medium">
 
 <div class="uk-alert uk-alert-primary" data-uk-alert>
+<p><b>July 4, 2026:</b> The <a href="fallacy-detection-results.html">results</a> for this task are out. <a href="#evaluation">See Evaluation section for details.</a></p>
+</div>
+
+<div class="uk-alert uk-alert-primary" data-uk-alert>
+<p><b>June 13, 2026:</b> The gold labels for the test set are now available on the <a href="https://zenodo.org/records/19925569">dataset webpage</a>. <a href="#data">See Data section for details.</a></p>
+</div>
+
+<div class="uk-alert uk-alert-primary" data-uk-alert>
 <p><b>April 30, 2026:</b> The <a href="https://zenodo.org/records/19925569">dataset</a> for this task is now available. <a href="#data">See Data section for details.</a></p>
 </div>
 
@@ -92,6 +100,8 @@ underlying properties (see <a href="#remarks">Remarks</a>).
 <p>
 The data is taken from <a href="#sahai21">Sahai et al.</a> and is called <a href="https://zenodo.org/records/19925569"><b>touchefallacy_2026</b></a>.
 It is the sole source of fallacies used in this task.
+The <b>gold labels</b> (including those for the test set) are also available on the
+<a href="https://zenodo.org/records/19925569">dataset webpage</a>.
 </p>
 <p>Each data entry contains the following fields:</p>
 
@@ -114,6 +124,42 @@ It is the sole source of fallacies used in this task.
 <tr><td><code>classification</code></td><td><code>{argument_goal, argument_basis}</code> &mdash; used in <b>Sub-Task&nbsp;3 (Argument Scheme Classification)</b>.</td></tr>
 </tbody>
 </table>
+
+<h3>Example Entry</h3>
+<p>The following entry shows all fields for a fallacious argument of type
+<code>hasty_generalization</code>:</p>
+<pre><code>{
+  "id": "informal_fallacies:999",
+  "text_raw": "Honestly I'm done with Hondas. My buddy had a Civic that just died at 80k, and my old CR-V had the transmission go out twice. Both of them, garbage. So yeah the whole brand is overrated, I don't care what the reliability charts say. Every Honda I've ever been around has been a headache.",
+  "text_raw_parent": "Looking to buy my first used car and everyone keeps telling me a Honda is the safe bet for reliability. Is that actually true?",
+  "text_raw_title": "What's the most reliable used car you can get for under $10k?",
+  "text_base": "Honestly I'm done with Hondas. My friend had a Honda Civic that just died at 80,000 miles, and my old Honda CR-V had its transmission go out twice. Both of those Hondas were garbage. So the whole Honda brand is overrated, and I don't care what the reliability charts say. Every Honda I've ever been around has been a headache.",
+  "text_enhanced": "Honestly, I'm completely done with Hondas, and I'll say it flat out: the entire brand is garbage. My friend had a Honda Civic that just died at 80,000 miles, and my old Honda CR-V had its transmission go out twice. That's all the proof anyone needs &mdash; two cars, and both of them were total disasters. Every single Honda ever made is exactly the same way; there isn't one reliable model in the whole lineup. I don't care what the reliability charts say or what the millions of other owners claim, because my own experience settles it once and for all: every Honda on the road is a ticking time bomb, and anyone who buys one is making a mistake.",
+  "argument_base": {
+    "claim": "Honda is an unreliable and overrated car brand.",
+    "supports": [
+      "A friend's Honda Civic died at 80,000 miles.",
+      "My own Honda CR-V had its transmission fail twice.",
+      "Every Honda I have personally been around has been a headache."
+    ]
+  },
+  "argument_enhanced": {
+    "claim": "Every Honda ever made is unreliable and no one should buy one.",
+    "supports": [
+      "A friend's Honda Civic died at 80,000 miles.",
+      "My own Honda CR-V had its transmission fail twice.",
+      "These two bad experiences are all the proof needed that the entire brand is unreliable.",
+      "My personal experience outweighs the reliability charts and the reports of millions of other owners."
+    ]
+  },
+  "fallacy_exists": 1,
+  "fallacy_type": "hasty_generalization",
+  "resembles_fallacy": "hasty_generalization",
+  "classification": {
+    "argument_goal": "epistemic",
+    "argument_basis": "internal"
+  }
+}</code></pre>
 
 <h2 id="remarks">Remarks</h2>
 
@@ -174,6 +220,8 @@ according to shared underlying properties. We adopt them as the two fundamental 
 <p>We ask participants to use <a href="https://www.tira.io/task-overview/fallacy-detection/">TIRA</a> for run submissions.</p>
 <p>The submissions for this task must be made as a <b>run submission</b>, i.e., participants process the data on their side and submit their predictions.
 Each team can submit a maximum of <b>3 runs per sub-task</b>, i.e., up to 9 submissions in total.</p>
+<p>For writing your working-notes paper, see our
+<a href="fallacy-detection-paper-guidelines.html"><b>working-notes paper guidelines</b></a>.</p>
 
     
 <h2 id="output-format">Output Format</h2>
@@ -245,6 +293,8 @@ will filter to the relevant subset (i.e., only the actually fallacious arguments
 <h2 id="evaluation">Evaluation</h2>
 <p>Evaluation uses a held-out test set for each subtask and standard
 evaluation metrics: precision, recall, and F1-score.</p>
+<p>The results of the task can be inspected
+<a href="fallacy-detection-results.html"><b>here</b></a>.</p>
 
 <!--
 <h2 id="submission">Submission</h2>

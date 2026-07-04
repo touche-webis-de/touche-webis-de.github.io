@@ -1,0 +1,1054 @@
+---
+layout: default
+nav_active: shared-tasks
+title: Touché at CLEF 2026 - Fallacy Detection - Results
+description: Results of the Touché 2026 shared task on fallacy detection.
+---
+<nav class="uk-container">
+    <ul class="uk-breadcrumb">
+        <li><a href="../../index.html">Touché</a></li>
+        <li><a href="../../shared-tasks.html">Shared Tasks</a></li>
+        <li><a href="fallacy-detection.html">Fallacy Detection 2026</a></li>
+        <li class="uk-disabled"><a href="#">Results</a></li>
+    </ul>
+</nav>
+
+<main class="uk-section uk-section-default">
+<div class="uk-container">
+<div class="uk-container uk-margin-small">
+<h1 class="uk-margin-remove-top uk-margin-remove-bottom">Fallacy Detection 2026 &mdash; Results</h1>
+<ul class="uk-list">
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#rankings-per-track-base-enhanced">Rankings per track (base / enhanced)</a></li>
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#combined-rankings-base-enhanced-merged">Combined rankings (base + enhanced merged)</a></li>
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#per-class-details">Per-class details</a></li>
+</ul>
+</div>
+
+<div class="uk-container uk-margin-medium">
+
+<p>This page lists the official results of the
+<a href="fallacy-detection.html">Fallacy Detection</a> task at Touché 2026. Runs are ranked by
+macro F1-score; precision and recall are macro-averaged as well. For Sub-Task 3, the two label
+dimensions (argument goal and argument basis) are scored separately; the macro average runs over
+the four dimension classes. The <i>Tag</i> column indicates whether a system used only the
+original (<code>base</code>) fields or also the <code>enhanced</code> fields; base and enhanced
+runs are ranked separately per sub-task, followed by a combined ranking. The <i>Repaired</i>
+column marks broken runs: entries for which the run submitted no prediction or an invalid label
+were counted as incorrect (the column states how many predictions were affected). Runs marked as
+&ldquo;not ranked (informational)&rdquo; exceeded the submission limit or were submitted by
+organizers and are reported for reference only.</p>
+
+<h2 id="rankings-per-track-base-enhanced">Rankings per track (base / enhanced)</h2>
+<h3>Task 1 — base</h3>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Rank</th><th>Team</th><th>Run</th><th>Tag</th><th>Precision</th><th>Recall</th><th>F1</th><th>Repaired</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>grtsh</td><td>llm-court-01</td><td>base</td><td>0.807</td><td>0.807</td><td>0.807</td><td></td></tr>
+    <tr><td>2</td><td>uzhcl-for-the-win</td><td>st1-base</td><td>base</td><td>0.770</td><td>0.754</td><td>0.751</td><td></td></tr>
+    <tr><td>3</td><td>veritas</td><td>RoBERTa-large-base</td><td>base</td><td>0.742</td><td>0.737</td><td>0.737</td><td></td></tr>
+    <tr><td>4</td><td>helium</td><td>Gem4-31B-no-desc</td><td>base</td><td>0.745</td><td>0.737</td><td>0.736</td><td></td></tr>
+    <tr><td>5</td><td>helium</td><td>Gemma4-31TrueRawCtx</td><td>base</td><td>0.745</td><td>0.737</td><td>0.736</td><td></td></tr>
+    <tr><td>6</td><td>helium</td><td>gemma-4-31b-it-context</td><td>base</td><td>0.745</td><td>0.737</td><td>0.736</td><td></td></tr>
+    <tr><td>7</td><td>napiernlp</td><td>CVB-Base</td><td>base</td><td>0.736</td><td>0.734</td><td>0.734</td><td></td></tr>
+    <tr><td>8</td><td>ooooooo</td><td>base-2</td><td>base</td><td>0.730</td><td>0.718</td><td>0.713</td><td></td></tr>
+    <tr><td>9</td><td>nit-agartala-nlp-team</td><td>fine tune deroberta</td><td>base</td><td>0.727</td><td>0.706</td><td>0.697</td><td></td></tr>
+    <tr><td>10</td><td>ooooooo</td><td>base</td><td>base</td><td>0.737</td><td>0.685</td><td>0.665</td><td></td></tr>
+    <tr><td>11</td><td>nit-agartala-nlp-team</td><td>nli-deberta</td><td>base</td><td>0.685</td><td>0.667</td><td>0.658</td><td></td></tr>
+    <tr><td>12</td><td>organizer</td><td>Organizer-LLM-Baseline-base</td><td>base</td><td>0.502</td><td>0.501</td><td>0.460</td><td></td></tr>
+  </tbody>
+</table></div>
+<p>Not ranked (informational):</p>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Team</th><th>Run</th><th>Tag</th><th>Precision</th><th>Recall</th><th>F1</th><th>Repaired</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>webis (organizer)</td><td>Webis-CourtroomTrial-base</td><td>base</td><td>0.705</td><td>0.704</td><td>0.704</td><td></td></tr>
+  </tbody>
+</table></div>
+<h3>Task 1 — enhanced</h3>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Rank</th><th>Team</th><th>Run</th><th>Tag</th><th>Precision</th><th>Recall</th><th>F1</th><th>Repaired</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>seals-nlp</td><td>Seals-NLP</td><td>enhanced</td><td>0.957</td><td>0.957</td><td>0.957</td><td></td></tr>
+    <tr><td>2</td><td>uzhcl-for-the-win</td><td>st1-first-run</td><td>enhanced</td><td>0.946</td><td>0.945</td><td>0.944</td><td></td></tr>
+    <tr><td>3</td><td>ooooooo</td><td>enhanced</td><td>enhanced</td><td>0.940</td><td>0.940</td><td>0.940</td><td></td></tr>
+    <tr><td>4</td><td>veritas</td><td>RoBERTa-large-enhnc</td><td>enhanced</td><td>0.927</td><td>0.927</td><td>0.927</td><td></td></tr>
+    <tr><td>5</td><td>sevitha</td><td>multitask-deberta</td><td>enhanced</td><td>0.931</td><td>0.926</td><td>0.927</td><td></td></tr>
+    <tr><td>6</td><td>clef26-sophisma</td><td>RoBERTa-BF16</td><td>enhanced</td><td>0.914</td><td>0.914</td><td>0.914</td><td></td></tr>
+    <tr><td>7</td><td>napiernlp</td><td>CVB-Enhanced</td><td>enhanced</td><td>0.910</td><td>0.910</td><td>0.910</td><td></td></tr>
+    <tr><td>8</td><td>uzh-tt</td><td>cascaded-run-1</td><td>enhanced</td><td>0.894</td><td>0.892</td><td>0.893</td><td></td></tr>
+    <tr><td>9</td><td>uzh-tt</td><td>cascaded-v2</td><td>enhanced</td><td>0.894</td><td>0.892</td><td>0.893</td><td></td></tr>
+    <tr><td>10</td><td>napiernlp</td><td>MVB-Enhanced</td><td>enhanced</td><td>0.888</td><td>0.889</td><td>0.888</td><td></td></tr>
+    <tr><td>11</td><td>uzh-tt</td><td>Roberta-Run</td><td>enhanced</td><td>0.887</td><td>0.884</td><td>0.884</td><td></td></tr>
+    <tr><td>12</td><td>nit-agartala-nlp-team</td><td>Logistic-Reg-Tf-idf</td><td>enhanced</td><td>0.881</td><td>0.876</td><td>0.875</td><td></td></tr>
+    <tr><td>13</td><td>organizer</td><td>Organizer-LLM-Baseline-enhanced</td><td>enhanced</td><td>0.597</td><td>0.533</td><td>0.438</td><td></td></tr>
+  </tbody>
+</table></div>
+<p>Not ranked (informational):</p>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Team</th><th>Run</th><th>Tag</th><th>Precision</th><th>Recall</th><th>F1</th><th>Repaired</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>sevitha</td><td>tfidf-linearsvc</td><td>enhanced</td><td>0.884</td><td>0.884</td><td>0.884</td><td></td></tr>
+    <tr><td>webis (organizer)</td><td>Webis-CourtroomTrial-enhanced</td><td>enhanced</td><td>0.848</td><td>0.842</td><td>0.841</td><td></td></tr>
+  </tbody>
+</table></div>
+<h3>Task 2 — base</h3>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Rank</th><th>Team</th><th>Run</th><th>Tag</th><th>Precision</th><th>Recall</th><th>F1</th><th>Repaired</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>uzhcl-for-the-win</td><td>st2-base</td><td>base</td><td>0.876</td><td>0.860</td><td>0.859</td><td></td></tr>
+    <tr><td>2</td><td>grtsh</td><td>llm-court-02</td><td>base</td><td>0.807</td><td>0.607</td><td>0.671</td><td>25 preds</td></tr>
+    <tr><td>3</td><td>grtsh</td><td>llm-court-01</td><td>base</td><td>0.780</td><td>0.574</td><td>0.638</td><td>27 preds</td></tr>
+    <tr><td>4</td><td>organizer</td><td>Organizer-LLM-Baseline-base</td><td>base</td><td>0.143</td><td>0.127</td><td>0.050</td><td></td></tr>
+  </tbody>
+</table></div>
+<p>Not ranked (informational):</p>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Team</th><th>Run</th><th>Tag</th><th>Precision</th><th>Recall</th><th>F1</th><th>Repaired</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>veritas</td><td>RoBERTa-large-base</td><td>base</td><td>0.685</td><td>0.656</td><td>0.661</td><td></td></tr>
+    <tr><td>veritas</td><td>ModernBERT-lg-base</td><td>base</td><td>0.576</td><td>0.523</td><td>0.523</td><td></td></tr>
+  </tbody>
+</table></div>
+<h3>Task 2 — enhanced</h3>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Rank</th><th>Team</th><th>Run</th><th>Tag</th><th>Precision</th><th>Recall</th><th>F1</th><th>Repaired</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>uzh-tt</td><td>cascaded-V22</td><td>enhanced</td><td>0.992</td><td>0.991</td><td>0.991</td><td></td></tr>
+    <tr><td>2</td><td>uzh-tt</td><td>cascaded-run2-2</td><td>enhanced</td><td>0.992</td><td>0.991</td><td>0.991</td><td></td></tr>
+    <tr><td>3</td><td>clef26-sophisma</td><td>RoBERTa-BF16-Class</td><td>enhanced</td><td>0.974</td><td>0.972</td><td>0.972</td><td></td></tr>
+    <tr><td>4</td><td>seals-nlp</td><td>Seals-NLP</td><td>enhanced</td><td>0.965</td><td>0.963</td><td>0.963</td><td></td></tr>
+    <tr><td>5</td><td>sevitha</td><td>multitask-deberta</td><td>enhanced</td><td>0.960</td><td>0.955</td><td>0.956</td><td></td></tr>
+    <tr><td>6</td><td>uzhcl-for-the-win</td><td>st2</td><td>enhanced</td><td>0.958</td><td>0.954</td><td>0.954</td><td></td></tr>
+    <tr><td>7</td><td>veritas</td><td>RoBERTa-large-enhnc</td><td>enhanced</td><td>0.950</td><td>0.947</td><td>0.947</td><td></td></tr>
+    <tr><td>8</td><td>uzh-tt</td><td>roberta-task2-run</td><td>enhanced</td><td>0.941</td><td>0.930</td><td>0.931</td><td></td></tr>
+    <tr><td>9</td><td>veritas</td><td>Ensembl</td><td>enhanced</td><td>0.936</td><td>0.925</td><td>0.927</td><td></td></tr>
+    <tr><td>10</td><td>veritas</td><td>ModernBERT</td><td>enhanced</td><td>0.936</td><td>0.925</td><td>0.927</td><td></td></tr>
+    <tr><td>11</td><td>nit-agartala-nlp-team</td><td>Reg-Lr</td><td>enhanced</td><td>0.733</td><td>0.821</td><td>0.773</td><td></td></tr>
+    <tr><td>12</td><td>nit-agartala-nlp-team</td><td>Bagging-LR</td><td>enhanced</td><td>0.730</td><td>0.812</td><td>0.766</td><td></td></tr>
+    <tr><td>13</td><td>organizer</td><td>Organizer-LLM-Baseline-enhanced</td><td>enhanced</td><td>0.142</td><td>0.133</td><td>0.045</td><td></td></tr>
+  </tbody>
+</table></div>
+<p>Not ranked (informational):</p>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Team</th><th>Run</th><th>Tag</th><th>Precision</th><th>Recall</th><th>F1</th><th>Repaired</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>sevitha</td><td>tfidf-linearsvc</td><td>enhanced</td><td>0.957</td><td>0.953</td><td>0.954</td><td></td></tr>
+  </tbody>
+</table></div>
+<h3>Task 3 — base</h3>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Rank</th><th>Team</th><th>Run</th><th>Tag</th><th>Precision</th><th>Recall</th><th>F1</th><th>Repaired</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>uzhcl-for-the-win</td><td>st3-base</td><td>base</td><td>0.710</td><td>0.724</td><td>0.716</td><td></td></tr>
+    <tr><td>2</td><td>grtsh</td><td>llm-court-01</td><td>base</td><td>0.705</td><td>0.812</td><td>0.700</td><td></td></tr>
+    <tr><td>3</td><td>organizer</td><td>Organizer-LLM-Baseline-base</td><td>base</td><td>0.701</td><td>0.511</td><td>0.498</td><td></td></tr>
+  </tbody>
+</table></div>
+<h3>Task 3 — enhanced</h3>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Rank</th><th>Team</th><th>Run</th><th>Tag</th><th>Precision</th><th>Recall</th><th>F1</th><th>Repaired</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>sevitha</td><td>multitask-deberta</td><td>enhanced</td><td>0.958</td><td>0.998</td><td>0.976</td><td></td></tr>
+    <tr><td>2</td><td>sevitha</td><td>TFIDF-LinearSVC</td><td>enhanced</td><td>0.880</td><td>0.880</td><td>0.880</td><td></td></tr>
+    <tr><td>3</td><td>uzh-tt</td><td>Roberta-run-task3</td><td>enhanced</td><td>0.837</td><td>0.897</td><td>0.858</td><td></td></tr>
+    <tr><td>4</td><td>seals-nlp</td><td>Seals-NLP</td><td>enhanced</td><td>0.866</td><td>0.798</td><td>0.816</td><td></td></tr>
+    <tr><td>5</td><td>uzhcl-for-the-win</td><td>st3</td><td>enhanced</td><td>0.716</td><td>0.933</td><td>0.748</td><td></td></tr>
+    <tr><td>6</td><td>organizer</td><td>Organizer-LLM-Baseline-enhanced</td><td>enhanced</td><td>0.701</td><td>0.513</td><td>0.499</td><td></td></tr>
+  </tbody>
+</table></div>
+<h2 id="combined-rankings-base-enhanced-merged">Combined rankings (base + enhanced merged)</h2>
+<h3>Task 1 — ranking (base + enhanced)</h3>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Rank</th><th>Team</th><th>Run</th><th>Tag</th><th>Precision</th><th>Recall</th><th>F1</th><th>Repaired</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>seals-nlp</td><td>Seals-NLP</td><td>enhanced</td><td>0.957</td><td>0.957</td><td>0.957</td><td></td></tr>
+    <tr><td>2</td><td>uzhcl-for-the-win</td><td>st1-first-run</td><td>enhanced</td><td>0.946</td><td>0.945</td><td>0.944</td><td></td></tr>
+    <tr><td>3</td><td>ooooooo</td><td>enhanced</td><td>enhanced</td><td>0.940</td><td>0.940</td><td>0.940</td><td></td></tr>
+    <tr><td>4</td><td>veritas</td><td>RoBERTa-large-enhnc</td><td>enhanced</td><td>0.927</td><td>0.927</td><td>0.927</td><td></td></tr>
+    <tr><td>5</td><td>sevitha</td><td>multitask-deberta</td><td>enhanced</td><td>0.931</td><td>0.926</td><td>0.927</td><td></td></tr>
+    <tr><td>6</td><td>clef26-sophisma</td><td>RoBERTa-BF16</td><td>enhanced</td><td>0.914</td><td>0.914</td><td>0.914</td><td></td></tr>
+    <tr><td>7</td><td>napiernlp</td><td>CVB-Enhanced</td><td>enhanced</td><td>0.910</td><td>0.910</td><td>0.910</td><td></td></tr>
+    <tr><td>8</td><td>uzh-tt</td><td>cascaded-run-1</td><td>enhanced</td><td>0.894</td><td>0.892</td><td>0.893</td><td></td></tr>
+    <tr><td>9</td><td>uzh-tt</td><td>cascaded-v2</td><td>enhanced</td><td>0.894</td><td>0.892</td><td>0.893</td><td></td></tr>
+    <tr><td>10</td><td>napiernlp</td><td>MVB-Enhanced</td><td>enhanced</td><td>0.888</td><td>0.889</td><td>0.888</td><td></td></tr>
+    <tr><td>11</td><td>uzh-tt</td><td>Roberta-Run</td><td>enhanced</td><td>0.887</td><td>0.884</td><td>0.884</td><td></td></tr>
+    <tr><td>12</td><td>nit-agartala-nlp-team</td><td>Logistic-Reg-Tf-idf</td><td>enhanced</td><td>0.881</td><td>0.876</td><td>0.875</td><td></td></tr>
+    <tr><td>13</td><td>grtsh</td><td>llm-court-01</td><td>base</td><td>0.807</td><td>0.807</td><td>0.807</td><td></td></tr>
+    <tr><td>14</td><td>uzhcl-for-the-win</td><td>st1-base</td><td>base</td><td>0.770</td><td>0.754</td><td>0.751</td><td></td></tr>
+    <tr><td>15</td><td>veritas</td><td>RoBERTa-large-base</td><td>base</td><td>0.742</td><td>0.737</td><td>0.737</td><td></td></tr>
+    <tr><td>16</td><td>helium</td><td>Gem4-31B-no-desc</td><td>base</td><td>0.745</td><td>0.737</td><td>0.736</td><td></td></tr>
+    <tr><td>17</td><td>helium</td><td>Gemma4-31TrueRawCtx</td><td>base</td><td>0.745</td><td>0.737</td><td>0.736</td><td></td></tr>
+    <tr><td>18</td><td>helium</td><td>gemma-4-31b-it-context</td><td>base</td><td>0.745</td><td>0.737</td><td>0.736</td><td></td></tr>
+    <tr><td>19</td><td>napiernlp</td><td>CVB-Base</td><td>base</td><td>0.736</td><td>0.734</td><td>0.734</td><td></td></tr>
+    <tr><td>20</td><td>ooooooo</td><td>base-2</td><td>base</td><td>0.730</td><td>0.718</td><td>0.713</td><td></td></tr>
+    <tr><td>21</td><td>nit-agartala-nlp-team</td><td>fine tune deroberta</td><td>base</td><td>0.727</td><td>0.706</td><td>0.697</td><td></td></tr>
+    <tr><td>22</td><td>ooooooo</td><td>base</td><td>base</td><td>0.737</td><td>0.685</td><td>0.665</td><td></td></tr>
+    <tr><td>23</td><td>nit-agartala-nlp-team</td><td>nli-deberta</td><td>base</td><td>0.685</td><td>0.667</td><td>0.658</td><td></td></tr>
+    <tr><td>24</td><td>organizer</td><td>Organizer-LLM-Baseline-base</td><td>base</td><td>0.502</td><td>0.501</td><td>0.460</td><td></td></tr>
+    <tr><td>25</td><td>organizer</td><td>Organizer-LLM-Baseline-enhanced</td><td>enhanced</td><td>0.597</td><td>0.533</td><td>0.438</td><td></td></tr>
+  </tbody>
+</table></div>
+<h4>Task 1 — not ranked (informational)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Team</th><th>Run</th><th>Tag</th><th>Precision</th><th>Recall</th><th>F1</th><th>Repaired</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>sevitha</td><td>tfidf-linearsvc</td><td>enhanced</td><td>0.884</td><td>0.884</td><td>0.884</td><td></td></tr>
+    <tr><td>webis (organizer)</td><td>Webis-CourtroomTrial-enhanced</td><td>enhanced</td><td>0.848</td><td>0.842</td><td>0.841</td><td></td></tr>
+    <tr><td>webis (organizer)</td><td>Webis-CourtroomTrial-base</td><td>base</td><td>0.705</td><td>0.704</td><td>0.704</td><td></td></tr>
+  </tbody>
+</table></div>
+<h3>Task 2 — ranking (base + enhanced)</h3>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Rank</th><th>Team</th><th>Run</th><th>Tag</th><th>Precision</th><th>Recall</th><th>F1</th><th>Repaired</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>uzh-tt</td><td>cascaded-V22</td><td>enhanced</td><td>0.992</td><td>0.991</td><td>0.991</td><td></td></tr>
+    <tr><td>2</td><td>uzh-tt</td><td>cascaded-run2-2</td><td>enhanced</td><td>0.992</td><td>0.991</td><td>0.991</td><td></td></tr>
+    <tr><td>3</td><td>clef26-sophisma</td><td>RoBERTa-BF16-Class</td><td>enhanced</td><td>0.974</td><td>0.972</td><td>0.972</td><td></td></tr>
+    <tr><td>4</td><td>seals-nlp</td><td>Seals-NLP</td><td>enhanced</td><td>0.965</td><td>0.963</td><td>0.963</td><td></td></tr>
+    <tr><td>5</td><td>sevitha</td><td>multitask-deberta</td><td>enhanced</td><td>0.960</td><td>0.955</td><td>0.956</td><td></td></tr>
+    <tr><td>6</td><td>uzhcl-for-the-win</td><td>st2</td><td>enhanced</td><td>0.958</td><td>0.954</td><td>0.954</td><td></td></tr>
+    <tr><td>7</td><td>veritas</td><td>RoBERTa-large-enhnc</td><td>enhanced</td><td>0.950</td><td>0.947</td><td>0.947</td><td></td></tr>
+    <tr><td>8</td><td>uzh-tt</td><td>roberta-task2-run</td><td>enhanced</td><td>0.941</td><td>0.930</td><td>0.931</td><td></td></tr>
+    <tr><td>9</td><td>veritas</td><td>Ensembl</td><td>enhanced</td><td>0.936</td><td>0.925</td><td>0.927</td><td></td></tr>
+    <tr><td>10</td><td>veritas</td><td>ModernBERT</td><td>enhanced</td><td>0.936</td><td>0.925</td><td>0.927</td><td></td></tr>
+    <tr><td>11</td><td>uzhcl-for-the-win</td><td>st2-base</td><td>base</td><td>0.876</td><td>0.860</td><td>0.859</td><td></td></tr>
+    <tr><td>12</td><td>nit-agartala-nlp-team</td><td>Reg-Lr</td><td>enhanced</td><td>0.733</td><td>0.821</td><td>0.773</td><td></td></tr>
+    <tr><td>13</td><td>nit-agartala-nlp-team</td><td>Bagging-LR</td><td>enhanced</td><td>0.730</td><td>0.812</td><td>0.766</td><td></td></tr>
+    <tr><td>14</td><td>grtsh</td><td>llm-court-02</td><td>base</td><td>0.807</td><td>0.607</td><td>0.671</td><td>25 preds</td></tr>
+    <tr><td>15</td><td>grtsh</td><td>llm-court-01</td><td>base</td><td>0.780</td><td>0.574</td><td>0.638</td><td>27 preds</td></tr>
+    <tr><td>16</td><td>organizer</td><td>Organizer-LLM-Baseline-base</td><td>base</td><td>0.143</td><td>0.127</td><td>0.050</td><td></td></tr>
+    <tr><td>17</td><td>organizer</td><td>Organizer-LLM-Baseline-enhanced</td><td>enhanced</td><td>0.142</td><td>0.133</td><td>0.045</td><td></td></tr>
+  </tbody>
+</table></div>
+<h4>Task 2 — not ranked (informational)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Team</th><th>Run</th><th>Tag</th><th>Precision</th><th>Recall</th><th>F1</th><th>Repaired</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>sevitha</td><td>tfidf-linearsvc</td><td>enhanced</td><td>0.957</td><td>0.953</td><td>0.954</td><td></td></tr>
+    <tr><td>veritas</td><td>RoBERTa-large-base</td><td>base</td><td>0.685</td><td>0.656</td><td>0.661</td><td></td></tr>
+    <tr><td>veritas</td><td>ModernBERT-lg-base</td><td>base</td><td>0.576</td><td>0.523</td><td>0.523</td><td></td></tr>
+  </tbody>
+</table></div>
+<h3>Task 3 — ranking (base + enhanced)</h3>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Rank</th><th>Team</th><th>Run</th><th>Tag</th><th>Precision</th><th>Recall</th><th>F1</th><th>Repaired</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>sevitha</td><td>multitask-deberta</td><td>enhanced</td><td>0.958</td><td>0.998</td><td>0.976</td><td></td></tr>
+    <tr><td>2</td><td>sevitha</td><td>TFIDF-LinearSVC</td><td>enhanced</td><td>0.880</td><td>0.880</td><td>0.880</td><td></td></tr>
+    <tr><td>3</td><td>uzh-tt</td><td>Roberta-run-task3</td><td>enhanced</td><td>0.837</td><td>0.897</td><td>0.858</td><td></td></tr>
+    <tr><td>4</td><td>seals-nlp</td><td>Seals-NLP</td><td>enhanced</td><td>0.866</td><td>0.798</td><td>0.816</td><td></td></tr>
+    <tr><td>5</td><td>uzhcl-for-the-win</td><td>st3</td><td>enhanced</td><td>0.716</td><td>0.933</td><td>0.748</td><td></td></tr>
+    <tr><td>6</td><td>uzhcl-for-the-win</td><td>st3-base</td><td>base</td><td>0.710</td><td>0.724</td><td>0.716</td><td></td></tr>
+    <tr><td>7</td><td>grtsh</td><td>llm-court-01</td><td>base</td><td>0.705</td><td>0.812</td><td>0.700</td><td></td></tr>
+    <tr><td>8</td><td>organizer</td><td>Organizer-LLM-Baseline-enhanced</td><td>enhanced</td><td>0.701</td><td>0.513</td><td>0.499</td><td></td></tr>
+    <tr><td>9</td><td>organizer</td><td>Organizer-LLM-Baseline-base</td><td>base</td><td>0.701</td><td>0.511</td><td>0.498</td><td></td></tr>
+  </tbody>
+</table></div>
+<h2 id="per-class-details">Per-class details</h2>
+<h3>Task 1 — base</h3>
+<h4>#1 llm-court-01 (team: grtsh)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fallacy</td><td>0.818</td><td>0.783</td><td>0.800</td></tr>
+    <tr><td>non-fallacy</td><td>0.797</td><td>0.831</td><td>0.813</td></tr>
+    <tr><td>MACRO</td><td>0.807</td><td>0.807</td><td>0.807</td></tr>
+  </tbody>
+</table></div>
+<h4>#2 st1-base (team: uzhcl-for-the-win)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fallacy</td><td>0.830</td><td>0.635</td><td>0.719</td></tr>
+    <tr><td>non-fallacy</td><td>0.710</td><td>0.873</td><td>0.783</td></tr>
+    <tr><td>MACRO</td><td>0.770</td><td>0.754</td><td>0.751</td></tr>
+  </tbody>
+</table></div>
+<h4>#3 RoBERTa-large-base (team: veritas)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fallacy</td><td>0.770</td><td>0.670</td><td>0.716</td></tr>
+    <tr><td>non-fallacy</td><td>0.714</td><td>0.805</td><td>0.757</td></tr>
+    <tr><td>MACRO</td><td>0.742</td><td>0.737</td><td>0.737</td></tr>
+  </tbody>
+</table></div>
+<h4>#4 Gem4-31B-no-desc (team: helium)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fallacy</td><td>0.781</td><td>0.652</td><td>0.711</td></tr>
+    <tr><td>non-fallacy</td><td>0.708</td><td>0.822</td><td>0.761</td></tr>
+    <tr><td>MACRO</td><td>0.745</td><td>0.737</td><td>0.736</td></tr>
+  </tbody>
+</table></div>
+<h4>#5 Gemma4-31TrueRawCtx (team: helium)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fallacy</td><td>0.781</td><td>0.652</td><td>0.711</td></tr>
+    <tr><td>non-fallacy</td><td>0.708</td><td>0.822</td><td>0.761</td></tr>
+    <tr><td>MACRO</td><td>0.745</td><td>0.737</td><td>0.736</td></tr>
+  </tbody>
+</table></div>
+<h4>#6 gemma-4-31b-it-context (team: helium)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fallacy</td><td>0.781</td><td>0.652</td><td>0.711</td></tr>
+    <tr><td>non-fallacy</td><td>0.708</td><td>0.822</td><td>0.761</td></tr>
+    <tr><td>MACRO</td><td>0.745</td><td>0.737</td><td>0.736</td></tr>
+  </tbody>
+</table></div>
+<h4>#7 CVB-Base (team: napiernlp)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fallacy</td><td>0.712</td><td>0.774</td><td>0.742</td></tr>
+    <tr><td>non-fallacy</td><td>0.759</td><td>0.695</td><td>0.726</td></tr>
+    <tr><td>MACRO</td><td>0.736</td><td>0.734</td><td>0.734</td></tr>
+  </tbody>
+</table></div>
+<h4>#8 base-2 (team: ooooooo)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fallacy</td><td>0.671</td><td>0.835</td><td>0.744</td></tr>
+    <tr><td>non-fallacy</td><td>0.789</td><td>0.602</td><td>0.683</td></tr>
+    <tr><td>MACRO</td><td>0.730</td><td>0.718</td><td>0.713</td></tr>
+  </tbody>
+</table></div>
+<h4>#9 fine tune deroberta (team: nit-agartala-nlp-team)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fallacy</td><td>0.651</td><td>0.861</td><td>0.742</td></tr>
+    <tr><td>non-fallacy</td><td>0.802</td><td>0.551</td><td>0.653</td></tr>
+    <tr><td>MACRO</td><td>0.727</td><td>0.706</td><td>0.697</td></tr>
+  </tbody>
+</table></div>
+<h4>#10 base (team: ooooooo)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fallacy</td><td>0.620</td><td>0.922</td><td>0.741</td></tr>
+    <tr><td>non-fallacy</td><td>0.855</td><td>0.449</td><td>0.589</td></tr>
+    <tr><td>MACRO</td><td>0.737</td><td>0.685</td><td>0.665</td></tr>
+  </tbody>
+</table></div>
+<h4>#11 nli-deberta (team: nit-agartala-nlp-team)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fallacy</td><td>0.621</td><td>0.826</td><td>0.709</td></tr>
+    <tr><td>non-fallacy</td><td>0.750</td><td>0.508</td><td>0.606</td></tr>
+    <tr><td>MACRO</td><td>0.685</td><td>0.667</td><td>0.658</td></tr>
+  </tbody>
+</table></div>
+<h4>#12 Organizer-LLM-Baseline-base (team: organizer)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fallacy</td><td>0.494</td><td>0.774</td><td>0.603</td></tr>
+    <tr><td>non-fallacy</td><td>0.509</td><td>0.229</td><td>0.316</td></tr>
+    <tr><td>MACRO</td><td>0.502</td><td>0.501</td><td>0.460</td></tr>
+  </tbody>
+</table></div>
+<h4>[info] Webis-CourtroomTrial-base (team: webis (organizer))</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fallacy</td><td>0.685</td><td>0.739</td><td>0.711</td></tr>
+    <tr><td>non-fallacy</td><td>0.725</td><td>0.669</td><td>0.696</td></tr>
+    <tr><td>MACRO</td><td>0.705</td><td>0.704</td><td>0.704</td></tr>
+  </tbody>
+</table></div>
+<h3>Task 1 — enhanced</h3>
+<h4>#1 Seals-NLP (team: seals-nlp)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fallacy</td><td>0.949</td><td>0.965</td><td>0.957</td></tr>
+    <tr><td>non-fallacy</td><td>0.966</td><td>0.949</td><td>0.957</td></tr>
+    <tr><td>MACRO</td><td>0.957</td><td>0.957</td><td>0.957</td></tr>
+  </tbody>
+</table></div>
+<h4>#2 st1-first-run (team: uzhcl-for-the-win)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fallacy</td><td>0.918</td><td>0.974</td><td>0.945</td></tr>
+    <tr><td>non-fallacy</td><td>0.973</td><td>0.915</td><td>0.943</td></tr>
+    <tr><td>MACRO</td><td>0.946</td><td>0.945</td><td>0.944</td></tr>
+  </tbody>
+</table></div>
+<h4>#3 enhanced (team: ooooooo)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fallacy</td><td>0.939</td><td>0.939</td><td>0.939</td></tr>
+    <tr><td>non-fallacy</td><td>0.941</td><td>0.941</td><td>0.941</td></tr>
+    <tr><td>MACRO</td><td>0.940</td><td>0.940</td><td>0.940</td></tr>
+  </tbody>
+</table></div>
+<h4>#4 RoBERTa-large-enhnc (team: veritas)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fallacy</td><td>0.930</td><td>0.922</td><td>0.926</td></tr>
+    <tr><td>non-fallacy</td><td>0.924</td><td>0.932</td><td>0.928</td></tr>
+    <tr><td>MACRO</td><td>0.927</td><td>0.927</td><td>0.927</td></tr>
+  </tbody>
+</table></div>
+<h4>#5 multitask-deberta (team: sevitha)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fallacy</td><td>0.971</td><td>0.878</td><td>0.922</td></tr>
+    <tr><td>non-fallacy</td><td>0.891</td><td>0.975</td><td>0.931</td></tr>
+    <tr><td>MACRO</td><td>0.931</td><td>0.926</td><td>0.927</td></tr>
+  </tbody>
+</table></div>
+<h4>#6 RoBERTa-BF16 (team: clef26-sophisma)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fallacy</td><td>0.899</td><td>0.930</td><td>0.915</td></tr>
+    <tr><td>non-fallacy</td><td>0.930</td><td>0.898</td><td>0.914</td></tr>
+    <tr><td>MACRO</td><td>0.914</td><td>0.914</td><td>0.914</td></tr>
+  </tbody>
+</table></div>
+<h4>#7 CVB-Enhanced (team: napiernlp)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fallacy</td><td>0.898</td><td>0.922</td><td>0.910</td></tr>
+    <tr><td>non-fallacy</td><td>0.922</td><td>0.898</td><td>0.910</td></tr>
+    <tr><td>MACRO</td><td>0.910</td><td>0.910</td><td>0.910</td></tr>
+  </tbody>
+</table></div>
+<h4>#8 cascaded-run-1 (team: uzh-tt)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fallacy</td><td>0.909</td><td>0.870</td><td>0.889</td></tr>
+    <tr><td>non-fallacy</td><td>0.878</td><td>0.915</td><td>0.896</td></tr>
+    <tr><td>MACRO</td><td>0.894</td><td>0.892</td><td>0.893</td></tr>
+  </tbody>
+</table></div>
+<h4>#9 cascaded-v2 (team: uzh-tt)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fallacy</td><td>0.909</td><td>0.870</td><td>0.889</td></tr>
+    <tr><td>non-fallacy</td><td>0.878</td><td>0.915</td><td>0.896</td></tr>
+    <tr><td>MACRO</td><td>0.894</td><td>0.892</td><td>0.893</td></tr>
+  </tbody>
+</table></div>
+<h4>#10 MVB-Enhanced (team: napiernlp)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fallacy</td><td>0.880</td><td>0.896</td><td>0.888</td></tr>
+    <tr><td>non-fallacy</td><td>0.897</td><td>0.881</td><td>0.889</td></tr>
+    <tr><td>MACRO</td><td>0.888</td><td>0.889</td><td>0.888</td></tr>
+  </tbody>
+</table></div>
+<h4>#11 Roberta-Run (team: uzh-tt)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fallacy</td><td>0.915</td><td>0.843</td><td>0.878</td></tr>
+    <tr><td>non-fallacy</td><td>0.858</td><td>0.924</td><td>0.890</td></tr>
+    <tr><td>MACRO</td><td>0.887</td><td>0.884</td><td>0.884</td></tr>
+  </tbody>
+</table></div>
+<h4>#12 Logistic-Reg-Tf-idf (team: nit-agartala-nlp-team)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fallacy</td><td>0.831</td><td>0.939</td><td>0.882</td></tr>
+    <tr><td>non-fallacy</td><td>0.932</td><td>0.814</td><td>0.869</td></tr>
+    <tr><td>MACRO</td><td>0.881</td><td>0.876</td><td>0.875</td></tr>
+  </tbody>
+</table></div>
+<h4>#13 Organizer-LLM-Baseline-enhanced (team: organizer)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fallacy</td><td>0.512</td><td>0.939</td><td>0.663</td></tr>
+    <tr><td>non-fallacy</td><td>0.682</td><td>0.127</td><td>0.214</td></tr>
+    <tr><td>MACRO</td><td>0.597</td><td>0.533</td><td>0.438</td></tr>
+  </tbody>
+</table></div>
+<h4>[info] tfidf-linearsvc (team: sevitha)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fallacy</td><td>0.879</td><td>0.887</td><td>0.883</td></tr>
+    <tr><td>non-fallacy</td><td>0.889</td><td>0.881</td><td>0.885</td></tr>
+    <tr><td>MACRO</td><td>0.884</td><td>0.884</td><td>0.884</td></tr>
+  </tbody>
+</table></div>
+<h4>[info] Webis-CourtroomTrial-enhanced (team: webis (organizer))</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fallacy</td><td>0.795</td><td>0.913</td><td>0.850</td></tr>
+    <tr><td>non-fallacy</td><td>0.901</td><td>0.771</td><td>0.831</td></tr>
+    <tr><td>MACRO</td><td>0.848</td><td>0.842</td><td>0.841</td></tr>
+  </tbody>
+</table></div>
+<h3>Task 2 — base</h3>
+<h4>#1 st2-base (team: uzhcl-for-the-win)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>authority</td><td>0.882</td><td>1.000</td><td>0.938</td></tr>
+    <tr><td>black-white</td><td>0.647</td><td>0.846</td><td>0.733</td></tr>
+    <tr><td>hasty_generalization</td><td>1.000</td><td>0.929</td><td>0.963</td></tr>
+    <tr><td>natural</td><td>0.875</td><td>0.933</td><td>0.903</td></tr>
+    <tr><td>population</td><td>0.900</td><td>0.750</td><td>0.818</td></tr>
+    <tr><td>slippery_slope</td><td>0.778</td><td>0.933</td><td>0.848</td></tr>
+    <tr><td>tradition</td><td>1.000</td><td>0.688</td><td>0.815</td></tr>
+    <tr><td>worse_problems</td><td>0.923</td><td>0.800</td><td>0.857</td></tr>
+    <tr><td>MACRO</td><td>0.876</td><td>0.860</td><td>0.859</td></tr>
+  </tbody>
+</table></div>
+<h4>#2 llm-court-02 (team: grtsh)  [repaired: 25 preds]</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>authority</td><td>0.846</td><td>0.733</td><td>0.786</td></tr>
+    <tr><td>black-white</td><td>0.583</td><td>0.538</td><td>0.560</td></tr>
+    <tr><td>hasty_generalization</td><td>0.909</td><td>0.714</td><td>0.800</td></tr>
+    <tr><td>natural</td><td>0.750</td><td>0.800</td><td>0.774</td></tr>
+    <tr><td>population</td><td>1.000</td><td>0.250</td><td>0.400</td></tr>
+    <tr><td>slippery_slope</td><td>0.917</td><td>0.733</td><td>0.815</td></tr>
+    <tr><td>tradition</td><td>0.786</td><td>0.688</td><td>0.733</td></tr>
+    <tr><td>worse_problems</td><td>0.667</td><td>0.400</td><td>0.500</td></tr>
+    <tr><td>MACRO</td><td>0.807</td><td>0.607</td><td>0.671</td></tr>
+  </tbody>
+</table></div>
+<h4>#3 llm-court-01 (team: grtsh)  [repaired: 27 preds]</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>authority</td><td>0.846</td><td>0.733</td><td>0.786</td></tr>
+    <tr><td>black-white</td><td>0.583</td><td>0.538</td><td>0.560</td></tr>
+    <tr><td>hasty_generalization</td><td>0.833</td><td>0.714</td><td>0.769</td></tr>
+    <tr><td>natural</td><td>0.750</td><td>0.800</td><td>0.774</td></tr>
+    <tr><td>population</td><td>1.000</td><td>0.250</td><td>0.400</td></tr>
+    <tr><td>slippery_slope</td><td>0.778</td><td>0.467</td><td>0.583</td></tr>
+    <tr><td>tradition</td><td>0.786</td><td>0.688</td><td>0.733</td></tr>
+    <tr><td>worse_problems</td><td>0.667</td><td>0.400</td><td>0.500</td></tr>
+    <tr><td>MACRO</td><td>0.780</td><td>0.574</td><td>0.638</td></tr>
+  </tbody>
+</table></div>
+<h4>#4 Organizer-LLM-Baseline-base (team: organizer)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>authority</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+    <tr><td>black-white</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+    <tr><td>hasty_generalization</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+    <tr><td>natural</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+    <tr><td>population</td><td>1.000</td><td>0.083</td><td>0.154</td></tr>
+    <tr><td>slippery_slope</td><td>0.140</td><td>0.933</td><td>0.243</td></tr>
+    <tr><td>tradition</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+    <tr><td>worse_problems</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+    <tr><td>MACRO</td><td>0.143</td><td>0.127</td><td>0.050</td></tr>
+  </tbody>
+</table></div>
+<h4>[info] RoBERTa-large-base (team: veritas)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>authority</td><td>0.909</td><td>0.667</td><td>0.769</td></tr>
+    <tr><td>black-white</td><td>0.350</td><td>0.538</td><td>0.424</td></tr>
+    <tr><td>hasty_generalization</td><td>0.571</td><td>0.571</td><td>0.571</td></tr>
+    <tr><td>natural</td><td>0.882</td><td>1.000</td><td>0.938</td></tr>
+    <tr><td>population</td><td>0.467</td><td>0.583</td><td>0.519</td></tr>
+    <tr><td>slippery_slope</td><td>0.714</td><td>0.667</td><td>0.690</td></tr>
+    <tr><td>tradition</td><td>0.917</td><td>0.688</td><td>0.786</td></tr>
+    <tr><td>worse_problems</td><td>0.667</td><td>0.533</td><td>0.593</td></tr>
+    <tr><td>MACRO</td><td>0.685</td><td>0.656</td><td>0.661</td></tr>
+  </tbody>
+</table></div>
+<h4>[info] ModernBERT-lg-base (team: veritas)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>authority</td><td>0.385</td><td>0.333</td><td>0.357</td></tr>
+    <tr><td>black-white</td><td>0.368</td><td>0.538</td><td>0.438</td></tr>
+    <tr><td>hasty_generalization</td><td>0.700</td><td>0.500</td><td>0.583</td></tr>
+    <tr><td>natural</td><td>0.722</td><td>0.867</td><td>0.788</td></tr>
+    <tr><td>population</td><td>0.250</td><td>0.500</td><td>0.333</td></tr>
+    <tr><td>slippery_slope</td><td>0.714</td><td>0.667</td><td>0.690</td></tr>
+    <tr><td>tradition</td><td>0.833</td><td>0.312</td><td>0.455</td></tr>
+    <tr><td>worse_problems</td><td>0.636</td><td>0.467</td><td>0.538</td></tr>
+    <tr><td>MACRO</td><td>0.576</td><td>0.523</td><td>0.523</td></tr>
+  </tbody>
+</table></div>
+<h3>Task 2 — enhanced</h3>
+<h4>#1 cascaded-V22 (team: uzh-tt)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>authority</td><td>0.938</td><td>1.000</td><td>0.968</td></tr>
+    <tr><td>black-white</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>hasty_generalization</td><td>1.000</td><td>0.929</td><td>0.963</td></tr>
+    <tr><td>natural</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>population</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>slippery_slope</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>tradition</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>worse_problems</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>MACRO</td><td>0.992</td><td>0.991</td><td>0.991</td></tr>
+  </tbody>
+</table></div>
+<h4>#2 cascaded-run2-2 (team: uzh-tt)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>authority</td><td>0.938</td><td>1.000</td><td>0.968</td></tr>
+    <tr><td>black-white</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>hasty_generalization</td><td>1.000</td><td>0.929</td><td>0.963</td></tr>
+    <tr><td>natural</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>population</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>slippery_slope</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>tradition</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>worse_problems</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>MACRO</td><td>0.992</td><td>0.991</td><td>0.991</td></tr>
+  </tbody>
+</table></div>
+<h4>#3 RoBERTa-BF16-Class (team: clef26-sophisma)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>authority</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>black-white</td><td>1.000</td><td>0.923</td><td>0.960</td></tr>
+    <tr><td>hasty_generalization</td><td>0.933</td><td>1.000</td><td>0.966</td></tr>
+    <tr><td>natural</td><td>1.000</td><td>0.933</td><td>0.966</td></tr>
+    <tr><td>population</td><td>0.917</td><td>0.917</td><td>0.917</td></tr>
+    <tr><td>slippery_slope</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>tradition</td><td>0.941</td><td>1.000</td><td>0.970</td></tr>
+    <tr><td>worse_problems</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>MACRO</td><td>0.974</td><td>0.972</td><td>0.972</td></tr>
+  </tbody>
+</table></div>
+<h4>#4 Seals-NLP (team: seals-nlp)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>authority</td><td>1.000</td><td>0.933</td><td>0.966</td></tr>
+    <tr><td>black-white</td><td>1.000</td><td>0.923</td><td>0.960</td></tr>
+    <tr><td>hasty_generalization</td><td>0.933</td><td>1.000</td><td>0.966</td></tr>
+    <tr><td>natural</td><td>1.000</td><td>0.933</td><td>0.966</td></tr>
+    <tr><td>population</td><td>0.846</td><td>0.917</td><td>0.880</td></tr>
+    <tr><td>slippery_slope</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>tradition</td><td>0.941</td><td>1.000</td><td>0.970</td></tr>
+    <tr><td>worse_problems</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>MACRO</td><td>0.965</td><td>0.963</td><td>0.963</td></tr>
+  </tbody>
+</table></div>
+<h4>#5 multitask-deberta (team: sevitha)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>authority</td><td>1.000</td><td>0.867</td><td>0.929</td></tr>
+    <tr><td>black-white</td><td>1.000</td><td>0.923</td><td>0.960</td></tr>
+    <tr><td>hasty_generalization</td><td>0.933</td><td>1.000</td><td>0.966</td></tr>
+    <tr><td>natural</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>population</td><td>0.917</td><td>0.917</td><td>0.917</td></tr>
+    <tr><td>slippery_slope</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>tradition</td><td>1.000</td><td>0.938</td><td>0.968</td></tr>
+    <tr><td>worse_problems</td><td>0.833</td><td>1.000</td><td>0.909</td></tr>
+    <tr><td>MACRO</td><td>0.960</td><td>0.955</td><td>0.956</td></tr>
+  </tbody>
+</table></div>
+<h4>#6 st2 (team: uzhcl-for-the-win)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>authority</td><td>1.000</td><td>0.867</td><td>0.929</td></tr>
+    <tr><td>black-white</td><td>1.000</td><td>0.923</td><td>0.960</td></tr>
+    <tr><td>hasty_generalization</td><td>0.929</td><td>0.929</td><td>0.929</td></tr>
+    <tr><td>natural</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>population</td><td>0.733</td><td>0.917</td><td>0.815</td></tr>
+    <tr><td>slippery_slope</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>tradition</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>worse_problems</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>MACRO</td><td>0.958</td><td>0.954</td><td>0.954</td></tr>
+  </tbody>
+</table></div>
+<h4>#7 RoBERTa-large-enhnc (team: veritas)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>authority</td><td>1.000</td><td>0.867</td><td>0.929</td></tr>
+    <tr><td>black-white</td><td>1.000</td><td>0.923</td><td>0.960</td></tr>
+    <tr><td>hasty_generalization</td><td>0.875</td><td>1.000</td><td>0.933</td></tr>
+    <tr><td>natural</td><td>1.000</td><td>0.933</td><td>0.966</td></tr>
+    <tr><td>population</td><td>0.846</td><td>0.917</td><td>0.880</td></tr>
+    <tr><td>slippery_slope</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>tradition</td><td>0.938</td><td>0.938</td><td>0.938</td></tr>
+    <tr><td>worse_problems</td><td>0.938</td><td>1.000</td><td>0.968</td></tr>
+    <tr><td>MACRO</td><td>0.950</td><td>0.947</td><td>0.947</td></tr>
+  </tbody>
+</table></div>
+<h4>#8 roberta-task2-run (team: uzh-tt)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>authority</td><td>1.000</td><td>0.800</td><td>0.889</td></tr>
+    <tr><td>black-white</td><td>1.000</td><td>0.923</td><td>0.960</td></tr>
+    <tr><td>hasty_generalization</td><td>0.737</td><td>1.000</td><td>0.848</td></tr>
+    <tr><td>natural</td><td>1.000</td><td>0.933</td><td>0.966</td></tr>
+    <tr><td>population</td><td>0.917</td><td>0.917</td><td>0.917</td></tr>
+    <tr><td>slippery_slope</td><td>0.938</td><td>1.000</td><td>0.968</td></tr>
+    <tr><td>tradition</td><td>0.938</td><td>0.938</td><td>0.938</td></tr>
+    <tr><td>worse_problems</td><td>1.000</td><td>0.933</td><td>0.966</td></tr>
+    <tr><td>MACRO</td><td>0.941</td><td>0.930</td><td>0.931</td></tr>
+  </tbody>
+</table></div>
+<h4>#9 Ensembl (team: veritas)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>authority</td><td>1.000</td><td>0.800</td><td>0.889</td></tr>
+    <tr><td>black-white</td><td>1.000</td><td>0.923</td><td>0.960</td></tr>
+    <tr><td>hasty_generalization</td><td>0.765</td><td>0.929</td><td>0.839</td></tr>
+    <tr><td>natural</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>population</td><td>0.900</td><td>0.750</td><td>0.818</td></tr>
+    <tr><td>slippery_slope</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>tradition</td><td>0.941</td><td>1.000</td><td>0.970</td></tr>
+    <tr><td>worse_problems</td><td>0.882</td><td>1.000</td><td>0.938</td></tr>
+    <tr><td>MACRO</td><td>0.936</td><td>0.925</td><td>0.927</td></tr>
+  </tbody>
+</table></div>
+<h4>#10 ModernBERT (team: veritas)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>authority</td><td>1.000</td><td>0.800</td><td>0.889</td></tr>
+    <tr><td>black-white</td><td>1.000</td><td>0.923</td><td>0.960</td></tr>
+    <tr><td>hasty_generalization</td><td>0.765</td><td>0.929</td><td>0.839</td></tr>
+    <tr><td>natural</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>population</td><td>0.900</td><td>0.750</td><td>0.818</td></tr>
+    <tr><td>slippery_slope</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>tradition</td><td>0.941</td><td>1.000</td><td>0.970</td></tr>
+    <tr><td>worse_problems</td><td>0.882</td><td>1.000</td><td>0.938</td></tr>
+    <tr><td>MACRO</td><td>0.936</td><td>0.925</td><td>0.927</td></tr>
+  </tbody>
+</table></div>
+<h4>#11 Reg-Lr (team: nit-agartala-nlp-team)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>authority</td><td>0.812</td><td>0.867</td><td>0.839</td></tr>
+    <tr><td>black-white</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+    <tr><td>hasty_generalization</td><td>0.875</td><td>1.000</td><td>0.933</td></tr>
+    <tr><td>natural</td><td>1.000</td><td>0.933</td><td>0.966</td></tr>
+    <tr><td>population</td><td>0.714</td><td>0.833</td><td>0.769</td></tr>
+    <tr><td>slippery_slope</td><td>0.833</td><td>1.000</td><td>0.909</td></tr>
+    <tr><td>tradition</td><td>0.882</td><td>0.938</td><td>0.909</td></tr>
+    <tr><td>worse_problems</td><td>0.750</td><td>1.000</td><td>0.857</td></tr>
+    <tr><td>MACRO</td><td>0.733</td><td>0.821</td><td>0.773</td></tr>
+  </tbody>
+</table></div>
+<h4>#12 Bagging-LR (team: nit-agartala-nlp-team)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>authority</td><td>0.824</td><td>0.933</td><td>0.875</td></tr>
+    <tr><td>black-white</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+    <tr><td>hasty_generalization</td><td>0.812</td><td>0.929</td><td>0.867</td></tr>
+    <tr><td>natural</td><td>1.000</td><td>0.933</td><td>0.966</td></tr>
+    <tr><td>population</td><td>0.833</td><td>0.833</td><td>0.833</td></tr>
+    <tr><td>slippery_slope</td><td>0.833</td><td>1.000</td><td>0.909</td></tr>
+    <tr><td>tradition</td><td>0.833</td><td>0.938</td><td>0.882</td></tr>
+    <tr><td>worse_problems</td><td>0.700</td><td>0.933</td><td>0.800</td></tr>
+    <tr><td>MACRO</td><td>0.730</td><td>0.812</td><td>0.766</td></tr>
+  </tbody>
+</table></div>
+<h4>#13 Organizer-LLM-Baseline-enhanced (team: organizer)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>authority</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+    <tr><td>black-white</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+    <tr><td>hasty_generalization</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+    <tr><td>natural</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+    <tr><td>population</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+    <tr><td>slippery_slope</td><td>0.138</td><td>1.000</td><td>0.242</td></tr>
+    <tr><td>tradition</td><td>1.000</td><td>0.062</td><td>0.118</td></tr>
+    <tr><td>worse_problems</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+    <tr><td>MACRO</td><td>0.142</td><td>0.133</td><td>0.045</td></tr>
+  </tbody>
+</table></div>
+<h4>[info] tfidf-linearsvc (team: sevitha)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>authority</td><td>0.933</td><td>0.933</td><td>0.933</td></tr>
+    <tr><td>black-white</td><td>1.000</td><td>0.923</td><td>0.960</td></tr>
+    <tr><td>hasty_generalization</td><td>0.875</td><td>1.000</td><td>0.933</td></tr>
+    <tr><td>natural</td><td>1.000</td><td>0.933</td><td>0.966</td></tr>
+    <tr><td>population</td><td>0.909</td><td>0.833</td><td>0.870</td></tr>
+    <tr><td>slippery_slope</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>tradition</td><td>0.941</td><td>1.000</td><td>0.970</td></tr>
+    <tr><td>worse_problems</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>MACRO</td><td>0.957</td><td>0.953</td><td>0.954</td></tr>
+  </tbody>
+</table></div>
+<h3>Task 3 — base</h3>
+<h4>#1 st3-base (team: uzhcl-for-the-win)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>goal:epistemic</td><td>0.959</td><td>0.949</td><td>0.954</td></tr>
+    <tr><td>goal:practical</td><td>0.750</td><td>0.789</td><td>0.769</td></tr>
+    <tr><td>basis:external</td><td>0.167</td><td>0.200</td><td>0.182</td></tr>
+    <tr><td>basis:internal</td><td>0.964</td><td>0.956</td><td>0.960</td></tr>
+    <tr><td>MACRO</td><td>0.710</td><td>0.724</td><td>0.716</td></tr>
+  </tbody>
+</table></div>
+<h4>#2 llm-court-01 (team: grtsh)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>goal:epistemic</td><td>1.000</td><td>0.939</td><td>0.969</td></tr>
+    <tr><td>goal:practical</td><td>0.760</td><td>1.000</td><td>0.864</td></tr>
+    <tr><td>basis:external</td><td>0.083</td><td>0.600</td><td>0.146</td></tr>
+    <tr><td>basis:internal</td><td>0.976</td><td>0.708</td><td>0.821</td></tr>
+    <tr><td>MACRO</td><td>0.705</td><td>0.812</td><td>0.700</td></tr>
+  </tbody>
+</table></div>
+<h4>#3 Organizer-LLM-Baseline-base (team: organizer)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>goal:epistemic</td><td>0.846</td><td>1.000</td><td>0.917</td></tr>
+    <tr><td>goal:practical</td><td>1.000</td><td>0.053</td><td>0.100</td></tr>
+    <tr><td>basis:external</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+    <tr><td>basis:internal</td><td>0.957</td><td>0.991</td><td>0.974</td></tr>
+    <tr><td>MACRO</td><td>0.701</td><td>0.511</td><td>0.498</td></tr>
+  </tbody>
+</table></div>
+<h3>Task 3 — enhanced</h3>
+<h4>#1 multitask-deberta (team: sevitha)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>goal:epistemic</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>goal:practical</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>basis:external</td><td>0.833</td><td>1.000</td><td>0.909</td></tr>
+    <tr><td>basis:internal</td><td>1.000</td><td>0.991</td><td>0.996</td></tr>
+    <tr><td>MACRO</td><td>0.958</td><td>0.998</td><td>0.976</td></tr>
+  </tbody>
+</table></div>
+<h4>#2 TFIDF-LinearSVC (team: sevitha)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>goal:epistemic</td><td>0.990</td><td>0.990</td><td>0.990</td></tr>
+    <tr><td>goal:practical</td><td>0.947</td><td>0.947</td><td>0.947</td></tr>
+    <tr><td>basis:external</td><td>0.600</td><td>0.600</td><td>0.600</td></tr>
+    <tr><td>basis:internal</td><td>0.982</td><td>0.982</td><td>0.982</td></tr>
+    <tr><td>MACRO</td><td>0.880</td><td>0.880</td><td>0.880</td></tr>
+  </tbody>
+</table></div>
+<h4>#3 Roberta-run-task3 (team: uzh-tt)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>goal:epistemic</td><td>0.970</td><td>0.980</td><td>0.975</td></tr>
+    <tr><td>goal:practical</td><td>0.889</td><td>0.842</td><td>0.865</td></tr>
+    <tr><td>basis:external</td><td>0.500</td><td>0.800</td><td>0.615</td></tr>
+    <tr><td>basis:internal</td><td>0.991</td><td>0.965</td><td>0.978</td></tr>
+    <tr><td>MACRO</td><td>0.837</td><td>0.897</td><td>0.858</td></tr>
+  </tbody>
+</table></div>
+<h4>#4 Seals-NLP (team: seals-nlp)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>goal:epistemic</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>goal:practical</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+    <tr><td>basis:external</td><td>0.500</td><td>0.200</td><td>0.286</td></tr>
+    <tr><td>basis:internal</td><td>0.966</td><td>0.991</td><td>0.978</td></tr>
+    <tr><td>MACRO</td><td>0.866</td><td>0.798</td><td>0.816</td></tr>
+  </tbody>
+</table></div>
+<h4>#5 st3 (team: uzhcl-for-the-win)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>goal:epistemic</td><td>1.000</td><td>0.899</td><td>0.947</td></tr>
+    <tr><td>goal:practical</td><td>0.655</td><td>1.000</td><td>0.792</td></tr>
+    <tr><td>basis:external</td><td>0.208</td><td>1.000</td><td>0.345</td></tr>
+    <tr><td>basis:internal</td><td>1.000</td><td>0.832</td><td>0.908</td></tr>
+    <tr><td>MACRO</td><td>0.716</td><td>0.933</td><td>0.748</td></tr>
+  </tbody>
+</table></div>
+<h4>#6 Organizer-LLM-Baseline-enhanced (team: organizer)</h4>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+  <thead>
+    <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>goal:epistemic</td><td>0.846</td><td>1.000</td><td>0.917</td></tr>
+    <tr><td>goal:practical</td><td>1.000</td><td>0.053</td><td>0.100</td></tr>
+    <tr><td>basis:external</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+    <tr><td>basis:internal</td><td>0.958</td><td>1.000</td><td>0.978</td></tr>
+    <tr><td>MACRO</td><td>0.701</td><td>0.513</td><td>0.499</td></tr>
+  </tbody>
+</table></div>
+
+<p>If you have any questions, please do not hesitate to <a href="mailto:touche@webis.de">contact us</a>.</p>
+
+</div>
+</div>
+</main>

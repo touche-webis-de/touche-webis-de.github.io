@@ -1,0 +1,207 @@
+---
+layout: default
+nav_active: shared-tasks
+title: Touché at CLEF 2026 - Fallacy Detection - Working-Notes Paper Guidelines
+description: Guidelines for writing your Touché 2026 Fallacy Detection working-notes paper.
+---
+<nav class="uk-container">
+    <ul class="uk-breadcrumb">
+        <li><a href="../../index.html">Touché</a></li>
+        <li><a href="../../shared-tasks.html">Shared Tasks</a></li>
+        <li><a href="fallacy-detection.html">Fallacy Detection 2026</a></li>
+        <li class="uk-disabled"><a href="#">Working-Notes Paper Guidelines</a></li>
+    </ul>
+</nav>
+
+<main class="uk-section uk-section-default">
+<div class="uk-container">
+<div class="uk-container uk-margin-small">
+<h1 class="uk-margin-remove-top uk-margin-remove-bottom">Writing Your Touché 2026 Working-Notes Paper</h1>
+<ul class="uk-list">
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#how-to-write">Part 1 &mdash; How to Write the Paper</a></li>
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-reference">Part 2 &mdash; Task Requirements and Reference</a></li>
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#checklist">Submission Checklist</a></li>
+</ul>
+</div>
+
+<div class="uk-container uk-margin-medium">
+
+<p>These guidelines help you structure your paper, sharpen its focus, and avoid the issues we most
+often see across submissions.</p>
+<p>As a general rule, do not assume that your reader is familiar with every term, abbreviation, or
+method you mention. Introduce all key concepts briefly and, where appropriate, support them with
+references.</p>
+<p>The guidelines have two parts:</p>
+<ol>
+<li><b>How to write the paper</b> &mdash; general advice on structure and what belongs in each section.</li>
+<li><b>Task requirements and reference</b> &mdash; the concrete rules, citations, dataset details, and formatting specific to this shared task.</li>
+</ol>
+<p>A short <a href="#checklist"><b>submission checklist</b></a> at the end collects the mandatory items.</p>
+
+<h2 id="how-to-write">Part 1 &mdash; How to Write the Paper</h2>
+
+<h3>General Structure</h3>
+<p>A paper is typically made up of a few standard parts, each with a distinct job: an
+<b>abstract</b> (a short overview of the whole paper), an <b>introduction</b> (problem, motivation,
+and your contribution), a <b>body</b> (usually dataset, experiments, and results), and a
+<b>conclusion</b> (what your work showed). For this task, a required <b>AI-usage</b> section
+follows the conclusion. The subsections below explain what belongs in each of these parts.</p>
+<p>A well-structured paper progresses from the general to the specific. Begin by introducing the
+broader topic and its motivation, then move on to your specific approach, task, data, and
+experimental setup.</p>
+<p>Throughout the paper, include only information that is actually necessary. Ask yourself whether
+each point is relevant to your method, experiments, or findings. For example, you do not need to
+describe every field in the dataset unless you used all of them in your experiments.</p>
+
+<h3>Abstract</h3>
+<p>The abstract is usually the first part of the paper that readers see, so it should give a clear
+and concise overview of the main idea. State the problem, the approach, and the main findings
+&mdash; briefly.</p>
+<p>Avoid too much detail. Do not describe the shared task extensively, and do not explain your
+models, methods, or experimental setup in depth; those details belong in the main sections. The
+abstract should convey the paper's topic, main idea, and key contribution, even to a reader with
+only minimal prior knowledge.</p>
+
+<h3>Introduction</h3>
+<p>The introduction should set up the problem and explain why it matters. In particular, it should:</p>
+<ul>
+<li>Define what fallacies are, and explain why detecting and classifying them matters.</li>
+<li>Introduce the shared task as the setting for this problem, and briefly say what the task asks participants to do.</li>
+<li>State your contribution clearly. This is the central idea of your paper: what are you proposing, and why do you believe it helps with fallacy detection and classification?</li>
+</ul>
+<p>Do not use the introduction to describe your full experimental setup in detail &mdash; that
+belongs in the experiments section. The introduction motivates the work, explains the task briefly,
+and clearly presents the main idea behind your approach.</p>
+
+<h3>Body of the Paper</h3>
+<p>The remaining sections provide the details needed to understand and evaluate your work.</p>
+<p><b>Dataset.</b> The body usually begins with a dataset subsection. For a shared task, a short
+description of the shared-task dataset is enough: state how large it is and which fields you
+actually used. You need not describe fields you did not use &mdash; but briefly explain every
+field or term you <i>do</i> mention. For example, if you refer to &ldquo;enhanced&rdquo; fields,
+say what &ldquo;enhanced&rdquo; means, since it is not self-explanatory.</p>
+<p><b>Approach &amp; Experiments.</b> Next, present your approach in detail and explain why you
+designed it this way. Make sure the reader can follow the main steps without having to guess what
+each model, feature, or abbreviation means. Describe how you trained your models and how you
+evaluated them: data splits, evaluation metrics, models, baselines, and any important
+implementation details. If you run experiments on your own data &mdash; for example, a development
+set &mdash; explain how that set was created and what kind of experiment you run on it. The goal
+is to make the experiments understandable and, where possible, reproducible. Very specific
+details, such as hyperparameters or prompts, can be moved to the appendix if they make the main
+section too long.</p>
+<p><b>Results.</b> Present the scores clearly and discuss what they show. These can be the results
+of your own experiments (for example, on your development set) or the official shared-task results
+on the test set. Do not only list numbers &mdash; explain what they mean. State whether the
+results support your main idea, and discuss any limitations or unexpected findings.</p>
+
+<h3>Conclusion</h3>
+<p>The conclusion summarizes what the paper has shown. Think of it as closing the circle opened by
+the introduction: return to the main research question or shared-task objective and state what
+answer your work provides. In the context of a shared task, explain whether your approach worked
+and what can be learned from the results.</p>
+<p>Do not introduce new methods, experiments, or results in the conclusion. Briefly summarize the
+contribution, the main findings, and any important limitations or directions for future work.</p>
+
+<h3>AI Usage</h3>
+<p>Each paper is <b>required</b> to include a section on AI usage. It comes <i>after</i> your
+conclusion and is not a regular part of the paper's narrative. See the
+<a href="https://clef2026.clef-initiative.eu/calls/submitting/#lab-working-notes">official guidance</a>.</p>
+
+<h2 id="task-reference">Part 2 &mdash; Task Requirements and Reference</h2>
+
+<h3>The Task</h3>
+<p>This work is part of the <b>Touché Lab at CLEF 2026</b>, which includes several shared tasks on
+argumentation. One of them is <a href="fallacy-detection.html"><b>Fallacy Detection</b></a>, which
+consists of three subtasks: fallacy detection, fallacy classification, and argument scheme
+classification.</p>
+
+<h3>Citations</h3>
+<ul>
+<li>Cite the official Touché and task overview papers as specified on the Touché 2026 website. According to the official instructions, cite Touché and the task with <code>\cite{kiesel:2026c,kiesel:2026d}</code>. If you use TIRA, cite it with <code>\cite{froebe:2023}</code>.</li>
+<li>If you use any models, cite or reference the corresponding model cards or documentation.</li>
+<li>Explain abbreviations when first introduced, unless they are very widely known (e.g., BERT, LLM).</li>
+<li>Do not use a citation as a noun or as the subject of a sentence &mdash; the number is not a substitute for the author name. Write &ldquo;Smith et al. [4]&rdquo; rather than &ldquo;by [4]&rdquo;, and &ldquo;As stated by Smith et al. [4], &hellip;&rdquo; rather than &ldquo;As stated in [4], &hellip;&rdquo;.</li>
+</ul>
+
+<h3>Writing Style</h3>
+<ul>
+<li>Do not start a sentence with a number or an acronym. Reword so the sentence opens with a word &mdash; e.g., &ldquo;42 examples were labeled&rdquo; &rarr; &ldquo;We labeled 42 examples&rdquo;, or spell the number out.</li>
+</ul>
+
+<h3>The Dataset</h3>
+<p>The dataset used in this task is based on the dataset by <a href="#sahai21">Sahai et al.</a>
+For our experiments, we used a subset of it and created <b>enhanced</b> versions of the underlying
+data using Claude Opus 4.6.</p>
+<ul>
+<li><b>Text versions.</b> We first created a <code>text_base</code> version, in which the original comment, parent comment, and topic are combined into a single, more self-contained text. We then created a <code>text_enhanced</code> version: the same <code>text_base</code> rewritten so that the scheme dimensions (argument goal and basis) become clearly identifiable from the text and &mdash; if the instance contains a fallacy &mdash; the fallacious reasoning pattern is made more explicit and central. The rewrite is constrained to stay natural and plausible, still reading like a real person's comment rather than a contrived textbook example, and it preserves the original tone and stance.</li>
+<li><b>Argument versions.</b> We also created <code>argument_base</code> and <code>argument_enhanced</code> versions. These represent the argument as a claim together with supporting premises. In the dataset, the supporting premises are labeled <code>support</code> to signal that the filtering process may be noisy; in terms of argumentation theory, this field is intended to capture the premises that support the claim.</li>
+</ul>
+<p>The full dataset, including the official test set and its gold labels, is available on
+<a href="https://zenodo.org/records/19925569">Zenodo</a>.</p>
+
+<h3>Argumentation Background</h3>
+<ul>
+<li>An argument consists of a <b>claim</b> and one or more <b>premises</b>. The premises provide support for the claim. In the dataset we label them <code>support</code> rather than <code>premises</code>, only to emphasize that &mdash; because they were extracted automatically &mdash; the claims and premises may not be perfect.</li>
+<li>An argument may or may not be <b>fallacious</b>. A fallacy is an argument that appears convincing or valid at first glance but is flawed. Such flaws can arise for different reasons &mdash; for example, the argument may rely on premises that are not generally accepted, or the inference from the premises to the claim may be too broad, too weak, or otherwise unjustified.</li>
+<li>Arguments can often be grouped by recurring patterns, known as <b>argumentation schemes</b>. For example, an <i>argument from expert opinion</i> follows the general pattern that an expert states something, and this statement is then used as support for a claim.</li>
+<li>In this task, however, we focus on more general <b>dimensions</b> of arguments rather than only on specific schemes. These dimensions include whether an argument is <i>practical</i> or <i>epistemic</i>, and whether it is <i>internal</i> or <i>external</i>. Every argumentation scheme can be mapped to these dimensions: the dimensions are a generalization of the schemes, based on the theory of <a href="#macagno15">Macagno (2015)</a>.</li>
+<li><b>Task&nbsp;3</b> asks participants to propose an argumentation scheme for non-fallacious arguments. From a theoretical perspective, every argument can be assigned to these dimensions, regardless of whether it is fallacious; requiring this for non-fallacious arguments is not a theoretical necessity but arose only from the symmetry with Task&nbsp;2.</li>
+</ul>
+
+<h3>Formatting</h3>
+<ul>
+<li><b>Title:</b> <code>&lt;Your Team Name&gt; at Touché: &lt;Brief Description of your Approach&gt;</code></li>
+<li><b>Subtitle:</b> <code>Touché at CLEF 2026</code> (as per the official template).</li>
+<li>Full submission information: <a href="index.html#index-paper-submission">Touché 2026 paper submission</a>.</li>
+</ul>
+
+<h3>Tables and Figures</h3>
+<ul>
+<li>Make tables self-contained. Explain abbreviations and shortcuts directly in the table or its caption. A table should be understandable on its own, since readers often look at tables before reading the surrounding text &mdash; so it is acceptable, and often helpful, for a table to repeat information already in the main text.</li>
+<li>Every table and figure should have a clear, informative caption.</li>
+<li>Avoid figure overflow. Place and size figures so they fit cleanly into the layout and do not disrupt the surrounding text.</li>
+</ul>
+
+<h3>Numerical Precision</h3>
+<p>Use at most three digits after the decimal point. Differences beyond that are usually not
+meaningful &mdash; no one can reasonably conclude that one model is better than another based on a
+difference in the fourth or fifth decimal place.</p>
+
+<h3>Literature</h3>
+<ul>
+<li id="sahai21">Saumya Sahai, Oana Balalau, and Roxana Horincar,
+<a href="https://aclanthology.org/2021.acl-long.53">Breaking Down the Invisible Wall of Informal Fallacies in Online Discussions</a>,
+Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics
+and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers),
+August 2021, pp. 644&ndash;657,
+doi:<a href="https://doi.org/10.18653/v1/2021.acl-long.53">10.18653/v1/2021.acl-long.53</a>.</li>
+<li id="macagno15">Fabrizio Macagno,
+<a href="https://doi.org/10.1007/978-3-319-21103-9_14">A Means-End Classification of Argumentation Schemes</a>,
+in Frans H. van Eemeren and Bart Garssen (eds.), <i>Reflections on Theoretical Issues in Argumentation Theory</i>,
+pp. 183&ndash;201, Springer International Publishing, Cham, 2015,
+doi:<a href="https://doi.org/10.1007/978-3-319-21103-9_14">10.1007/978-3-319-21103-9_14</a>.</li>
+</ul>
+
+<h2 id="checklist">Submission Checklist</h2>
+<ul class="uk-list uk-list-bullet">
+<li>Title follows <code>&lt;Team Name&gt; at Touché: &lt;Brief Description&gt;</code>; subtitle is <code>Touché at CLEF 2026</code>.</li>
+<li>Abstract states problem, approach, and main findings &mdash; without setup details.</li>
+<li>Introduction defines fallacies, introduces the task, and states your contribution.</li>
+<li>Dataset subsection states size and the fields you actually used; every mentioned field/term is explained.</li>
+<li>Experiments cover data splits, metrics, models, baselines, and key implementation details (hyperparameters/prompts can go to the appendix).</li>
+<li>Results are interpreted, not just listed.</li>
+<li>Conclusion closes the circle from the introduction; no new results.</li>
+<li>Touché and task cited via <code>\cite{kiesel:2026c,kiesel:2026d}</code>; TIRA via <code>\cite{froebe:2023}</code> if used.</li>
+<li>Models cited via their model cards / documentation.</li>
+<li>Citations use author names, not bare numbers, and are never used as a noun (&ldquo;As stated by Smith et al. [4]&rdquo;, not &ldquo;As stated in [4]&rdquo;).</li>
+<li>No sentence starts with a number or an acronym.</li>
+<li>Results rounded to at most three decimal places.</li>
+<li>Tables and figures are self-contained, captioned, and do not overflow.</li>
+<li>AI-usage section included after the conclusion.</li>
+</ul>
+
+<p>If you have any questions, please do not hesitate to <a href="mailto:touche@webis.de">contact us</a>.</p>
+
+</div>
+</div>
+</main>
