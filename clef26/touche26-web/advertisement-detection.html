@@ -271,7 +271,7 @@ The submitted classifiers were evaluated on a private test-split of the Webis Ge
 
 <h3 id="results-sub-task-2">Results Sub-Task 2</h3>
 <p>The results for sub-task 2 are shown below, as described in <a href="#evaluation">Evaluation</a>.
-Note that the metrics below are the mean values across all responses with ads from the private test-split of the Webis Generated Native Ads 2025.</p>
+Note that the metrics below are the mean values across all responses with ads from the private test-split of the Webis Generated Native Ads 2025. Hence, the F1-score is the mean of the response F1-scores</p>
 <div class='uk-overflow-auto'>
 <table class="dataframe uk-table uk-table-divider uk-table-small uk-table-hover sortable">
     <thead>
@@ -287,28 +287,28 @@ Note that the metrics below are the mean values across all responses with ads fr
         <tr>
 			<td>Baseline</td>
 			<td>minilm</td>
-			<td>0.730</td>
+			<td>0.697</td>
 			<td>0.821</td>
 			<td>0.657</td>
 		</tr>
 		<tr>
 			<td>code-doctors</td>
 			<td>RoBERTa sentence-pair (3-class)</td>
-			<td>0.722</td>
+			<td>0.668</td>
 			<td>0.726</td>
 			<td>0.719</td>
 		</tr>
 		<tr>
 			<td>Baseline</td>
 			<td>last-sents</td>
-			<td>0.519</td>
+			<td>0.472</td>
 			<td>0.605</td>
 			<td>0.454</td>
 		</tr>
 		<tr>
 			<td>modernbert-adhunter</td>
 			<td>messy-key</td>
-			<td>0.217</td>
+			<td>0.198</td>
 			<td>0.279</td>
 			<td>0.178</td>
 		</tr>
