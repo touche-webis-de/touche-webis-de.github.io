@@ -257,6 +257,14 @@ The submitted classifiers were evaluated on a private test-split of the Webis Ge
 		    <td>0.942</td>
 		    <td>0.293</td>	
 	    </tr>
+		<tr>
+		    <td>code-doctors</td>			
+		    <td>RoBERTa fine-tuned</td>					
+		    <td>0.357</td>	
+		    <td>0.761</td>	
+		    <td>0.985</td>
+		    <td>0.218</td>	
+	    </tr>
     </tbody>
 </table>
 </div>
@@ -274,33 +282,36 @@ Note that the metrics below are the mean values across all responses with ads fr
 			<th>F1</th>
 			<th>Precision</th>
 			<th>Recall</th>
-			<th>IoU</th>
 		</tr>
     </thead>
 	<tbody>
         <tr>
 			<td>Baseline</td>
 			<td>minilm</td>
-			<td>0.697</td>
+			<td>0.730</td>
 			<td>0.821</td>
 			<td>0.657</td>
-			<td>0.633</td>	
+		</tr>
+		<tr>
+			<td>code-doctors</td>
+			<td>RoBERTa sentence-pair (3-class)</td>
+			<td>0.722</td>
+			<td>0.726</td>
+			<td>0.719</td>
 		</tr>
 		<tr>
 			<td>Baseline</td>
 			<td>last-sents</td>
-			<td>0.472</td>
+			<td>0.519</td>
 			<td>0.605</td>
 			<td>0.454</td>
-			<td>0.397</td>	
 		</tr>
 		<tr>
 			<td>modernbert-adhunter</td>
 			<td>messy-key</td>
-			<td>0.198</td>
+			<td>0.217</td>
 			<td>0.279</td>
 			<td>0.178</td>
-			<td>0.189</td>
 		</tr>
 	</tbody>
 </table>
