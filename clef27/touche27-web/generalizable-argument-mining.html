@@ -1,0 +1,440 @@
+---
+layout: default
+nav_active: shared-tasks
+title: Touché at CLEF 2027 - Generalizability of Argument Identification in Context
+description: 👉 To be an argument or not to be an argument — that is the question that current models cannot answer and is raised by this task @ CLEF 2027 🤞
+---
+
+<nav class="uk-container">
+    <ul class="uk-breadcrumb">
+        <li><a href="../../index.html">Touché</a></li>
+        <li><a href="../../shared-tasks.html">Shared Tasks</a></li>
+        <li class="uk-disabled"><a href="#">Generalizability of Argument Identification in Context 2027</a></li>
+    </ul>
+</nav>
+
+<main class="uk-section uk-section-default">
+<div class="uk-container">
+<div class="uk-container uk-margin-small">
+<h1 class="uk-margin-remove-top uk-margin-remove-bottom">Generalizability of Argument Identification in Context 2027</h1>
+<ul class="uk-list">
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
+<!--
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#important_dates">Important Dates</a></li>
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#leaderboard">Leaderboard</a></li>
+-->
+<li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
+</ul>
+</div>
+
+<div class="uk-container uk-margin-medium">
+
+<h2 id="synopsis">Synopsis</h2>
+<ul>
+<li>Task: Decide if a sentence, in its context, constitutes an argument or not.</li>
+<li>Communication: [mailing lists: <a href="https://groups.google.com/g/touche-lab">participants</a>, <a href="mailto:touche@webis.de">organizers</a>] </li>
+<!--
+<li>Submission: [<a href="index.html#index-paper-submission">notebook papers</a>]</li>
+-->
+</ul>
+
+<!--
+<a class="uk-button uk-button-primary" href="https://clef-labs-registration.dipintra.it/">Register for participation</a>
+-->
+<a href="https://groups.google.com/g/touche-lab" class="uk-button uk-button-primary">Join the Touché mailing list</a>
+
+<!--
+<h2 id="important-dates" class="uk-margin-large-top">Important Dates</h2>
+<ul>
+    <li>14.01.26: The training and development data is released.</li>
+    <li>24.04.26: The test data is released.</li>
+    <li>22.05.26: The leaderboard is released.</li>
+    <li>22.05.26: The test labels are released.</li>
+</ul>
+<p>Run submission extended to May 21st, 2026 (AoE).</p>
+<p>See the <a href="https://clef2026.clef-initiative.eu/dates/#participating-in-a-lab">CLEF 2026 homepage</a> for other dates.</p>
+<p>Subscribe to the <a href="https://groups.google.com/g/touche-lab">Touché mailing list</a> to receive notifications.</p>
+-->
+
+<!--
+<h2 id="task">Task</h2>
+<p>Given a sentence from a dataset along with metadata about its provenance, such as the source text and the dataset's annotation guidelines, predict whether the sentence can be annotated as an argument or not. In particular, participants are encouraged to develop robust systems that generalize beyond lexical shortcuts to unseen datasets and investigate ways to exploit rich context information for this purpose.</p>
+-->
+
+<!--
+<h2 id="data">Data</h2>
+<p>A subset from 10 established, publicly available benchmark datasets (<a href="https://ecai2020.eu/papers/1470_paper">ABSTRCT</a>, <a href="https://aclanthology.org/W19-4516/">ACQUA</a>, <a href="https://aclanthology.org/W15-4631/">AEC</a>, <a href="https://aclanthology.org/W16-3636/">AFS</a>, <a href="https://aclanthology.org/W18-5206/">ARGUMINSCI</a>, <a href="https://aclanthology.org/2022.finnlp-1.22/">FINARG</a>, <a href="https://aclanthology.org/2022.acl-long.162/">IAM</a>, <a href="https://aclanthology.org/J17-3005/">PE</a>, <a href="https://aclanthology.org/2021.argmining-1.10/">SCIARK</a>, <a href="https://aclanthology.org/P19-1463/">USELEC</a>), which <a href="https://aclanthology.org/2025.acl-long.1164/">this paper</a> considers most relevant for argument identification, will be used.
+Each consists of 1.7k labeled sentences, partitioned with a 60/20/20 ratio into training, development, and test splits.
+Additionally, a new evaluation-only dataset will be released.
+Overall, the data includes sentences labeled as <i>Argument</i> or <i>No-Argument</i>, according to the respective dataset annotations.
+Accompanying metadata includes sentence IDs, generated splits, and (where available) context-relevant information via the original data sources, as well as annotation guidelines and corresponding papers.</p>
+-->
+
+<!--
+<h2 id="evaluation">Evaluation</h2>
+<p>Systems will primarily be evaluated on the newly created, evaluation-only dataset.
+    This dataset comprises 340 test sentences from the enhanced and anonymized <a href="https://aclanthology.org/2024.lrec-main.1349/">TACO</a> dataset, each annotated with its original labels as well as labels aligned with the <a href="https://aclanthology.org/J17-3005/">PE</a> and <a href="https://aclanthology.org/P19-1463/">USELEC</a> guidelines (1.020 in total). For further insights, evaluation results on the established test splits from the held-out benchmark data will also be provided but not used for ranking. This setup addresses the risk of data contamination in LLMs and for participants’ potential use of additional datasets during training. To evaluate the systems for their generalizability, the macro F<sub>1</sub>-score will be measured for each test split, along with the overall average of all these values.</p>
+-->
+
+<!--
+<h2 id="submission">Submission</h2>
+<p>We ask participants to use <a href="https://www.tira.io/">TIRA</a> for submissions. Each team can submit <b>up to 3</b> approaches to the task.</p>
+<p>The submissions for this task must be made as a <b>run submission</b>, meaning the test data will be provided in the same format as the training and development data, and participants must return their predictions.
+-->
+
+<!--
+<h3 id="output">Output Format</h3>
+<p>The output of the submission needs to be a <b>JSONL</b> file. Each line in the file must be in the following <b>JSON</b> format:
+<ul>
+<li><code>id</code>: The ID of the sentence that was classified.</li>
+<li><code>label</code>: The label assigned by your classifier (<code>Argument</code> if the sentence is an argument and <code>No-Argument</code> otherwise).</li>
+</ul>
+<details>
+<summary>Example JSONL file (click to see)</summary>
+<pre><code>
+    {
+        "id": "SCIARK-test-21",
+        "label": "Argument"
+    }
+    {
+        "id": "USELEC-test-171",
+        "label": "No-Argument"
+    }
+</code></pre>
+</details>
+<h3 id="input">Input Format</h3>
+<p>The input for the submission will also be provided as <b>JSONL</b> files (e.g., <code>train.jsonl</code> and <code>train_labels.jsonl</code>), which can be combined to follow the <b>JSON</b> structure below:</p>
+<ul>
+  <li><code>id</code>: A unique sentence identifier composed of a dataset prefix, the split name, and a running number (e.g., <code>ABSTRCT-train-1</code>).</li>
+  <li><code>paper</code>: A link to the corresponding dataset paper.</li>
+  <li><code>document</code>: A link to the source document from which the sentence was extracted.</li>
+  <li><code>guidelines</code>: A link to the annotation guidelines used to label the sentence.</li>
+  <li><code>label</code>: The gold label, where <code>Argument</code> indicates an argument sentence and <code>No-Argument</code> otherwise.</li>
+  <li><code>sentence</code>: The sentence itself.</li>
+</ul>
+
+<details>
+<summary>Example JSONL file (click to see)</summary>
+<pre><code>
+    {
+        "id": "ABSTRCT-train-403",
+        "paper": "https://raw.githubusercontent.com/TomatenMarc/GAIC-2026/refs/heads/main/data/ABSTRCT/paper/ABSTRCT.pdf",
+        "document": "https://raw.githubusercontent.com/TomatenMarc/GAIC-2026/refs/heads/main/data/ABSTRCT/data/ABSTRCT-19.txt",
+        "guidelines": "https://raw.githubusercontent.com/TomatenMarc/GAIC-2026/refs/heads/main/data/ABSTRCT/guidelines/ABSTRCT-Guidelines.pdf",
+        "label": "Argument",
+        "sentence": "Therefore, single-fraction radiotherapy should be considered as the palliative treatment of choice for cancer patients with painful bone metastases."
+    }
+    {
+        "id": "FINARG-dev-262",
+        "paper": "https://raw.githubusercontent.com/TomatenMarc/GAIC-2026/refs/heads/main/data/FINARG/paper/FINARG.pdf",
+        "document": "https://raw.githubusercontent.com/TomatenMarc/GAIC-2026/refs/heads/main/data/FINARG/data/FINARG-631.txt",
+        "guidelines": "-",
+        "label": "No-Argument",
+        "sentence": "I can take the first one, Brian, on the time spent metric."
+    }
+    {
+        "id":"TAUS-test-90",
+        "paper":"./TACO/paper/TACO.pdf",
+        "document":"./TACO/data/TACO-19.txt",
+        "guidelines":"./TAUS/guidelines/TAUS-Guidelines.pdf",
+        "label": "No-Argument",
+        "sentence":"@Mrs._Diane_Reyes Theon killed was the cherry on top."
+    }
+</code></pre>
+</details>
+
+<h4 id="Please Note">Please Note</h4>
+<ul>
+  <li>Links provided under <code>paper</code> and <code>guidelines</code> point to a <b>PDF</b> file.</li>
+  <li>Links provided under <code>document</code> point to a <b>TXT</b> file.</li>
+  <li>The respective <code>train/dev/test</code> splits will be published sequentially in <code>./data/</code> as separate files (e.g., <code>train.jsonl</code>).</li>
+  <li>Each <code>train/dev/test</code> split will have a separate file containing the labels (e.g., <code>train_labels.jsonl</code>).</li>
+  <li>The paths in each split are relative to the <code>./data/</code> working directory and point to the respective files (e.g., <code>./ABSTRCT/data/ABSTRCT-1.txt</code>).</li>
+  <li>The three <a href="https://aclanthology.org/2024.lrec-main.1349/">TACO</a> test variants (<a href="https://aclanthology.org/2024.lrec-main.1349/">TACO</a>, <a href="https://aclanthology.org/2024.lrec-main.1349/">TACO</a>-<a href="https://aclanthology.org/J17-3005/">PE</a>, <a href="https://aclanthology.org/2024.lrec-main.1349/">TACO</a>-<a href="https://aclanthology.org/P19-1463/">USELEC</a>) will accompany the held-out data and use standard IDs (e.g., <code>taco-test-1</code>, <code>tape-test-1</code>, <code>taus-test-1</code>).</li>
+  <li>For <a href="https://aclanthology.org/2024.lrec-main.1349/">TACO</a>-<a href="https://aclanthology.org/J17-3005/">PE</a> and <a href="https://aclanthology.org/2024.lrec-main.1349/">TACO</a>-<a href="https://aclanthology.org/P19-1463/">USELEC</a>, the original guidelines were applied, and deviations are documented respectively (e.g., <code>./TAPE/guidelines/TAPE-Guidelines.pdf</code>).</li>
+  <li>The data will be distributed via <a href="https://www.tira.io/">TIRA</a>, but is already published in this <a href="https://github.com/TomatenMarc/GAIC-2026">GitHub repository</a>.</li>
+  <li>If you encounter any issues, please feel free to contact any of the maintainers.</li>
+</ul>
+-->
+
+<!--
+<h2><a id="related-work"></a>Related Work</h2>
+<ul>
+<li>Marc Feger, Katarina Boland, and Stefan Dietze. <a href="https://aclanthology.org/2025.acl-long.1164/"> Limited Generalizability in Argument Mining: State-Of-The-Art Models Learn Datasets, Not Arguments.</a> In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics, July 2025.</li>
+<li>Terne Sasha Thorn Jakobsen, Maria Barrett, and Anders Søgaard. <a href="https://aclanthology.org/2021.starsem-1.25/">Spurious Correlations in Cross-Topic Argument Mining</a>. In Proceedings of *SEM 2021: The Tenth Joint Conference on Lexical and Computational Semantics, August 2021.</li>
+<li>Robert Geirhos, Jörn-Henrik Jacobsen, Claudio Michaelis, Robert Zemel, Wieland Brendel, Matthias Bethge & Felix A. Wichmann. <a href="https://doi.org/10.1038/s42256-020-00257-z">Shortcut learning in deep neural networks</a>. Nature Machine Intelligence, November 2020.</li>
+</ul>
+-->
+
+<!--
+<h2 id="leaderboard">Leaderboard</h2>
+<h3 id="leaderboard-small">Condensed Leaderboard</h3>
+<p>The condensed leaderboard is shown below, as described in <a href="#evaluation">Evaluation</a>. <b>Main</b> refers to the averaged macro F<sub>1</sub>-scores of the three new evaluation-only datasets used for the official ranking, while <b>Supplementary</b> denotes the average across the 10 publicly available training benchmarks.</p>
+
+<div class='uk-overflow-auto'>
+<table class="dataframe uk-table uk-table-divider uk-table-small uk-table-hover sortable"
+         style="white-space: nowrap;">
+  <thead>
+    <tr style="text-align: right;">
+      <th>team</th>
+      <th>id</th>
+      <th>name</th>
+      <th>Main</th>
+      <th>Supplementary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>context-awakens</td>
+      <td>2026-05-08-15-04-50</td>
+      <td>Full GAIC Testset</td>
+      <td>0.7955</td>
+      <td>0.7308</td>
+    </tr>
+    <tr>
+      <td>arginvariant</td>
+      <td>2026-05-06-16-07-49</td>
+      <td>arginvariant_1</td>
+      <td>0.7834</td>
+      <td>0.7899</td>
+    </tr>
+    <tr>
+      <td>arginvariant</td>
+      <td>2026-05-06-16-08-30</td>
+      <td>arinvariant_2</td>
+      <td>0.7829</td>
+      <td>0.7533</td>
+    </tr>
+    <tr>
+      <td>the-wildcards</td>
+      <td>2026-05-18-16-29-20</td>
+      <td>hybrid</td>
+      <td>0.7822</td>
+      <td>0.8128</td>
+    </tr>
+    <tr>
+      <td>the-wildcards</td>
+      <td>2026-05-21-18-35-58</td>
+      <td>local</td>
+      <td>0.7693</td>
+      <td>0.8057</td>
+    </tr>
+    <tr>
+      <td>arginvariant</td>
+      <td>2026-05-06-16-09-54</td>
+      <td>arginvariant_3</td>
+      <td>0.7561</td>
+      <td>0.6531</td>
+    </tr>
+    <tr>
+      <td>code-doctors</td>
+      <td>2026-04-29-21-22-47</td>
+      <td>run_1</td>
+      <td>0.6502</td>
+      <td>0.8000</td>
+    </tr>
+    <tr>
+      <td>the-wildcards</td>
+      <td>2026-05-21-18-34-10</td>
+      <td>solo</td>
+      <td>0.5938</td>
+      <td>0.8148</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3 id="leaderboard-big">Detailed Leaderboard</h3>
+<p>The detailed leaderboard used to compute the official scores in the previous section is shown below.</p>
+
+<div class='uk-overflow-auto'>
+<table class="dataframe uk-table uk-table-divider uk-table-small uk-table-hover sortable"
+         style="white-space: nowrap;">
+  <thead>
+    <tr style="text-align: right;">
+      <th>team</th>
+      <th>id</th>
+      <th>name</th>
+      <th>ABSTRCT</th>
+      <th>ACQUA</th>
+      <th>AEC</th>
+      <th>AFS</th>
+      <th>ARGUMINSCI</th>
+      <th>FINARG</th>
+      <th>IAM</th>
+      <th>PE</th>
+      <th>SCIARK</th>
+      <th>TACO</th>
+      <th>TAPE</th>
+      <th>TAUS</th>
+      <th>USELEC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>context-awakens</td>
+      <td>2026-05-08-15-04-50</td>
+      <td>Full GAIC Testset</td>
+      <td>0.8735</td>
+      <td>0.7882</td>
+      <td>0.9141</td>
+      <td>0.7119</td>
+      <td>0.7933</td>
+      <td>0.4764</td>
+      <td>0.7146</td>
+      <td>0.6646</td>
+      <td>0.6682</td>
+      <td>0.8408</td>
+      <td>0.7604</td>
+      <td>0.7853</td>
+      <td>0.7029</td>
+    </tr>
+    <tr>
+      <td>arginvariant</td>
+      <td>2026-05-06-16-07-49</td>
+      <td>arginvariant_1</td>
+      <td>0.8529</td>
+      <td>0.8529</td>
+      <td>0.9588</td>
+      <td>0.7475</td>
+      <td>0.8032</td>
+      <td>0.6705</td>
+      <td>0.7041</td>
+      <td>0.8137</td>
+      <td>0.7465</td>
+      <td>0.8133</td>
+      <td>0.7757</td>
+      <td>0.7612</td>
+      <td>0.7490</td>
+    </tr>
+    <tr>
+      <td>arginvariant</td>
+      <td>2026-05-06-16-08-30</td>
+      <td>arinvariant_2</td>
+      <td>0.8466</td>
+      <td>0.7968</td>
+      <td>0.9381</td>
+      <td>0.6441</td>
+      <td>0.7505</td>
+      <td>0.6372</td>
+      <td>0.6795</td>
+      <td>0.7881</td>
+      <td>0.7203</td>
+      <td>0.8133</td>
+      <td>0.7757</td>
+      <td>0.7598</td>
+      <td>0.7316</td>
+    </tr>
+    <tr>
+      <td>the-wildcards</td>
+      <td>2026-05-18-16-29-20</td>
+      <td>hybrid</td>
+      <td>0.9000</td>
+      <td>0.8617</td>
+      <td>0.9588</td>
+      <td>0.8265</td>
+      <td>0.8146</td>
+      <td>0.6728</td>
+      <td>0.7529</td>
+      <td>0.7706</td>
+      <td>0.8234</td>
+      <td>0.8265</td>
+      <td>0.7465</td>
+      <td>0.7735</td>
+      <td>0.7468</td>
+    </tr>
+    <tr>
+      <td>the-wildcards</td>
+      <td>2026-05-21-18-35-58</td>
+      <td>local</td>
+      <td>0.9000</td>
+      <td>0.7910</td>
+      <td>0.9588</td>
+      <td>0.8265</td>
+      <td>0.8146</td>
+      <td>0.6728</td>
+      <td>0.7529</td>
+      <td>0.7706</td>
+      <td>0.8234</td>
+      <td>0.7912</td>
+      <td>0.7506</td>
+      <td>0.7660</td>
+      <td>0.7468</td>
+    </tr>
+    <tr>
+      <td>arginvariant</td>
+      <td>2026-05-06-16-09-54</td>
+      <td>arginvariant_3</td>
+      <td>0.7924</td>
+      <td>0.7455</td>
+      <td>0.8076</td>
+      <td>0.5998</td>
+      <td>0.6132</td>
+      <td>0.5598</td>
+      <td>0.7041</td>
+      <td>0.4696</td>
+      <td>0.6760</td>
+      <td>0.8101</td>
+      <td>0.7204</td>
+      <td>0.7377</td>
+      <td>0.5632</td>
+    </tr>
+    <tr>
+      <td>code-doctors</td>
+      <td>2026-04-29-21-22-47</td>
+      <td>run_1</td>
+      <td>0.8587</td>
+      <td>0.8205</td>
+      <td>0.9559</td>
+      <td>0.7941</td>
+      <td>0.8265</td>
+      <td>0.6715</td>
+      <td>0.7382</td>
+      <td>0.7676</td>
+      <td>0.8056</td>
+      <td>0.6025</td>
+      <td>0.6748</td>
+      <td>0.6734</td>
+      <td>0.7617</td>
+    </tr>
+    <tr>
+      <td>the-wildcards</td>
+      <td>2026-05-21-18-34-10</td>
+      <td>solo</td>
+      <td>0.9000</td>
+      <td>0.8258</td>
+      <td>0.9588</td>
+      <td>0.8265</td>
+      <td>0.8382</td>
+      <td>0.6728</td>
+      <td>0.7529</td>
+      <td>0.7880</td>
+      <td>0.8234</td>
+      <td>0.5098</td>
+      <td>0.6216</td>
+      <td>0.6499</td>
+      <td>0.7617</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+-->
+
+<h2 id="task-committee">Task Committee</h2>
+<div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+{% include people-cards/feger.html gender="male" %}
+{% include people-cards/boland.html gender="female" %}
+{% include people-cards/romberg.html gender="female" %}
+{% include people-cards/dietze.html gender="male" %}
+</div>
+<div class="uk-container uk-padding-large uk-padding-remove-bottom">
+{% include organizations/clef-organizations-section.html year=2027 %}
+</div>
+</div>
+</div>
+</main>
